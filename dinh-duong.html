@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dinh dưỡng &amp; thực đơn — Dawn Kindergarten</title>
+<meta name="description" content="Chế độ dinh dưỡng khoa học, thực đơn mẫu hằng tuần và nguyên tắc an toàn thực phẩm tại Dawn Kindergarten.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="css/style.css">
+  <!-- v4 design: Tailwind config colors -->
+  <script>
+   tailwind.config = {
+    theme: {
+     extend: {
+      colors: {
+       forest: '#223D22',
+       plum: '#2F1834',
+       chartreuse: '#DCD870',
+       gold: '#ECAB45',
+       sage: '#C9D3B5',
+       ivory: '#F7F5EA',
+       charcoal: '#20251F',
+       'stats-bg': '#E5EBD9',
+      },
+      fontFamily: {
+       serif: ['"DM Serif Display"', 'serif'],
+       sans: ['"Be Vietnam Pro"', 'sans-serif'],
+      },
+      borderRadius: {
+       '3xl': '1.75rem',
+       '4xl': '2.5rem',
+       'pill': '9999px',
+      },
+      maxWidth: {
+       'container': '1280px',
+      }
+     }
+    }
+   }
+  </script>
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+<body class="grain">
+<div id="dawn-arc-track"><div id="dawn-arc-fill"></div></div>
+<div data-include="header"></div>
+
+<section class="page-hero">
+ <svg class="absolute left-0 top-0 w-full h-full pointer-events-none" viewBox="0 0 1280 500" preserveAspectRatio="none" style="opacity:.5;">
+ <path class="sunrise-line" d="M-60 380c240-200 640-250 1360-30" stroke="#ECAB45" stroke-width="1.5" fill="none"/>
+ </svg>
+ <div class="relative z-10 max-w-[1280px] mx-auto px-6 md:px-10">
+ <p class="eyebrow reveal in" style="color:var(--chartreuse);">DINH DƯỠNG &amp; THỰC ĐƠN</p>
+ <h1 class="serif text-[40px] md:text-[58px] leading-[1.08] mt-4 max-w-[760px] text-white reveal in">Ăn ngon, lớn khỏe mỗi ngày</h1>
+ <p class="mt-5 max-w-[560px] text-[16px] md:text-[18px] leading-[1.7] font-light text-white/75 reveal in">Thực đơn được xây dựng bởi chuyên gia dinh dưỡng, đảm bảo cân bằng và phù hợp từng độ tuổi.</p>
+ </div>
+</section>
+<section>
+ <div class="max-w-[1280px] mx-auto px-6 md:px-10 py-20 md:py-24">
+ <div class="reveal max-w-[640px]">
+ <p class="eyebrow" style="color:var(--gold);">THỰC ĐƠN MẪU TUẦN</p>
+ <h2 class="serif text-[32px] md:text-[44px] leading-[1.12] mt-4" style="color:var(--plum);">Một tuần ăn ngon của bé</h2>
+ <p class="mt-4 text-[13px]" style="color:var(--forest);">* Thực đơn minh họa — có thể thay đổi theo mùa và nhu cầu thực tế.</p>
+ </div>
+ <div class="mt-10 overflow-x-auto reveal">
+ <table class="w-full text-left" style="min-width:640px;">
+ <thead>
+ <tr style="background:var(--sage);">
+ <th class="py-4 px-4 text-[12px] tracking-[0.12em] uppercase" style="color:var(--forest);">Ngày</th>
+ <th class="py-4 px-4 text-[12px] tracking-[0.12em] uppercase" style="color:var(--forest);">Bữa sáng</th>
+ <th class="py-4 px-4 text-[12px] tracking-[0.12em] uppercase" style="color:var(--forest);">Bữa trưa</th>
+ <th class="py-4 px-4 text-[12px] tracking-[0.12em] uppercase" style="color:var(--forest);">Bữa xế</th>
+ </tr>
+ </thead>
+ <tbody>
+ 
+ <tr class="border-b" style="border-color:rgba(34,61,34,.1);">
+ <td class="py-4 pr-4 font-semibold text-[14px]" style="color:var(--forest);">Thứ Hai</td>
+ <td class="py-4 pr-4 text-[14px] text-[color:var(--charcoal)]/75">Cháo yến mạch thịt bò</td>
+ <td class="py-4 pr-4 text-[14px] text-[color:var(--charcoal)]/75">Cơm trắng + cá hồi sốt cam + canh rau ngót</td>
+ <td class="py-4 text-[14px] text-[color:var(--charcoal)]/75">Sữa chua + trái cây</td>
+ </tr>
+ <tr class="border-b" style="border-color:rgba(34,61,34,.1);">
+ <td class="py-4 pr-4 font-semibold text-[14px]" style="color:var(--forest);">Thứ Ba</td>
+ <td class="py-4 pr-4 text-[14px] text-[color:var(--charcoal)]/75">Bún riêu cua</td>
+ <td class="py-4 pr-4 text-[14px] text-[color:var(--charcoal)]/75">Cơm + gà kho gừng + canh bí đỏ</td>
+ <td class="py-4 text-[14px] text-[color:var(--charcoal)]/75">Bánh flan + chuối</td>
+ </tr>
+ <tr class="border-b" style="border-color:rgba(34,61,34,.1);">
+ <td class="py-4 pr-4 font-semibold text-[14px]" style="color:var(--forest);">Thứ Tư</td>
+ <td class="py-4 pr-4 text-[14px] text-[color:var(--charcoal)]/75">Phở bò nạm</td>
+ <td class="py-4 pr-4 text-[14px] text-[color:var(--charcoal)]/75">Cơm + tôm rim thịt + canh cải xanh</td>
+ <td class="py-4 text-[14px] text-[color:var(--charcoal)]/75">Sữa tươi + xoài</td>
+ </tr>
+ <tr class="border-b" style="border-color:rgba(34,61,34,.1);">
+ <td class="py-4 pr-4 font-semibold text-[14px]" style="color:var(--forest);">Thứ Năm</td>
+ <td class="py-4 pr-4 text-[14px] text-[color:var(--charcoal)]/75">Cháo trứng đậu xanh</td>
+ <td class="py-4 pr-4 text-[14px] text-[color:var(--charcoal)]/75">Cơm + thịt heo sốt cà chua + canh mồng tơi</td>
+ <td class="py-4 text-[14px] text-[color:var(--charcoal)]/75">Chè đậu đen + dưa hấu</td>
+ </tr>
+ <tr class="border-b" style="border-color:rgba(34,61,34,.1);">
+ <td class="py-4 pr-4 font-semibold text-[14px]" style="color:var(--forest);">Thứ Sáu</td>
+ <td class="py-4 pr-4 text-[14px] text-[color:var(--charcoal)]/75">Bánh mì + sữa</td>
+ <td class="py-4 pr-4 text-[14px] text-[color:var(--charcoal)]/75">Cơm + cá thu sốt cà + canh rau củ</td>
+ <td class="py-4 text-[14px] text-[color:var(--charcoal)]/75">Sữa chua + táo</td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
+ </div>
+</section>
+
+<section style="background:var(--sage);">
+ <div class="max-w-[1280px] mx-auto px-6 md:px-10 py-20 md:py-24 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+ <div class="reveal img-frame"><img src="img/food-1.jpg" alt="Bữa ăn dinh dưỡng cho trẻ" class="w-full h-[380px] md:h-[460px] object-cover photo-grade"></div>
+ <div class="reveal">
+ <p class="eyebrow" style="color:var(--forest);">NGUYÊN TẮC DINH DƯỠNG</p>
+ <h2 class="serif text-[32px] md:text-[42px] leading-[1.12] mt-4" style="color:var(--forest);">Cân bằng 4 nhóm chất mỗi bữa</h2>
+ <ul class="mt-8 space-y-4">
+ <li class="flex items-start gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full shrink-0" style="background:var(--gold);"></span><span class="text-[15px] leading-[1.6]">Tinh bột · Đạm · Chất béo · Vitamin &amp; khoáng chất</span></li>
+ <li class="flex items-start gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full shrink-0" style="background:var(--gold);"></span><span class="text-[15px] leading-[1.6]">Nguồn thực phẩm tươi mỗi ngày, có nguồn gốc rõ ràng</span></li>
+ <li class="flex items-start gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full shrink-0" style="background:var(--gold);"></span><span class="text-[15px] leading-[1.6]">Lưu mẫu thức ăn 24 giờ theo quy định vệ sinh an toàn thực phẩm</span></li>
+ <li class="flex items-start gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full shrink-0" style="background:var(--gold);"></span><span class="text-[15px] leading-[1.6]">Theo dõi dị ứng &amp; khẩu vị riêng của từng bé</span></li>
+ <li class="flex items-start gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full shrink-0" style="background:var(--gold);"></span><span class="text-[15px] leading-[1.6]">Thực đơn công bố hằng tuần cho phụ huynh</span></li>
+ </ul>
+ </div>
+ </div>
+</section>
+
+<section class="py-24 md:py-28" style="background:var(--forest);">
+ <div class="max-w-[820px] mx-auto px-6 md:px-10 text-center reveal">
+ <h2 class="serif text-white text-[30px] md:text-[44px] leading-[1.15]">Cùng con bắt đầu hành trình đầu đời thật đẹp</h2>
+ <p class="mt-6 text-white/70 text-[16px] md:text-[18px] leading-[1.7] max-w-[520px] mx-auto">Đăng ký tham quan Dawn Kindergarten và trải nghiệm không gian học tập của chúng tôi.</p>
+ <div class="mt-9 flex flex-wrap justify-center gap-5">
+ <a href="dang-ky.html" class="focus-ring btn-solid">ĐĂNG KÝ THAM QUAN →</a>
+ <a href="lien-he.html" class="focus-ring btn-ghost">LIÊN HỆ CHÚNG TÔI</a>
+ </div>
+ </div>
+</section>
+<div data-include="footer"></div>
+<script src="js/components.js"></script>
+<script>
+ const fill = document.getElementById('dawn-arc-fill');
+ const header = document.getElementById('site-header');
+ window.addEventListener('scroll', () => {
+ const h = document.documentElement;
+ const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+ fill.style.width = pct + '%';
+ if (h.scrollTop > 40) {
+ header.classList.add('header-blur');
+ header.style.boxShadow = '0 1px 0 rgba(34,61,34,0.08)';
+ } else {
+ header.classList.remove('header-blur');
+ header.style.boxShadow = 'none';
+ }
+ });
+ const observer = new IntersectionObserver((entries) => {
+ entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+ }, { threshold: 0.15 });
+ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+ const menuBtn = document.getElementById('menu-btn');
+ const mobileMenu = document.getElementById('mobile-menu');
+ if (menuBtn && mobileMenu) {
+ menuBtn.addEventListener('click', () => {
+ mobileMenu.classList.toggle('hidden');
+ mobileMenu.classList.toggle('flex');
+ });
+ }
+</script>
+</body>
+</html>

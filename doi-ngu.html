@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đội ngũ giáo viên — Dawn Kindergarten</title>
+<meta name="description" content="Đội ngũ giáo viên tận tâm, giàu kinh nghiệm của Dawn Kindergarten — những người đồng hành cùng trẻ trên hành trình đầu đời.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="css/style.css">
+  <!-- v4 design: Tailwind config colors -->
+  <script>
+   tailwind.config = {
+    theme: {
+     extend: {
+      colors: {
+       forest: '#223D22',
+       plum: '#2F1834',
+       chartreuse: '#DCD870',
+       gold: '#ECAB45',
+       sage: '#C9D3B5',
+       ivory: '#F7F5EA',
+       charcoal: '#20251F',
+       'stats-bg': '#E5EBD9',
+      },
+      fontFamily: {
+       serif: ['"DM Serif Display"', 'serif'],
+       sans: ['"Be Vietnam Pro"', 'sans-serif'],
+      },
+      borderRadius: {
+       '3xl': '1.75rem',
+       '4xl': '2.5rem',
+       'pill': '9999px',
+      },
+      maxWidth: {
+       'container': '1280px',
+      }
+     }
+    }
+   }
+  </script>
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+<body class="grain">
+<div id="dawn-arc-track"><div id="dawn-arc-fill"></div></div>
+<div data-include="header"></div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+ <svg class="absolute left-0 top-0 w-full h-full pointer-events-none" viewBox="0 0 1280 500" preserveAspectRatio="none" style="opacity:.5;">
+ <path class="sunrise-line" d="M-60 380c240-200 640-250 1360-30" stroke="#ECAB45" stroke-width="1.5" fill="none"/>
+ </svg>
+ <div class="relative z-10 max-w-[1280px] mx-auto px-6 md:px-10">
+ <p class="eyebrow reveal in" style="color:var(--chartreuse);">ĐỘI NGŨ</p>
+ <h1 class="serif text-[40px] md:text-[58px] leading-[1.08] mt-4 max-w-[760px] text-white reveal in">Những người ươm mầm tận tâm</h1>
+ <p class="mt-5 max-w-[560px] text-[16px] md:text-[18px] leading-[1.7] font-light text-white/75 reveal in">Giáo viên của Dawn không chỉ dạy — chúng tôi lắng nghe, thấu hiểu và đồng hành cùng từng đứa trẻ.</p>
+ </div>
+</section>
+<section>
+ <div class="max-w-[1280px] mx-auto px-6 md:px-10 py-20 md:py-24">
+ <div class="reveal max-w-[640px]">
+ <p class="eyebrow" style="color:var(--gold);">GIÁO VIÊN &amp; CÁN BỘ</p>
+ <h2 class="serif text-[32px] md:text-[44px] leading-[1.12] mt-4" style="color:var(--plum);">Gặp gỡ những người đồng hành của bé</h2>
+ </div>
+ <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-14 stagger">
+ <div class="reveal card overflow-hidden" style="--i:0;">
+ <div class="img-frame" style="border-radius:0;"><img src="img/teacher-1.jpg" alt="Cô Hiệu trưởng" class="w-full h-[300px] object-cover photo-grade"></div>
+ <div class="p-7">
+ <h3 class="serif text-[22px]" style="color:var(--plum);">Cô Nguyễn Thu Hà</h3>
+ <p class="text-[12px] tracking-[0.14em] font-semibold mt-1" style="color:var(--gold);">HIỆU TRƯỞNG</p>
+ <p class="mt-3 text-[14px] leading-[1.7] text-[color:var(--charcoal)]/75">Hơn 18 năm kinh nghiệm giáo dục mầm non, tốt nghiệp Thạc sĩ Giáo dục Mầm non.</p>
+ </div>
+ </div>
+ <div class="reveal card overflow-hidden" style="--i:1;">
+ <div class="img-frame" style="border-radius:0;"><img src="img/teacher-2.jpg" alt="Cô Phó hiệu trưởng" class="w-full h-[300px] object-cover photo-grade"></div>
+ <div class="p-7">
+ <h3 class="serif text-[22px]" style="color:var(--plum);">Cô Trần Minh Anh</h3>
+ <p class="text-[12px] tracking-[0.14em] font-semibold mt-1" style="color:var(--gold);">PHÓ HIỆU TRƯỞNG</p>
+ <p class="mt-3 text-[14px] leading-[1.7] text-[color:var(--charcoal)]/75">Chuyên gia tâm lý trẻ em, phụ trách chương trình phát triển cảm xúc xã hội.</p>
+ </div>
+ </div>
+ <div class="reveal card overflow-hidden" style="--i:2;">
+ <div class="img-frame" style="border-radius:0;"><img src="img/teacher-3.jpg" alt="Cô điều phối chương trình" class="w-full h-[300px] object-cover photo-grade"></div>
+ <div class="p-7">
+ <h3 class="serif text-[22px]" style="color:var(--plum);">Cô Lê Bảo Ngọc</h3>
+ <p class="text-[12px] tracking-[0.14em] font-semibold mt-1" style="color:var(--gold);">ĐIỀU PHỐI CHƯƠNG TRÌNH</p>
+ <p class="mt-3 text-[14px] leading-[1.7] text-[color:var(--charcoal)]/75">Đồng tác giả chương trình học trải nghiệm kết hợp thiên nhiên của Dawn.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<section style="background:var(--sage);">
+ <div class="max-w-[1280px] mx-auto px-6 md:px-10 py-20 md:py-24">
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+ <div class="reveal">
+ <p class="eyebrow" style="color:var(--forest);">CAM KẾT</p>
+ <h2 class="serif text-[32px] md:text-[42px] leading-[1.12] mt-4" style="color:var(--forest);">Mỗi giáo viên Dawn đều trải qua đào tạo chuyên sâu</h2>
+ <ul class="mt-8 space-y-4">
+ <li class="flex items-start gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full shrink-0" style="background:var(--gold);"></span><span class="text-[15px] leading-[1.6]">Tốt nghiệp chuyên ngành Giáo dục Mầm non trở lên</span></li>
+ <li class="flex items-start gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full shrink-0" style="background:var(--gold);"></span><span class="text-[15px] leading-[1.6]">Chứng chỉ sơ cấp cứu &amp; an toàn cho trẻ hằng năm</span></li>
+ <li class="flex items-start gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full shrink-0" style="background:var(--gold);"></span><span class="text-[15px] leading-[1.6]">Tập huấn phương pháp Montessori &amp; học qua trải nghiệm</span></li>
+ <li class="flex items-start gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full shrink-0" style="background:var(--gold);"></span><span class="text-[15px] leading-[1.6]">Đánh giá định kỳ từ phụ huynh &amp; ban chuyên môn</span></li>
+ </ul>
+ </div>
+ <div class="reveal img-frame"><img src="img/activity-1.jpg" alt="Giáo viên tương tác với trẻ" class="w-full h-[380px] md:h-[460px] object-cover photo-grade"></div>
+ </div>
+ </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 md:py-28" style="background:var(--forest);">
+ <div class="max-w-[820px] mx-auto px-6 md:px-10 text-center reveal">
+ <h2 class="serif text-white text-[30px] md:text-[44px] leading-[1.15]">Cùng con bắt đầu hành trình đầu đời thật đẹp</h2>
+ <p class="mt-6 text-white/70 text-[16px] md:text-[18px] leading-[1.7] max-w-[520px] mx-auto">Đăng ký tham quan Dawn Kindergarten và trải nghiệm không gian học tập của chúng tôi.</p>
+ <div class="mt-9 flex flex-wrap justify-center gap-5">
+ <a href="dang-ky.html" class="focus-ring btn-solid">ĐĂNG KÝ THAM QUAN →</a>
+ <a href="lien-he.html" class="focus-ring btn-ghost">LIÊN HỆ CHÚNG TÔI</a>
+ </div>
+ </div>
+</section>
+<div data-include="footer"></div>
+<script src="js/components.js"></script>
+<script>
+ // Header glass effect (v4)
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      header.classList.add('glass-header');
+      header.style.boxShadow = '0 1px 0 rgba(34,61,34,0.08)';
+    } else {
+      header.classList.remove('glass-header');
+      header.style.boxShadow = 'none';
+    }
+  });
+ // AOS: convert .reveal elements to AOS fade-up (v4 design)
+  document.querySelectorAll('.reveal').forEach(el => {
+    if (!el.hasAttribute('data-aos')) el.setAttribute('data-aos', 'fade-up');
+  });
+  AOS.init({ once: true, offset: 80, duration: 900, easing: 'ease-out-cubic' });
+  if (typeof lucide !== 'undefined' && lucide.createIcons) { lucide.createIcons(); }
+ // mobile menu (injected header)
+ const menuBtn = document.getElementById('menu-btn');
+ const mobileMenu = document.getElementById('mobile-menu');
+ if (menuBtn && mobileMenu) {
+ menuBtn.addEventListener('click', () => {
+ mobileMenu.classList.toggle('hidden');
+ mobileMenu.classList.toggle('flex');
+ });
+ }
+</script>
+</body>
+</html>

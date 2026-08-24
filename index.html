@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAWN Kindergarten — Mầm non Bình Minh</title>
+  <meta name="description" content="DAWN Kindergarten (Mầm non Bình Minh) — môi trường học tập an toàn, yêu thương, khuyến khích trẻ khám phá thế giới bằng sự tò mò, sáng tạo và niềm vui.">
+
+  <!-- Google Fonts: DM Serif Display & Be Vietnam Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v3 via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+   tailwind.config = {
+    theme: {
+     extend: {
+      colors: {
+       forest: '#223D22',
+       plum: '#2F1834',
+       chartreuse: '#DCD870',
+       gold: '#ECAB45',
+       sage: '#C9D3B5',
+       ivory: '#F7F5EA',
+       charcoal: '#20251F',
+       'stats-bg': '#E5EBD9',
+      },
+      fontFamily: {
+       serif: ['"DM Serif Display"', 'serif'],
+       sans: ['"Be Vietnam Pro"', 'sans-serif'],
+      },
+      borderRadius: {
+       '3xl': '1.75rem',
+       '4xl': '2.5rem',
+       'pill': '9999px',
+      },
+      maxWidth: {
+       'container': '1280px',
+      }
+     }
+    }
+   }
+  </script>
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+   ::-webkit-scrollbar { width: 8px; }
+   ::-webkit-scrollbar-track { background: #F7F5EA; }
+   ::-webkit-scrollbar-thumb { background: #C9D3B5; border-radius: 4px; }
+   ::-webkit-scrollbar-thumb:hover { background: #223D22; }
+   html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-ivory text-charcoal font-sans antialiased">
+
+  <div data-include="header"></div>
+  <div class="h-[90px]"></div>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative w-full px-4 md:px-8 py-3">
+   <div class="relative min-h-[calc(100vh-130px)] min-h-[600px] max-h-[780px] w-full rounded-4xl overflow-hidden flex items-center shadow-2xl">
+
+     <div class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[10000ms] scale-105 hover:scale-100"
+     style="background-image: url('img/hero.jpg');">
+     </div>
+     <!-- Organic Gradient Overlay -->
+     <div class="absolute inset-0 bg-gradient-to-r from-forest/85 via-forest/45 to-transparent"></div>
+
+     <div class="relative z-10 max-w-container mx-auto px-6 md:px-16 w-full py-16">
+     <div class="max-w-2xl text-white">
+       <span data-aos="fade-down" data-aos-duration="800" class="inline-block bg-white/10 backdrop-blur-md text-chartreuse border border-chartreuse/30 px-4 py-1.5 rounded-pill text-xs uppercase tracking-[0.15em] font-semibold mb-6">
+       DAWN — Grow with Nature
+       </span>
+
+       <h1 data-aos="fade-up" data-aos-duration="1000" class="font-serif text-[44px] sm:text-[54px] md:text-[68px] leading-[1.05] font-normal mb-6 tracking-tight text-ivory">
+       Nơi những mầm non <br />
+       <span class="italic font-light text-chartreuse">lớn lên trong yêu thương</span>
+       </h1>
+
+       <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" class="text-base md:text-lg text-ivory/90 leading-relaxed font-normal mb-10 max-w-xl">
+       Dawn Kindergarten xây dựng môi trường học tập an toàn, yêu thương và khuyến khích trẻ khám phá thế giới bằng sự tò mò, sáng tạo và niềm vui.
+       </p>
+       <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" class="flex flex-col sm:flex-row items-stretch sm:items-center gap-5">
+       <a href="gioi-thieu.html" class="inline-flex items-center justify-center gap-3 bg-chartreuse hover:bg-gold text-forest font-bold text-xs uppercase tracking-[0.08em] px-8 py-4 rounded-pill transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+         Khám Phá Dawn Kindergarten <i data-lucide="arrow-right" class="w-4 h-4"></i>
+       </a>
+       <button class="inline-flex items-center justify-center gap-3.5 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/25 font-semibold text-xs uppercase tracking-[0.08em] px-7 py-4 rounded-pill transition-all duration-300 group">
+         <div class="relative w-7 h-7 rounded-full bg-white text-forest flex items-center justify-center ripple-btn">
+         <i data-lucide="play" class="w-3.5 h-3.5 fill-current ml-0.5"></i>
+         </div>
+         Xem Video Giới Thiệu
+       </button>
+       </div>
+     </div>
+     </div>
+   </div>
+  </section>
+
+  <!-- ================= CORE VALUES ================= -->
+  <section class="px-4 md:px-8 -mt-6 relative z-20">
+   <div class="max-w-container mx-auto bg-forest rounded-3xl p-8 md:p-14 text-white shadow-2xl border border-white/10" data-aos="fade-up" data-aos-duration="1000">
+     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
+
+     <div class="flex flex-col items-start group">
+       <div class="p-3 bg-white/5 rounded-2xl mb-4 group-hover:bg-chartreuse/20 transition-colors">
+       <i data-lucide="heart" class="w-7 h-7 text-chartreuse stroke-[1.5]"></i>
+       </div>
+       <h3 class="font-sans font-bold text-sm tracking-[0.1em] uppercase text-chartreuse mb-2">YÊU THƯƠNG</h3>
+       <p class="text-xs md:text-sm text-ivory/80 leading-relaxed">Chúng tôi nuôi dưỡng trẻ bằng tình yêu thương, sự thấu hiểu và tôn trọng.</p>
+     </div>
+
+     <div class="flex flex-col items-start pt-6 sm:pt-0 sm:pl-8 group">
+       <div class="p-3 bg-white/5 rounded-2xl mb-4 group-hover:bg-chartreuse/20 transition-colors">
+       <i data-lucide="compass" class="w-7 h-7 text-chartreuse stroke-[1.5]"></i>
+       </div>
+       <h3 class="font-sans font-bold text-sm tracking-[0.1em] uppercase text-chartreuse mb-2">KHÁM PHÁ</h3>
+       <p class="text-xs md:text-sm text-ivory/80 leading-relaxed">Khuyến khích trẻ khám phá, đặt câu hỏi và học hỏi qua trải nghiệm.</p>
+     </div>
+
+     <div class="flex flex-col items-start pt-6 sm:pt-0 sm:pl-8 group">
+       <div class="p-3 bg-white/5 rounded-2xl mb-4 group-hover:bg-chartreuse/20 transition-colors">
+       <i data-lucide="sparkles" class="w-7 h-7 text-chartreuse stroke-[1.5]"></i>
+       </div>
+       <h3 class="font-sans font-bold text-sm tracking-[0.1em] uppercase text-chartreuse mb-2">PHÁT TRIỂN TOÀN DIỆN</h3>
+       <p class="text-xs md:text-sm text-ivory/80 leading-relaxed">Phát triển thể chất, trí tuệ, cảm xúc và kỹ năng xã hội.</p>
+     </div>
+
+     <div class="flex flex-col items-start pt-6 sm:pt-0 sm:pl-8 group">
+       <div class="p-3 bg-white/5 rounded-2xl mb-4 group-hover:bg-chartreuse/20 transition-colors">
+       <i data-lucide="shield-check" class="w-7 h-7 text-chartreuse stroke-[1.5]"></i>
+       </div>
+       <h3 class="font-sans font-bold text-sm tracking-[0.1em] uppercase text-chartreuse mb-2">AN TOÀN</h3>
+       <p class="text-xs md:text-sm text-ivory/80 leading-relaxed">Môi trường an toàn, lành mạnh và truyền cảm hứng mỗi ngày.</p>
+     </div>
+
+     </div>
+   </div>
+  </section>
+
+  <!-- ================= ABOUT DAWN KINDERGARTEN ================= -->
+  <section id="about" class="py-28 px-6 md:px-12 bg-ivory relative overflow-hidden">
+   <!-- Botanical Background Accent Left -->
+   <svg class="absolute top-12 left-0 w-64 h-64 opacity-15 pointer-events-none text-sage" fill="currentColor" viewBox="0 0 100 100">
+     <path d="M50 0 C20 30 20 70 50 100 C80 70 80 30 50 0 Z"/>
+   </svg>
+
+   <div class="max-w-container mx-auto relative z-10">
+     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+     <div data-aos="fade-right" data-aos-duration="1000">
+       <span class="text-xs font-bold tracking-[0.18em] uppercase text-plum mb-3 block">VỀ DAWN KINDERGARTEN</span>
+       <h2 class="font-serif text-[38px] md:text-[50px] leading-[1.1] text-forest font-normal mb-6">
+       Chúng tôi tin rằng mỗi đứa trẻ đều là một thế giới riêng biệt
+       </h2>
+       <p class="text-charcoal/80 text-base md:text-lg leading-relaxed mb-8">
+       Tại Dawn Kindergarten, chúng tôi tạo ra một môi trường học tập ấm áp, nơi trẻ được là chính mình, được yêu thương và phát triển theo cách tự nhiên nhất.
+       </p>
+
+       <ul class="space-y-4 mb-10">
+       <li class="flex items-center gap-3.5">
+         <i data-lucide="check-circle-2" class="w-5 h-5 text-chartreuse fill-forest shrink-0"></i>
+         <span class="text-sm md:text-base font-semibold text-charcoal">Chương trình học hiện đại, lấy trẻ làm trung tâm</span>
+       </li>
+       <li class="flex items-center gap-3.5">
+         <i data-lucide="check-circle-2" class="w-5 h-5 text-chartreuse fill-forest shrink-0"></i>
+         <span class="text-sm md:text-base font-semibold text-charcoal">Đội ngũ giáo viên tận tâm, giàu kinh nghiệm</span>
+       </li>
+       <li class="flex items-center gap-3.5">
+         <i data-lucide="check-circle-2" class="w-5 h-5 text-chartreuse fill-forest shrink-0"></i>
+         <span class="text-sm md:text-base font-semibold text-charcoal">Cơ sở vật chất an toàn, thân thiện với thiên nhiên</span>
+       </li>
+       <li class="flex items-center gap-3.5">
+         <i data-lucide="check-circle-2" class="w-5 h-5 text-chartreuse fill-forest shrink-0"></i>
+         <span class="text-sm md:text-base font-semibold text-charcoal">Kết nối chặt chẽ giữa nhà trường và phụ huynh</span>
+       </li>
+       </ul>
+
+       <a href="gioi-thieu.html" class="inline-flex items-center gap-3 bg-forest hover:bg-plum text-ivory font-bold text-xs uppercase tracking-[0.08em] px-9 py-4 rounded-pill transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5">
+       Tìm Hiểu Thêm <i data-lucide="arrow-right" class="w-4 h-4"></i>
+       </a>
+     </div>
+
+     <!-- Editorial Arched Image Container -->
+     <div data-aos="fade-left" data-aos-duration="1000" class="relative">
+       <div class="relative rounded-[3rem] overflow-hidden editorial-shadow aspect-[4/3] md:aspect-[5/4] border-4 border-white">
+       <img src="img/campus.jpg" alt="Khuôn viên DAWN Kindergarten" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-105">
+       </div>
+       <!-- Decorative Frame Accent -->
+       <div class="absolute -bottom-6 -right-6 w-full h-full border-2 border-gold/30 rounded-[3rem] -z-10 pointer-events-none"></div>
+     </div>
+
+     </div>
+   </div>
+  </section>
+
+  <!-- ================= PROGRAM SECTION ================= -->
+  <section id="program" class="py-28 px-6 md:px-12 bg-white">
+   <div class="max-w-container mx-auto"><div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+     <span class="text-xs font-bold tracking-[0.18em] uppercase text-plum mb-3 block">CHƯƠNG TRÌNH HỌC</span>
+     <h2 class="font-serif text-[38px] md:text-[50px] leading-[1.1] text-forest font-normal">
+     Mỗi ngày đến trường là một hành trình khám phá
+     </h2>
+   </div>
+
+   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+     <div data-aos="fade-up" data-aos-delay="100" class="p-9 rounded-3xl border bg-ivory border-forest/10 flex flex-col justify-between min-h-[320px] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
+     <span class="font-serif text-4xl font-light text-plum group-hover:scale-110 transition-transform origin-left inline-block">01</span>
+     <div>
+       <h3 class="font-sans font-bold text-base leading-snug tracking-wider uppercase text-forest">HỌC QUA TRẢI NGHIỆM</h3>
+       <p class="text-xs mt-3 leading-relaxed text-charcoal/70">Phương pháp tiếp cận kích thích sự tò mò tự nhiên và niềm đam mê học hỏi.</p>
+     </div>
+     </div>
+
+     <div data-aos="fade-up" data-aos-delay="200" class="p-9 rounded-3xl border bg-white border-forest/10 flex flex-col justify-between min-h-[320px] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
+     <span class="font-serif text-4xl font-light text-plum group-hover:scale-110 transition-transform origin-left inline-block">02</span>
+     <div>
+       <h3 class="font-sans font-bold text-base leading-snug tracking-wider uppercase text-forest">PHÁT TRIỂN NGÔN NGỮ</h3>
+       <p class="text-xs mt-3 leading-relaxed text-charcoal/70">Tạo nền tảng giao tiếp tự tin và khả năng tư duy ngôn ngữ phong phú.</p>
+     </div>
+     </div>
+
+     <div data-aos="fade-up" data-aos-delay="300" class="p-9 rounded-3xl border bg-sage/20 border-sage flex flex-col justify-between min-h-[320px] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
+     <span class="font-serif text-4xl font-light text-plum group-hover:scale-110 transition-transform origin-left inline-block">03</span>
+     <div>
+       <h3 class="font-sans font-bold text-base leading-snug tracking-wider uppercase text-forest">NGHỆ THUẬT & SÁNG TẠO</h3>
+       <p class="text-xs mt-3 leading-relaxed text-charcoal/70">Khơi gợi tiềm năng nghệ thuật, âm nhạc và khả năng biểu đạt cảm xúc.</p>
+     </div>
+     </div>
+
+     <div data-aos="fade-up" data-aos-delay="400" class="p-9 rounded-3xl border bg-forest border-forest flex flex-col justify-between min-h-[320px] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
+     <span class="font-serif text-4xl font-light text-chartreuse group-hover:scale-110 transition-transform origin-left inline-block">04</span>
+     <div>
+       <h3 class="font-sans font-bold text-base leading-snug tracking-wider uppercase text-white">THỂ CHẤT & THIÊN NHIÊN</h3>
+       <p class="text-xs mt-3 leading-relaxed text-ivory/80">Rèn luyện sức khỏe, sự dẻo dai thông qua các hoạt động kết nối thiên nhiên.</p>
+     </div>
+     </div>
+   </div>
+
+   <div class="text-center mt-14">
+     <a href="chuong-trinh.html" class="inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-widest text-forest hover:text-plum transition-colors">
+     Xem Toàn Bộ Chương Trình <i data-lucide="arrow-right" class="w-4 h-4"></i>
+     </a>
+   </div>
+
+   </div>
+  </section>
+
+  <!-- ================= CAMPUS / GALLERY (EDITORIAL MASONRY) ================= -->
+  <section id="gallery" class="py-28 px-6 md:px-12 bg-ivory">
+   <div class="max-w-container mx-auto">
+
+     <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6" data-aos="fade-up">
+     <div>
+       <span class="text-xs font-bold tracking-[0.18em] uppercase text-plum mb-3 block">KHÔNG GIAN & HOẠT ĐỘNG</span>
+       <h2 class="font-serif text-[38px] md:text-[48px] text-forest font-normal">Khoảnh khắc tại Dawn</h2>
+     </div><a href="gallery.html" class="text-xs font-bold uppercase tracking-widest text-forest hover:text-plum flex items-center gap-2 group">
+       Xem Tất Cả Ảnh <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+     </a>
+     </div>
+
+     <!-- Masonry Grid with Editorial Rounded Corners -->
+     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+     <div data-aos="fade-up" class="relative rounded-4xl overflow-hidden aspect-[4/5] group shadow-lg">
+       <img src="img/gal-1.jpg" alt="Hoạt động tại trường" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+       <div class="absolute inset-0 bg-gradient-to-t from-forest/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8 text-white">
+       <span class="text-xs uppercase tracking-widest font-semibold">Khám phá thiên nhiên</span>
+       </div>
+     </div>
+
+     <div data-aos="fade-up" data-aos-delay="100" class="relative rounded-4xl overflow-hidden aspect-square group shadow-lg">
+       <img src="img/gal-2.jpg" alt="Hoạt động tại trường" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+       <div class="absolute inset-0 bg-gradient-to-t from-forest/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8 text-white">
+       <span class="text-xs uppercase tracking-widest font-semibold">Góc nghệ thuật</span>
+       </div>
+     </div>
+
+     <div data-aos="fade-up" data-aos-delay="200" class="relative rounded-4xl overflow-hidden aspect-[4/5] group shadow-lg">
+       <img src="img/gal-3.jpg" alt="Hoạt động tại trường" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+       <div class="absolute inset-0 bg-gradient-to-t from-forest/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8 text-white">
+       <span class="text-xs uppercase tracking-widest font-semibold">Giờ đọc sách</span>
+       </div>
+     </div>
+
+     <div data-aos="fade-up" class="relative rounded-4xl overflow-hidden aspect-square group shadow-lg">
+       <img src="img/gal-4.jpg" alt="Hoạt động tại trường" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+       <div class="absolute inset-0 bg-gradient-to-t from-forest/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8 text-white">
+       <span class="text-xs uppercase tracking-widest font-semibold">Vui chơi ngoài trời</span>
+       </div>
+     </div>
+
+     <div data-aos="fade-up" data-aos-delay="100" class="relative rounded-4xl overflow-hidden aspect-[4/5] group shadow-lg">
+       <img src="img/gal-5.jpg" alt="Hoạt động tại trường" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+       <div class="absolute inset-0 bg-gradient-to-t from-forest/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8 text-white">
+       <span class="text-xs uppercase tracking-widest font-semibold">Lớp học rực rỡ</span>
+       </div>
+     </div>
+
+     <div data-aos="fade-up" data-aos-delay="200" class="relative rounded-4xl overflow-hidden aspect-square group shadow-lg">
+       <img src="img/gal-6.jpg" alt="Hoạt động tại trường" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+       <div class="absolute inset-0 bg-gradient-to-t from-forest/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8 text-white">
+       <span class="text-xs uppercase tracking-widest font-semibold">Tận tâm chăm sóc</span>
+       </div>
+     </div>
+     </div>
+
+   </div>
+  </section>
+
+  <!-- ================= STATISTICS ================= -->
+  <section class="py-20 px-6 md:px-12 bg-stats-bg">
+   <div class="max-w-container mx-auto">
+     <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center" data-aos="zoom-in" data-aos-duration="800">
+     <div class="flex flex-col items-center">
+       <span class="font-serif text-[48px] sm:text-[64px] text-forest leading-none font-normal mb-2">150+</span>
+       <span class="text-xs font-bold tracking-[0.12em] text-charcoal/70 uppercase">HỌC SINH</span>
+     </div>
+     <div class="flex flex-col items-center">
+       <span class="font-serif text-[48px] sm:text-[64px] text-forest leading-none font-normal mb-2">20+</span>
+       <span class="text-xs font-bold tracking-[0.12em] text-charcoal/70 uppercase">GIÁO VIÊN</span>
+     </div>
+     <div class="flex flex-col items-center">
+       <span class="font-serif text-[48px] sm:text-[64px] text-forest leading-none font-normal mb-2">10+</span>
+       <span class="text-xs font-bold tracking-[0.12em] text-charcoal/70 uppercase">CHƯƠNG TRÌNH</span>
+     </div>
+     <div class="flex flex-col items-center">
+       <span class="font-serif text-[48px] sm:text-[64px] text-forest leading-none font-normal mb-2">3000<span class="text-gold font-sans text-3xl font-light">m²</span></span>
+       <span class="text-xs font-bold tracking-[0.12em] text-charcoal/70 uppercase">KHUÔN VIÊN</span>
+     </div>
+     </div>
+   </div>
+  </section>
+
+  <!-- ================= TESTIMONIAL ================= -->
+  <section class="py-28 px-6 md:px-12 bg-ivory">
+   <div class="max-w-container mx-auto max-w-4xl text-center" data-aos="fade-up">
+     <span class="text-xs font-bold tracking-[0.18em] uppercase text-plum mb-6 block">ĐIỀU PHỤ HUYNH NÓI VỀ DAWN</span>
+     <blockquote class="font-serif text-[30px] sm:text-[40px] md:text-[46px] text-forest leading-[1.2] font-normal italic mb-10">
+     “Điều chúng tôi yêu thích nhất ở Dawn là con được tôn trọng, được khuyến khích khám phá và luôn cảm thấy vui vẻ khi đến trường.”
+     </blockquote>
+     <div class="flex flex-col items-center">
+     <div class="w-14 h-14 rounded-full overflow-hidden mb-4 border-2 border-gold shadow-md">
+       <img src="img/avatar.jpg" alt="Phụ huynh" class="w-full h-full object-cover">
+     </div>
+     <span class="font-bold text-base text-charcoal">Chị Minh Anh</span>
+     <span class="text-xs text-charcoal/60 mt-0.5">Phụ huynh bé Min (3 tuổi)</span>
+     </div>
+   </div>
+  </section>
+
+  <!-- ================= NEWS ================= -->
+  <section id="news" class="py-24 md:py-28 bg-sage">
+   <div class="max-w-container mx-auto px-6 md:px-12">
+     <div class="flex flex-wrap items-end justify-between gap-6" data-aos="fade-up">
+     <div class="max-w-[560px]">
+       <span class="text-xs font-bold tracking-[0.18em] uppercase text-forest mb-3 block">TIN TỨC & SỰ KIỆN</span>
+       <h2 class="font-serif text-[32px] md:text-[44px] leading-[1.12] text-forest">Chuyện của Dawn mỗi tuần</h2>
+     </div>
+     <a href="tin-tuc.html" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-forest hover:text-plum transition-colors">
+       Xem Tất Cả Tin Tức <i data-lucide="arrow-right" class="w-4 h-4"></i>
+     </a>
+     </div>
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+     <a href="tin-tuc.html" data-aos="fade-up" class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+       <div class="overflow-hidden h-[200px]"><img src="img/gal-3.jpg" alt="Lễ hội Trung thu" class="w-full h-full object-cover photo-grade transition-transform duration-700 group-hover:scale-105"></div>
+       <div class="p-6">
+       <span class="tag">SỰ KIỆN</span>
+       <h3 class="font-serif text-[19px] leading-[1.3] mt-3 text-plum">Lễ hội Trung thu 2026 tại Dawn</h3>
+       <p class="mt-2 text-[13px] text-gold">24/08/2026</p>
+       </div>
+     </a>
+     <a href="tin-tuc.html" data-aos="fade-up" data-aos-delay="100" class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+       <div class="overflow-hidden h-[200px]"><img src="img/activity-1.jpg" alt="Bé làm vườn" class="w-full h-full object-cover photo-grade transition-transform duration-700 group-hover:scale-105"></div>
+       <div class="p-6">
+       <span class="tag">HOẠT ĐỘNG</span>
+       <h3 class="font-serif text-[19px] leading-[1.3] mt-3 text-plum">Bé làm vườn: gieo hạt và chờ mầm xanh</h3>
+       <p class="mt-2 text-[13px] text-gold">18/08/2026</p>
+       </div>
+     </a>
+     <a href="tin-tuc.html" data-aos="fade-up" data-aos-delay="200" class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+       <div class="overflow-hidden h-[200px]"><img src="img/gal-5.jpg" alt="Ngày hội gia đình" class="w-full h-full object-cover photo-grade transition-transform duration-700 group-hover:scale-105"></div>
+       <div class="p-6">
+       <span class="tag">SỰ KIỆN</span>
+       <h3 class="font-serif text-[19px] leading-[1.3] mt-3 text-plum">Ngày hội gia đình: kết nối yêu thương</h3>
+       <p class="mt-2 text-[13px] text-gold">10/08/2026</p>
+       </div>
+     </a>
+     </div>
+   </div>
+  </section>
+
+  <!-- ================= CTA SECTION ================= -->
+  <section class="px-4 md:px-8 py-8" id="register">
+   <div class="max-w-container mx-auto bg-forest rounded-4xl p-12 md:p-24 text-center text-white relative overflow-hidden shadow-2xl" data-aos="fade-up" data-aos-duration="1000">
+     <div class="relative z-10 max-w-2xl mx-auto">
+     <h2 class="font-serif text-[40px] md:text-[56px] leading-[1.08] font-normal mb-6 text-ivory">
+       Cùng con bắt đầu hành trình đầu đời thật đẹp
+     </h2><p class="text-ivory/80 text-base md:text-lg mb-10 font-normal">
+       Đăng ký tham quan Dawn Kindergarten và trải nghiệm không gian học tập của chúng tôi.
+     </p>
+     <a href="dang-ky.html" class="inline-flex items-center gap-3 bg-chartreuse hover:bg-gold text-forest font-bold text-xs uppercase tracking-[0.08em] px-11 py-5 rounded-pill transition-all duration-300 hover:shadow-2xl hover:scale-105">
+       Đăng Ký Tham Quan <i data-lucide="arrow-right" class="w-4 h-4"></i>
+     </a>
+     </div>
+
+     <!-- Background Decorative Geometric Rings -->
+     <div class="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full border border-white/5 pointer-events-none"></div>
+     <div class="absolute -bottom-32 -right-32 w-[500px] h-[500px] rounded-full border border-white/5 pointer-events-none"></div>
+   </div>
+  </section>
+
+  <div data-include="footer"></div>
+
+  <script src="js/components.js"></script>
+  <script>
+   // Init Icons
+   if (typeof lucide !== 'undefined' && lucide.createIcons) { lucide.createIcons(); }
+
+   // Init AOS Animation Library
+   AOS.init({
+   once: true,
+   offset: 80,
+   duration: 900,
+   easing: 'ease-out-cubic'
+   });
+
+   // Header Scroll Shadow & Glass Effect
+   const header = document.getElementById('site-header');
+   window.addEventListener('scroll', () => {
+   if (window.scrollY > 40) {
+     header.classList.add('glass-header', 'shadow-sm', 'border-b', 'border-forest/5');
+   } else {
+     header.classList.remove('glass-header', 'shadow-sm', 'border-b', 'border-forest/5');
+   }
+   });
+
+   // Mobile Menu Toggle (injected header)
+   const menuBtn = document.getElementById('menu-btn');
+   const mobileMenu = document.getElementById('mobile-menu');
+   if (menuBtn && mobileMenu) {
+   menuBtn.addEventListener('click', () => {
+     const isHidden = mobileMenu.classList.contains('hidden');
+     if (isHidden) {
+     mobileMenu.classList.remove('hidden');
+     mobileMenu.classList.add('flex');
+     } else {
+     mobileMenu.classList.add('hidden');
+     mobileMenu.classList.remove('flex');
+     }
+   });
+   document.querySelectorAll('#mobile-menu a').forEach(link => {
+     link.addEventListener('click', () => {
+     mobileMenu.classList.add('hidden');
+     mobileMenu.classList.remove('flex');
+     });
+   });
+   }
+  </script>
+</body>
+</html>
