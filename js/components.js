@@ -188,21 +188,6 @@
 #floating-contact.open #fc-toggle i{ transform:rotate(90deg); transition:transform .3s ease; }
 </style>`;
 
-  const floatScript = `
-<script>
-(function(){
- var root = document.getElementById('floating-contact');
- var toggle = document.getElementById('fc-toggle');
- if(!root || !toggle) return;
- toggle.addEventListener('click', function(){
-  var open = root.classList.toggle('open');
-  toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
- });
- document.addEventListener('click', function(e){
-  if(!root.contains(e.target)) root.classList.remove('open');
- });
-})();
-</script>`;
 
   function inject() {
     document.querySelectorAll('[data-include="header"]').forEach(el => { el.outerHTML = headerHTML; });
@@ -216,10 +201,23 @@
       try { lucide.createIcons(); } catch (e) {}
     }
 
-    document.body.insertAdjacentHTML('beforeend', floatScript);
   }
 
   // Script is loaded at end of <body> — header/footer placeholders already parsed,
   // so inject synchronously (before any inline scripts run).
   inject();
+
+  // Floating contact toggle (direct binding — script strings injected via
+  // insertAdjacentHTML are not reliably executed)
+  var fcRoot = document.getElementById('floating-contact');
+  var fcToggle = document.getElementById('fc-toggle');
+  if (fcRoot && fcToggle) {
+    fcToggle.addEventListener('click', function () {
+      var open = fcRoot.classList.toggle('open');
+      fcToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', function (e) {
+      if (!fcRoot.contains(e.target)) fcRoot.classList.remove('open');
+    });
+  }
 })();
