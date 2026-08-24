@@ -16,7 +16,7 @@ media_folder: "img/news"
 public_folder: "/img/news"
 
 # Tên hiển thị trong giao diện quản trị
-display_url: https://dawn-v6-demo.netlify.app
+display_url: https://relaxed-pothos-440796.netlify.app
 logo_url: /img/logo.png
 
 collections:
@@ -24,22 +24,25 @@ collections:
     label: "Tin tức"
     label_singular: "Bài viết"
     description: "Quản lý các bài tin tức & sự kiện của trường. Bấm '+ Thêm bài viết' để đăng tin mới."
-    folder: "data/news"
-    create: true
-    delete: true
-    slug: "{{slug}}"
-    extension: json
-    format: json
-    sortable_fields: ["date", "title"]
-    fields:
-      - { label: "Tiêu đề bài viết", name: "title", widget: "string", hint: "Ví dụ: Lễ hội Trung thu 2026 tại Mầm non Bình Minh" }
-      - { label: "Đường dẫn (slug)", name: "slug", widget: "string", hint: "Tự động tạo nếu bỏ trống. Dùng chữ thường, không dấu, gạch ngang. Ví dụ: le-hoi-trung-thu" }
-      - label: "Danh mục"
-        name: "tag"
-        widget: "select"
-        options: ["Sự kiện", "Hoạt động", "Chương trình", "Dinh dưỡng", "Văn nghệ", "Thông báo"]
-        default: "Sự kiện"
-      - { label: "Ngày đăng", name: "date", widget: "datetime", date_format: "DD/MM/YYYY", time_format: false }
-      - { label: "Ảnh đại diện", name: "image", widget: "image", choose_url: true, hint: "Chọn ảnh từ máy hoặc dán link ảnh. Nên dùng ảnh ngang (16:9) cho đẹp." }
-      - { label: "Mô tả ngắn", name: "excerpt", widget: "text", hint: "2-3 câu tóm tắt hiển thị trên thẻ bài viết." }
-      - { label: "Nội dung chi tiết", name: "body", widget: "markdown", hint: "Soạn nội dung bài viết. Xuống dòng 2 lần để tạo đoạn mới." }
+    files:
+      - name: "news"
+        label: "Bài viết"
+        file: "data/news.json"
+        fields:
+          - label: "Danh sách bài viết"
+            name: "news"
+            widget: "list"
+            summary: "{{fields.title}} — {{fields.tag}} — {{fields.date}}"
+            collapsed: false
+            fields:
+              - { label: "Tiêu đề bài viết", name: "title", widget: "string", hint: "Ví dụ: Lễ hội Trung thu 2026 tại Mầm non Bình Minh" }
+              - { label: "Đường dẫn (slug)", name: "slug", widget: "string", hint: "Tự động tạo nếu bỏ trống. Dùng chữ thường, không dấu, gạch ngang. Ví dụ: le-hoi-trung-thu" }
+              - label: "Danh mục"
+                name: "tag"
+                widget: "select"
+                options: ["Sự kiện", "Hoạt động", "Chương trình", "Dinh dưỡng", "Văn nghệ", "Thông báo"]
+                default: "Sự kiện"
+              - { label: "Ngày đăng", name: "date", widget: "datetime", date_format: "DD/MM/YYYY", time_format: false }
+              - { label: "Ảnh đại diện", name: "image", widget: "image", choose_url: true, hint: "Chọn ảnh từ máy hoặc dán link ảnh. Nên dùng ảnh ngang (16:9) cho đẹp." }
+              - { label: "Mô tả ngắn", name: "excerpt", widget: "text", hint: "2-3 câu tóm tắt hiển thị trên thẻ bài viết." }
+              - { label: "Nội dung chi tiết", name: "body", widget: "markdown", hint: "Soạn nội dung bài viết. Xuống dòng 2 lần để tạo đoạn mới." }
