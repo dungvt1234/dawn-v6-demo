@@ -68,29 +68,27 @@
   <div data-include="header"></div>
   <div class="h-[90px]"></div>
 
-  <!-- ================= HERO + CORE VALUES (1 khung chung) ================= -->
-  <!-- Gộp hero và 4 giá trị cốt lõi vào cùng 1 khung → khung cao hơn → ảnh dọc hiển thị TOÀN BỘ -->
+  <!-- ================= HERO SECTION (ảnh 16:9 — hiển thị đầy đủ 100%) ================= -->
   <section class="relative w-full px-4 md:px-8 py-4">
-   <div class="relative w-full min-h-[640px] md:min-h-[calc(100svh-40px)] rounded-4xl overflow-hidden shadow-2xl" style="background-color:#223D22;">
+   <div class="relative w-full bg-forest rounded-4xl overflow-hidden shadow-2xl md:aspect-video">
 
-     <!-- Ảnh gốc — contain: hiển thị 100% nguyên vẹn (desktop căn phải, mobile căn giữa) -->
-     <div class="absolute inset-0 bg-contain bg-center md:bg-right bg-no-repeat"
+     <!-- Desktop: ảnh 16:9 phủ toàn khung (không cắt — đúng tỉ lệ) -->
+     <div class="absolute inset-0 bg-cover bg-center bg-no-repeat hidden md:block"
+     style="background-image: url('img/hero.jpg');"></div>
+     <!-- Mobile: ảnh 16:9 nguyên vẹn phía trên -->
+     <div class="md:hidden aspect-video w-full bg-cover bg-center bg-no-repeat"
      style="background-image: url('img/hero.jpg');"></div>
 
-     <!-- Overlay trái → text hero đọc rõ -->
-     <div class="absolute inset-0 bg-gradient-to-r from-forest/90 via-forest/55 to-transparent"></div>
-     <!-- Overlay dưới → 4 giá trị đọc rõ -->
-     <div class="absolute inset-0 bg-gradient-to-t from-forest/95 via-forest/30 to-transparent"></div>
+     <!-- Overlay desktop: tối bên phải cho chữ (chủ thể ảnh nằm bên trái) -->
+     <div class="absolute inset-0 bg-gradient-to-l from-forest/85 via-forest/40 to-transparent hidden md:block"></div>
 
-     <div class="relative z-10 w-full h-full flex flex-col justify-between px-6 md:px-14 pt-10 md:pt-14 pb-6 md:pb-10">
-
-     <!-- ===== Hero text ===== -->
-     <div class="max-w-xl text-white">
-       <span data-aos="fade-down" data-aos-duration="800" class="inline-block bg-white/10 backdrop-blur-md text-chartreuse border border-chartreuse/30 px-4 py-1.5 rounded-pill text-xs uppercase tracking-[0.15em] font-semibold mb-5">
+     <!-- Hero text: desktop nổi phải trên ảnh, mobile nằm dưới ảnh -->
+     <div class="relative z-10 text-white px-6 md:px-14 py-8 md:py-0 bg-forest/60 md:bg-transparent backdrop-blur-md md:backdrop-blur-none md:absolute md:inset-y-0 md:right-0 md:w-1/2 md:flex md:flex-col md:justify-center">
+       <span data-aos="fade-down" data-aos-duration="800" class="inline-block bg-white/10 backdrop-blur-md text-chartreuse border border-chartreuse/30 px-4 py-1.5 rounded-pill text-xs uppercase tracking-[0.15em] font-semibold mb-5 w-fit">
        DAWN — Grow with Nature
        </span>
 
-       <h1 data-aos="fade-up" data-aos-duration="1000" class="font-serif text-[34px] sm:text-[46px] md:text-[56px] leading-[1.1] font-normal mb-5 tracking-tight text-ivory">
+       <h1 data-aos="fade-up" data-aos-duration="1000" class="font-serif text-[30px] sm:text-[40px] md:text-[48px] leading-[1.1] font-normal mb-5 tracking-tight text-ivory">
        Nơi những mầm non <br />
        <span class="italic font-light text-chartreuse">lớn lên trong yêu thương</span>
        </h1>
@@ -110,43 +108,46 @@
        </button>
        </div>
      </div>
+   </div>
+  </section>
 
-     <!-- ===== 4 core values (trong cùng khung hero) ===== -->
-     <div data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5 mt-12">
+  <!-- ================= CORE VALUES ================= -->
+  <section class="px-4 md:px-8 -mt-6 relative z-20">
+   <div class="max-w-container mx-auto bg-forest rounded-3xl p-8 md:p-14 text-white shadow-2xl border border-white/10" data-aos="fade-up" data-aos-duration="1000">
+     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
 
-       <div class="flex flex-col items-start bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 md:p-5 group hover:bg-chartreuse/15 hover:border-chartreuse/30 transition-colors">
-       <div class="p-2.5 bg-white/10 rounded-xl mb-3 group-hover:bg-chartreuse/20 transition-colors">
-         <i data-lucide="heart" class="w-6 h-6 text-chartreuse stroke-[1.5]"></i>
+     <div class="flex flex-col items-start group">
+       <div class="p-3 bg-white/5 rounded-2xl mb-4 group-hover:bg-chartreuse/20 transition-colors">
+       <i data-lucide="heart" class="w-7 h-7 text-chartreuse stroke-[1.5]"></i>
        </div>
-       <h3 class="font-sans font-bold text-xs tracking-[0.1em] uppercase text-chartreuse mb-1.5">YÊU THƯƠNG</h3>
-       <p class="text-[11px] md:text-sm text-ivory/80 leading-relaxed">Nuôi dưỡng trẻ bằng tình yêu thương, sự thấu hiểu và tôn trọng.</p>
-       </div>
-
-       <div class="flex flex-col items-start bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 md:p-5 group hover:bg-chartreuse/15 hover:border-chartreuse/30 transition-colors">
-       <div class="p-2.5 bg-white/10 rounded-xl mb-3 group-hover:bg-chartreuse/20 transition-colors">
-         <i data-lucide="compass" class="w-6 h-6 text-chartreuse stroke-[1.5]"></i>
-       </div>
-       <h3 class="font-sans font-bold text-xs tracking-[0.1em] uppercase text-chartreuse mb-1.5">KHÁM PHÁ</h3>
-       <p class="text-[11px] md:text-sm text-ivory/80 leading-relaxed">Khuyến khích trẻ khám phá, đặt câu hỏi và học hỏi qua trải nghiệm.</p>
-       </div>
-
-       <div class="flex flex-col items-start bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 md:p-5 group hover:bg-chartreuse/15 hover:border-chartreuse/30 transition-colors">
-       <div class="p-2.5 bg-white/10 rounded-xl mb-3 group-hover:bg-chartreuse/20 transition-colors">
-         <i data-lucide="sparkles" class="w-6 h-6 text-chartreuse stroke-[1.5]"></i>
-       </div>
-       <h3 class="font-sans font-bold text-xs tracking-[0.1em] uppercase text-chartreuse mb-1.5">PHÁT TRIỂN TOÀN DIỆN</h3>
-       <p class="text-[11px] md:text-sm text-ivory/80 leading-relaxed">Phát triển thể chất, trí tuệ, cảm xúc và kỹ năng xã hội.</p>
-       </div>
-
-       <div class="flex flex-col items-start bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 md:p-5 group hover:bg-chartreuse/15 hover:border-chartreuse/30 transition-colors">
-       <div class="p-2.5 bg-white/10 rounded-xl mb-3 group-hover:bg-chartreuse/20 transition-colors">
-         <i data-lucide="shield-check" class="w-6 h-6 text-chartreuse stroke-[1.5]"></i>
-       </div>
-       <h3 class="font-sans font-bold text-xs tracking-[0.1em] uppercase text-chartreuse mb-1.5">AN TOÀN</h3>
-       <p class="text-[11px] md:text-sm text-ivory/80 leading-relaxed">Môi trường an toàn, lành mạnh và truyền cảm hứng mỗi ngày.</p>
-       </div>
-
+       <h3 class="font-sans font-bold text-sm tracking-[0.1em] uppercase text-chartreuse mb-2">YÊU THƯƠNG</h3>
+       <p class="text-xs md:text-sm text-ivory/80 leading-relaxed">Chúng tôi nuôi dưỡng trẻ bằng tình yêu thương, sự thấu hiểu và tôn trọng.</p>
      </div>
+
+     <div class="flex flex-col items-start pt-6 sm:pt-0 sm:pl-8 group">
+       <div class="p-3 bg-white/5 rounded-2xl mb-4 group-hover:bg-chartreuse/20 transition-colors">
+       <i data-lucide="compass" class="w-7 h-7 text-chartreuse stroke-[1.5]"></i>
+       </div>
+       <h3 class="font-sans font-bold text-sm tracking-[0.1em] uppercase text-chartreuse mb-2">KHÁM PHÁ</h3>
+       <p class="text-xs md:text-sm text-ivory/80 leading-relaxed">Khuyến khích trẻ khám phá, đặt câu hỏi và học hỏi qua trải nghiệm.</p>
+     </div>
+
+     <div class="flex flex-col items-start pt-6 sm:pt-0 sm:pl-8 group">
+       <div class="p-3 bg-white/5 rounded-2xl mb-4 group-hover:bg-chartreuse/20 transition-colors">
+       <i data-lucide="sparkles" class="w-7 h-7 text-chartreuse stroke-[1.5]"></i>
+       </div>
+       <h3 class="font-sans font-bold text-sm tracking-[0.1em] uppercase text-chartreuse mb-2">PHÁT TRIỂN TOÀN DIỆN</h3>
+       <p class="text-xs md:text-sm text-ivory/80 leading-relaxed">Phát triển thể chất, trí tuệ, cảm xúc và kỹ năng xã hội.</p>
+     </div>
+
+     <div class="flex flex-col items-start pt-6 sm:pt-0 sm:pl-8 group">
+       <div class="p-3 bg-white/5 rounded-2xl mb-4 group-hover:bg-chartreuse/20 transition-colors">
+       <i data-lucide="shield-check" class="w-7 h-7 text-chartreuse stroke-[1.5]"></i>
+       </div>
+       <h3 class="font-sans font-bold text-sm tracking-[0.1em] uppercase text-chartreuse mb-2">AN TOÀN</h3>
+       <p class="text-xs md:text-sm text-ivory/80 leading-relaxed">Môi trường an toàn, lành mạnh và truyền cảm hứng mỗi ngày.</p>
+     </div>
+
      </div>
    </div>
   </section>
