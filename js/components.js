@@ -86,7 +86,7 @@
    <i data-lucide="menu" class="w-7 h-7"></i>
   </button>
  </div>
- <div id="mobile-menu" class="hidden absolute top-[90px] left-0 right-0 bg-ivory border-b border-forest/10 p-6 flex-col gap-4 shadow-2xl lg:hidden">
+ <div id="mobile-menu" class="hidden absolute top-[90px] left-0 right-0 bg-ivory border-b border-forest/10 p-6 flex-col gap-4 shadow-2xl lg:hidden max-h-[calc(100vh-90px)] overflow-y-auto overscroll-contain">
   ${mobileLinks}
  </div>
 </header>`;
