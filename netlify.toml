@@ -1,0 +1,4 @@
+# Netlify build — site tĩnh, chỉ cần gộp bài viết CMS
+[build]
+  command = "node scripts/build-news.js"
+  publish = "."
