@@ -53,7 +53,7 @@
   </a>
   <div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50">
    <div class="bg-white rounded-2xl shadow-2xl border border-forest/10 py-2 min-w-[240px]">
-    ${n.children.map(c => `<a href="${c.href}" class="block px-5 py-3 text-[13px] font-medium tracking-[0.03em] transition-colors focus-ring ${activeKey === c.key ? 'text-plum font-bold bg-forest/5' : 'text-charcoal/70 hover:text-plum hover:bg-forest/5'}" style="${activeKey === c.key ? 'color:var(--plum);' : ''}">${c.label}</a>`).join('\n    ')}
+    ${n.children.map(c => `<a href="${c.href}" class="block px-5 py-3 text-[13px] font-medium tracking-[0.03em] transition-colors focus-ring ${PAGE === c.href ? 'text-plum font-bold bg-forest/5' : 'text-charcoal/70 hover:text-plum hover:bg-forest/5'}" style="${PAGE === c.href ? 'color:var(--plum);' : ''}">${c.label}</a>`).join('\n    ')}
    </div>
   </div>
  </div>`;
@@ -64,7 +64,7 @@
   const mobileLinks = NAV.map(n => {
     const base = `<a href="${n.href}" class="text-base font-semibold py-2 border-b border-forest/5 focus-ring${activeKey === n.key ? ' text-plum' : ' text-charcoal'}" style="${activeKey === n.key ? 'color:var(--plum);' : 'color:var(--charcoal);'}">${n.label}</a>`;
     if (n.children) {
-      return base + n.children.map(c => `<a href="${c.href}" class="text-sm font-medium pl-6 py-2 border-b border-forest/5 focus-ring ${activeKey === c.key ? 'text-plum' : 'text-charcoal/70'}" style="${activeKey === c.key ? 'color:var(--plum);' : 'color:var(--charcoal);'}">→ ${c.label}</a>`).join('\n ');
+      return base + n.children.map(c => `<a href="${c.href}" class="text-sm font-medium pl-6 py-2 border-b border-forest/5 focus-ring ${PAGE === c.href ? 'text-plum' : 'text-charcoal/70'}" style="${PAGE === c.href ? 'color:var(--plum);' : 'color:var(--charcoal);'}">→ ${c.label}</a>`).join('\n ');
     }
     return base;
   }).join('\n ');
