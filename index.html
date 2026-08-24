@@ -111,7 +111,7 @@
          <i data-lucide="arrow-right" class="w-4 h-4"></i>
          </span>
        </a>
-       <button class="inline-flex items-center justify-center gap-3 text-white/90 text-xs uppercase tracking-[0.08em] font-semibold py-1 group self-start">
+       <button type="button" data-video-btn class="cursor-pointerinline-flex items-center justify-center gap-3 text-white/90 text-xs uppercase tracking-[0.08em] font-semibold py-1 group self-start">
          <span class="w-8 h-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center group-hover:bg-white/20 transition-colors">
          <i data-lucide="play" class="w-3.5 h-3.5 fill-current ml-0.5"></i>
          </span>
@@ -150,7 +150,7 @@
        <a href="gioi-thieu.html" class="inline-flex items-center justify-center gap-3 bg-chartreuse hover:bg-gold text-forest font-bold text-xs uppercase tracking-[0.08em] px-7 py-3.5 rounded-pill transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
          Khám Phá Mầm non Bình Minh <i data-lucide="arrow-right" class="w-4 h-4"></i>
        </a>
-       <button class="inline-flex items-center justify-center gap-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/25 font-semibold text-xs uppercase tracking-[0.08em] px-6 py-3.5 rounded-pill transition-all duration-300 group">
+       <button type="button" data-video-btn class="cursor-pointerinline-flex items-center justify-center gap-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/25 font-semibold text-xs uppercase tracking-[0.08em] px-6 py-3.5 rounded-pill transition-all duration-300 group">
          <div class="relative w-7 h-7 rounded-full bg-white text-forest flex items-center justify-center ripple-btn">
          <i data-lucide="play" class="w-3.5 h-3.5 fill-current ml-0.5"></i>
          </div>
@@ -820,5 +820,49 @@
    });
    }
   </script>
+
+<!-- ============ VIDEO MODAL (Reel giới thiệu) ============ -->
+<div id="video-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/85 p-4 md:p-8" role="dialog" aria-modal="true" aria-label="Video giới thiệu">
+  <button type="button" id="video-close" class="absolute top-4 right-4 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white text-2xl flex items-center justify-center transition-colors z-10 focus-ring" aria-label="Đóng video">✕</button>
+  <div class="relative w-full max-w-[480px]">
+    <div class="relative pt-[177.78%] bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+      <iframe id="video-frame" class="absolute inset-0 w-full h-full" src="" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen title="Video giới thiệu Mầm non Bình Minh"></iframe>
+    </div>
+    <p class="text-center text-white/60 text-xs mt-3">Video giới thiệu Mầm non Bình Minh</p>
+  </div>
+</div>
+
+<script>
+(function() {
+  var modal = document.getElementById('video-modal');
+  var frame = document.getElementById('video-frame');
+  var closeBtn = document.getElementById('video-close');
+  if (!modal || !frame || !closeBtn) return;
+  var VIDEO_SRC = 'https://www.facebook.com/plugins/video.php?href=' + encodeURIComponent('https://www.facebook.com/reel/1856904525286173/') + '&show_text=false&autoplay=1';
+  function openVideo() {
+    frame.src = VIDEO_SRC;
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeVideo() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    frame.src = '';
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('[data-video-btn]').forEach(function(btn) {
+    btn.addEventListener('click', openVideo);
+  });
+  closeBtn.addEventListener('click', closeVideo);
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) closeVideo();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeVideo();
+  });
+})();
+</script>
+
 </body>
 </html>
