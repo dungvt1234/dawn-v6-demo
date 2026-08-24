@@ -1,4 +1,4 @@
-// Shared header/footer for DAWN Kindergarten v6 — design v4 editorial style
+// Shared header/footer for MẦM NON BÌNH MINH v6 — design v4 editorial style
 // Usage: <div data-include="header"></div> ... <div data-include="footer"></div>
 (function () {
   const PAGE = location.pathname.split('/').pop() || 'index.html';
@@ -40,10 +40,9 @@
 <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 h-[90px] flex items-center" style="background:var(--ivory);">
  <div class="max-w-container w-full mx-auto px-6 md:px-12 flex items-center justify-between">
   <a href="index.html" class="focus-ring flex items-center gap-3 group">
-   <img src="img/logo-icon.png" alt="DAWN Kindergarten — Mầm non Bình Minh" class="h-11 w-auto transition-transform duration-500 group-hover:scale-105" style="height:44px; width:auto;">
+   <img src="img/logo-icon.png" alt="Mầm non Bình Minh" class="h-11 w-auto transition-transform duration-500 group-hover:scale-105" style="height:44px; width:auto;">
    <div class="flex flex-col leading-tight items-center">
-    <span class="font-serif text-base md:text-lg tracking-[0.04em] text-plum font-bold whitespace-nowrap text-center">DAWN KINDERGARTEN</span>
-    <span class="text-[9px] md:text-[10px] tracking-[0.24em] text-forest font-bold uppercase mt-0.5 whitespace-nowrap text-center">Mầm Non Bình Minh</span>
+    <span class="font-serif text-base md:text-lg tracking-[0.04em] text-plum font-bold whitespace-nowrap text-center">MẦM NON BÌNH MINH</span>
    </div>
   </a>
   <nav class="hidden lg:flex items-center gap-7 lg:ml-10">
@@ -70,10 +69,9 @@
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-white/10">
    <div class="lg:col-span-2">
     <div class="flex items-center gap-3 mb-6">
-     <img src="img/logo-icon-light.png" alt="DAWN Kindergarten — Mầm non Bình Minh" class="h-16 w-auto" style="height:64px; width:auto;">
+     <img src="img/logo-icon-light.png" alt="Mầm non Bình Minh" class="h-16 w-auto" style="height:64px; width:auto;">
      <div class="flex flex-col leading-tight items-center">
-      <span class="font-serif text-xl tracking-[0.04em] text-ivory font-bold whitespace-nowrap text-center">DAWN KINDERGARTEN</span>
-      <span class="text-[11px] tracking-[0.28em] text-gold font-semibold uppercase mt-1 whitespace-nowrap text-center">Mầm Non Bình Minh</span>
+      <span class="font-serif text-xl tracking-[0.04em] text-ivory font-bold whitespace-nowrap text-center">MẦM NON BÌNH MINH</span>
      </div>
     </div>
     <p class="text-ivory/70 text-sm leading-relaxed max-w-sm">
@@ -109,7 +107,7 @@
    </div>
   </div>
   <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-ivory/50 gap-4">
-   <p>© 2026 Dawn Kindergarten. All rights reserved.</p>
+   <p>© 2026 Mầm non Bình Minh. All rights reserved.</p>
    <div class="flex gap-6">
     <a href="#" class="focus-ring hover:text-gold transition-colors">Bảo Mật Thông Tin</a>
     <a href="#" class="focus-ring hover:text-gold transition-colors">Điều Khoản Sử Dụng</a>
