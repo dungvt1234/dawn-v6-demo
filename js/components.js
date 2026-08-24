@@ -40,13 +40,13 @@
 <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 h-[90px] flex items-center" style="background:var(--ivory);">
  <div class="max-w-container w-full mx-auto px-6 md:px-12 flex items-center justify-between">
   <a href="index.html" class="focus-ring flex items-center gap-3 group">
-   <img src="img/logo-icon.png" alt="DAWN Kindergarten — Mầm non Bình Minh" class="h-12 w-auto transition-transform duration-500 group-hover:scale-105" style="height:52px; width:auto;">
+   <img src="img/logo-icon.png" alt="DAWN Kindergarten — Mầm non Bình Minh" class="h-11 w-auto transition-transform duration-500 group-hover:scale-105" style="height:44px; width:auto;">
    <div class="flex flex-col leading-tight">
-    <span class="font-serif text-lg md:text-xl tracking-[0.04em] text-plum font-bold whitespace-nowrap">DAWN KINDERGARTEN</span>
-    <span class="text-[10px] md:text-[11px] tracking-[0.28em] text-forest font-bold uppercase mt-0.5 whitespace-nowrap">Mầm Non Bình Minh</span>
+    <span class="font-serif text-base md:text-lg tracking-[0.04em] text-plum font-bold whitespace-nowrap">DAWN KINDERGARTEN</span>
+    <span class="text-[9px] md:text-[10px] tracking-[0.24em] text-forest font-bold uppercase mt-0.5 whitespace-nowrap">Mầm Non Bình Minh</span>
    </div>
   </a>
-  <nav class="hidden lg:flex items-center gap-9">
+  <nav class="hidden lg:flex items-center gap-7 lg:ml-10">
    ${navLinks}
   </nav>
   <div class="hidden lg:block">
