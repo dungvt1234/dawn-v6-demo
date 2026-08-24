@@ -185,7 +185,7 @@
  from{ opacity:0; transform:translateY(14px) scale(.92); }
  to{ opacity:1; transform:translateY(0) scale(1); }
 }
-#floating-contact.open #fc-toggle i{ transform:rotate(90deg); transition:transform .3s ease; }
+#floating-contact.open #fc-toggle svg{ transform:rotate(90deg); transition:transform .3s ease; }
 </style>`;
 
 
@@ -215,6 +215,16 @@
     fcToggle.addEventListener('click', function () {
       var open = fcRoot.classList.toggle('open');
       fcToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      var icon = fcToggle.querySelector('svg');
+      if (icon) {
+        if (open) {
+          icon.setAttribute('data-lucide', 'x');
+          icon.innerHTML = '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>';
+        } else {
+          icon.setAttribute('data-lucide', 'message-circle');
+          icon.innerHTML = '<path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>';
+        }
+      }
     });
     document.addEventListener('click', function (e) {
       if (!fcRoot.contains(e.target)) fcRoot.classList.remove('open');
