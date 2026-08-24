@@ -1,18 +1,20 @@
 /* ============================================================
    DAWN Kindergarten — v6 (design v4: editorial + AOS + glass)
-   Design system: forest #223D22 · plum #2F1834 · chartreuse #DCD870
-   gold #ECAB45 · sage #C9D3B5 · ivory #F7F5EA · charcoal #20251F
+   Design system: forest #223D22 · plum #281936 · chartreuse #DCD870
+   gold #ECAB45 · sage #C9D3B5 · ivory #F8F7F0 · text #1F251F
    Fonts: DM Serif Display (serif) + Be Vietnam Pro (sans)
    ============================================================ */
 :root{
   --forest:#223D22;
-  --plum:#2F1834;
+  --plum:#281936;
   --chartreuse:#DCD870;
   --gold:#ECAB45;
   --sage:#C9D3B5;
-  --ivory:#F7F5EA;
+  --ivory:#F8F7F0;
   --white:#FFFFFF;
-  --charcoal:#20251F;
+  --charcoal:#1F251F;
+  --muted:#667066;
+  --border:#DDE2D8;
   --stats-bg:#E5EBD9;
 }
 html{ scroll-behavior:smooth; }
@@ -27,13 +29,13 @@ h1,h2,h3,.serif{ font-family:'DM Serif Display',serif; font-weight:400; }
 
 /* ===== Scrollbar (v4 signature) ===== */
 ::-webkit-scrollbar{ width:8px; }
-::-webkit-scrollbar-track{ background:#F7F5EA; }
+::-webkit-scrollbar-track{ background:var(--ivory); }
 ::-webkit-scrollbar-thumb{ background:#C9D3B5; border-radius:4px; }
 ::-webkit-scrollbar-thumb:hover{ background:#223D22; }
 
 /* ===== Glass header (v4) ===== */
 .glass-header{
-  background:rgba(247,245,234,0.85);
+  background:rgba(248,247,240,0.85);
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
 }
@@ -85,11 +87,11 @@ h1,h2,h3,.serif{ font-family:'DM Serif Display',serif; font-weight:400; }
 .btn-solid:hover{ transform:translateY(-2px); box-shadow:0 14px 28px -12px rgba(236,171,69,0.55); background:var(--gold); }
 .btn-ghost{
   display:inline-block; border-radius:999px;
-  border:1px solid rgba(247,245,234,.4); color:var(--ivory);
+  border:1px solid rgba(248,247,240,.4); color:var(--ivory);
   font-weight:600; font-size:13px; letter-spacing:.08em; text-transform:uppercase;
   padding:15px 30px; transition:all .35s;
 }
-.btn-ghost:hover{ background:rgba(247,245,234,.12); }
+.btn-ghost:hover{ background:rgba(248,247,240,.12); }
 
 /* ===== Cards (v4 editorial rounded) ===== */
 .card{ border-radius:1.75rem; transition:transform .5s cubic-bezier(.22,.61,.36,1), box-shadow .5s ease; }
@@ -144,7 +146,7 @@ h1,h2,h3,.serif{ font-family:'DM Serif Display',serif; font-weight:400; }
 @media (min-width:768px){ .section-title{ font-size:46px; } }
 
 /* ===== Prose ===== */
-.prose-c p{ color:var(--charcoal); opacity:.85; line-height:1.75; font-size:16px; }
+.prose-c p{ color:var(--muted); line-height:1.75; font-size:16px; }
 .prose-c p + p{ margin-top:16px; }
 
 /* ===== Tags ===== */
@@ -152,7 +154,7 @@ h1,h2,h3,.serif{ font-family:'DM Serif Display',serif; font-weight:400; }
 .tag-outline{ background:transparent; color:var(--chartreuse); border:1px solid var(--chartreuse); }
 
 /* ===== Form fields ===== */
-.field{ width:100%; border:1px solid rgba(34,61,34,.2); border-radius:14px; padding:14px 16px; font-size:15px; font-family:'Be Vietnam Pro',sans-serif; background:#fff; transition:border .3s; }
+.field{ width:100%; border:1px solid var(--border); border-radius:14px; padding:14px 16px; font-size:15px; font-family:'Be Vietnam Pro',sans-serif; background:#fff; transition:border .3s; }
 .field:focus{ outline:none; border-color:var(--gold); box-shadow:0 0 0 3px rgba(236,171,69,.2); }
 .label{ display:block; font-size:13px; font-weight:600; letter-spacing:.05em; margin-bottom:8px; color:var(--forest); }
 
@@ -162,7 +164,7 @@ details.faq summary{ cursor:pointer; font-family:'DM Serif Display',serif; font-
 details.faq summary::-webkit-details-marker{ display:none; }
 details.faq summary::after{ content:'+'; font-size:26px; color:var(--gold); transition:transform .3s; }
 details.faq[open] summary::after{ transform:rotate(45deg); }
-details.faq p{ margin-top:12px; color:var(--charcoal); opacity:.8; line-height:1.7; font-size:15px; }
+details.faq p{ margin-top:12px; color:var(--muted); line-height:1.7; font-size:15px; }
 
 /* ===== Nav active ===== */
 .nav-active{ color:var(--gold) !important; }
