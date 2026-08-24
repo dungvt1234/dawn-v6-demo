@@ -5,7 +5,15 @@
 
   const NAV = [
     { href: 'index.html', label: 'TRANG CHỦ', key: 'index' },
-    { href: 'gioi-thieu.html', label: 'GIỚI THIỆU', key: 'about' },
+    {
+      href: 'gioi-thieu.html', label: 'GIỚI THIỆU', key: 'about',
+      children: [
+        { href: 'gioi-thieu.html', label: 'Về chúng tôi', key: 'about' },
+        { href: 'chuong-trinh.html', label: 'Chương trình học', key: 'program' },
+        { href: 'moi-truong.html', label: 'Cơ sở vật chất', key: 'about' },
+        { href: 'doi-ngu.html', label: 'Đội ngũ giáo viên', key: 'about' }
+      ]
+    },
     { href: 'chuong-trinh.html', label: 'CHƯƠNG TRÌNH', key: 'program' },
     { href: 'tin-tuc.html', label: 'TIN TỨC', key: 'news' },
     { href: 'gallery.html', label: 'GALLERY', key: 'gallery' },
@@ -29,12 +37,30 @@
     'dang-ky.html': 'contact'
   }[PAGE] || 'index';
 
-  const navLinks = NAV.map(n =>
-    `<a href="${n.href}" class="text-[13px] font-medium tracking-[0.06em] uppercase transition-colors focus-ring${activeKey === n.key ? ' text-plum font-bold' : ' text-charcoal/70 hover:text-plum'}" style="${activeKey === n.key ? 'color:var(--plum);' : ''}">${n.label}</a>`
-  ).join('\n ');
-  const mobileLinks = NAV.map(n =>
-    `<a href="${n.href}" class="text-base font-semibold py-2 border-b border-forest/5 focus-ring${activeKey === n.key ? ' text-plum' : ' text-charcoal'}" style="${activeKey === n.key ? 'color:var(--plum);' : 'color:var(--charcoal);'}">${n.label}</a>`
-  ).join('\n ');
+  const navLinks = NAV.map(n => {
+    if (n.children) {
+      return `
+ <div class="relative group">
+  <a href="${n.href}" class="inline-flex items-center gap-1.5 text-[13px] font-medium tracking-[0.06em] uppercase transition-colors focus-ring${activeKey === n.key ? ' text-plum font-bold' : ' text-charcoal/70 hover:text-plum'}" style="${activeKey === n.key ? 'color:var(--plum);' : ''}">
+   ${n.label} <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180"></i>
+  </a>
+  <div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50">
+   <div class="bg-white rounded-2xl shadow-2xl border border-forest/10 py-2 min-w-[240px]">
+    ${n.children.map(c => `<a href="${c.href}" class="block px-5 py-3 text-[13px] font-medium tracking-[0.03em] transition-colors focus-ring ${activeKey === c.key ? 'text-plum font-bold bg-forest/5' : 'text-charcoal/70 hover:text-plum hover:bg-forest/5'}" style="${activeKey === c.key ? 'color:var(--plum);' : ''}">${c.label}</a>`).join('\n    ')}
+   </div>
+  </div>
+ </div>`;
+    }
+    return `<a href="${n.href}" class="text-[13px] font-medium tracking-[0.06em] uppercase transition-colors focus-ring${activeKey === n.key ? ' text-plum font-bold' : ' text-charcoal/70 hover:text-plum'}" style="${activeKey === n.key ? 'color:var(--plum);' : ''}">${n.label}</a>`;
+  }).join('\n ');
+
+  const mobileLinks = NAV.map(n => {
+    const base = `<a href="${n.href}" class="text-base font-semibold py-2 border-b border-forest/5 focus-ring${activeKey === n.key ? ' text-plum' : ' text-charcoal'}" style="${activeKey === n.key ? 'color:var(--plum);' : 'color:var(--charcoal);'}">${n.label}</a>`;
+    if (n.children) {
+      return base + n.children.map(c => `<a href="${c.href}" class="text-sm font-medium pl-6 py-2 border-b border-forest/5 focus-ring ${activeKey === c.key ? 'text-plum' : 'text-charcoal/70'}" style="${activeKey === c.key ? 'color:var(--plum);' : 'color:var(--charcoal);'}">→ ${c.label}</a>`).join('\n ');
+    }
+    return base;
+  }).join('\n ');
 
   const headerHTML = `
 <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 h-[90px] flex items-center" style="background:var(--ivory);">
