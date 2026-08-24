@@ -40,7 +40,7 @@
 <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 h-[90px] flex items-center" style="background:var(--ivory);">
  <div class="max-w-container w-full mx-auto px-6 md:px-12 flex items-center justify-between">
   <a href="index.html" class="focus-ring flex items-center gap-3.5 group">
-   <div class="w-11 h-11 rounded-full bg-plum text-gold flex items-center justify-center font-serif text-2xl font-bold shadow-md transition-transform duration-500 group-hover:rotate-12">D</div>
+   <img src="img/logo-header.png" alt="DAWN Kindergarten — Mầm non Bình Minh" class="h-12 w-auto transition-transform duration-500 group-hover:scale-105" style="height:48px;">
    <div class="flex flex-col">
     <span class="font-serif text-xl tracking-wider text-plum font-bold leading-none">DAWN</span>
     <span class="text-[9px] tracking-[0.2em] text-forest font-bold uppercase mt-1">Kindergarten</span>
@@ -70,7 +70,7 @@
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-white/10">
    <div class="lg:col-span-2">
     <div class="flex items-center gap-3.5 mb-6">
-     <div class="w-11 h-11 rounded-full bg-forest text-gold flex items-center justify-center font-serif text-2xl font-bold">D</div>
+     <img src="img/logo-footer.png" alt="DAWN Kindergarten — Mầm non Bình Minh" class="h-14 w-auto" style="height:56px;">
      <div class="flex flex-col">
       <span class="font-serif text-xl tracking-wider text-ivory font-bold leading-none">DAWN</span>
       <span class="text-[9px] tracking-[0.2em] text-gold font-semibold uppercase mt-1">Kindergarten</span>
