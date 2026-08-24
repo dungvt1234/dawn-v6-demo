@@ -77,8 +77,9 @@
      </div>
     </div>
     <p class="text-ivory/70 text-sm leading-relaxed max-w-sm">
-     Nơi nuôi dưỡng tâm hồn, trí tuệ và thể chất cho mầm non tương lai trong môi trường ngập tràn yêu thương và không khí thiên nhiên.
+     Nơi khởi đầu cho những bước chân đầu đời — nuôi dưỡng tâm hồn, trí tuệ và thể chất cho mầm non tương lai trong môi trường ngập tràn yêu thương.
     </p>
+    <p class="mt-4 text-[11px] tracking-[0.14em] uppercase text-gold/90 font-semibold">Yêu thương · Tôn trọng · An toàn · Phát triển</p>
    </div>
    <div>
     <h4 class="text-xs font-bold tracking-[0.12em] uppercase text-gold mb-5">Khám Phá</h4>
