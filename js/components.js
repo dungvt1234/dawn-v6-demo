@@ -39,8 +39,12 @@
   const headerHTML = `
 <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 h-[90px] flex items-center" style="background:var(--ivory);">
  <div class="max-w-container w-full mx-auto px-6 md:px-12 flex items-center justify-between">
-  <a href="index.html" class="focus-ring flex items-center">
-   <img src="img/logo-header.png" alt="DAWN Kindergarten — Mầm non Bình Minh" class="h-16 w-auto transition-transform duration-500 group-hover:scale-105" style="height:64px; width:auto;">
+  <a href="index.html" class="focus-ring flex items-center gap-3 group">
+   <img src="img/logo-icon.png" alt="DAWN Kindergarten — Mầm non Bình Minh" class="h-12 w-auto transition-transform duration-500 group-hover:scale-105" style="height:52px; width:auto;">
+   <div class="flex flex-col leading-tight">
+    <span class="font-serif text-lg md:text-xl tracking-[0.04em] text-plum font-bold whitespace-nowrap">DAWN KINDERGARTEN</span>
+    <span class="text-[10px] md:text-[11px] tracking-[0.28em] text-forest font-bold uppercase mt-0.5 whitespace-nowrap">Mầm Non Bình Minh</span>
+   </div>
   </a>
   <nav class="hidden lg:flex items-center gap-9">
    ${navLinks}
@@ -65,8 +69,12 @@
  <div class="max-w-container mx-auto">
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-white/10">
    <div class="lg:col-span-2">
-    <div class="flex items-center mb-6">
-     <img src="img/logo-footer.png" alt="DAWN Kindergarten — Mầm non Bình Minh" class="h-20 w-auto" style="height:80px; width:auto;">
+    <div class="flex items-center gap-3 mb-6">
+     <img src="img/logo-icon-light.png" alt="DAWN Kindergarten — Mầm non Bình Minh" class="h-16 w-auto" style="height:64px; width:auto;">
+     <div class="flex flex-col leading-tight">
+      <span class="font-serif text-xl tracking-[0.04em] text-ivory font-bold whitespace-nowrap">DAWN KINDERGARTEN</span>
+      <span class="text-[11px] tracking-[0.28em] text-gold font-semibold uppercase mt-1 whitespace-nowrap">Mầm Non Bình Minh</span>
+     </div>
     </div>
     <p class="text-ivory/70 text-sm leading-relaxed max-w-sm">
      Nơi nuôi dưỡng tâm hồn, trí tuệ và thể chất cho mầm non tương lai trong môi trường ngập tràn yêu thương và không khí thiên nhiên.
