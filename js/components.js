@@ -70,15 +70,7 @@
   }).join('\n ');
 
   const headerHTML = `
-<div id="header-wrap" class="fixed top-0 left-0 right-0 z-50">
- <div class="topbar hidden md:flex items-center justify-between gap-6 px-6 md:px-12 h-10 text-[12px] tracking-[0.04em] text-ivory/85" style="background:var(--plum);">
-  <div class="flex items-center gap-6">
-   <a href="tel:19006868" class="flex items-center gap-1.5 hover:text-gold transition-colors focus-ring"><i data-lucide="phone" class="w-3.5 h-3.5"></i>1900 6868</a>
-   <a href="mailto:hello@dawnkindergarten.vn" class="flex items-center gap-1.5 hover:text-gold transition-colors focus-ring"><i data-lucide="mail" class="w-3.5 h-3.5"></i>hello@dawnkindergarten.vn</a>
-  </div>
-  <div class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>123 Đường Ánh Dương, Q. Bình Thạnh, TP.HCM</div>
- </div>
- <header id="site-header" class="transition-all duration-500 h-[90px] flex items-center" style="background:var(--ivory);">
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 h-[90px] flex items-center" style="background:var(--ivory);">
  <div class="max-w-container w-full mx-auto px-6 md:px-12 flex items-center justify-between">
   <a href="index.html" class="focus-ring flex items-center gap-3 group">
    <img src="img/logo-icon.png" alt="Mầm non Bình Minh" class="h-11 w-auto transition-transform duration-500 group-hover:scale-105" style="height:44px; width:auto;">
@@ -103,8 +95,7 @@
   ${mobileLinks}
   <a href="dang-ky.html" class="mt-2 w-full text-center bg-chartreuse text-forest font-bold text-sm uppercase tracking-wider py-4 rounded-pill">Đăng Ký Tham Quan →</a>
  </div>
- </header>
-</div>`;
+</header>`;
 
   const footerHTML = `
 <footer id="contact" class="bg-plum text-ivory pt-24 pb-12 px-6 md:px-12 mt-12">

@@ -124,7 +124,7 @@ h1,h2,h3,.serif{ font-family:'DM Serif Display',serif; font-weight:400; }
 
 /* ===== Page hero (v4 gradient + sunrise line) ===== */
 .page-hero{
-  padding:190px 0 80px;
+  padding:150px 0 80px;
   background:linear-gradient(120deg, var(--forest) 0%, #2C4A2C 60%, var(--plum) 130%);
   position:relative; overflow:hidden;
 }
