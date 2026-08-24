@@ -68,40 +68,46 @@
   <div data-include="header"></div>
   <div class="h-[90px]"></div>
 
-  <!-- ================= HERO SECTION — LAYERED IMAGE-CONTENT OVERLAP (editorial) =================
-  Mobile: ảnh 16:9 phía trên + panel xanh đậm lồng lên ảnh (-90px) → chiều sâu 2 lớp
+  <!-- ================= HERO SECTION — FULL-BLEED IMAGE + OVERLAY (poster editorial) =================
+  Mobile: MỘT khối ảnh duy nhất — bg image cover + gradient xanh bán trong suốt + typography TRÊN ảnh
   Desktop: khung editorial 16:9, ảnh cover + text góc dưới trái trên ảnh -->
   <section class="relative w-full px-7 md:px-8 py-4">
    <div class="relative w-full max-w-[1280px] mx-auto">
 
-     <!-- ============ MOBILE + TABLET: LAYERED OVERLAP STACK ============ -->
+     <!-- ============ MOBILE + TABLET: FULL-BLEED IMAGE + COLOR OVERLAY (poster editorial) ============ -->
      <div class="lg:hidden">
 
-     <!-- IMAGE LAYER (z-1) — 16:9, bo trên 32px, không phủ màu -->
-     <div data-aos="zoom-out" data-aos-duration="1200" class="relative z-[1] aspect-video w-full overflow-hidden rounded-t-[32px]">
-       <img src="img/hero.jpg" alt="Học sinh Dawn Kindergarten" class="w-full h-full object-cover" loading="eager" />
-     </div>
+     <!-- MỘT KHỐI DUY NHẤT: ảnh nền cover + overlay xanh bán trong suốt + typography TRÊN ảnh -->
+     <div class="relative w-full overflow-hidden rounded-[32px] aspect-[3/4] min-h-[720px] bg-forest">
 
-     <!-- CONTENT OVERLAP LAYER (z-2) — panel xanh đậm lồng NHẸ lên ảnh 40px (mobile) / 48px (tablet) -->
-     <div data-aos="fade-up" data-aos-duration="900" class="relative z-[2] -mt-10 md:-mt-12 rounded-t-[32px] bg-forest px-6 md:px-10 pt-16 md:pt-20 pb-10 md:pb-12 text-white shadow-[0_24px_60px_-24px_rgba(31,37,31,0.45)]">
+       <!-- LỚP 1: Full-bleed background image (cover, center) -->
+       <div class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+       style="background-image: url('img/hero.jpg');"></div>
 
-       <span data-aos="fade-up" data-aos-delay="100" data-aos-duration="800" class="inline-block text-chartreuse border border-chartreuse/30 px-4 py-1.5 rounded-full text-[11px] uppercase tracking-[0.15em] font-semibold mb-5">
+       <!-- LỚP 2: Semi-transparent green gradient overlay — ảnh vẫn nhìn xuyên qua, dưới tối hơn cho chữ -->
+       <div class="absolute inset-0"
+       style="background: linear-gradient(180deg, rgba(24,61,34,0.25) 0%, rgba(24,61,34,0.48) 42%, rgba(24,61,34,0.82) 100%);"></div>
+
+       <!-- LỚP 3: Content nằm TRÊN ảnh + overlay, ở phần thấp của khối -->
+       <div class="relative z-[2] flex flex-col justify-end w-full h-full px-6 md:px-10 pb-9 md:pb-12 pt-24 text-white">
+
+       <span data-aos="fade-up" data-aos-delay="100" data-aos-duration="800" class="inline-block text-chartreuse border border-chartreuse/30 px-4 py-1.5 rounded-full text-[11px] uppercase tracking-[0.15em] font-semibold mb-5 w-fit">
        DAWN — Grow with Nature
        </span>
 
-       <h1 data-aos="fade-up" data-aos-delay="180" data-aos-duration="900" class="font-serif text-[34px] sm:text-[42px] md:text-[46px] leading-[1.02] tracking-[-0.02em] font-normal mb-5 text-ivory">
+       <h1 data-aos="fade-up" data-aos-delay="180" data-aos-duration="900" class="font-serif text-[34px] sm:text-[42px] md:text-[46px] leading-[1.04] tracking-[-0.02em] font-normal mb-5 text-white">
        Nơi những mầm non <br />
        <span class="italic font-light text-chartreuse">lớn lên trong yêu thương</span>
        </h1>
 
-       <p data-aos="fade-up" data-aos-delay="260" data-aos-duration="900" class="text-sm sm:text-base text-ivory/85 leading-relaxed font-normal mb-8 max-w-[90%]">
+       <p data-aos="fade-up" data-aos-delay="260" data-aos-duration="900" class="text-sm sm:text-base text-white/85 leading-relaxed font-normal mb-8 max-w-[90%]">
        Dawn Kindergarten xây dựng môi trường học tập an toàn, yêu thương và khuyến khích trẻ khám phá thế giới bằng sự tò mò, sáng tạo và niềm vui.
        </p>
 
        <div data-aos="fade-up" data-aos-delay="350" data-aos-duration="900" class="flex flex-col gap-4">
-       <a href="gioi-thieu.html" class="flex items-center justify-between w-full h-[60px] px-7 bg-chartreuse hover:bg-gold text-forest font-bold text-xs uppercase tracking-[0.08em] rounded-full transition-all duration-300 active:scale-[0.98] hover:shadow-2xl">
+       <a href="gioi-thieu.html" class="flex items-center justify-between w-full h-[60px] px-7 bg-[#E7E66A] hover:bg-gold text-[#183D22] font-bold text-xs uppercase tracking-[0.08em] rounded-full transition-all duration-300 active:scale-[0.98] hover:shadow-2xl">
          <span>Khám Phá Dawn Kindergarten</span>
-         <span class="w-8 h-8 rounded-full bg-forest/10 flex items-center justify-center shrink-0">
+         <span class="w-8 h-8 rounded-full bg-[#183D22]/10 flex items-center justify-center shrink-0">
          <i data-lucide="arrow-right" class="w-4 h-4"></i>
          </span>
        </a>
@@ -113,6 +119,7 @@
        </button>
        </div>
 
+       </div>
      </div>
      </div>
 
