@@ -206,3 +206,16 @@ details.faq p{ margin-top:12px; color:var(--muted); line-height:1.7; font-size:1
 
 /* ===== Gallery grid: hiện nhanh, stagger giới hạn ===== */
 .gallery-grid > *{ transition-delay:calc(min(var(--i,0),8) * 40ms); transition-duration:.45s; }
+
+/* ===== Nội dung bài viết (markdown) ===== */
+.prose-article{ color:var(--charcoal); font-size:16px; line-height:1.85; }
+.prose-article p{ margin:0 0 1.25em; }
+.prose-article h1,.prose-article h2,.prose-article h3{ font-family:'DM Serif Display', serif; color:var(--plum); line-height:1.25; margin:1.6em 0 .6em; }
+.prose-article h2{ font-size:26px; } .prose-article h3{ font-size:21px; }
+.prose-article strong{ color:var(--forest); font-weight:600; }
+.prose-article ul,.prose-article ol{ margin:0 0 1.25em; padding-left:1.4em; }
+.prose-article ul{ list-style:disc; } .prose-article ol{ list-style:decimal; }
+.prose-article li{ margin:.35em 0; }
+.prose-article a{ color:var(--forest); text-decoration:underline; text-underline-offset:3px; }
+.prose-article img{ border-radius:1.25rem; margin:1.5em 0; }
+.prose-article blockquote{ border-left:3px solid var(--gold); padding:.4em 1em; margin:0 0 1.25em; color:var(--muted); font-style:italic; }
