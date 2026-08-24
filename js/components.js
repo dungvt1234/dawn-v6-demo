@@ -79,21 +79,15 @@
     <span class="text-[9px] md:text-[10px] tracking-[0.24em] text-forest font-bold uppercase mt-0.5 whitespace-nowrap text-center">Mầm Non Bình Minh</span>
    </div>
   </a>
-  <nav class="hidden lg:flex items-center gap-6 lg:ml-10">
+  <nav class="hidden lg:flex items-center gap-7 lg:ml-10">
    ${navLinks}
   </nav>
-  <div class="hidden lg:block lg:ml-10">
-   <a href="dang-ky.html" class="focus-ring inline-flex items-center gap-2.5 bg-chartreuse hover:bg-gold text-forest font-bold text-xs uppercase tracking-[0.08em] px-7 py-3.5 rounded-pill transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5">
-    Đăng Ký Tham Quan <i data-lucide="arrow-right" class="w-4 h-4"></i>
-   </a>
-  </div>
   <button id="menu-btn" class="lg:hidden p-2 text-forest focus:outline-none focus-ring" aria-label="Mở menu">
    <i data-lucide="menu" class="w-7 h-7"></i>
   </button>
  </div>
  <div id="mobile-menu" class="hidden absolute top-[90px] left-0 right-0 bg-ivory border-b border-forest/10 p-6 flex-col gap-4 shadow-2xl lg:hidden">
   ${mobileLinks}
-  <a href="dang-ky.html" class="mt-2 w-full text-center bg-chartreuse text-forest font-bold text-sm uppercase tracking-wider py-4 rounded-pill">Đăng Ký Tham Quan →</a>
  </div>
 </header>`;
 
