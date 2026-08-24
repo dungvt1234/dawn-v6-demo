@@ -130,7 +130,7 @@
     <h4 class="text-xs font-bold tracking-[0.12em] uppercase text-gold mb-5">Liên Hệ</h4>
     <ul class="space-y-3.5 text-sm text-ivory/80">
      <li class="flex items-start gap-2.5"><i data-lucide="map-pin" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i><span>123 Đường Ánh Dương, Q. Bình Thạnh, TP.HCM</span></li>
-     <li class="flex items-center gap-2.5"><i data-lucide="phone" class="w-4 h-4 text-gold shrink-0"></i><span>1900 6868</span></li>
+     <li class="flex items-center gap-2.5"><i data-lucide="phone" class="w-4 h-4 text-gold shrink-0"></i><span>0866 685 632</span></li>
      <li class="flex items-center gap-2.5"><i data-lucide="mail" class="w-4 h-4 text-gold shrink-0"></i><span>hello@dawnkindergarten.vn</span></li>
     </ul>
    </div>
@@ -148,7 +148,7 @@
   const floatContactHTML = `
 <div id="floating-contact" class="fixed bottom-6 right-5 md:bottom-8 md:right-8 z-[60] flex flex-col items-end">
  <div id="fc-links" class="flex flex-col items-end gap-3 mb-3 opacity-0 invisible translate-y-3 transition-all duration-300 ease-out">
-  <a href="https://zalo.me/19006868" target="_blank" rel="noopener" class="fc-btn flex items-center gap-2.5 bg-white rounded-full pl-2 pr-4 py-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 focus-ring">
+  <a href="https://zalo.me/0866685632" target="_blank" rel="noopener" class="fc-btn flex items-center gap-2.5 bg-white rounded-full pl-2 pr-4 py-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 focus-ring">
    <span class="fc-icon w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-lg" style="background:#0068FF;">Z</span>
    <span class="text-[13px] font-semibold text-charcoal">Zalo</span>
   </a>
@@ -156,9 +156,9 @@
    <span class="fc-icon w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-base" style="background:#0084FF;">M</span>
    <span class="text-[13px] font-semibold text-charcoal">Messenger</span>
   </a>
-  <a href="tel:19006868" class="fc-btn flex items-center gap-2.5 bg-white rounded-full pl-2 pr-4 py-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 focus-ring">
+  <a href="tel:0866685632" class="fc-btn flex items-center gap-2.5 bg-white rounded-full pl-2 pr-4 py-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 focus-ring">
    <span class="fc-icon w-9 h-9 rounded-full flex items-center justify-center text-white" style="background:var(--forest);"><i data-lucide="phone" class="w-4.5 h-4.5"></i></span>
-   <span class="text-[13px] font-semibold text-charcoal">1900 6868</span>
+   <span class="text-[13px] font-semibold text-charcoal">0866 685 632</span>
   </a>
  </div>
  <button id="fc-toggle" aria-label="Liên hệ nhanh" aria-expanded="false" class="w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-xl transition-all duration-300 hover:scale-105 focus-ring" style="background:var(--chartreuse); color:var(--forest);">
