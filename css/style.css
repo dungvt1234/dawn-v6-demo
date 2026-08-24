@@ -193,7 +193,6 @@ details.faq p{ margin-top:12px; color:var(--muted); line-height:1.7; font-size:1
   mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
 }
 .marquee-track{ display:flex; width:max-content; animation: marquee 42s linear infinite; }
-.marquee-left{ animation-duration: 320s; }
-.marquee-right{ animation-direction: reverse; animation-duration: 316s; }
-.marquee-wrap:hover .marquee-track{ animation-play-state: paused; }
+.marquee-left{ animation-duration: 160s; }
+.marquee-right{ animation-direction: reverse; animation-duration: 157s; }
 @keyframes marquee{ to{ transform: translateX(-50%); } }
