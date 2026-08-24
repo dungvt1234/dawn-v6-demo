@@ -79,10 +79,10 @@
     <span class="text-[9px] md:text-[10px] tracking-[0.24em] text-forest font-bold uppercase mt-0.5 whitespace-nowrap text-center">Mầm Non Bình Minh</span>
    </div>
   </a>
-  <nav class="hidden lg:flex items-center gap-7 lg:ml-10">
+  <nav class="hidden lg:flex items-center gap-6 lg:ml-10">
    ${navLinks}
   </nav>
-  <div class="hidden lg:block">
+  <div class="hidden lg:block lg:ml-10">
    <a href="dang-ky.html" class="focus-ring inline-flex items-center gap-2.5 bg-chartreuse hover:bg-gold text-forest font-bold text-xs uppercase tracking-[0.08em] px-7 py-3.5 rounded-pill transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5">
     Đăng Ký Tham Quan <i data-lucide="arrow-right" class="w-4 h-4"></i>
    </a>
