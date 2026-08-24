@@ -80,11 +80,11 @@
      <div class="md:hidden aspect-video w-full bg-cover bg-center bg-no-repeat"
      style="background-image: url('img/hero.jpg');"></div>
 
-     <!-- Overlay desktop: tối dần ở đáy → chữ góc dưới đọc rõ, ảnh phía trên vẫn rõ -->
-     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-forest/10 to-forest/90 hidden md:block"></div>
+     <!-- Overlay gradient phủ toàn khung (cả mobile + desktop): tối dần ở đáy → chữ đọc rõ, ảnh phía trên vẫn rõ -->
+     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-forest/15 to-forest/85"></div>
 
-     <!-- Hero text: desktop góc dưới trái trên ảnh, mobile nằm dưới ảnh -->
-     <div class="relative z-10 text-white px-6 md:px-14 py-8 md:py-0 bg-forest/60 md:bg-transparent backdrop-blur-md md:backdrop-blur-none md:absolute md:inset-x-0 md:bottom-0 md:pb-10 md:flex md:items-end">
+     <!-- Hero text: desktop góc dưới trái trên ảnh, mobile nằm dưới ảnh (trên nền forest + overlay) -->
+     <div class="relative z-10 text-white px-6 md:px-14 py-8 md:py-0 md:absolute md:inset-x-0 md:bottom-0 md:pb-10 md:flex md:items-end">
        <div class="md:max-w-2xl">
        <span data-aos="fade-down" data-aos-duration="800" class="inline-block bg-white/10 backdrop-blur-md text-chartreuse border border-chartreuse/30 px-4 py-1.5 rounded-pill text-xs uppercase tracking-[0.15em] font-semibold mb-5 w-fit">
        DAWN — Grow with Nature
@@ -115,7 +115,8 @@
   </section>
 
   <!-- ================= CORE VALUES ================= -->
-  <section class="px-4 md:px-8 -mt-6 relative z-20">
+  <!-- Cách hero một khoảng rõ ràng (mt-8/12) — không còn chồng sát -->
+  <section class="px-4 md:px-8 mt-8 md:mt-12 relative z-20">
    <div class="max-w-container mx-auto bg-forest rounded-3xl p-8 md:p-14 text-white shadow-2xl border border-white/10" data-aos="fade-up" data-aos-duration="1000">
      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
 
