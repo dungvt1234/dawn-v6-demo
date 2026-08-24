@@ -145,14 +145,78 @@
  </div>
 </footer>`;
 
+  const floatContactHTML = `
+<div id="floating-contact" class="fixed bottom-6 right-5 md:bottom-8 md:right-8 z-[60] flex flex-col items-end">
+ <div id="fc-links" class="flex flex-col items-end gap-3 mb-3 opacity-0 invisible translate-y-3 transition-all duration-300 ease-out">
+  <a href="https://zalo.me/19006868" target="_blank" rel="noopener" class="fc-btn flex items-center gap-2.5 bg-white rounded-full pl-2 pr-4 py-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 focus-ring">
+   <span class="fc-icon w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-lg" style="background:#0068FF;">Z</span>
+   <span class="text-[13px] font-semibold text-charcoal">Zalo</span>
+  </a>
+  <a href="https://m.me/dawnkindergarten" target="_blank" rel="noopener" class="fc-btn flex items-center gap-2.5 bg-white rounded-full pl-2 pr-4 py-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 focus-ring">
+   <span class="fc-icon w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-base" style="background:#0084FF;">M</span>
+   <span class="text-[13px] font-semibold text-charcoal">Messenger</span>
+  </a>
+  <a href="tel:19006868" class="fc-btn flex items-center gap-2.5 bg-white rounded-full pl-2 pr-4 py-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 focus-ring">
+   <span class="fc-icon w-9 h-9 rounded-full flex items-center justify-center text-white" style="background:var(--forest);"><i data-lucide="phone" class="w-4.5 h-4.5"></i></span>
+   <span class="text-[13px] font-semibold text-charcoal">1900 6868</span>
+  </a>
+ </div>
+ <button id="fc-toggle" aria-label="Liên hệ nhanh" aria-expanded="false" class="w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-xl transition-all duration-300 hover:scale-105 focus-ring" style="background:var(--chartreuse); color:var(--forest);">
+  <i data-lucide="message-circle" class="w-7 h-7 md:w-8 md:h-8"></i>
+ </button>
+</div>`;
+
+  const floatCSS = `
+<style id="floating-contact-css">
+#floating-contact .fc-icon{ box-shadow:0 2px 6px rgba(0,0,0,.18); }
+#fc-toggle::after{ content:""; position:absolute; inset:0; border-radius:9999px; border:2px solid var(--chartreuse); animation:fc-pulse 2.2s ease-out infinite; }
+#fc-toggle{ position:relative; }
+@keyframes fc-pulse{
+ 0%{ transform:scale(1); opacity:.85; }
+ 70%{ transform:scale(1.45); opacity:0; }
+ 100%{ transform:scale(1.45); opacity:0; }
+}
+#floating-contact.open #fc-links{ opacity:1; visibility:visible; transform:translateY(0); }
+#floating-contact.open #fc-links .fc-btn{ animation:fc-pop .3s cubic-bezier(.22,.61,.36,1) backwards; }
+#floating-contact.open #fc-links .fc-btn:nth-child(1){ animation-delay:.05s; }
+#floating-contact.open #fc-links .fc-btn:nth-child(2){ animation-delay:.12s; }
+#floating-contact.open #fc-links .fc-btn:nth-child(3){ animation-delay:.19s; }
+@keyframes fc-pop{
+ from{ opacity:0; transform:translateY(14px) scale(.92); }
+ to{ opacity:1; transform:translateY(0) scale(1); }
+}
+#floating-contact.open #fc-toggle i{ transform:rotate(90deg); transition:transform .3s ease; }
+</style>`;
+
+  const floatScript = `
+<script>
+(function(){
+ var root = document.getElementById('floating-contact');
+ var toggle = document.getElementById('fc-toggle');
+ if(!root || !toggle) return;
+ toggle.addEventListener('click', function(){
+  var open = root.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+ });
+ document.addEventListener('click', function(e){
+  if(!root.contains(e.target)) root.classList.remove('open');
+ });
+})();
+</script>`;
+
   function inject() {
     document.querySelectorAll('[data-include="header"]').forEach(el => { el.outerHTML = headerHTML; });
     document.querySelectorAll('[data-include="footer"]').forEach(el => { el.outerHTML = footerHTML; });
+
+    // Floating contact button (all pages)
+    document.body.insertAdjacentHTML('beforeend', floatCSS + floatContactHTML);
 
     // Re-init Lucide icons after injection (if available)
     if (typeof lucide !== 'undefined' && lucide.createIcons) {
       try { lucide.createIcons(); } catch (e) {}
     }
+
+    document.body.insertAdjacentHTML('beforeend', floatScript);
   }
 
   // Script is loaded at end of <body> — header/footer placeholders already parsed,
