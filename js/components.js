@@ -16,7 +16,14 @@
     },
     { href: 'chuong-trinh.html', label: 'CHƯƠNG TRÌNH', key: 'program' },
     { href: 'tin-tuc.html', label: 'TIN TỨC', key: 'news' },
-    { href: 'gallery.html', label: 'GALLERY', key: 'gallery' },
+    {
+      href: '#', label: 'THÔNG TIN', key: 'info',
+      children: [
+        { href: 'tuyen-sinh.html', label: 'Quy trình tuyển sinh', key: 'info' },
+        { href: 'hoc-phi.html', label: 'Học phí & ưu đãi', key: 'info' },
+        { href: 'gallery.html', label: 'Thư viện ảnh', key: 'info' }
+      ]
+    },
     { href: 'lien-he.html', label: 'LIÊN HỆ', key: 'contact' }
   ];
   const activeKey = {
@@ -25,14 +32,14 @@
     'doi-ngu.html': 'about',
     'chuong-trinh.html': 'program',
     'sinh-hoat.html': 'program',
-    'hoc-phi.html': 'program',
-    'tuyen-sinh.html': 'program',
+    'hoc-phi.html': 'info',
+    'tuyen-sinh.html': 'info',
     'cau-hoi.html': 'program',
     'moi-truong.html': 'about',
     'hoat-dong.html': 'about',
     'dinh-duong.html': 'about',
     'tin-tuc.html': 'news',
-    'gallery.html': 'gallery',
+    'gallery.html': 'info',
     'lien-he.html': 'contact',
     'dang-ky.html': 'contact'
   }[PAGE] || 'index';
