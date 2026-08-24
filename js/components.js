@@ -41,9 +41,9 @@
  <div class="max-w-container w-full mx-auto px-6 md:px-12 flex items-center justify-between">
   <a href="index.html" class="focus-ring flex items-center gap-3 group">
    <img src="img/logo-icon.png" alt="DAWN Kindergarten — Mầm non Bình Minh" class="h-11 w-auto transition-transform duration-500 group-hover:scale-105" style="height:44px; width:auto;">
-   <div class="flex flex-col leading-tight">
-    <span class="font-serif text-base md:text-lg tracking-[0.04em] text-plum font-bold whitespace-nowrap">DAWN KINDERGARTEN</span>
-    <span class="text-[9px] md:text-[10px] tracking-[0.24em] text-forest font-bold uppercase mt-0.5 whitespace-nowrap">Mầm Non Bình Minh</span>
+   <div class="flex flex-col leading-tight items-center">
+    <span class="font-serif text-base md:text-lg tracking-[0.04em] text-plum font-bold whitespace-nowrap text-center">DAWN KINDERGARTEN</span>
+    <span class="text-[9px] md:text-[10px] tracking-[0.24em] text-forest font-bold uppercase mt-0.5 whitespace-nowrap text-center">Mầm Non Bình Minh</span>
    </div>
   </a>
   <nav class="hidden lg:flex items-center gap-7 lg:ml-10">
@@ -71,9 +71,9 @@
    <div class="lg:col-span-2">
     <div class="flex items-center gap-3 mb-6">
      <img src="img/logo-icon-light.png" alt="DAWN Kindergarten — Mầm non Bình Minh" class="h-16 w-auto" style="height:64px; width:auto;">
-     <div class="flex flex-col leading-tight">
-      <span class="font-serif text-xl tracking-[0.04em] text-ivory font-bold whitespace-nowrap">DAWN KINDERGARTEN</span>
-      <span class="text-[11px] tracking-[0.28em] text-gold font-semibold uppercase mt-1 whitespace-nowrap">Mầm Non Bình Minh</span>
+     <div class="flex flex-col leading-tight items-center">
+      <span class="font-serif text-xl tracking-[0.04em] text-ivory font-bold whitespace-nowrap text-center">DAWN KINDERGARTEN</span>
+      <span class="text-[11px] tracking-[0.28em] text-gold font-semibold uppercase mt-1 whitespace-nowrap text-center">Mầm Non Bình Minh</span>
      </div>
     </div>
     <p class="text-ivory/70 text-sm leading-relaxed max-w-sm">
