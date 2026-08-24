@@ -131,7 +131,6 @@
     <ul class="space-y-3.5 text-sm text-ivory/80">
      <li class="flex items-start gap-2.5"><i data-lucide="map-pin" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i><span>Số 75/2A Đường Phạm Hồng Thái, Phường Tam Thắng, TP.HCM</span></li>
      <li class="flex items-center gap-2.5"><i data-lucide="phone" class="w-4 h-4 text-gold shrink-0"></i><span>0866 685 632</span></li>
-     <li class="flex items-center gap-2.5"><i data-lucide="mail" class="w-4 h-4 text-gold shrink-0"></i><span>hello@dawnkindergarten.vn</span></li>
     </ul>
    </div>
   </div>
