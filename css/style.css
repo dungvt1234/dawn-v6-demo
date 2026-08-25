@@ -13,7 +13,7 @@
   --ivory:#F8F7F0;
   --white:#FFFFFF;
   --charcoal:#1F251F;
-  --muted:#667066;
+  --muted:#5A635A;
   --border:#DDE2D8;
   --stats-bg:#E5EBD9;
 }
@@ -86,7 +86,7 @@ h1,h2,h3,.serif{ font-family:'DM Serif Display',serif; font-weight:400; }
   padding:15px 30px;
   transition:transform .35s, box-shadow .35s, background .35s;
 }
-.btn-solid:hover{ transform:translateY(-2px); box-shadow:0 14px 28px -12px rgba(236,171,69,0.55); background:var(--gold); }
+.btn-solid:hover{ transform:translateY(-2px); box-shadow:0 14px 28px -12px rgba(34,61,34,0.45); background:var(--forest); color:var(--ivory); }
 .btn-ghost{
   display:inline-block; border-radius:999px;
   border:1px solid rgba(248,247,240,.4); color:var(--ivory);
@@ -94,6 +94,9 @@ h1,h2,h3,.serif{ font-family:'DM Serif Display',serif; font-weight:400; }
   padding:15px 30px; transition:all .35s;
 }
 .btn-ghost:hover{ background:rgba(248,247,240,.12); }
+
+/* ===== Button hover nâng cấp (v4.1): vàng chanh → xanh rừng ===== */
+.hover-forest:hover{ background:var(--forest); color:var(--ivory); }
 
 /* ===== Cards (v4 editorial rounded) ===== */
 .card{ border-radius:1.75rem; transition:transform .5s cubic-bezier(.22,.61,.36,1), box-shadow .5s ease; }
