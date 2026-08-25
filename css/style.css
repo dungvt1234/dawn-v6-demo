@@ -234,3 +234,11 @@ details.faq p{ margin-top:12px; color:var(--muted); line-height:1.7; font-size:1
 .text-\[color\:var\(--charcoal\)\]\/70,
 .text-\[color\:var\(--charcoal\)\]\/75,
 .text-\[color\:var\(--charcoal\)\]\/80 { color: var(--charcoal); }
+
+/* ===== Grid "Nụ cười mỗi ngày tại trường" (chuong-trinh.html): 10 ảnh 2 hàng ngang =====
+   Ảnh gốc đều 3:4 dọc → mỗi ô aspect 3:4, ảnh cover đầy ô cho đều đặn.
+   Mobile 2 cột × 5 hàng → ≥768px: 5 cột × 2 hàng. */
+.mom-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; }
+.mom-cell{ position:relative; aspect-ratio:3/4; overflow:hidden; border-radius:1.25rem; }
+.mom-cell img{ width:100%; height:100%; object-fit:cover; display:block; }
+@media (min-width:768px){ .mom-grid{ grid-template-columns:repeat(5,1fr); gap:1.25rem; } }
