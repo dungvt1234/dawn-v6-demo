@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dungvt1234.github.io/dawn-v6-demo/sitemap.xml
+Sitemap: https://binhminhkindergarten.site/sitemap.xml
