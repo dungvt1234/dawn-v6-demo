@@ -87,6 +87,8 @@
     }
   ]
 }
+  <!-- ===== SEO: ItemList động (JS fill từ news.json) ===== -->
+  <script type="application/ld+json" id="news-itemlist"></script>
   </script>
 </head>
 <body class="grain">
@@ -170,6 +172,24 @@
  if (grid && Array.isArray(data.news)) {
  const sorted = [...data.news].sort((a, b) => b.date.localeCompare(a.date));
  grid.innerHTML = sorted.map(newsCard).join('\n ');
+ // === SEO: ItemList JSON-LD động ===
+ try {
+  const base = 'https://dungvt1234.github.io/dawn-v6-demo';
+  const itemList = {
+   '@context': 'https://schema.org',
+   '@type': 'ItemList',
+   name: 'Tin tức & Sự kiện Mầm non Bình Minh',
+   numberOfItems: sorted.length,
+   itemListElement: sorted.map((n, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    url: base + '/bai-viet.html?slug=' + encodeURIComponent(n.slug),
+    name: n.title
+   }))
+  };
+  const ldEl = document.getElementById('news-itemlist');
+  if (ldEl) ldEl.textContent = JSON.stringify(itemList);
+ } catch (err) { console.error('Lỗi ItemList JSON-LD:', err); }
  // kích hoạt lại hiệu ứng reveal
  const obs = new IntersectionObserver((entries) => {
  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
