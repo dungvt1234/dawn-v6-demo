@@ -24,7 +24,11 @@ if (fs.existsSync(dir)) {
     if (!f.endsWith('.json')) continue;
     try {
       const data = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
-      if (data && data.title) items.push(data);
+      // GitHub Pages sub-path: ảnh phải dùng đường dẫn tương đối
+      if (data && data.title) {
+        if (data.image && data.image.startsWith('/')) data.image = data.image.replace(/^\/+/,'');
+        items.push(data);
+      }
     } catch (e) {
       console.error('Lỗi đọc ' + f + ': ' + e.message);
     }

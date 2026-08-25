@@ -15,7 +15,7 @@ locale: "vi"
 
 # Nơi lưu ảnh tải lên từ trình soạn thảo
 media_folder: "img/news"
-public_folder: "/img/news"
+public_folder: "img/news"
 
 # Tên hiển thị trong giao diện quản trị
 display_url: https://dungvt1234.github.io/dawn-v6-demo
