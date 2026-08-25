@@ -86,10 +86,10 @@
    <i data-lucide="menu" class="w-7 h-7"></i>
   </button>
  </div>
- <div id="mobile-menu" class="hidden fixed top-[90px] left-0 right-0 bottom-0 bg-ivory border-b border-forest/10 p-6 flex-col gap-4 shadow-2xl lg:hidden overflow-y-auto overscroll-contain z-[100]" style="-webkit-overflow-scrolling:touch;">
+</header>
+<div id="mobile-menu" class="hidden fixed top-[90px] left-0 right-0 bottom-0 bg-ivory border-b border-forest/10 p-6 flex-col gap-4 shadow-2xl lg:hidden overflow-y-auto overscroll-contain z-[100]" style="-webkit-overflow-scrolling:touch;">
   ${mobileLinks}
- </div>
-</header>`;
+ </div>`;
 
   const footerHTML = `
 <footer id="contact" class="bg-plum text-ivory pt-24 pb-12 px-6 md:px-12 mt-12">
