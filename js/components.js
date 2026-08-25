@@ -206,6 +206,17 @@
   // so inject synchronously (before any inline scripts run).
   inject();
 
+  // Auto-close mobile menu when a link is tapped
+  var mobileMenu = document.getElementById('mobile-menu');
+  if (mobileMenu) {
+    mobileMenu.addEventListener('click', function (e) {
+      if (e.target.closest('a')) {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+      }
+    });
+  }
+
   // Floating contact toggle (direct binding — script strings injected via
   // insertAdjacentHTML are not reliably executed)
   var fcRoot = document.getElementById('floating-contact');
