@@ -1,14 +1,13 @@
 # Cấu hình Decap CMS — Mầm non Bình Minh (DAWN Kindergarten)
-# Backend: Netlify Git Gateway — khách đăng nhập bằng email/mật khẩu (Netlify Identity)
+# Backend: GitHub — đăng nhập bằng tài khoản GitHub (OAuth qua oauth.decapcms.org)
 # Mỗi bài viết là 1 file riêng trong data/news/ — dễ thêm/sửa/xoá từng bài
-# Khi deploy, scripts/build-news.js tự gộp tất cả vào data/news.json cho website đọc
+# Khi deploy, GitHub Actions chạy scripts/build-news.js tự gộp vào data/news.json
 
 backend:
-  name: git-gateway
+  name: github
+  repo: dungvt1234/dawn-v6-demo
   branch: main
-  accept_roles:
-    - admin
-    - editor
+  base_url: https://oauth.decapcms.org
 
 # Giao diện tiếng Việt
 locale: "vi"
@@ -18,7 +17,7 @@ media_folder: "img/news"
 public_folder: "/img/news"
 
 # Tên hiển thị trong giao diện quản trị
-display_url: https://relaxed-pothos-440796.netlify.app
+display_url: https://dungvt1234.github.io/dawn-v6-demo
 logo_url: /img/logo.png
 
 collections:

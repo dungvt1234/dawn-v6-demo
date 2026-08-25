@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://relaxed-pothos-440796.netlify.app/sitemap.xml
+Sitemap: https://dungvt1234.github.io/dawn-v6-demo/sitemap.xml
