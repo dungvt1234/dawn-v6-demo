@@ -37,27 +37,6 @@ h1,h2,h3,.serif{ font-family:'DM Serif Display',serif; font-weight:400; }
 ::-webkit-scrollbar-thumb{ background:#C9D3B5; border-radius:4px; }
 ::-webkit-scrollbar-thumb:hover{ background:#223D22; }
 
-/* Ẩn thanh cuộn ngang cho carousel (mobile program) */
-.no-scrollbar{ scrollbar-width:none; -ms-overflow-style:none; }
-.no-scrollbar::-webkit-scrollbar{ display:none; }
-.no-scrollbar > *{ -webkit-overflow-scrolling:touch; }
-
-/* ===== Program carousel mobile (custom CSS — tailwind.css là file build sẵn) ===== */
-.prog-scroll{ display:flex; gap:1.5rem; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none; -ms-overflow-style:none; }
-.prog-scroll::-webkit-scrollbar{ display:none; }
-.prog-card{ width:80%; flex:0 0 auto; scroll-snap-align:center; }
-@media (min-width:640px){ .prog-card{ width:46%; } }
-@media (min-width:1024px){
-  .prog-scroll{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); overflow:visible; gap:1.5rem; scroll-snap-type:none; }
-  .prog-card{ width:auto; flex:none; }
-}
-
-/* ===== Marquee ảnh mobile (class w-40/h-28/h-44 không có trong tailwind.css build) ===== */
-.marquee-track img{ width:10rem; height:7rem; }
-@media (min-width:768px){
-  .marquee-track img{ width:16rem; height:11rem; }
-}
-
 /* ===== Glass header (v4) ===== */
 .glass-header{
   background:rgba(248,247,240,0.85);
