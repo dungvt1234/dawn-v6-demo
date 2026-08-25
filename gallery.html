@@ -8,6 +8,10 @@
 <meta name="description" content="Thư viện ảnh Mầm non Bình Minh: khoảnh khắc vui chơi, học tập và trưởng thành của các bé.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- ===== Phase 3: preload fonts ===== -->
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/dmserifdisplay/v17/-nFnOHM81r4j6k0gjAW3mujVU2B2G_Bx0g.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/bevietnampro/v12/QdVMSTAyLFyeg_IDWvOJmVES_HScJ281Rb0.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/bevietnampro/v12/QdVPSTAyLFyeg_IDWvOJmVES_Hw5BXoKZA.woff2">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="css/style.css">
@@ -580,7 +584,7 @@
 </section>
 <div data-include="footer"></div>
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
- <img id="lightbox-img" src="" alt="Khoảnh khắc tại Mầm non Bình Minh">
+ <img id="lightbox-img" src="" loading="lazy" alt="Khoảnh khắc tại Mầm non Bình Minh">
  <button class="lightbox-close" aria-label="Đóng">✕</button>
 </div>
 <script src="js/components.js"></script>
