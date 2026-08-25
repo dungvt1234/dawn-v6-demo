@@ -18,7 +18,7 @@ media_folder: "img/news"
 public_folder: "img/news"
 
 # Tên hiển thị trong giao diện quản trị
-display_url: https://dungvt1234.github.io/dawn-v6-demo
+display_url: https://binhminhkindergarten.site
 logo_url: /img/logo.png
 
 collections:
