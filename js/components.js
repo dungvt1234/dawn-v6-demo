@@ -23,7 +23,7 @@
       ]
     },
     { href: 'chuong-trinh.html', label: 'CHƯƠNG TRÌNH HỌC', key: 'program' },
-    { href: 'tin-tuc.html', label: 'TIN TỨC', key: 'news' },
+    { href: 'tin-tuc.html', label: 'TIN TỨC & SỰ KIỆN', key: 'news' },
     { href: 'lien-he.html', label: 'LIÊN HỆ', key: 'contact' }
   ];
   const activeKey = {
