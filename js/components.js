@@ -22,7 +22,7 @@
         { href: 'gallery.html', label: 'Thư viện ảnh', key: 'info' }
       ]
     },
-    { href: 'chuong-trinh.html', label: 'CHƯƠNG TRÌNH', key: 'program' },
+    { href: 'chuong-trinh.html', label: 'CHƯƠNG TRÌNH HỌC', key: 'program' },
     { href: 'tin-tuc.html', label: 'TIN TỨC', key: 'news' },
     { href: 'lien-he.html', label: 'LIÊN HỆ', key: 'contact' }
   ];
