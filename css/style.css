@@ -219,3 +219,11 @@ details.faq p{ margin-top:12px; color:var(--muted); line-height:1.7; font-size:1
 .prose-article a{ color:var(--forest); text-decoration:underline; text-underline-offset:3px; }
 .prose-article img{ border-radius:1.25rem; margin:1.5em 0; }
 .prose-article blockquote{ border-left:3px solid var(--gold); padding:.4em 1em; margin:0 0 1.25em; color:var(--muted); font-style:italic; }
+
+/* ===== Fallback: text-[color:var(--charcoal)]/xx (Tailwind không hỗ trợ opacity modifier với arbitrary var()) =====
+   Trên CDN cũ các class này cũng không được generate → text hiển thị charcoal 100% (kế thừa body).
+   Giữ nguyên hành vi đó để giao diện không đổi. */
+.text-\[color\:var\(--charcoal\)\]\/60,
+.text-\[color\:var\(--charcoal\)\]\/70,
+.text-\[color\:var\(--charcoal\)\]\/75,
+.text-\[color\:var\(--charcoal\)\]\/80 { color: var(--charcoal); }
