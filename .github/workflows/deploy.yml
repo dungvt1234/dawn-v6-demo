@@ -1,0 +1,16 @@
+  - name: Setup Node
+    uses: actions/setup-node@v4
+    with:
+      node-version: 20
+
+  - name: Build news
+    run: node scripts/build-news.js
+
+  - name: Deploy to GitHub Pages
+    uses: peaceiris/actions-gh-pages@v4
+    with:
+      github_token: ${{ secrets.GITHUB_TOKEN }}
+      publish_dir: .
+      publish_branch: gh-pages
+      exclude_assets: '.github,netlify.toml'
+      force_orphan: true
