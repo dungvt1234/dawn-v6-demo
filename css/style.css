@@ -17,7 +17,9 @@
   --border:#DDE2D8;
   --stats-bg:#E5EBD9;
 }
-html{ scroll-behavior:smooth; }
+html{ scroll-behavior:smooth; overflow-x:clip; }
+/* overflow-x:clip chặn scroll ngang triệt để (kể cả iOS Safari),
+   không tạo scroll container như overflow-x:hidden */
 body{
   background:var(--ivory);
   color:var(--charcoal);

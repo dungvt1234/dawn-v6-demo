@@ -98,9 +98,9 @@
    <div class="lg:col-span-2">
     <div class="flex items-center gap-3 mb-6">
      <img src="img/logo-icon-light.png" alt="Mầm non Bình Minh" class="h-16 w-auto" style="height:64px; width:auto;">
-     <div class="flex flex-col leading-tight items-center">
-      <span class="font-serif text-xl tracking-[0.04em] text-ivory font-bold whitespace-nowrap text-center">DAWN KINDERGARTEN</span>
-      <span class="text-[11px] tracking-[0.28em] text-gold font-semibold uppercase mt-1 whitespace-nowrap text-center">Mầm Non Bình Minh</span>
+     <div class="flex flex-col leading-tight items-center min-w-0">
+      <span class="font-serif text-base md:text-xl tracking-[0.04em] text-ivory font-bold whitespace-nowrap text-center">DAWN KINDERGARTEN</span>
+      <span class="text-[10px] md:text-[11px] tracking-[0.28em] text-gold font-semibold uppercase mt-1 whitespace-nowrap text-center">Mầm Non Bình Minh</span>
      </div>
     </div>
     <p class="text-ivory/70 text-sm leading-relaxed max-w-sm">
