@@ -62,11 +62,21 @@
   }).join('\n ');
 
   const mobileLinks = NAV.map(n => {
-    const base = `<a href="${n.href}" class="text-base font-semibold py-2 border-b border-forest/5 focus-ring${activeKey === n.key ? ' text-plum' : ' text-charcoal'}" style="${activeKey === n.key ? 'color:var(--plum);' : 'color:var(--charcoal);'}">${n.label}</a>`;
     if (n.children) {
-      return base + n.children.map(c => `<a href="${c.href}" class="text-sm font-medium pl-6 py-2 border-b border-forest/5 focus-ring ${PAGE === c.href ? 'text-plum' : 'text-charcoal/70'}" style="${PAGE === c.href ? 'color:var(--plum);' : 'color:var(--charcoal);'}">→ ${c.label}</a>`).join('\n ');
+      const hasActiveChild = n.children.some(c => PAGE === c.href);
+      const isActive = activeKey === n.key || hasActiveChild;
+      return `
+ <div class="border-b border-forest/5">
+  <button type="button" class="mobile-nav-toggle w-full flex items-center justify-between gap-2 py-3 text-left focus-ring" aria-expanded="${hasActiveChild ? 'true' : 'false'}" aria-controls="mobile-sub-${n.key}">
+   <span class="text-base font-semibold${isActive ? ' text-plum' : ' text-charcoal'}" style="${isActive ? 'color:var(--plum);' : 'color:var(--charcoal);'}">${n.label}</span>
+   <i data-lucide="chevron-down" class="w-4 h-4 shrink-0 transition-transform duration-300${hasActiveChild ? ' rotate-180' : ''}" style="color:var(--muted);"></i>
+  </button>
+  <div id="mobile-sub-${n.key}" class="${hasActiveChild ? '' : 'hidden'} pl-4 pb-3 flex flex-col gap-1">
+   ${n.children.map(c => `<a href="${c.href}" class="text-sm font-medium py-2 px-3 rounded-lg focus-ring ${PAGE === c.href ? 'text-plum bg-forest/5 font-bold' : 'text-charcoal/70'}" style="${PAGE === c.href ? 'color:var(--plum);' : 'color:var(--charcoal);'}">${c.label}</a>`).join('\n   ')}
+  </div>
+ </div>`;
     }
-    return base;
+    return `<a href="${n.href}" class="block text-base font-semibold py-3 border-b border-forest/5 focus-ring${activeKey === n.key ? ' text-plum' : ' text-charcoal'}" style="${activeKey === n.key ? 'color:var(--plum);' : 'color:var(--charcoal);'}">${n.label}</a>`;
   }).join('\n ');
 
   const headerHTML = `
@@ -216,6 +226,18 @@
       }
     });
   }
+
+  // Mobile accordion submenus: click parent to open/close dropdown
+  document.querySelectorAll('.mobile-nav-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var target = document.getElementById(btn.getAttribute('aria-controls'));
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      var icon = btn.querySelector('[data-lucide="chevron-down"]');
+      if (icon) icon.classList.toggle('rotate-180');
+      if (target) target.classList.toggle('hidden');
+    });
+  });
 
   // Floating contact toggle (direct binding — script strings injected via
   // insertAdjacentHTML are not reliably executed)
