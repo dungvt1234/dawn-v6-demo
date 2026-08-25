@@ -76,7 +76,7 @@
  <div class="card p-8 md:p-12 reveal" style="background:var(--white);">
  <p class="eyebrow" style="color:var(--gold);">MẪU ĐĂNG KÝ</p>
  <h2 class="serif text-[28px] md:text-[36px] leading-[1.15] mt-3" style="color:var(--plum);">Thông tin gia đình</h2>
- <form class="mt-9 space-y-6" onsubmit="alert('Đăng ký thành công! Mầm non Bình Minh sẽ liên hệ anh/chị để xác nhận lịch tham quan.'); this.reset(); return false;">
+ <form class="mt-9 space-y-6 js-zalo-form" novalidate>
  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
  <div><label class="label" for="pname">Họ tên phụ huynh *</label><input class="field" id="pname" required placeholder="Họ và tên"></div>
  <div><label class="label" for="pphone">Số điện thoại *</label><input class="field" id="pphone" required type="tel" placeholder="0xx xxx xxxx"></div>
@@ -136,5 +136,6 @@
  menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); mobileMenu.classList.toggle('flex'); });
  }
 </script>
+<script src="js/zalo-modal.js"></script>
 </body>
 </html>
