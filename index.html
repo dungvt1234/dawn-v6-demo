@@ -117,8 +117,8 @@
      <div class="lg:hidden">
 
      <!-- MỘT KHỐI DUY NHẤT: ảnh nền cover + overlay xanh bán trong suốt + typography TRÊN ảnh -->
-     <!-- min-h 560px (thay vì 720px): đủ chỗ cho nội dung nhưng vừa màn hình ngắn (iPhone SE 667px) -->
-     <div class="relative w-full overflow-hidden rounded-[32px] aspect-[3/4] min-h-[560px] bg-forest">
+     <!-- min-h 440px: gọn hơn trên mobile, vừa màn hình, không ngốn hết viewport -->
+     <div class="relative w-full overflow-hidden rounded-[32px] aspect-[3/4] min-h-[440px] bg-forest">
 
        <!-- LỚP 1: Full-bleed background image (cover, center) -->
        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -129,13 +129,13 @@
        style="background: linear-gradient(180deg, rgba(24,61,34,0.25) 0%, rgba(24,61,34,0.48) 42%, rgba(24,61,34,0.82) 100%);"></div>
 
        <!-- LỚP 3: Content nằm TRÊN ảnh + overlay, ở phần thấp của khối -->
-       <div class="relative z-[2] flex flex-col justify-end w-full h-full px-6 md:px-10 pb-7 md:pb-12 pt-16 md:pt-24 text-white">
+       <div class="relative z-[2] flex flex-col justify-end w-full h-full px-6 md:px-10 pb-6 md:pb-12 pt-10 md:pt-24 text-white">
 
        <span data-aos="fade-up" data-aos-delay="100" data-aos-duration="800" class="inline-block text-chartreuse border border-chartreuse/30 px-4 py-1.5 rounded-full text-[11px] uppercase tracking-[0.15em] font-semibold mb-5 w-fit">
        MẦM NON BÌNH MINH — Grow with Nature
        </span>
 
-       <h2 data-aos="fade-up" data-aos-delay="180" data-aos-duration="900" class="font-serif text-[34px] sm:text-[42px] md:text-[46px] leading-[1.04] tracking-[-0.02em] font-normal mb-5 text-white">
+       <h2 data-aos="fade-up" data-aos-delay="180" data-aos-duration="900" class="font-serif text-[30px] sm:text-[42px] md:text-[46px] leading-[1.06] tracking-[-0.02em] font-normal mb-4 text-white">
        Nơi khởi đầu cho <br />
        <span class="italic font-light text-chartreuse">những bước chân đầu đời</span>
        </h2>
@@ -145,7 +145,7 @@
        </p>
 
        <div data-aos="fade-up" data-aos-delay="350" data-aos-duration="900" class="flex flex-col gap-4">
-       <a href="gioi-thieu.html" class="flex items-center justify-between w-full h-14 md:h-[60px] px-7 bg-[#E7E66A] hover-forest text-[#183D22] font-bold text-xs uppercase tracking-[0.08em] rounded-full transition-all duration-300 active:scale-[0.98] hover:shadow-2xl">
+       <a href="gioi-thieu.html" class="flex items-center justify-between w-full h-12 md:h-[60px] px-6 bg-[#E7E66A] hover-forest text-[#183D22] font-bold text-xs uppercase tracking-[0.08em] rounded-full transition-all duration-300 active:scale-[0.98] hover:shadow-2xl">
          <span>Khám Phá Mầm non Bình Minh</span>
          <span class="w-8 h-8 rounded-full bg-[#183D22]/10 flex items-center justify-center shrink-0">
          <i data-lucide="arrow-right" class="w-4 h-4"></i>
@@ -207,39 +207,39 @@
   <!-- ================= CORE VALUES ================= -->
   <!-- Cách hero một khoảng rõ ràng (mt-8/12) — không còn chồng sát -->
   <section class="px-7 md:px-8 mt-8 md:mt-12 relative z-20">
-   <div class="max-w-container mx-auto bg-forest rounded-3xl p-8 md:p-14 text-white shadow-2xl border border-white/10" data-aos="fade-up" data-aos-duration="1000">
-     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
+   <div class="max-w-container mx-auto bg-forest rounded-3xl p-6 md:p-14 text-white shadow-2xl border border-white/10" data-aos="fade-up" data-aos-duration="1000">
+     <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-8 md:gap-10">
 
      <div class="flex flex-col items-start group">
-       <div class="p-3 bg-white/5 rounded-2xl mb-4 group-hover:bg-chartreuse/20 transition-colors">
-       <i data-lucide="heart" class="w-7 h-7 text-chartreuse stroke-[1.5]"></i>
+       <div class="p-2.5 bg-white/5 rounded-2xl mb-3 group-hover:bg-chartreuse/20 transition-colors">
+       <i data-lucide="heart" class="w-6 h-6 text-chartreuse stroke-[1.5]"></i>
        </div>
-       <h3 class="font-sans font-bold text-sm tracking-[0.1em] uppercase text-chartreuse mb-2">YÊU THƯƠNG</h3>
-       <p class="text-xs md:text-sm text-ivory/80 leading-relaxed">Nuôi dưỡng trẻ bằng tình yêu thương, sự thấu hiểu và lòng trắc ẩn mỗi ngày.</p>
+       <h3 class="font-sans font-bold text-[13px] tracking-[0.08em] uppercase text-chartreuse mb-1.5">YÊU THƯƠNG</h3>
+       <p class="text-[13px] md:text-sm text-ivory/80 leading-relaxed">Nuôi dưỡng trẻ bằng tình yêu thương, sự thấu hiểu và lòng trắc ẩn mỗi ngày.</p>
      </div>
 
-     <div class="flex flex-col items-start pt-6 sm:pt-0 sm:pl-8 group">
-       <div class="p-3 bg-white/5 rounded-2xl mb-4 group-hover:bg-chartreuse/20 transition-colors">
-       <i data-lucide="handshake" class="w-7 h-7 text-chartreuse stroke-[1.5]"></i>
+     <div class="flex flex-col items-start group">
+       <div class="p-2.5 bg-white/5 rounded-2xl mb-3 group-hover:bg-chartreuse/20 transition-colors">
+       <i data-lucide="handshake" class="w-6 h-6 text-chartreuse stroke-[1.5]"></i>
        </div>
-       <h3 class="font-sans font-bold text-sm tracking-[0.1em] uppercase text-chartreuse mb-2">TÔN TRỌNG</h3>
-       <p class="text-xs md:text-sm text-ivory/80 leading-relaxed">Lắng nghe và tôn trọng cá tính, nhịp phát triển riêng của từng trẻ.</p>
+       <h3 class="font-sans font-bold text-[13px] tracking-[0.08em] uppercase text-chartreuse mb-1.5">TÔN TRỌNG</h3>
+       <p class="text-[13px] md:text-sm text-ivory/80 leading-relaxed">Lắng nghe và tôn trọng cá tính, nhịp phát triển riêng của từng trẻ.</p>
      </div>
 
-     <div class="flex flex-col items-start pt-6 sm:pt-0 sm:pl-8 group">
-       <div class="p-3 bg-white/5 rounded-2xl mb-4 group-hover:bg-chartreuse/20 transition-colors">
-       <i data-lucide="shield-check" class="w-7 h-7 text-chartreuse stroke-[1.5]"></i>
+     <div class="flex flex-col items-start group">
+       <div class="p-2.5 bg-white/5 rounded-2xl mb-3 group-hover:bg-chartreuse/20 transition-colors">
+       <i data-lucide="shield-check" class="w-6 h-6 text-chartreuse stroke-[1.5]"></i>
        </div>
-       <h3 class="font-sans font-bold text-sm tracking-[0.1em] uppercase text-chartreuse mb-2">AN TOÀN</h3>
-       <p class="text-xs md:text-sm text-ivory/80 leading-relaxed">Môi trường an toàn, lành mạnh và truyền cảm hứng mỗi ngày.</p>
+       <h3 class="font-sans font-bold text-[13px] tracking-[0.08em] uppercase text-chartreuse mb-1.5">AN TOÀN</h3>
+       <p class="text-[13px] md:text-sm text-ivory/80 leading-relaxed">Môi trường an toàn, lành mạnh và truyền cảm hứng mỗi ngày.</p>
      </div>
 
-     <div class="flex flex-col items-start pt-6 sm:pt-0 sm:pl-8 group">
-       <div class="p-3 bg-white/5 rounded-2xl mb-4 group-hover:bg-chartreuse/20 transition-colors">
-       <i data-lucide="sprout" class="w-7 h-7 text-chartreuse stroke-[1.5]"></i>
+     <div class="flex flex-col items-start group">
+       <div class="p-2.5 bg-white/5 rounded-2xl mb-3 group-hover:bg-chartreuse/20 transition-colors">
+       <i data-lucide="sprout" class="w-6 h-6 text-chartreuse stroke-[1.5]"></i>
        </div>
-       <h3 class="font-sans font-bold text-sm tracking-[0.1em] uppercase text-chartreuse mb-2">PHÁT TRIỂN</h3>
-       <p class="text-xs md:text-sm text-ivory/80 leading-relaxed">Đồng hành phát triển toàn diện thể chất, trí tuệ và cảm xúc.</p>
+       <h3 class="font-sans font-bold text-[13px] tracking-[0.08em] uppercase text-chartreuse mb-1.5">PHÁT TRIỂN</h3>
+       <p class="text-[13px] md:text-sm text-ivory/80 leading-relaxed">Đồng hành phát triển toàn diện thể chất, trí tuệ và cảm xúc.</p>
      </div>
 
      </div>
@@ -247,25 +247,25 @@
   </section>
 
   <!-- ================= ABOUT MẦM NON BÌNH MINH ================= -->
-  <section id="about" class="py-28 px-6 md:px-12 bg-ivory relative overflow-hidden">
+  <section id="about" class="py-14 md:py-28 px-6 md:px-12 bg-ivory relative overflow-hidden">
    <!-- Botanical Background Accent Left -->
    <svg class="absolute top-12 left-0 w-64 h-64 opacity-15 pointer-events-none text-sage" fill="currentColor" viewBox="0 0 100 100">
      <path d="M50 0 C20 30 20 70 50 100 C80 70 80 30 50 0 Z"/>
    </svg>
 
    <div class="max-w-container mx-auto relative z-10">
-     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
 
      <div data-aos="fade-right" data-aos-duration="1000">
        <span class="text-xs font-bold tracking-[0.18em] uppercase text-plum mb-3 block">VỀ MẦM NON BÌNH MINH</span>
-       <h2 class="font-serif text-[38px] md:text-[50px] leading-[1.1] text-forest font-normal mb-6">
+       <h2 class="font-serif text-[30px] md:text-[50px] leading-[1.12] text-forest font-normal mb-5">
        Chúng tôi tin rằng mỗi đứa trẻ đều là một thế giới riêng biệt
        </h2>
-       <p class="text-charcoal/80 text-base md:text-lg leading-relaxed mb-8">
+       <p class="text-charcoal/80 text-base md:text-lg leading-relaxed mb-6">
        Tại Mầm non Bình Minh, chúng tôi tạo ra một môi trường học tập ấm áp, nơi trẻ được là chính mình, được yêu thương và phát triển theo cách tự nhiên nhất.
        </p>
 
-       <ul class="space-y-4 mb-10">
+       <ul class="space-y-3 mb-8">
        <li class="flex items-center gap-3.5">
          <i data-lucide="check-circle-2" class="w-5 h-5 text-chartreuse fill-forest shrink-0"></i>
          <span class="text-sm md:text-base font-semibold text-charcoal">Chương trình học hiện đại, lấy trẻ làm trung tâm</span>
@@ -303,21 +303,22 @@
   </section>
 
   <!-- ================= PROGRAM SECTION ================= -->
-  <section id="program" class="py-28 px-6 md:px-12 bg-white">
-   <div class="max-w-container mx-auto"><div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+  <section id="program" class="py-14 md:py-28 px-6 md:px-12 bg-white">
+   <div class="max-w-container mx-auto"><div class="text-center max-w-2xl mx-auto mb-8 md:mb-16" data-aos="fade-up">
      <span class="text-xs font-bold tracking-[0.18em] uppercase text-plum mb-3 block">CHƯƠNG TRÌNH HỌC</span>
-     <h2 class="font-serif text-[38px] md:text-[50px] leading-[1.1] text-forest font-normal">
+     <h2 class="font-serif text-[28px] md:text-[50px] leading-[1.12] text-forest font-normal">
      Mỗi ngày đến trường là một hành trình khám phá
      </h2>
    </div>
 
-   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-     <div data-aos="fade-up" data-aos-delay="100" class="relative rounded-3xl overflow-hidden min-h-[320px] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
+   <!-- Mobile: vuốt ngang (snap) | Desktop: grid 4 cột -->
+   <div class="prog-scroll pb-2 lg:pb-0">
+     <div data-aos="fade-up" data-aos-delay="100" class="prog-card relative rounded-3xl overflow-hidden min-h-[280px] lg:min-h-[320px] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
      <!-- Ảnh nền full card -->
      <img src="img/program-1.webp" loading="lazy" alt="Học qua trải nghiệm" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
      <!-- Overlay xanh bán trong suốt: trên nhạt để thấy ảnh rõ, dưới đậm cho chữ dễ đọc -->
      <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(24,61,34,0.18) 0%, rgba(24,61,34,0.55) 55%, rgba(24,61,34,0.94) 100%);"></div>
-     <div class="relative z-[2] flex flex-col justify-between h-full min-h-[320px] p-9">
+     <div class="relative z-[2] flex flex-col justify-between h-full min-h-[280px] lg:min-h-[320px] p-7 lg:p-9">
        <span class="font-serif text-4xl font-light text-chartreuse group-hover:scale-110 transition-transform origin-left inline-block overlay-num">01</span>
        <div>
        <h3 class="font-sans font-bold text-base leading-snug tracking-wider uppercase text-white overlay-text">HỌC QUA TRẢI NGHIỆM</h3>
@@ -326,12 +327,12 @@
      </div>
      </div>
 
-     <div data-aos="fade-up" data-aos-delay="200" class="relative rounded-3xl overflow-hidden min-h-[320px] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
+     <div data-aos="fade-up" data-aos-delay="200" class="prog-card relative rounded-3xl overflow-hidden min-h-[280px] lg:min-h-[320px] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
      <!-- Ảnh nền full card -->
      <img src="img/program-2.webp" loading="lazy" alt="Phát triển ngôn ngữ" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
      <!-- Overlay xanh bán trong suốt -->
      <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(24,61,34,0.18) 0%, rgba(24,61,34,0.55) 55%, rgba(24,61,34,0.94) 100%);"></div>
-     <div class="relative z-[2] flex flex-col justify-between h-full min-h-[320px] p-9">
+     <div class="relative z-[2] flex flex-col justify-between h-full min-h-[280px] lg:min-h-[320px] p-7 lg:p-9">
        <span class="font-serif text-4xl font-light text-chartreuse group-hover:scale-110 transition-transform origin-left inline-block overlay-num">02</span>
        <div>
        <h3 class="font-sans font-bold text-base leading-snug tracking-wider uppercase text-white overlay-text">PHÁT TRIỂN NGÔN NGỮ</h3>
@@ -340,12 +341,12 @@
      </div>
      </div>
 
-     <div data-aos="fade-up" data-aos-delay="300" class="relative rounded-3xl overflow-hidden min-h-[320px] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
+     <div data-aos="fade-up" data-aos-delay="300" class="prog-card relative rounded-3xl overflow-hidden min-h-[280px] lg:min-h-[320px] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
      <!-- Ảnh nền full card -->
      <img src="img/program-3.webp" loading="lazy" alt="Nghệ thuật và sáng tạo" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
      <!-- Overlay xanh bán trong suốt -->
      <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(24,61,34,0.18) 0%, rgba(24,61,34,0.55) 55%, rgba(24,61,34,0.94) 100%);"></div>
-     <div class="relative z-[2] flex flex-col justify-between h-full min-h-[320px] p-9">
+     <div class="relative z-[2] flex flex-col justify-between h-full min-h-[280px] lg:min-h-[320px] p-7 lg:p-9">
        <span class="font-serif text-4xl font-light text-chartreuse group-hover:scale-110 transition-transform origin-left inline-block overlay-num">03</span>
        <div>
        <h3 class="font-sans font-bold text-base leading-snug tracking-wider uppercase text-white overlay-text">NGHỆ THUẬT & SÁNG TẠO</h3>
@@ -354,12 +355,12 @@
      </div>
      </div>
 
-     <div data-aos="fade-up" data-aos-delay="400" class="relative rounded-3xl overflow-hidden min-h-[320px] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
+     <div data-aos="fade-up" data-aos-delay="400" class="prog-card relative rounded-3xl overflow-hidden min-h-[280px] lg:min-h-[320px] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
      <!-- Ảnh nền full card -->
      <img src="img/program-4.webp" loading="lazy" alt="Thể chất và thiên nhiên" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
      <!-- Overlay xanh bán trong suốt -->
      <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(24,61,34,0.18) 0%, rgba(24,61,34,0.55) 55%, rgba(24,61,34,0.94) 100%);"></div>
-     <div class="relative z-[2] flex flex-col justify-between h-full min-h-[320px] p-9">
+     <div class="relative z-[2] flex flex-col justify-between h-full min-h-[280px] lg:min-h-[320px] p-7 lg:p-9">
        <span class="font-serif text-4xl font-light text-chartreuse group-hover:scale-110 transition-transform origin-left inline-block overlay-num">04</span>
        <div>
        <h3 class="font-sans font-bold text-base leading-snug tracking-wider uppercase text-white overlay-text">THỂ CHẤT & THIÊN NHIÊN</h3>
@@ -369,7 +370,7 @@
      </div>
    </div>
 
-   <div class="text-center mt-14">
+   <div class="text-center mt-6 md:mt-14">
      <a href="chuong-trinh.html" class="inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-widest text-forest hover:text-plum transition-colors">
      Xem Toàn Bộ Chương Trình <i data-lucide="arrow-right" class="w-4 h-4"></i>
      </a>
@@ -379,356 +380,357 @@
   </section>
 
   <!-- ================= CAMPUS / GALLERY (EDITORIAL MASONRY) ================= -->
-  <section id="gallery" class="py-28 px-6 md:px-12 bg-ivory">
+  <section id="gallery" class="py-14 md:py-28 px-6 md:px-12 bg-ivory">
    <div class="max-w-container mx-auto">
 
-     <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6" data-aos="fade-up">
+     <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4" data-aos="fade-up">
      <div>
        <span class="text-xs font-bold tracking-[0.18em] uppercase text-plum mb-3 block">KHÔNG GIAN & HOẠT ĐỘNG</span>
-       <h2 class="font-serif text-[38px] md:text-[48px] text-forest font-normal">Khoảnh khắc tại Mầm non Bình Minh</h2>
+       <h2 class="font-serif text-[28px] md:text-[48px] text-forest font-normal">Khoảnh khắc tại Mầm non Bình Minh</h2>
      </div><a href="gallery.html" class="text-xs font-bold uppercase tracking-widest text-forest hover:text-plum flex items-center gap-2 group">
        Xem Tất Cả Ảnh <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
      </a>
      </div>
 
      <!-- Marquee motion: 2 hàng 151 ảnh chạy liên tục ngược chiều -->
-     <div class="marquee-wrap rounded-4xl overflow-hidden bg-white shadow-lg py-6 md:py-8 space-y-5">
+     <div class="marquee-wrap rounded-4xl overflow-hidden bg-white shadow-lg py-4 md:py-8 space-y-3 md:space-y-5">
      <!-- Hàng 1: moment-01 → 76, chạy trái -->
      <div class="marquee-track marquee-left">
 <div class="flex gap-4 px-2 shrink-0">
-<img src="img/moment-thumb/moment-01.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-02.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-03.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-04.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-05.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-06.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-07.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-08.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-09.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-10.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-11.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-12.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-13.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-14.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-15.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-16.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-17.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-18.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-19.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-20.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-21.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-22.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-23.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-24.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-25.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-26.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-27.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-28.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-29.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-30.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-31.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-32.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-33.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-34.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-35.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-36.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-37.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-38.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-39.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-40.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-41.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-42.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-43.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-44.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-45.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-46.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-47.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-48.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-49.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-50.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-51.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-52.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-53.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-54.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-55.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-56.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-57.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-58.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-59.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-60.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-61.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-62.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-63.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-64.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-65.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-66.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-67.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-68.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-69.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-70.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-71.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-72.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-73.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-74.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-75.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-76.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-01.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-02.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-03.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-04.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-05.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-06.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-07.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-08.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-09.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-10.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-11.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-12.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-13.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-14.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-15.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-16.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-17.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-18.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-19.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-20.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-21.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-22.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-23.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-24.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-25.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-26.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-27.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-28.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-29.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-30.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-31.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-32.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-33.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-34.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-35.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-36.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-37.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-38.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-39.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-40.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-41.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-42.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-43.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-44.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-45.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-46.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-47.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-48.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-49.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-50.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-51.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-52.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-53.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-54.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-55.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-56.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-57.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-58.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-59.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-60.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-61.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-62.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-63.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-64.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-65.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-66.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-67.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-68.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-69.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-70.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-71.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-72.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-73.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-74.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-75.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-76.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
 </div>
 <div class="flex gap-4 px-2 shrink-0" aria-hidden="true">
-<img src="img/moment-thumb/moment-01.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-02.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-03.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-04.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-05.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-06.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-07.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-08.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-09.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-10.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-11.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-12.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-13.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-14.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-15.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-16.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-17.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-18.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-19.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-20.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-21.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-22.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-23.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-24.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-25.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-26.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-27.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-28.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-29.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-30.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-31.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-32.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-33.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-34.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-35.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-36.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-37.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-38.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-39.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-40.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-41.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-42.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-43.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-44.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-45.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-46.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-47.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-48.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-49.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-50.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-51.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-52.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-53.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-54.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-55.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-56.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-57.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-58.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-59.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-60.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-61.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-62.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-63.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-64.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-65.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-66.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-67.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-68.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-69.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-70.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-71.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-72.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-73.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-74.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-75.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-76.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-01.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-02.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-03.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-04.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-05.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-06.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-07.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-08.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-09.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-10.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-11.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-12.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-13.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-14.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-15.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-16.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-17.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-18.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-19.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-20.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-21.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-22.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-23.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-24.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-25.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-26.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-27.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-28.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-29.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-30.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-31.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-32.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-33.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-34.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-35.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-36.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-37.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-38.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-39.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-40.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-41.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-42.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-43.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-44.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-45.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-46.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-47.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-48.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-49.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-50.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-51.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-52.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-53.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-54.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-55.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-56.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-57.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-58.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-59.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-60.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-61.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-62.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-63.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-64.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-65.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-66.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-67.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-68.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-69.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-70.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-71.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-72.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-73.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-74.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-75.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-76.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
 </div>
      </div>
      <!-- Hàng 2: moment-77 → 151, chạy phải (ngược chiều) -->
      <div class="marquee-track marquee-right">
 <div class="flex gap-4 px-2 shrink-0">
-<img src="img/moment-thumb/moment-77.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-78.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-79.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-80.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-81.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-82.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-83.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-84.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-85.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-86.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-87.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-88.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-89.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-90.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-91.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-92.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-93.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-94.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-95.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-96.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-97.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-98.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-99.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-100.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-101.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-102.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-103.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-104.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-105.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-106.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-107.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-108.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-109.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-110.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-111.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-112.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-113.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-114.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-115.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-116.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-117.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-118.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-119.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-120.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-121.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-122.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-123.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-124.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-125.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-126.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-127.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-128.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-129.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-130.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-131.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-132.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-133.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-134.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-135.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-136.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-137.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-138.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-139.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-140.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-141.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-142.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-143.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-144.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-145.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-146.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-147.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-148.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-149.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-150.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-151.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-77.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-78.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-79.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-80.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-81.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-82.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-83.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-84.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-85.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-86.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-87.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-88.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-89.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-90.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-91.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-92.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-93.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-94.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-95.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-96.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-97.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-98.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-99.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-100.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-101.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-102.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-103.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-104.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-105.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-106.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-107.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-108.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-109.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-110.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-111.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-112.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-113.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-114.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-115.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-116.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-117.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-118.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-119.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-120.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-121.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-122.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-123.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-124.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-125.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-126.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-127.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-128.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-129.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-130.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-131.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-132.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-133.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-134.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-135.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-136.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-137.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-138.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-139.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-140.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-141.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-142.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-143.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-144.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-145.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-146.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-147.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-148.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-149.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-150.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-151.webp" alt="Khoảnh khắc tại Mầm non Bình Minh" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
 </div>
 <div class="flex gap-4 px-2 shrink-0" aria-hidden="true">
-<img src="img/moment-thumb/moment-77.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-78.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-79.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-80.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-81.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-82.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-83.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-84.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-85.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-86.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-87.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-88.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-89.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-90.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-91.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-92.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-93.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-94.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-95.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-96.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-97.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-98.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-99.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-100.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-101.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-102.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-103.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-104.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-105.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-106.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-107.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-108.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-109.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-110.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-111.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-112.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-113.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-114.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-115.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-116.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-117.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-118.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-119.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-120.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-121.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-122.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-123.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-124.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-125.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-126.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-127.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-128.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-129.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-130.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-131.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-132.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-133.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-134.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-135.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-136.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-137.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-138.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-139.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-140.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-141.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-142.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-143.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-144.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-145.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-146.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-147.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-148.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-149.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-150.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
-<img src="img/moment-thumb/moment-151.webp" alt="" loading="lazy" class="w-52 md:w-64 h-40 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-77.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-78.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-79.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-80.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-81.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-82.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-83.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-84.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-85.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-86.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-87.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-88.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-89.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-90.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-91.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-92.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-93.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-94.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-95.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-96.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-97.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-98.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-99.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-100.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-101.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-102.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-103.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-104.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-105.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-106.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-107.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-108.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-109.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-110.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-111.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-112.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-113.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-114.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-115.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-116.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-117.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-118.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-119.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-120.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-121.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-122.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-123.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-124.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-125.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-126.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-127.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-128.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-129.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-130.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-131.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-132.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-133.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-134.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-135.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-136.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-137.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-138.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-139.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-140.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-141.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-142.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-143.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-144.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-145.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-146.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-147.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-148.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-149.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-150.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
+<img src="img/moment-thumb/moment-151.webp" alt="" loading="lazy" class="w-40 md:w-64 h-28 md:h-44 object-cover rounded-2xl shrink-0">
 </div>
      </div>
      </div>
+  </section>
 
   <!-- ================= STATISTICS ================= -->
-  <section class="py-20 px-6 md:px-12 bg-stats-bg">
+  <section class="py-12 md:py-20 px-6 md:px-12 bg-stats-bg">
    <div class="max-w-container mx-auto">
-     <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center" data-aos="zoom-in" data-aos-duration="800">
+     <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-8 text-center" data-aos="zoom-in" data-aos-duration="800">
      <div class="flex flex-col items-center">
-       <span class="font-serif text-[48px] sm:text-[64px] text-forest leading-none font-normal mb-2">100+</span>
+       <span class="font-serif text-[40px] sm:text-[64px] text-forest leading-none font-normal mb-2">100+</span>
        <span class="text-xs font-bold tracking-[0.12em] text-charcoal/70 uppercase">HỌC SINH</span>
      </div>
      <div class="flex flex-col items-center">
-       <span class="font-serif text-[48px] sm:text-[64px] text-forest leading-none font-normal mb-2">10+</span>
+       <span class="font-serif text-[40px] sm:text-[64px] text-forest leading-none font-normal mb-2">10+</span>
        <span class="text-xs font-bold tracking-[0.12em] text-charcoal/70 uppercase">GIÁO VIÊN</span>
      </div>
      <div class="flex flex-col items-center">
-       <span class="font-serif text-[48px] sm:text-[64px] text-forest leading-none font-normal mb-2">10+</span>
+       <span class="font-serif text-[40px] sm:text-[64px] text-forest leading-none font-normal mb-2">10+</span>
        <span class="text-xs font-bold tracking-[0.12em] text-charcoal/70 uppercase">CHƯƠNG TRÌNH</span>
      </div>
      <div class="flex flex-col items-center">
-       <span class="font-serif text-[48px] sm:text-[64px] text-forest leading-none font-normal mb-2">700<span class="font-sans text-3xl font-light" style="color:var(--gold-strong)">m²</span></span>
+       <span class="font-serif text-[40px] sm:text-[64px] text-forest leading-none font-normal mb-2">700<span class="font-sans text-3xl font-light" style="color:var(--gold-strong)">m²</span></span>
        <span class="text-xs font-bold tracking-[0.12em] text-charcoal/70 uppercase">KHUÔN VIÊN</span>
      </div>
      </div>
@@ -736,41 +738,43 @@
   </section>
 
   <!-- ================= TESTIMONIAL ================= -->
-  <section class="py-28 px-6 md:px-12 bg-ivory">
+  <section class="py-14 md:py-28 px-6 md:px-12 bg-ivory">
    <div class="max-w-container mx-auto max-w-4xl text-center" data-aos="fade-up">
-     <span class="text-xs font-bold tracking-[0.18em] uppercase text-plum mb-6 block">ĐIỀU PHỤ HUYNH NÓI VỀ MẦM NON BÌNH MINH</span>
-     <blockquote class="font-serif text-[30px] sm:text-[40px] md:text-[46px] text-forest leading-[1.2] font-normal italic mb-10">
+     <span class="text-xs font-bold tracking-[0.18em] uppercase text-plum mb-5 block">ĐIỀU PHỤ HUYNH NÓI VỀ MẦM NON BÌNH MINH</span>
+     <blockquote class="font-serif text-[24px] sm:text-[40px] md:text-[46px] text-forest leading-[1.25] font-normal italic mb-8">
      “Điều chúng tôi yêu thích nhất ở Mầm non Bình Minh là con được tôn trọng, được khuyến khích khám phá và luôn cảm thấy vui vẻ khi đến trường.”
      </blockquote>
    </div>
   </section>
 
   <!-- ================= NEWS ================= -->
-  <section id="news" class="py-24 md:py-28 bg-sage">
+  <section id="news" class="py-14 md:py-28 bg-sage">
    <div class="max-w-container mx-auto px-6 md:px-12">
      <div class="flex flex-wrap items-end justify-between gap-6" data-aos="fade-up">
      <div class="max-w-[560px]">
        <span class="text-xs font-bold tracking-[0.18em] uppercase text-forest mb-3 block">TIN TỨC & SỰ KIỆN</span>
-       <h2 class="font-serif text-[32px] md:text-[44px] leading-[1.12] text-forest">Chuyện của Mầm non Bình Minh mỗi tuần</h2>
+       <h2 class="font-serif text-[26px] md:text-[44px] leading-[1.15] text-forest">Chuyện của Mầm non Bình Minh mỗi tuần</h2>
      </div>
      <a href="tin-tuc.html" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-forest hover:text-plum transition-colors">
        Xem Tất Cả Tin Tức <i data-lucide="arrow-right" class="w-4 h-4"></i>
      </a>
      </div>
-     <div id="home-news" class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+     <div id="home-news" class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
      <!-- 3 bài mới nhất được tải động từ data/news.json -->
      </div>
+   </div>
+  </section>
 
   <!-- ================= CTA SECTION ================= -->
   <section class="px-4 md:px-8 py-8" id="register">
-   <div class="max-w-container mx-auto bg-forest rounded-4xl p-12 md:p-24 text-center text-white relative overflow-hidden shadow-2xl" data-aos="fade-up" data-aos-duration="1000">
+   <div class="max-w-container mx-auto bg-forest rounded-4xl p-8 md:p-24 text-center text-white relative overflow-hidden shadow-2xl" data-aos="fade-up" data-aos-duration="1000">
      <div class="relative z-10 max-w-2xl mx-auto">
-     <h2 class="font-serif text-[40px] md:text-[56px] leading-[1.08] font-normal mb-6 text-ivory">
+     <h2 class="font-serif text-[30px] md:text-[56px] leading-[1.1] font-normal mb-5 text-ivory">
        Cùng con bắt đầu hành trình đầu đời thật đẹp
-     </h2><p class="text-ivory/80 text-base md:text-lg mb-10 font-normal">
+     </h2><p class="text-ivory/80 text-base md:text-lg mb-6 font-normal">
        Đăng ký tham quan Mầm non Bình Minh và trải nghiệm không gian học tập của chúng tôi.
      </p>
-     <a href="dang-ky.html" class="inline-flex items-center gap-3 bg-chartreuse hover-forest text-forest font-bold text-xs uppercase tracking-[0.08em] px-11 py-5 rounded-pill transition-all duration-300 hover:shadow-2xl hover:scale-105">
+     <a href="dang-ky.html" class="inline-flex items-center gap-3 bg-chartreuse hover-forest text-forest font-bold text-xs uppercase tracking-[0.08em] px-8 py-4 md:px-11 md:py-5 rounded-pill transition-all duration-300 hover:shadow-2xl hover:scale-105">
        Đăng Ký Tham Quan <i data-lucide="arrow-right" class="w-4 h-4"></i>
      </a>
      </div>
