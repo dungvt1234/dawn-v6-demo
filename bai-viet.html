@@ -57,18 +57,18 @@
   <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
 
   <!-- ===== SEO: canonical + Open Graph + Twitter ===== -->
-  <link rel="canonical" href="https://dungvt1234.github.io/dawn-v6-demo/bai-viet.html">
+  <link rel="canonical" id="canonical-link" href="https://dungvt1234.github.io/dawn-v6-demo/bai-viet.html">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://dungvt1234.github.io/dawn-v6-demo/bai-viet.html">
+  <meta property="og:url" id="og-url" content="https://dungvt1234.github.io/dawn-v6-demo/bai-viet.html">
   <meta property="og:site_name" content="Mầm non Bình Minh">
-  <meta property="og:title" content="Bài viết — Mầm non Bình Minh">
-  <meta property="og:description" content="Tin tức và sự kiện mới nhất tại Mầm non Bình Minh.">
-  <meta property="og:image" content="https://dungvt1234.github.io/dawn-v6-demo/img/hero.jpg">
+  <meta property="og:title" id="og-title" content="Bài viết — Mầm non Bình Minh">
+  <meta property="og:description" id="og-desc" content="Tin tức và sự kiện mới nhất tại Mầm non Bình Minh.">
+  <meta property="og:image" id="og-image" content="https://dungvt1234.github.io/dawn-v6-demo/img/hero.jpg">
   <meta property="og:locale" content="vi_VN">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Bài viết — Mầm non Bình Minh">
-  <meta name="twitter:description" content="Tin tức và sự kiện mới nhất tại Mầm non Bình Minh.">
-  <meta name="twitter:image" content="https://dungvt1234.github.io/dawn-v6-demo/img/hero.jpg">
+  <meta name="twitter:title" id="tw-title" content="Bài viết — Mầm non Bình Minh">
+  <meta name="twitter:description" id="tw-desc" content="Tin tức và sự kiện mới nhất tại Mầm non Bình Minh.">
+  <meta name="twitter:image" id="tw-image" content="https://dungvt1234.github.io/dawn-v6-demo/img/hero.jpg">
   <meta name="theme-color" content="#223D22">
   <script type="application/ld+json">
 {
@@ -90,6 +90,8 @@
   ]
 }
   </script>
+  <!-- ===== SEO: Article JSON-LD động (được JS cập nhật theo bài viết) ===== -->
+  <script type="application/ld+json" id="article-jsonld"></script>
 </head>
 <body class="grain">
 <div id="dawn-arc-track"><div id="dawn-arc-fill"></div></div>
@@ -175,6 +177,49 @@
 
  document.title = post.title + ' — Mầm non Bình Minh';
  document.getElementById('bv-title').textContent = post.title;
+
+ // === SEO động: canonical + OG/Twitter + Article JSON-LD theo bài viết ===
+ const base = 'https://dungvt1234.github.io/dawn-v6-demo';
+ const postUrl = base + '/bai-viet.html?slug=' + encodeURIComponent(post.slug);
+ const canon = document.getElementById('canonical-link');
+ if (canon) canon.setAttribute('href', postUrl);
+ const ogUrl = document.getElementById('og-url');
+ if (ogUrl) ogUrl.setAttribute('content', postUrl);
+ const ogT = document.getElementById('og-title');
+ if (ogT) ogT.setAttribute('content', post.title + ' — Mầm non Bình Minh');
+ const twT = document.getElementById('tw-title');
+ if (twT) twT.setAttribute('content', post.title + ' — Mầm non Bình Minh');
+ const ogD = document.getElementById('og-desc');
+ if (ogD) ogD.setAttribute('content', (post.excerpt || '').slice(0, 155));
+ const twD = document.getElementById('tw-desc');
+ if (twD) twD.setAttribute('content', (post.excerpt || '').slice(0, 155));
+ if (post.image) {
+  const imgAbs = post.image.indexOf('http') === 0 ? post.image : base + '/' + post.image.replace(/^\//, '');
+  const ogI = document.getElementById('og-image');
+  if (ogI) ogI.setAttribute('content', imgAbs);
+  const twI = document.getElementById('tw-image');
+  if (twI) twI.setAttribute('content', imgAbs);
+ }
+ // Article JSON-LD
+ try {
+  const dateISO = (post.date || '').replace(/^(\d{2})\/(\d{2})\/(\d{4})$/, '$3-$2-$1');
+  const imgAbs = post.image ? (post.image.indexOf('http') === 0 ? post.image : base + '/' + post.image.replace(/^\//, '')) : base + '/img/hero.jpg';
+  const articleLd = {
+   '@context': 'https://schema.org',
+   '@type': 'Article',
+   headline: post.title,
+   description: post.excerpt || '',
+   image: imgAbs,
+   datePublished: dateISO || '2026-01-01',
+   dateModified: dateISO || '2026-01-01',
+   author: { '@type': 'Organization', name: 'Mầm non Bình Minh' },
+   publisher: { '@type': 'Organization', name: 'Mầm non Bình Minh', logo: { '@type': 'ImageObject', url: base + '/img/logo.png' } },
+   mainEntityOfPage: postUrl
+  };
+  const ldEl = document.getElementById('article-jsonld');
+  if (ldEl) ldEl.textContent = JSON.stringify(articleLd);
+ } catch (err) { console.error('Lỗi Article JSON-LD:', err); }
+
  const tag = document.getElementById('bv-tag');
  tag.textContent = post.tag;
  tag.style.background = 'var(--chartreuse)';
