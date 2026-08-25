@@ -73,7 +73,7 @@
 <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 h-[90px] flex items-center" style="background:var(--ivory);">
  <div class="max-w-container w-full mx-auto px-6 md:px-12 flex items-center justify-between">
   <a href="index.html" class="focus-ring flex items-center gap-3 group">
-   <img src="img/logo-icon.png" alt="Mầm non Bình Minh" class="h-11 w-auto transition-transform duration-500 group-hover:scale-105" style="height:44px; width:auto;">
+   <img src="img/logo-icon.webp" alt="Mầm non Bình Minh" class="h-11 w-auto transition-transform duration-500 group-hover:scale-105" style="height:44px; width:auto;">
    <div class="flex flex-col leading-tight items-center">
     <span class="font-serif text-base md:text-lg tracking-[0.04em] text-plum font-bold whitespace-nowrap text-center">DAWN KINDERGARTEN</span>
     <span class="text-[9px] md:text-[10px] tracking-[0.24em] text-forest font-bold uppercase mt-0.5 whitespace-nowrap text-center">Mầm Non Bình Minh</span>
@@ -97,7 +97,7 @@
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-white/10">
    <div class="lg:col-span-2">
     <div class="flex flex-col sm:flex-row items-center gap-3 mb-6">
-     <img src="img/logo-icon-light.png" alt="Mầm non Bình Minh" class="h-12 sm:h-16 w-auto shrink-0">
+     <img src="img/logo-icon-light.webp" alt="Mầm non Bình Minh" class="h-12 sm:h-16 w-auto shrink-0">
      <div class="flex flex-col leading-tight items-center min-w-0">
       <span class="font-serif text-sm sm:text-xl tracking-[0.04em] text-ivory font-bold whitespace-nowrap text-center">DAWN KINDERGARTEN</span>
       <span class="text-[9px] sm:text-[11px] tracking-[0.28em] text-gold font-semibold uppercase mt-1 whitespace-nowrap text-center">Mầm Non Bình Minh</span>

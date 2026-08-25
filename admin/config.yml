@@ -19,7 +19,7 @@ public_folder: "img/news"
 
 # Tên hiển thị trong giao diện quản trị
 display_url: https://binhminhkindergarten.site
-logo_url: /img/logo.png
+logo_url: /img/logo.webp
 
 collections:
   - name: "news"

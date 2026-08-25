@@ -30,12 +30,12 @@
   <meta property="og:site_name" content="Mầm non Bình Minh">
   <meta property="og:title" id="og-title" content="Bài viết — Mầm non Bình Minh">
   <meta property="og:description" id="og-desc" content="Tin tức và sự kiện mới nhất tại Mầm non Bình Minh.">
-  <meta property="og:image" id="og-image" content="https://binhminhkindergarten.site/img/hero.jpg">
+  <meta property="og:image" id="og-image" content="https://binhminhkindergarten.site/img/hero.webp">
   <meta property="og:locale" content="vi_VN">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" id="tw-title" content="Bài viết — Mầm non Bình Minh">
   <meta name="twitter:description" id="tw-desc" content="Tin tức và sự kiện mới nhất tại Mầm non Bình Minh.">
-  <meta name="twitter:image" id="tw-image" content="https://binhminhkindergarten.site/img/hero.jpg">
+  <meta name="twitter:image" id="tw-image" content="https://binhminhkindergarten.site/img/hero.webp">
   <meta name="theme-color" content="#223D22">
   <script type="application/ld+json">
 {
@@ -171,7 +171,7 @@
  // Article JSON-LD
  try {
   const dateISO = (post.date || '').replace(/^(\d{2})\/(\d{2})\/(\d{4})$/, '$3-$2-$1');
-  const imgAbs = post.image ? (post.image.indexOf('http') === 0 ? post.image : base + '/' + post.image.replace(/^\//, '')) : base + '/img/hero.jpg';
+  const imgAbs = post.image ? (post.image.indexOf('http') === 0 ? post.image : base + '/' + post.image.replace(/^\//, '')) : base + '/img/hero.webp';
   const articleLd = {
    '@context': 'https://schema.org',
    '@type': 'Article',
