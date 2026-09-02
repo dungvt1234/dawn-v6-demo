@@ -234,6 +234,38 @@
     });
   }
 
+  // Gentle slide-down + stagger animation for mobile menu
+  var menuMarginCss = '<style id="mobile-menu-motion">' +
+    '#mobile-menu{ animation:menuIn .32s cubic-bezier(.22,.61,.36,1) both; transform-origin:top; }' +
+    '@keyframes menuIn{ from{ opacity:0; transform:translateY(-8px); } to{ opacity:1; transform:translateY(0); } }' +
+    '#mobile-menu > a, #mobile-menu > div{ animation:menuItem .34s cubic-bezier(.22,.61,.36,1) both; }' +
+    '#mobile-menu > a:nth-child(1), #mobile-menu > div:nth-child(1){ animation-delay:.04s; }' +
+    '#mobile-menu > a:nth-child(2), #mobile-menu > div:nth-child(2){ animation-delay:.09s; }' +
+    '#mobile-menu > a:nth-child(3), #mobile-menu > div:nth-child(3){ animation-delay:.14s; }' +
+    '#mobile-menu > a:nth-child(4), #mobile-menu > div:nth-child(4){ animation-delay:.19s; }' +
+    '@keyframes menuItem{ from{ opacity:0; transform:translateX(-10px); } to{ opacity:1; transform:translateX(0); } }' +
+    '</style>';
+  document.head.insertAdjacentHTML('beforeend', menuMarginCss);
+
+  // Mobile menu toggle button (open/close + aria)
+  var menuBtn = document.getElementById('menu-btn');
+  var mobileMenuEl = document.getElementById('mobile-menu');
+  if (menuBtn && mobileMenuEl) {
+    function setMobileMenu(open) {
+      mobileMenuEl.classList.toggle('hidden', !open);
+      mobileMenuEl.classList.toggle('flex', open);
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      menuBtn.setAttribute('aria-label', open ? 'Đóng menu' : 'Mở menu');
+    }
+    menuBtn.addEventListener('click', function () {
+      setMobileMenu(mobileMenuEl.classList.contains('hidden'));
+    });
+    // Close on Escape
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !mobileMenuEl.classList.contains('hidden')) setMobileMenu(false);
+    });
+  }
+
   // Mobile accordion submenus: click parent to open/close dropdown
   document.querySelectorAll('.mobile-nav-toggle').forEach(function (btn) {
     btn.addEventListener('click', function () {

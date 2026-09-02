@@ -32,7 +32,7 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@0.469.0"></script>
 
   <link rel="stylesheet" href="css/style.css?v=5">
   <style>
@@ -722,19 +722,19 @@
    <div class="max-w-container mx-auto">
      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center" data-aos="zoom-in" data-aos-duration="800">
      <div class="flex flex-col items-center">
-       <span class="font-serif text-[48px] sm:text-[64px] text-forest leading-none font-normal mb-2">100+</span>
+       <span class="stat font-serif text-[48px] sm:text-[64px] text-forest leading-none font-normal mb-2"><span data-count="100">0</span>+</span>
        <span class="text-xs font-bold tracking-[0.12em] text-charcoal/70 uppercase">HỌC SINH</span>
      </div>
      <div class="flex flex-col items-center">
-       <span class="font-serif text-[48px] sm:text-[64px] text-forest leading-none font-normal mb-2">10+</span>
+       <span class="stat font-serif text-[48px] sm:text-[64px] text-forest leading-none font-normal mb-2"><span data-count="10">0</span>+</span>
        <span class="text-xs font-bold tracking-[0.12em] text-charcoal/70 uppercase">GIÁO VIÊN</span>
      </div>
      <div class="flex flex-col items-center">
-       <span class="font-serif text-[48px] sm:text-[64px] text-forest leading-none font-normal mb-2">10+</span>
+       <span class="stat font-serif text-[48px] sm:text-[64px] text-forest leading-none font-normal mb-2"><span data-count="10">0</span>+</span>
        <span class="text-xs font-bold tracking-[0.12em] text-charcoal/70 uppercase">CHƯƠNG TRÌNH</span>
      </div>
      <div class="flex flex-col items-center">
-       <span class="font-serif text-[48px] sm:text-[64px] text-forest leading-none font-normal mb-2">700<span class="font-sans text-3xl font-light" style="color:var(--gold-strong)">m²</span></span>
+       <span class="stat font-serif text-[48px] sm:text-[64px] text-forest leading-none font-normal mb-2"><span data-count="700">0</span><span class="font-sans text-3xl font-light" style="color:var(--gold-strong)">m²</span></span>
        <span class="text-xs font-bold tracking-[0.12em] text-charcoal/70 uppercase">KHUÔN VIÊN</span>
      </div>
      </div>
@@ -745,9 +745,24 @@
   <section class="py-28 px-6 md:px-12 bg-ivory">
    <div class="max-w-container mx-auto max-w-4xl text-center" data-aos="fade-up">
      <span class="text-xs font-bold tracking-[0.18em] uppercase text-plum mb-6 block">ĐIỀU PHỤ HUYNH NÓI VỀ MẦM NON BÌNH MINH</span>
-     <blockquote class="font-serif text-[30px] sm:text-[40px] md:text-[46px] text-forest leading-[1.2] font-normal italic mb-10">
-     “Điều chúng tôi yêu thích nhất ở Mầm non Bình Minh là con được tôn trọng, được khuyến khích khám phá và luôn cảm thấy vui vẻ khi đến trường.”
-     </blockquote>
+
+     <div class="tcarousel">
+       <div class="tcarousel-viewport">
+       <blockquote class="tcarousel-slide font-serif text-[30px] sm:text-[40px] md:text-[46px] text-forest leading-[1.2] font-normal italic">
+         “Điều chúng tôi yêu thích nhất ở Mầm non Bình Minh là con được tôn trọng, được khuyến khích khám phá và luôn cảm thấy vui vẻ khi đến trường.”
+         <footer class="tcarousel-author">Chị Thu Hà — Phụ huynh bé Bảo An</footer>
+       </blockquote>
+       <blockquote class="tcarousel-slide font-serif text-[30px] sm:text-[40px] md:text-[46px] text-forest leading-[1.2] font-normal italic">
+         “Giáo viên nắm tình trạng và sự tiến bộ của con rất sát sao, nhà trường trao đổi với gia đình thường xuyên. Con tôi tự tin và hay chủ động kể chuyện học ở lớp hơn.”
+         <footer class="tcarousel-author">Chị Minh Trang — Phụ huynh bé Gia Bảo</footer>
+       </blockquote>
+       <blockquote class="tcarousel-slide font-serif text-[30px] sm:text-[40px] md:text-[46px] text-forest leading-[1.2] font-normal italic">
+         “Cơ sở vật chất sạch sẽ, khuôn viên gần gũi thiên nhiên. Mỗi buổi chiều đón con thấy con vui vẻ, chủ động, chúng tôi thật sự yên tâm.”
+         <footer class="tcarousel-author">Anh Đức Minh — Phụ huynh bé Khánh Vy</footer>
+       </blockquote>
+       </div>
+       <div class="tcarousel-dots"></div>
+     </div>
    </div>
   </section>
 
@@ -913,5 +928,6 @@
 })();
 </script>
 
+<script src="js/enhancements.js"></script>
 </body>
 </html>
