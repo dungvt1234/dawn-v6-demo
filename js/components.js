@@ -247,25 +247,6 @@
     '</style>';
   document.head.insertAdjacentHTML('beforeend', menuMarginCss);
 
-  // Mobile menu toggle button (open/close + aria)
-  var menuBtn = document.getElementById('menu-btn');
-  var mobileMenuEl = document.getElementById('mobile-menu');
-  if (menuBtn && mobileMenuEl) {
-    function setMobileMenu(open) {
-      mobileMenuEl.classList.toggle('hidden', !open);
-      mobileMenuEl.classList.toggle('flex', open);
-      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      menuBtn.setAttribute('aria-label', open ? 'Đóng menu' : 'Mở menu');
-    }
-    menuBtn.addEventListener('click', function () {
-      setMobileMenu(mobileMenuEl.classList.contains('hidden'));
-    });
-    // Close on Escape
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && !mobileMenuEl.classList.contains('hidden')) setMobileMenu(false);
-    });
-  }
-
   // Mobile accordion submenus: click parent to open/close dropdown
   document.querySelectorAll('.mobile-nav-toggle').forEach(function (btn) {
     btn.addEventListener('click', function () {
