@@ -246,7 +246,7 @@ details.faq p{ margin-top:12px; color:var(--muted); line-height:1.7; font-size:1
 /* ===== Mỗi ngày đến trường (index.html #program): mobile hiển thị NGANG (cuộn ngang) =====
    <640px: 1 hàng ngang vuốt trái-phải, mỗi thẻ ~80vw. ≥640px: giữ grid 2/4 cột dọc như cũ. */
 @media (max-width:639px){
-  #program-grid{ display:flex; flex-wrap:nowrap; overflow-x:auto; scroll-snap-type:x mandatory; gap:1rem; padding:0 0 1rem; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
-  #program-grid::-webkit-scrollbar{ display:none; }
-  #program-grid > div{ flex:0 0 80vw; scroll-snap-align:start; }
+  #program-grid{ display:flex; flex-wrap:nowrap; overflow-x:auto; scroll-snap-type:x mandatory; gap:1rem; padding:0 0 1rem; margin:0 -1.25rem; padding-left:1.25rem; padding-right:1.25rem; -webkit-overflow-scrolling:touch; scrollbar-width:none; overscroll-behavior-inline:contain; scroll-behavior:smooth; }
+  #program-grid::-webkit-scrollbar{ display:none; height:0; }
+  #program-grid > div{ flex:0 0 80vw; scroll-snap-align:center; scroll-snap-stop:always; }
 }
