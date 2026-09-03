@@ -65,6 +65,12 @@
   }
 
   /* ---------- 6. Testimonial carousel ---------- */
+  // NOTE: Nếu carousel dùng class .tcarousel-stacked (hiện lần lượt khi cuộn) thì
+  // bỏ qua logic auto-carousel cũ — phần đó do js/scroll-3d.js điều khiển.
+  var tcarRoot = document.querySelector('.tcarousel');
+  if (tcarRoot && tcarRoot.classList.contains('tcarousel-stacked')) {
+    // Vô hiệu hoá: không khởi tạo carousel cũ.
+  } else {
   var vp = document.querySelector('.tcarousel-viewport');
   if (vp) {
     var slides = Array.prototype.slice.call(vp.querySelectorAll('.tcarousel-slide'));
@@ -107,5 +113,6 @@
     restart();
     vp.addEventListener('mouseenter', function () { if (timer) clearInterval(timer); });
     vp.addEventListener('mouseleave', restart);
+  }
   }
 })();

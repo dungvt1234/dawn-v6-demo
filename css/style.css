@@ -243,10 +243,23 @@ details.faq p{ margin-top:12px; color:var(--muted); line-height:1.7; font-size:1
 .mom-cell img{ width:100%; height:100%; object-fit:cover; display:block; }
 @media (min-width:768px){ .mom-grid{ grid-template-columns:repeat(5,1fr); gap:1.25rem; } }
 
-/* ===== Mỗi ngày đến trường (index.html #program): mobile hiển thị NGANG (cuộn ngang) =====
-   <640px: 1 hàng ngang vuốt trái-phải, mỗi thẻ ~80vw. ≥640px: giữ grid 2/4 cột dọc như cũ. */
-@media (max-width:639px){
-  #program-grid{ display:flex; flex-wrap:nowrap; overflow-x:auto; scroll-snap-type:x mandatory; gap:1rem; padding:0 0 1rem; margin:0 -1.25rem; padding-left:1.25rem; padding-right:1.25rem; -webkit-overflow-scrolling:touch; scrollbar-width:none; overscroll-behavior-inline:contain; scroll-behavior:smooth; }
-  #program-grid::-webkit-scrollbar{ display:none; height:0; }
-  #program-grid > div{ flex:0 0 80vw; scroll-snap-align:center; scroll-snap-stop:always; }
+/* ===== Mỗi ngày đến trường (index.html #program): hiệu ứng 3D nghiêng khi cuộn =====
+   Mỗi thẻ .tilt-card nghiêng theo trục X lúc mới vào viewport, đứng thẳng khi vào giữa.
+   Layout dọc (grid) như cũ — không còn cuộn ngang. */
+.tilt-card{
+  transform: perspective(1200px) rotateX(22deg) translateY(30px);
+  opacity:.25;
+  transform-style:preserve-3d;
+  will-change:transform,opacity;
+}
+
+/* ===== Testimonial: hiện lần lượt khi cuộn (xếp dọc, không vuốt ngang) ===== */
+.tcarousel-stacked .tcarousel-viewport{ overflow:visible; }
+.tcarousel-stacked .tcarousel-slide{ margin:0 0 3.5rem; }
+.tcarousel-stacked .tcarousel-slide:last-child{ margin-bottom:0; }
+.tcareveal{
+  opacity:0;
+  transform:perspective(900px) rotateX(18deg) translateY(40px) scale(.96);
+  transform-style:preserve-3d;
+  transition:opacity .7s ease, transform .7s cubic-bezier(.22,.61,.36,1);
 }
