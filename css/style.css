@@ -242,3 +242,11 @@ details.faq p{ margin-top:12px; color:var(--muted); line-height:1.7; font-size:1
 .mom-cell{ position:relative; aspect-ratio:3/4; overflow:hidden; border-radius:1.25rem; }
 .mom-cell img{ width:100%; height:100%; object-fit:cover; display:block; }
 @media (min-width:768px){ .mom-grid{ grid-template-columns:repeat(5,1fr); gap:1.25rem; } }
+
+/* ===== Mỗi ngày đến trường (index.html #program): mobile hiển thị NGANG (cuộn ngang) =====
+   <640px: 1 hàng ngang vuốt trái-phải, mỗi thẻ ~80vw. ≥640px: giữ grid 2/4 cột dọc như cũ. */
+@media (max-width:639px){
+  #program-grid{ display:flex; flex-wrap:nowrap; overflow-x:auto; scroll-snap-type:x mandatory; gap:1rem; padding:0 0 1rem; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+  #program-grid::-webkit-scrollbar{ display:none; }
+  #program-grid > div{ flex:0 0 80vw; scroll-snap-align:start; }
+}
