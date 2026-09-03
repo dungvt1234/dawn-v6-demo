@@ -1,0 +1,265 @@
+/* ============================================================
+   MẦM NON BÌNH MINH — v6 (design v4: editorial + AOS + glass)
+   Design system: forest #223D22 · plum #281936 · chartreuse #DCD870
+   gold #ECAB45 · sage #C9D3B5 · ivory #F8F7F0 · text #1F251F
+   Fonts: DM Serif Display (serif) + Be Vietnam Pro (sans)
+   ============================================================ */
+:root{
+  --forest:#223D22;
+  --plum:#281936;
+  --chartreuse:#DCD870;
+  --chartreuse-strong:#6B7A1E;
+  --gold:#ECAB45;
+  --gold-strong:#8A6D1F;
+  --sage:#C9D3B5;
+  --ivory:#F8F7F0;
+  --white:#FFFFFF;
+  --charcoal:#1F251F;
+  --muted:#5A635A;
+  --border:#DDE2D8;
+  --stats-bg:#E5EBD9;
+}
+html{ scroll-behavior:smooth; overflow-x:clip; }
+/* overflow-x:clip chặn scroll ngang triệt để (kể cả iOS Safari),
+   không tạo scroll container như overflow-x:hidden */
+body{
+  background:var(--ivory);
+  color:var(--charcoal);
+  font-family:'Be Vietnam Pro',sans-serif;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.serif{ font-family:'DM Serif Display',serif; font-weight:400; }
+
+/* ===== Scrollbar (v4 signature) ===== */
+::-webkit-scrollbar{ width:8px; }
+::-webkit-scrollbar-track{ background:var(--ivory); }
+::-webkit-scrollbar-thumb{ background:#C9D3B5; border-radius:4px; }
+::-webkit-scrollbar-thumb:hover{ background:#223D22; }
+
+/* ===== Glass header (v4) ===== */
+.glass-header{
+  background:rgba(248,247,240,0.85);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+}
+#site-header{ transition:background .4s ease, box-shadow .4s ease; }
+
+/* ===== Ripple button (v4) ===== */
+.ripple-btn::before{
+  content:'';
+  position:absolute;
+  width:100%; height:100%;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,0.6);
+  animation:ripple 2s infinite;
+}
+@keyframes ripple{
+  0%{ transform:scale(1); opacity:1; }
+  100%{ transform:scale(1.6); opacity:0; }
+}
+
+/* ===== Editorial shadow (v4) ===== */
+.editorial-shadow{ box-shadow:0 30px 60px -15px rgba(34,61,34,0.12); }
+
+/* ===== Eyebrow label ===== */
+.eyebrow{
+  font-size:13px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-weight:600;
+}
+
+/* ===== AOS-friendly reveal fallback ===== */
+.reveal{ opacity:0; transform:translateY(28px); transition:opacity .9s cubic-bezier(.22,.61,.36,1), transform .9s cubic-bezier(.22,.61,.36,1); }
+.reveal.in{ opacity:1; transform:translateY(0); }
+.stagger > * { transition-delay:calc(var(--i,0) * 90ms); }
+
+/* ===== Buttons (v4 editorial pills) ===== */
+.btn-pill{
+  border-radius:999px;
+  transition:transform .35s cubic-bezier(.22,.61,.36,1), background .35s ease, box-shadow .35s ease;
+}
+.btn-pill:hover{ transform:translateY(-2px); box-shadow:0 14px 28px -12px rgba(236,171,69,0.55); }
+.btn-solid{
+  display:inline-block; border-radius:999px;
+  background:var(--chartreuse); color:var(--forest);
+  font-weight:600; font-size:13px; letter-spacing:.08em; text-transform:uppercase;
+  padding:15px 30px;
+  transition:transform .35s, box-shadow .35s, background .35s;
+}
+.btn-solid:hover{ transform:translateY(-2px); box-shadow:0 14px 28px -12px rgba(34,61,34,0.45); background:var(--forest); color:var(--ivory); }
+.btn-ghost{
+  display:inline-block; border-radius:999px;
+  border:1px solid rgba(248,247,240,.4); color:var(--ivory);
+  font-weight:600; font-size:13px; letter-spacing:.08em; text-transform:uppercase;
+  padding:15px 30px; transition:all .35s;
+}
+.btn-ghost:hover{ background:rgba(248,247,240,.12); }
+
+/* ===== Button hover nâng cấp (v4.1): vàng chanh → xanh rừng ===== */
+.hover-forest:hover{ background:var(--forest); color:var(--ivory); }
+
+/* ===== Cards (v4 editorial rounded) ===== */
+.card{ border-radius:1.75rem; transition:transform .5s cubic-bezier(.22,.61,.36,1), box-shadow .5s ease; }
+.card:hover{ transform:translateY(-6px); box-shadow:0 24px 48px -20px rgba(34,61,34,0.25); }
+.card-hover{ transition:transform .5s cubic-bezier(.22,.61,.36,1), box-shadow .5s ease; }
+.card-hover:hover{ transform:translateY(-6px); box-shadow:0 24px 48px -20px rgba(34,61,34,0.25); }
+
+/* ===== Image frames (v4 rounded-4xl editorial) ===== */
+.img-frame{ border-radius:2.5rem; overflow:hidden; box-shadow:0 30px 60px -15px rgba(34,61,34,0.12); }
+.img-frame img{ transition:transform .8s cubic-bezier(.22,.61,.36,1); }
+.img-frame:hover img{ transform:scale(1.05); }
+
+/* ===== Photo captions (v4 masonry overlay) ===== */
+.photo-cap{ position:relative; border-radius:2.5rem; overflow:hidden; }
+.photo-cap .cap{
+  position:absolute; inset:auto 0 0 0; padding:14px 18px;
+  background:linear-gradient(to top, rgba(34,61,34,.75), transparent);
+  color:#fff; font-size:12px; letter-spacing:.12em; text-transform:uppercase; font-weight:600;
+  opacity:0; transition:opacity .4s ease;
+}
+.photo-cap:hover .cap{ opacity:1; }
+
+/* ===== Photography grade (warm editorial) ===== */
+.photo-grade{
+  filter:sepia(22%) saturate(115%) hue-rotate(-6deg) brightness(0.97) contrast(1.03);
+}
+.photo-grade-strong{
+  filter:sepia(30%) saturate(90%) hue-rotate(-8deg) brightness(0.88) contrast(1.05);
+}
+
+/* ===== Page hero (v4 gradient + sunrise line) ===== */
+.page-hero{
+  padding:150px 0 80px;
+  background:linear-gradient(120deg, var(--forest) 0%, #2C4A2C 60%, var(--plum) 130%);
+  position:relative; overflow:hidden;
+}
+.page-hero::after{
+  content:""; position:absolute; inset:0; pointer-events:none; opacity:.4;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.page-hero .sunrise-line{
+  stroke-dasharray:600; stroke-dashoffset:600;
+  animation:sunrise 2.2s .3s cubic-bezier(.22,.61,.36,1) forwards;
+}
+@keyframes sunrise{ to{ stroke-dashoffset:0; } }
+
+/* ===== Breadcrumb ===== */
+.breadcrumb{ font-size:13px; letter-spacing:.15em; text-transform:uppercase; font-weight:600; color:var(--gold); }
+
+/* ===== Section title ===== */
+.section-title{ font-size:34px; line-height:1.12; color:var(--plum); }
+@media (min-width:768px){ .section-title{ font-size:46px; } }
+
+/* ===== Prose ===== */
+.prose-c p{ color:var(--muted); line-height:1.75; font-size:16px; }
+.prose-c p + p{ margin-top:16px; }
+
+/* ===== Tags ===== */
+.tag{ display:inline-block; font-size:11px; letter-spacing:.14em; text-transform:uppercase; font-weight:700; color:var(--forest); background:var(--chartreuse); padding:6px 14px; border-radius:999px; }
+.tag-outline{ background:transparent; color:var(--chartreuse); border:1px solid var(--chartreuse); }
+
+/* ===== Form fields ===== */
+.field{ width:100%; border:1px solid var(--border); border-radius:14px; padding:14px 16px; font-size:15px; font-family:'Be Vietnam Pro',sans-serif; background:#fff; transition:border .3s; }
+.field:focus{ outline:none; border-color:var(--gold); box-shadow:0 0 0 3px rgba(236,171,69,.2); }
+.label{ display:block; font-size:13px; font-weight:600; letter-spacing:.05em; margin-bottom:8px; color:var(--forest); }
+
+/* ===== FAQ accordion ===== */
+details.faq{ border-bottom:1px solid rgba(34,61,34,.12); padding:22px 0; }
+details.faq summary{ cursor:pointer; font-family:'DM Serif Display',serif; font-size:20px; color:var(--forest); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+details.faq summary::-webkit-details-marker{ display:none; }
+details.faq summary::after{ content:'+'; font-size:26px; color:var(--gold); transition:transform .3s; }
+details.faq[open] summary::after{ transform:rotate(45deg); }
+details.faq p{ margin-top:12px; color:var(--muted); line-height:1.7; font-size:15px; }
+
+/* ===== Nav active ===== */
+.nav-active{ color:var(--gold) !important; }
+
+/* ===== Focus ring ===== */
+.focus-ring:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; border-radius:8px; }
+
+/* ===== Selection ===== */
+::selection{ background:var(--chartreuse); color:var(--forest); }
+
+/* ===== Reduced motion ===== */
+@media (prefers-reduced-motion: reduce){
+  .reveal{ opacity:1; transform:none; transition:none; }
+  html{ scroll-behavior:auto; }
+  .ripple-btn::before{ animation:none; }
+  .page-hero .sunrise-line{ animation:none; stroke-dashoffset:0; }
+}
+
+/* ===== Chữ nổi trên ảnh (program cards) ===== */
+.overlay-text{ text-shadow: 0 1px 4px rgba(0,0,0,.5), 0 4px 18px rgba(0,0,0,.55); }
+.overlay-num{ text-shadow: 0 2px 10px rgba(0,0,0,.6); }
+
+/* ===== Gallery marquee (motion liên tục) ===== */
+.marquee-wrap{
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+.marquee-track{ display:flex; width:max-content; animation: marquee 42s linear infinite; }
+.marquee-left{ animation-duration: 160s; }
+.marquee-right{ animation-direction: reverse; animation-duration: 157s; }
+@keyframes marquee{ to{ transform: translateX(-50%); } }
+
+/* ===== Gallery Lightbox ===== */
+.lightbox{ position:fixed; inset:0; z-index:1000; display:flex; align-items:center; justify-content:center; background:rgba(18,24,18,.92); opacity:0; visibility:hidden; transition:opacity .3s ease, visibility .3s ease; padding:24px; }
+.lightbox.open{ opacity:1; visibility:visible; }
+.lightbox img{ max-width:94vw; max-height:88vh; border-radius:16px; box-shadow:0 24px 80px rgba(0,0,0,.5); object-fit:contain; }
+.lightbox-close{ position:absolute; top:18px; right:22px; width:44px; height:44px; border-radius:50%; border:none; background:rgba(255,255,255,.14); color:#fff; font-size:20px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .2s; }
+.lightbox-close:hover{ background:rgba(255,255,255,.3); }
+
+/* ===== Gallery grid: hiện nhanh, stagger giới hạn ===== */
+.gallery-grid > *{ transition-delay:calc(min(var(--i,0),8) * 40ms); transition-duration:.45s; }
+
+/* ===== Nội dung bài viết (markdown) ===== */
+.prose-article{ color:var(--charcoal); font-size:16px; line-height:1.85; }
+.prose-article p{ margin:0 0 1.25em; }
+.prose-article h1,.prose-article h2,.prose-article h3{ font-family:'DM Serif Display', serif; color:var(--plum); line-height:1.25; margin:1.6em 0 .6em; }
+.prose-article h2{ font-size:26px; } .prose-article h3{ font-size:21px; }
+.prose-article strong{ color:var(--forest); font-weight:600; }
+.prose-article ul,.prose-article ol{ margin:0 0 1.25em; padding-left:1.4em; }
+.prose-article ul{ list-style:disc; } .prose-article ol{ list-style:decimal; }
+.prose-article li{ margin:.35em 0; }
+.prose-article a{ color:var(--forest); text-decoration:underline; text-underline-offset:3px; }
+.prose-article img{ border-radius:1.25rem; margin:1.5em 0; }
+.prose-article blockquote{ border-left:3px solid var(--gold); padding:.4em 1em; margin:0 0 1.25em; color:var(--muted); font-style:italic; }
+
+/* ===== Fallback: text-[color:var(--charcoal)]/xx (Tailwind không hỗ trợ opacity modifier với arbitrary var()) =====
+   Trên CDN cũ các class này cũng không được generate → text hiển thị charcoal 100% (kế thừa body).
+   Giữ nguyên hành vi đó để giao diện không đổi. */
+.text-\[color\:var\(--charcoal\)\]\/60,
+.text-\[color\:var\(--charcoal\)\]\/70,
+.text-\[color\:var\(--charcoal\)\]\/75,
+.text-\[color\:var\(--charcoal\)\]\/80 { color: var(--charcoal); }
+
+/* ===== Grid "Nụ cười mỗi ngày tại trường" (chuong-trinh.html): 10 ảnh 2 hàng ngang =====
+   Ảnh gốc đều 3:4 dọc → mỗi ô aspect 3:4, ảnh cover đầy ô cho đều đặn.
+   Mobile 2 cột × 5 hàng → ≥768px: 5 cột × 2 hàng. */
+.mom-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; }
+.mom-cell{ position:relative; aspect-ratio:3/4; overflow:hidden; border-radius:1.25rem; }
+.mom-cell img{ width:100%; height:100%; object-fit:cover; display:block; }
+@media (min-width:768px){ .mom-grid{ grid-template-columns:repeat(5,1fr); gap:1.25rem; } }
+
+/* ===== Mỗi ngày đến trường (index.html #program): hiệu ứng 3D nghiêng khi cuộn =====
+   Mỗi thẻ .tilt-card nghiêng theo trục X lúc mới vào viewport, đứng thẳng khi vào giữa.
+   Layout dọc (grid) như cũ — không còn cuộn ngang. */
+.tilt-card{
+  transform: perspective(1200px) rotateX(22deg) translateY(30px);
+  opacity:.25;
+  transform-style:preserve-3d;
+  will-change:transform,opacity;
+}
+
+/* ===== Testimonial: hiện lần lượt khi cuộn (xếp dọc, không vuốt ngang) ===== */
+.tcarousel-stacked .tcarousel-viewport{ overflow:visible; }
+.tcarousel-stacked .tcarousel-slide{ margin:0 0 3.5rem; }
+.tcarousel-stacked .tcarousel-slide:last-child{ margin-bottom:0; }
+.tcareveal{
+  opacity:0;
+  transform:perspective(900px) rotateX(18deg) translateY(40px) scale(.96);
+  transform-style:preserve-3d;
+  transition:opacity .7s ease, transform .7s cubic-bezier(.22,.61,.36,1);
+}
