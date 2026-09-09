@@ -5,6 +5,16 @@
 (function () {
   'use strict';
 
+  // Luôn bắt đầu ở đầu trang: chặn browser tự cuộn về vị trí cũ sau reload.
+  // (Kết hợp với scroll-behavior:smooth, việc restore này gây cảm giác
+  // "load xong tự chạy xuống footer".)
+  try {
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  } catch (e) {}
+  try {
+    window.scrollTo(0, 0);
+  } catch (e) {}
+
   var LEAVE_MS = 220;
 
   var css =
