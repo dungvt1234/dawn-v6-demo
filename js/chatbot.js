@@ -246,12 +246,12 @@
     }
   } catch (e) {}
 
-  // Khung chat luôn hiện sẵn khi mở trang (sau 1.2s cho trang kịp vẽ).
+  // Khung chat hiện ra liền khi mở trang (sau 0.4s cho trang kịp vẽ khung đầu).
   // Ba mẹ vẫn đóng được bằng nút ✕ / phím Esc; qua trang khác khung lại tự mở.
   // Truyền false để không focus ô nhập → không bị cuộn trang, không bật bàn phím.
   setTimeout(function () {
     if (!panel.classList.contains('is-open')) open(false);
-  }, 1200);
+  }, 400);
 
   window.DawnChat = { open: open, close: close, ask: ask };
 })();
