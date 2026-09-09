@@ -174,7 +174,7 @@
       say(answer(q), 'bot');
     }, 550);
   }
-  function open() {
+  function open(focusInput) {
     panel.classList.add('is-open');
     hideTeaser();
     if (!greeted) {
@@ -183,9 +183,14 @@
         say(T.hello, 'bot');
       }, 250);
     }
-    setTimeout(function () {
-      input.focus();
-    }, 350);
+    // Chỉ focus ô nhập khi người dùng chủ động mở chat (bấm nút/teaser).
+    // Tự mở lúc tải trang thì KHÔNG focus để tránh cuộn trang xuống cuối
+    // và tránh tự bật bàn phím trên mobile.
+    if (focusInput !== false) {
+      setTimeout(function () {
+        input.focus();
+      }, 350);
+    }
   }
   function close() {
     panel.classList.remove('is-open');
@@ -243,8 +248,9 @@
 
   // Khung chat luôn hiện sẵn khi mở trang (sau 1.2s cho trang kịp vẽ).
   // Ba mẹ vẫn đóng được bằng nút ✕ / phím Esc; qua trang khác khung lại tự mở.
+  // Truyền false để không focus ô nhập → không bị cuộn trang, không bật bàn phím.
   setTimeout(function () {
-    if (!panel.classList.contains('is-open')) open();
+    if (!panel.classList.contains('is-open')) open(false);
   }, 1200);
 
   window.DawnChat = { open: open, close: close, ask: ask };
