@@ -17,12 +17,15 @@
 
   var LEAVE_MS = 220;
 
+  // LƯU Ý: keyframes KHÔNG được dùng transform (kể cả translateY(0)/none),
+  // vì fill 'both' giữ lại ma trận đơn vị matrix(1,0,0,1,0,0) — khác 'none' —
+  // khiến body thành containing block, làm mọi position:fixed (dock, chat,
+  // header) dính theo trang thay vì dính viewport. Chỉ dùng opacity.
   var css =
     '@view-transition{navigation:auto;}' +
     'body{animation:dawn-page-in .45s ease both;}' +
-    '@keyframes dawn-page-in{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}' +
-    'body.dawn-leave{animation:none;opacity:0;transform:translateY(6px);' +
-    'transition:opacity .22s ease,transform .22s ease;}' +
+    '@keyframes dawn-page-in{from{opacity:0;}to{opacity:1;}}' +
+    'body.dawn-leave{animation:none;opacity:0;transition:opacity .22s ease;}' +
     '@media (prefers-reduced-motion:reduce){' +
     'body{animation:none;}' +
     'body.dawn-leave{transition:none;}' +
