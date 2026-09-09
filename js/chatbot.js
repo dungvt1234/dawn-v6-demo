@@ -111,6 +111,11 @@
     'max-width:230px;opacity:0;visibility:hidden;transform:translateY(8px);' +
     'transition:opacity .35s,transform .35s,visibility .35s;}' +
     '#dawn-chat-teaser.is-show{opacity:1;visibility:visible;transform:none;}' +
+    '#dawn-chat-teaser .tt-text{flex:1;}' +
+    '#dawn-chat-teaser .tt-close{flex-shrink:0;width:24px;height:24px;border-radius:50%;' +
+    'border:none;background:#EFEDE4;color:#888;font-size:11px;cursor:pointer;line-height:1;' +
+    'display:flex;align-items:center;justify-content:center;margin-left:8px;}' +
+    '#dawn-chat-teaser{display:flex;align-items:center;}' +
     '#chat-toggle{position:fixed;right:16px;bottom:24px;z-index:2499;width:56px;height:56px;border-radius:50%;' +
     'border:none;cursor:pointer;font-size:24px;background:#D4E157;background:var(--chartreuse,#D4E157);color:#2D4A33;' +
     'box-shadow:0 12px 30px rgba(20,30,20,.3);}' +
@@ -230,12 +235,23 @@
   // Bấm vào bong bóng thì mở chat.
   var teaser = document.createElement('div');
   teaser.id = 'dawn-chat-teaser';
-  teaser.textContent = T.hello;
+  teaser.innerHTML =
+    '<span class="tt-text"></span>' +
+    '<button type="button" class="tt-close" aria-label="Ẩn thông báo">✕</button>';
+  teaser.querySelector('.tt-text').textContent = T.hello;
   document.body.appendChild(teaser);
   function hideTeaser() {
     teaser.classList.remove('is-show');
   }
-  teaser.addEventListener('click', open);
+  teaser.addEventListener('click', function (e) {
+    // Bấm ✕ thì ẩn hẳn (không mở chat, không hiện lại trong phiên này)
+    if (e.target && e.target.closest && e.target.closest('.tt-close')) {
+      hideTeaser();
+      markTeased();
+      return;
+    }
+    open();
+  });
   // Đọc sessionStorage trong try riêng: mobile chặn storage (private mode,
   // chặn cookie) sẽ throw — khi đó vẫn hiện teaser chứ không bỏ qua.
   function alreadyTeased() {
