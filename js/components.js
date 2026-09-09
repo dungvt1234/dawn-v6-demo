@@ -142,7 +142,7 @@
    <div>
     <h4 class="text-xs font-bold tracking-[0.12em] uppercase text-gold mb-5">Liên Hệ</h4>
     <ul class="space-y-3.5 text-sm text-ivory/80">
-     <li class="flex items-start gap-2.5"><i data-lucide="map-pin" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i><span>72/2A Đường Phạm Hồng Thái, Phường 7, TP. Vũng Tàu</span></li>
+     <li class="flex items-start gap-2.5"><i data-lucide="map-pin" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i><span>75/2A Đường Phạm Hồng Thái, Phường 7, TP. Vũng Tàu</span></li>
      <li class="flex items-center gap-2.5"><i data-lucide="phone" class="w-4 h-4 text-gold shrink-0"></i><span>0866 685 632</span></li>
     </ul>
    </div>
@@ -160,6 +160,10 @@
   const floatContactHTML = `
 <div id="floating-contact" class="fixed bottom-6 right-5 md:bottom-8 md:right-8 z-[60] flex flex-col items-end">
  <div id="fc-links" class="flex flex-col items-end gap-3 mb-3 opacity-0 invisible translate-y-3 transition-all duration-300 ease-out">
+  <button type="button" id="fc-chat" class="fc-btn flex items-center gap-2.5 bg-white rounded-full pl-2 pr-4 py-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 focus-ring" style="border:none;cursor:pointer;">
+   <span class="fc-icon w-9 h-9 rounded-full flex items-center justify-center text-lg" style="background:var(--chartreuse);">🌱</span>
+   <span class="text-[13px] font-semibold text-charcoal">Chat tư vấn</span>
+  </button>
   <a href="${DEMO_URL}" target="_blank" rel="noopener" class="fc-btn flex items-center gap-2.5 bg-white rounded-full pl-2 pr-4 py-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 focus-ring">
    <span class="fc-icon w-9 h-9 rounded-full flex items-center justify-center text-forest font-bold text-lg" style="background:var(--chartreuse);">🖥️</span>
    <span class="text-[13px] font-semibold text-charcoal">Dùng thử phần mềm</span>
@@ -281,5 +285,19 @@
     document.addEventListener('click', function (e) {
       if (!fcRoot.contains(e.target)) fcRoot.classList.remove('open');
     });
+  }
+
+  // Nút "Chat tư vấn" — mở chatbot Bé Ngoan (js/chatbot.js). Ẩn nút nếu chatbot chưa được nạp.
+  var fcChat = document.getElementById('fc-chat');
+  if (fcChat) {
+    if (!window.DawnChat) fcChat.style.display = 'none';
+    fcChat.addEventListener('click', function () {
+      if (fcRoot) fcRoot.classList.remove('open');
+      if (window.DawnChat) window.DawnChat.open();
+    });
+    // chatbot.js nạp sau components.js — kiểm tra lại sau 1.5s
+    setTimeout(function () {
+      if (window.DawnChat) fcChat.style.display = '';
+    }, 1500);
   }
 })();
