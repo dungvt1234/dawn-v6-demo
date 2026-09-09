@@ -162,7 +162,7 @@
 
   const floatContactHTML = `
 <div id="floating-contact" class="fixed bottom-6 right-5 md:bottom-8 md:right-8 z-[60] flex flex-col items-end">
- <div id="fc-links" class="flex flex-col items-end gap-3 mb-3">
+ <div id="fc-links" class="flex flex-col items-end gap-3 mb-3 opacity-0 invisible translate-y-3 transition-all duration-300 ease-out">
   <button type="button" id="fc-chat" class="fc-btn flex items-center gap-2.5 bg-white rounded-full pl-2 pr-4 py-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 focus-ring" style="border:none;cursor:pointer;">
    <span class="fc-icon w-9 h-9 rounded-full flex items-center justify-center text-lg" style="background:var(--chartreuse);">🌱</span>
    <span class="text-[13px] font-semibold text-charcoal">Chat tư vấn</span>
@@ -184,7 +184,7 @@
    <span class="text-[13px] font-semibold text-charcoal">0866 685 632</span>
   </a>
  </div>
- <button id="fc-toggle" aria-label="Liên hệ nhanh" aria-expanded="false" class="w-14 h-14 md:w-16 md:h-16 rounded-full hidden items-center justify-center shadow-xl transition-all duration-300 hover:scale-105 focus-ring" style="display:none;background:var(--chartreuse); color:var(--forest);">
+ <button id="fc-toggle" aria-label="Liên hệ nhanh" aria-expanded="false" class="w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-xl transition-all duration-300 hover:scale-105 focus-ring" style="background:var(--chartreuse); color:var(--forest);">
   <i data-lucide="message-circle" class="w-7 h-7 md:w-8 md:h-8"></i>
  </button>
 </div>`;
