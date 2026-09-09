@@ -225,10 +225,11 @@
   // components.js chèn floating contact ngay khi nạp; kiểm tra lại sau 1s cho chắc
   setTimeout(syncFallbackBtn, 1000);
 
-  // Bong bóng mời chat 1 lần/phiên
+  // Bong bóng chào 1 lần/phiên — hiện câu chào mà không cần mở khung chat.
+  // Bấm vào bong bóng thì mở chat.
   var teaser = document.createElement('div');
   teaser.id = 'dawn-chat-teaser';
-  teaser.textContent = '👋 Ba mẹ cần tư vấn gì không ạ?';
+  teaser.textContent = T.hello;
   document.body.appendChild(teaser);
   function hideTeaser() {
     teaser.classList.remove('is-show');
@@ -241,8 +242,8 @@
         try {
           sessionStorage.setItem('dawn-chat-teased', '1');
         } catch (e) {}
-      }, 8000);
-      setTimeout(hideTeaser, 20000);
+      }, 1500);
+      setTimeout(hideTeaser, 30000);
     }
   } catch (e) {}
 
