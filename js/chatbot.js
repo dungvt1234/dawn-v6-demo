@@ -253,10 +253,19 @@
   });
   // Bong bóng chào hiện MỖI trang (sau 1.5s), không cần mở khung chat.
   // Bấm chữ thì mở chat; bấm ✕/mở chat thì ẩn; tự ẩn sau 30s.
-  setTimeout(function () {
+  function showTeaser() {
     if (!panel.classList.contains('is-open')) teaser.classList.add('is-show');
-  }, 1500);
+  }
+  setTimeout(showTeaser, 1500);
   setTimeout(hideTeaser, 30000);
+  // Safari/iOS hay khôi phục trang từ bộ nhớ đệm (back-forward cache) mà không
+  // chạy lại code — hiện lại bong bóng khi đó.
+  window.addEventListener('pageshow', function (e) {
+    if (e.persisted) {
+      setTimeout(showTeaser, 1500);
+      setTimeout(hideTeaser, 30000);
+    }
+  });
 
   // Khung chat mặc định ĐÓNG để không che dock 4 nút nổi.
   // Ba mẹ mở bằng: nút tròn dự phòng, nút "Chat tư vấn", bong bóng mời chat,
