@@ -244,35 +244,19 @@
     teaser.classList.remove('is-show');
   }
   teaser.addEventListener('click', function (e) {
-    // Bấm ✕ thì ẩn hẳn (không mở chat, không hiện lại trong phiên này)
+    // Bấm ✕ thì ẩn hẳn (không mở chat)
     if (e.target && e.target.closest && e.target.closest('.tt-close')) {
       hideTeaser();
-      markTeased();
       return;
     }
     open();
   });
-  // Đọc sessionStorage trong try riêng: mobile chặn storage (private mode,
-  // chặn cookie) sẽ throw — khi đó vẫn hiện teaser chứ không bỏ qua.
-  function alreadyTeased() {
-    try {
-      return !!sessionStorage.getItem('dawn-chat-teased');
-    } catch (e) {
-      return false;
-    }
-  }
-  function markTeased() {
-    try {
-      sessionStorage.setItem('dawn-chat-teased', '1');
-    } catch (e) {}
-  }
-  if (!alreadyTeased()) {
-    setTimeout(function () {
-      if (!panel.classList.contains('is-open')) teaser.classList.add('is-show');
-      markTeased();
-    }, 1500);
-    setTimeout(hideTeaser, 30000);
-  }
+  // Bong bóng chào hiện MỖI trang (sau 1.5s), không cần mở khung chat.
+  // Bấm chữ thì mở chat; bấm ✕/mở chat thì ẩn; tự ẩn sau 30s.
+  setTimeout(function () {
+    if (!panel.classList.contains('is-open')) teaser.classList.add('is-show');
+  }, 1500);
+  setTimeout(hideTeaser, 30000);
 
   // Khung chat mặc định ĐÓNG để không che dock 4 nút nổi.
   // Ba mẹ mở bằng: nút tròn dự phòng, nút "Chat tư vấn", bong bóng mời chat,
