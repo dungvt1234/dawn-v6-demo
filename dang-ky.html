@@ -85,24 +85,10 @@
  <div class="card p-8 md:p-12 reveal" style="background:var(--white);">
  <p class="eyebrow" style="color:var(--gold-strong);">MẪU ĐĂNG KÝ</p>
  <h2 class="serif text-[28px] md:text-[36px] leading-[1.15] mt-3" style="color:var(--plum);">Thông tin gia đình</h2>
- <form class="mt-9 space-y-6 js-zalo-form" novalidate>
- <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
- <div><label class="label" for="pname">Họ tên phụ huynh *</label><input class="field" id="pname" required placeholder="Họ và tên"></div>
- <div><label class="label" for="pphone">Số điện thoại *</label><input class="field" id="pphone" required type="tel" placeholder="0xx xxx xxxx"></div>
- </div>
- <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
- <div><label class="label" for="bname">Tên bé *</label><input class="field" id="bname" required placeholder="Tên của bé"></div>
- <div><label class="label" for="bdob">Ngày sinh của bé *</label><input class="field" id="bdob" required type="date"></div>
- </div>
- <div><label class="label" for="bclass">Độ tuổi / Lớp mong muốn</label>
- <select class="field" id="bclass">
- <option>Nhà trẻ (6 – 24 tháng)</option>
- <option>Mẫu giáo bé (2 – 3 tuổi)</option>
- <option>Mẫu giáo nhỡ (3 – 4 tuổi)</option>
- <option>Mẫu giáo lớn (4 – 6 tuổi)</option>
- </select></div>
- <div><label class="label" for="tdate">Ngày tham quan mong muốn</label><input class="field" id="tdate" type="date"></div>
- <div><label class="label" for="note">Ghi chú thêm</label><textarea class="field" id="note" rows="3" placeholder="Anh/chị muốn tìm hiểu thêm điều gì?"></textarea></div>
+  <form class="mt-9 space-y-6 js-zalo-form" novalidate>
+  <div><label class="label" for="pname">Họ tên phụ huynh *</label><input class="field" id="pname" required placeholder="Họ và tên"></div>
+  <div><label class="label" for="pphone">Số điện thoại *</label><input class="field" id="pphone" required type="tel" placeholder="0xx xxx xxxx"></div>
+  <div><label class="label" for="bname">Tên bé và độ tuổi</label><input class="field" id="bname" placeholder="VD: Bo — 3 tuổi"></div>
  <div class="pt-2 flex flex-col sm:flex-row gap-4 items-center">
  <button type="submit" class="focus-ring btn-solid w-full sm:w-auto">GỬI ĐĂNG KÝ THAM QUAN →</button>
  <p class="text-[13px]" style="color:var(--forest);">Hoặc gọi trực tiếp: <strong>0866 685 632</strong></p>
