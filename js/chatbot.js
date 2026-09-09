@@ -246,12 +246,9 @@
     }
   } catch (e) {}
 
-  // Khung chat hiện ra liền khi mở trang (sau 0.4s cho trang kịp vẽ khung đầu).
-  // Ba mẹ vẫn đóng được bằng nút ✕ / phím Esc; qua trang khác khung lại tự mở.
-  // Truyền false để không focus ô nhập → không bị cuộn trang, không bật bàn phím.
-  setTimeout(function () {
-    if (!panel.classList.contains('is-open')) open(false);
-  }, 400);
+  // Khung chat mặc định ĐÓNG để không che dock 4 nút nổi.
+  // Ba mẹ mở bằng: nút tròn dự phòng, nút "Chat tư vấn", bong bóng mời chat,
+  // hoặc code: window.DawnChat.open()
 
   window.DawnChat = { open: open, close: close, ask: ask };
 })();
