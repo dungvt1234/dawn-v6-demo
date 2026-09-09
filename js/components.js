@@ -213,8 +213,13 @@
 
 
   function inject() {
-    document.querySelectorAll('[data-include="header"]').forEach(el => { el.outerHTML = headerHTML; });
-    document.querySelectorAll('[data-include="footer"]').forEach(el => { el.outerHTML = footerHTML; });
+    // Array.prototype.forEach để không gãy trên browser cũ (NodeList.forEach)
+    Array.prototype.forEach.call(document.querySelectorAll('[data-include="header"]'), function (el) {
+      el.outerHTML = headerHTML;
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-include="footer"]'), function (el) {
+      el.outerHTML = footerHTML;
+    });
 
     // Floating contact button (all pages)
     document.body.insertAdjacentHTML('beforeend', floatCSS + floatContactHTML);
@@ -255,7 +260,7 @@
   document.head.insertAdjacentHTML('beforeend', menuMarginCss);
 
   // Mobile accordion submenus: click parent to open/close dropdown
-  document.querySelectorAll('.mobile-nav-toggle').forEach(function (btn) {
+  Array.prototype.forEach.call(document.querySelectorAll('.mobile-nav-toggle'), function (btn) {
     btn.addEventListener('click', function () {
       var target = document.getElementById(btn.getAttribute('aria-controls'));
       var expanded = btn.getAttribute('aria-expanded') === 'true';

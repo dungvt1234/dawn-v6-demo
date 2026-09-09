@@ -197,7 +197,8 @@
   }
 
   panel.querySelector('.chat-close').addEventListener('click', close);
-  panel.querySelectorAll('.chat-chips button').forEach(function (b) {
+  // forEach trực tiếp trên NodeList gãy ở browser cũ → mượn Array.forEach
+  Array.prototype.forEach.call(panel.querySelectorAll('.chat-chips button'), function (b) {
     b.addEventListener('click', function () {
       ask(b.textContent);
     });
@@ -235,17 +236,27 @@
     teaser.classList.remove('is-show');
   }
   teaser.addEventListener('click', open);
-  try {
-    if (!sessionStorage.getItem('dawn-chat-teased')) {
-      setTimeout(function () {
-        if (!panel.classList.contains('is-open')) teaser.classList.add('is-show');
-        try {
-          sessionStorage.setItem('dawn-chat-teased', '1');
-        } catch (e) {}
-      }, 1500);
-      setTimeout(hideTeaser, 30000);
+  // Đọc sessionStorage trong try riêng: mobile chặn storage (private mode,
+  // chặn cookie) sẽ throw — khi đó vẫn hiện teaser chứ không bỏ qua.
+  function alreadyTeased() {
+    try {
+      return !!sessionStorage.getItem('dawn-chat-teased');
+    } catch (e) {
+      return false;
     }
-  } catch (e) {}
+  }
+  function markTeased() {
+    try {
+      sessionStorage.setItem('dawn-chat-teased', '1');
+    } catch (e) {}
+  }
+  if (!alreadyTeased()) {
+    setTimeout(function () {
+      if (!panel.classList.contains('is-open')) teaser.classList.add('is-show');
+      markTeased();
+    }, 1500);
+    setTimeout(hideTeaser, 30000);
+  }
 
   // Khung chat mặc định ĐÓNG để không che dock 4 nút nổi.
   // Ba mẹ mở bằng: nút tròn dự phòng, nút "Chat tư vấn", bong bóng mời chat,
