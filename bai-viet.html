@@ -22,7 +22,7 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/bevietnampro/v12/QdVMSTAyLFyeg_IDWvOJmVES_HScJ281Rb0.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/bevietnampro/v12/QdVPSTAyLFyeg_IDWvOJmVES_Hw5BXoKZA.woff2">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=5">
+<link rel="stylesheet" href="css/style.min.css?v=5">
   <!-- v4 design: Tailwind config colors -->
   <!-- AOS Animation Library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -97,7 +97,7 @@
  </a>
 
  <div id="bv-image-wrap" class="mt-8 img-frame" style="border-radius:1.75rem; display:none;">
- <img id="bv-image" src="" loading="lazy" alt="" class="w-full h-auto object-cover">
+ <img id="bv-image" loading="lazy" src="" loading="lazy" alt="" class="w-full h-auto object-cover">
  </div>
 
  <article id="bv-body" class="mt-10 prose-article"></article>
@@ -110,7 +110,7 @@
 </section>
 
 <div data-include="footer"></div>
-<script src="js/components.js?v=5"></script>
+<script defer src="js/components.min.js?v=5"></script>
 <script>
  const fill = document.getElementById('dawn-arc-fill');
  const header = document.getElementById('site-header');
@@ -218,7 +218,7 @@
  if (others.length) {
  othersEl.innerHTML = others.map(n => `
  <a href="bai-viet.html?slug=${encodeURIComponent(n.slug)}" class="card overflow-hidden focus-ring block group">
- <div class="img-frame" style="border-radius:0;"><img src="${n.image}" alt="${esc(n.title)}" class="w-full h-[150px] object-cover photo-grade group-hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+ <div class="img-frame" style="border-radius:0;"><img loading="lazy" src="${n.image}" alt="${esc(n.title)}" class="w-full h-[150px] object-cover photo-grade group-hover:scale-105 transition-transform duration-500" loading="lazy"></div>
  <div class="p-5">
  <span class="tag">${esc(n.tag)}</span>
  <h3 class="serif text-[17px] leading-[1.3] mt-3" style="color:var(--plum);">${esc(n.title)}</h3>
