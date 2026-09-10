@@ -30,6 +30,8 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 h1,h2,h3,.serif{ font-family:'DM Serif Display',serif; font-weight:400; }
+/* Chống chữ tràn màn hình mobile: cho phép ngắt từ + cân dòng (browser cũ tự bỏ qua) */
+h1,h2{ overflow-wrap:break-word; text-wrap:balance; }
 
 /* ===== Scrollbar (v4 signature) ===== */
 ::-webkit-scrollbar{ width:8px; }
