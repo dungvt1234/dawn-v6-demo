@@ -39,13 +39,238 @@ h1,h2{ overflow-wrap:break-word; text-wrap:balance; }
 ::-webkit-scrollbar-thumb{ background:#C9D3B5; border-radius:4px; }
 ::-webkit-scrollbar-thumb:hover{ background:#223D22; }
 
-/* ===== Glass header (v4) ===== */
-.glass-header{
-  background:rgba(248,247,240,0.85);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
+/* ===== Premium header — warm elegant preschool (2026) ===== */
+.site-header{
+  background:var(--ivory);
+  border-bottom:1px solid transparent;
+  height:76px;
 }
-#site-header{ transition:background .4s ease, box-shadow .4s ease; }
+.site-header__inner{
+  max-width:1280px;
+  width:100%;
+  margin:0 auto;
+  padding:0 20px;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+@media (min-width:768px){
+  .site-header__inner{ padding:0 32px; }
+}
+.site-brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-shrink:0;
+  text-decoration:none;
+}
+.site-brand__icon{
+  height:40px;
+  width:auto;
+  transition:transform .35s cubic-bezier(.22,.61,.36,1);
+}
+.site-brand:hover .site-brand__icon{ transform:scale(1.04); }
+.site-brand__text{
+  display:flex;
+  flex-direction:column;
+  line-height:1;
+  align-items:center;
+}
+.site-brand__title{
+  font-family:'DM Serif Display',serif;
+  font-size:15px;
+  letter-spacing:.04em;
+  color:var(--plum);
+  font-weight:700;
+  white-space:nowrap;
+}
+.site-brand__subtitle{
+  font-size:9px;
+  letter-spacing:.22em;
+  color:var(--forest);
+  font-weight:700;
+  text-transform:uppercase;
+  margin-top:3px;
+  white-space:nowrap;
+}
+/* Nav */
+.site-nav{ display:none; }
+@media (min-width:1024px){ .site-nav{ display:block; } }
+.site-nav__list{
+  display:flex;
+  align-items:center;
+  gap:28px;
+  list-style:none;
+  margin:0; padding:0;
+}
+@media (min-width:1024px) and (max-width:1180px){
+  .site-nav__list{ gap:18px; }
+}
+.site-nav__item{ position:relative; }
+.site-nav__link{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-family:'Be Vietnam Pro',sans-serif;
+  font-size:14.5px;
+  font-weight:500;
+  letter-spacing:.01em;
+  color:var(--forest);
+  text-decoration:none;
+  padding:8px 2px;
+  position:relative;
+  transition:color .2s ease;
+  white-space:nowrap;
+}
+.site-nav__link:hover{ color:var(--plum); }
+.site-nav__link.is-active{ font-weight:600; color:var(--plum); }
+.site-nav__link.is-active::after{
+  content:'';
+  position:absolute;
+  left:2px; right:2px; bottom:-2px;
+  height:2px;
+  background:var(--forest);
+  border-radius:999px;
+  opacity:.9;
+}
+.site-nav__link--cta.is-active::after{ display:none; }
+.site-nav__link--cta{
+  background:rgba(201,211,181,0.38);
+  border:1px solid rgba(34,61,34,0.08);
+  padding:8px 16px;
+  border-radius:999px;
+  transition:background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+}
+.site-nav__link--cta:hover{
+  background:var(--sage);
+  color:var(--forest);
+  border-color:rgba(34,61,34,0.12);
+}
+.site-nav__link--cta.is-active{
+  background:var(--forest);
+  color:var(--ivory);
+  border-color:var(--forest);
+}
+.site-nav__chevron{
+  width:14px; height:14px;
+  opacity:.7;
+  transition:transform .25s ease, opacity .2s ease;
+  flex-shrink:0;
+}
+.site-nav__item:hover .site-nav__chevron,
+.site-nav__item:focus-within .site-nav__chevron{ transform:rotate(180deg); opacity:1; }
+/* Dropdown */
+.site-nav__dropdown{
+  position:absolute;
+  top:100%;
+  left:50%;
+  transform:translateX(-50%);
+  padding-top:14px;
+  opacity:0;
+  visibility:hidden;
+  translate:0 8px;
+  transition:opacity .22s ease, visibility .22s ease, translate .22s cubic-bezier(.22,.61,.36,1);
+  z-index:60;
+  pointer-events:none;
+}
+.site-nav__item:hover .site-nav__dropdown,
+.site-nav__item:focus-within .site-nav__dropdown{
+  opacity:1; visibility:visible; translate:0 0; pointer-events:auto;
+}
+.site-nav__dropdown-panel{
+  background:#FFFFFF;
+  border:1px solid rgba(34,61,34,0.08);
+  border-radius:16px;
+  box-shadow:0 16px 40px rgba(34,61,34,0.12), 0 4px 12px rgba(34,61,34,0.06);
+  padding:8px;
+  min-width:240px;
+}
+.site-nav__dropdown-link{
+  display:block;
+  padding:10px 14px;
+  font-size:14px;
+  font-weight:500;
+  color:var(--charcoal);
+  text-decoration:none;
+  border-radius:10px;
+  transition:background .18s ease, color .18s ease;
+  white-space:nowrap;
+}
+.site-nav__dropdown-link:hover,
+.site-nav__dropdown-link:focus-visible{
+  background:rgba(201,211,181,0.32);
+  color:var(--forest);
+  outline:none;
+}
+.site-nav__dropdown-link.is-active{
+  background:rgba(34,61,34,0.06);
+  color:var(--plum);
+  font-weight:600;
+}
+/* Actions */
+.site-actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-shrink:0;
+}
+.site-phone{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:var(--forest);
+  color:var(--ivory);
+  padding:10px 18px;
+  border-radius:999px;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.02em;
+  text-decoration:none;
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+  white-space:nowrap;
+}
+.site-phone:hover{ transform:translateY(-1px); box-shadow:0 8px 20px rgba(34,61,34,0.18); background:#1a2f1a; }
+.site-burger{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:44px; height:44px;
+  border-radius:12px;
+  border:1px solid rgba(34,61,34,0.08);
+  background:rgba(255,255,255,0.6);
+  color:var(--forest);
+  cursor:pointer;
+  transition:background .2s ease, border-color .2s ease;
+}
+.site-burger:hover{ background:#fff; border-color:rgba(34,61,34,0.14); }
+@media (min-width:1024px){ .site-burger{ display:none; } }
+/* Mobile */
+.site-mobile{
+  position:fixed;
+  left:0; right:0; bottom:0;
+  background:var(--ivory);
+  border-top:1px solid rgba(34,61,34,0.08);
+  box-shadow:0 24px 48px rgba(34,61,34,0.14);
+  padding:20px 20px 28px;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  z-index:40;
+}
+@media (min-width:1024px){ .site-mobile{ display:none !important; } }
+/* Sticky premium */
+.glass-header{
+  background:rgba(248,247,240,0.92);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(34,61,34,0.08);
+  box-shadow:0 4px 24px rgba(34,61,34,0.06);
+}
+#site-header{ transition:background .35s ease, box-shadow .35s ease, border-color .35s ease; }
 
 /* ===== Ripple button (v4) ===== */
 .ripple-btn::before{

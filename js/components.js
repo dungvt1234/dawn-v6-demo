@@ -5,9 +5,9 @@
   const DEMO_URL = 'https://school-os-eta.vercel.app';
 
   const NAV = [
-    { href: 'index.html', label: 'TRANG CHỦ', key: 'index' },
+    { href: 'index.html', label: 'Trang chủ', key: 'index' },
     {
-      href: 'gioi-thieu.html', label: 'GIỚI THIỆU', key: 'about',
+      href: 'gioi-thieu.html', label: 'Giới thiệu', key: 'about',
       children: [
         { href: 'gioi-thieu.html', label: 'Về chúng tôi', key: 'about' },
         { href: 'chuong-trinh.html', label: 'Chương trình học', key: 'program' },
@@ -16,17 +16,17 @@
       ]
     },
     {
-      href: '#', label: 'THÔNG TIN', key: 'info',
+      href: '#', label: 'Thông tin', key: 'info',
       children: [
         { href: 'tuyen-sinh.html', label: 'Quy trình tuyển sinh', key: 'info' },
         { href: 'hoc-phi.html', label: 'Học phí & ưu đãi', key: 'info' },
         { href: 'gallery.html', label: 'Thư viện ảnh', key: 'info' }
       ]
     },
-    { href: 'chuong-trinh.html', label: 'CHƯƠNG TRÌNH HỌC', key: 'program' },
-    { href: 'tieng-anh-cho-tre.html', label: 'TIẾNG ANH CHO TRẺ', key: 'english' },
-    { href: 'tin-tuc.html', label: 'TIN TỨC & SỰ KIỆN', key: 'news' },
-    { href: 'lien-he.html', label: 'LIÊN HỆ', key: 'contact' }
+    { href: 'chuong-trinh.html', label: 'Chương trình học', key: 'program' },
+    { href: 'tieng-anh-cho-tre.html', label: 'Tiếng Anh cho trẻ', key: 'english' },
+    { href: 'tin-tuc.html', label: 'Tin tức & Sự kiện', key: 'news' },
+    { href: 'lien-he.html', label: 'Liên hệ', key: 'contact' }
   ];
   const activeKey = {
     'index.html': 'index',
@@ -48,21 +48,26 @@
   }[PAGE] || 'index';
 
    const navLinks = NAV.map(n => {
+    const isActive = activeKey === n.key;
+    const isCta = n.key === 'english';
     if (n.children) {
       return `
- <div class="relative group">
-  <a href="${n.href}" class="inline-flex items-center gap-1 text-[11px] font-medium tracking-[0.04em] uppercase transition-colors focus-ring${activeKey === n.key ? ' text-plum font-bold' : ' text-charcoal/70 hover:text-plum'}" style="${activeKey === n.key ? 'color:var(--plum);' : ''}">
-   ${n.label} <i data-lucide="chevron-down" class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180"></i>
+ <li class="site-nav__item">
+  <a href="${n.href}" class="site-nav__link focus-ring${isActive ? ' is-active' : ''}" aria-haspopup="true" aria-expanded="false">
+   ${n.label} <i data-lucide="chevron-down" class="site-nav__chevron"></i>
   </a>
-  <div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50">
-   <div class="bg-white rounded-2xl shadow-2xl border border-forest/10 py-2 min-w-[240px]">
-    ${n.children.map(c => `<a href="${c.href}" class="block px-5 py-3 text-[13px] font-medium tracking-[0.03em] transition-colors focus-ring ${PAGE === c.href ? 'text-plum font-bold bg-forest/5' : 'text-charcoal/70 hover:text-plum hover:bg-forest/5'}" style="${PAGE === c.href ? 'color:var(--plum);' : ''}">${c.label}</a>`).join('\n    ')}
+  <div class="site-nav__dropdown" role="menu">
+   <div class="site-nav__dropdown-panel">
+    ${n.children.map(c => `<a href="${c.href}" role="menuitem" class="site-nav__dropdown-link focus-ring${PAGE === c.href ? ' is-active' : ''}">${c.label}</a>`).join('\n    ')}
    </div>
   </div>
- </div>`;
+ </li>`;
     }
-    return `<a href="${n.href}" class="text-[11px] font-medium tracking-[0.04em] uppercase transition-colors focus-ring${activeKey === n.key ? ' text-plum font-bold' : ' text-charcoal/70 hover:text-plum'}" style="${activeKey === n.key ? 'color:var(--plum);' : ''}">${n.label}</a>`;
-  }).join('\n ');
+    if (isCta) {
+      return `<li class="site-nav__item"><a href="${n.href}" class="site-nav__link site-nav__link--cta focus-ring${isActive ? ' is-active' : ''}">${n.label}</a></li>`;
+    }
+    return `<li class="site-nav__item"><a href="${n.href}" class="site-nav__link focus-ring${isActive ? ' is-active' : ''}">${n.label}</a></li>`;
+  }).join('\n  ');
 
   const mobileLinks = NAV.map(n => {
     if (n.children) {
@@ -83,27 +88,31 @@
   }).join('\n ');
 
   const headerHTML = `
-<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 flex items-center" style="background:var(--ivory); height:64px;">
- <div class="max-w-container w-full mx-auto px-4 flex items-center justify-between gap-2">
-  <a href="index.html" class="focus-ring flex items-center gap-2 group shrink-0">
-   <img src="img/logo-icon.webp" alt="Mầm non Bình Minh" class="w-auto transition-transform duration-500 group-hover:scale-105" style="height:34px; width:auto;">
-   <div class="flex flex-col leading-tight items-center">
-    <span class="font-serif text-[13px] tracking-[0.04em] text-plum font-bold whitespace-nowrap text-center">DAWN KINDERGARTEN</span>
-    <span class="text-[9px] tracking-[0.24em] text-forest font-bold uppercase whitespace-nowrap text-center">Mầm Non Bình Minh</span>
+<header id="site-header" class="site-header fixed top-0 left-0 right-0 z-50">
+ <div class="site-header__inner">
+  <a href="index.html" class="site-brand focus-ring">
+   <img src="img/logo-icon.webp" alt="Mầm non Bình Minh" class="site-brand__icon">
+   <div class="site-brand__text">
+    <span class="site-brand__title">DAWN KINDERGARTEN</span>
+    <span class="site-brand__subtitle">Mầm Non Bình Minh</span>
    </div>
   </a>
-  <nav class="hidden lg:flex items-center gap-4 shrink" style="margin-left:16px;">
-   ${navLinks}
+  <nav class="site-nav" aria-label="Điều hướng chính">
+   <ul class="site-nav__list">
+    ${navLinks}
+   </ul>
   </nav>
-  <a href="tel:0866685632" aria-label="Gọi tư vấn 0866 685 632" class="focus-ring inline-flex items-center gap-1.5 px-3 py-2 rounded-full text-[11px] font-bold tracking-wide transition-all duration-300 hover:-translate-y-0.5 shrink-0" style="background:#223D22;color:#F8F7F0;">
-   <i data-lucide="phone" class="w-3.5 h-3.5"></i><span class="hidden sm:inline">0866 685 632</span>
-  </a>
-  <button id="menu-btn" class="lg:hidden p-2 text-forest focus:outline-none focus-ring shrink-0" aria-label="Mở menu">
-   <i data-lucide="menu" class="w-6 h-6"></i>
-  </button>
+  <div class="site-actions">
+   <a href="tel:0866685632" aria-label="Gọi tư vấn 0866 685 632" class="site-phone focus-ring">
+    <i data-lucide="phone" class="w-4 h-4"></i><span class="hidden sm:inline">0866 685 632</span>
+   </a>
+   <button id="menu-btn" class="site-burger focus-ring" aria-expanded="false" aria-controls="mobile-menu" aria-label="Mở menu">
+    <i data-lucide="menu" class="w-6 h-6"></i>
+   </button>
+  </div>
  </div>
 </header>
-<div id="mobile-menu" class="hidden fixed left-0 right-0 bottom-0 bg-ivory border-b border-forest/10 p-6 flex-col gap-4 shadow-2xl lg:hidden overflow-y-auto overscroll-contain z-[100]" style="top:64px; -webkit-overflow-scrolling:touch;">
+<div id="mobile-menu" class="site-mobile hidden" style="top:76px;">
   ${mobileLinks}
   <a href="${DEMO_URL}" target="_blank" rel="noopener" class="mt-4 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-[13px] font-bold tracking-[0.08em] uppercase transition-all duration-300 focus-ring" style="background:var(--chartreuse); color:var(--forest);">🖥️ Dùng thử phần mềm quản lý</a>
  </div>`;
@@ -243,7 +252,17 @@
       if (e.target.closest('a')) {
         mobileMenu.classList.add('hidden');
         mobileMenu.classList.remove('flex');
+        var mb = document.getElementById('menu-btn');
+        if (mb) mb.setAttribute('aria-expanded', 'false');
       }
+    });
+  }
+  // Hamburger ARIA sync (enhances inline page script)
+  var menuBtnAria = document.getElementById('menu-btn');
+  if (menuBtnAria && mobileMenu) {
+    menuBtnAria.addEventListener('click', function () {
+      var expanded = menuBtnAria.getAttribute('aria-expanded') === 'true';
+      menuBtnAria.setAttribute('aria-expanded', expanded ? 'false' : 'true');
     });
   }
 
