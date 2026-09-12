@@ -135,6 +135,8 @@ try {
         console.log('Thêm sitemap entry mới: ' + loc);
       }
     }
+    // Chuẩn hóa whitespace sau các thao tác xóa
+    xml = xml.replace(/[ \t]+\n/g, '\n').replace(/\n{3,}/g, '\n\n');
     // Dedup check
     const locs = [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);
     const seen = new Set();
@@ -195,7 +197,7 @@ try {
       datePublished: isoDate,
       dateModified: isoDate,
       author: { '@type': 'Organization', name: 'Mầm non Bình Minh' },
-      publisher: { '@type': 'Organization', name: 'Mầm non Bình Minh', logo: { '@type': 'ImageObject', url: `${base}/img/logo.png` } },
+      publisher: { '@type': 'Organization', name: 'Mầm non Bình Minh', logo: { '@type': 'ImageObject', url: `${base}/img/logo.webp` } },
       mainEntityOfPage: postUrl
     };
     html = html.replace(/<script type="application\/ld\+json" id="article-jsonld">.*?<\/script>/s, `<script type="application/ld+json" id="article-jsonld">${JSON.stringify(articleLd, null, 2)}</script>`);
@@ -252,7 +254,7 @@ try {
         datePublished: isoDate,
         dateModified: isoDate,
         author: { '@type': 'Organization', name: 'Mầm non Bình Minh' },
-        publisher: { '@type': 'Organization', name: 'Mầm non Bình Minh', logo: { '@type': 'ImageObject', url: `${base}/img/logo.png` } },
+        publisher: { '@type': 'Organization', name: 'Mầm non Bình Minh', logo: { '@type': 'ImageObject', url: `${base}/img/logo.webp` } },
         mainEntityOfPage: postUrl
       };
       html = html.replace(/<script type="application\/ld\+json" id="article-jsonld">.*?<\/script>/s, `<script type="application/ld+json" id="article-jsonld">${JSON.stringify(articleLd, null, 2)}</script>`);
@@ -308,6 +310,32 @@ try {
   }
 } catch (e) {
   console.error('Lỗi cập nhật netlify.toml:', e.message);
+}
+
+// --- Tin-tuc.html: điền sẵn ItemList JSON-LD từ dữ liệu thật (tránh block rỗng) ---
+try {
+  const tinTucPath = path.join(__dirname, '..', 'tin-tuc.html');
+  if (fs.existsSync(tinTucPath) && items.length > 0) {
+    const base = 'https://binhminhkindergarten.site';
+    const itemList = {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'Tin tức & Sự kiện Mầm non Bình Minh',
+      numberOfItems: items.length,
+      itemListElement: items.map((n, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: `${base}/bai-viet/${encodeURIComponent(n.slug)}/`,
+        name: n.title
+      }))
+    };
+    let t = fs.readFileSync(tinTucPath, 'utf8');
+    t = t.replace(/<script type="application\/ld\+json" id="news-itemlist">.*?<\/script>/s, `<script type="application/ld+json" id="news-itemlist">${JSON.stringify(itemList, null, 2)}</script>`);
+    fs.writeFileSync(tinTucPath, t, 'utf8');
+    console.log('Đã điền ItemList vào tin-tuc.html cho ' + items.length + ' bài viết');
+  }
+} catch (e) {
+  console.error('Lỗi cập nhật tin-tuc.html:', e.message);
 }
 
 // --- Vercel rewrites ---
