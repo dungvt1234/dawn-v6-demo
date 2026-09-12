@@ -265,14 +265,3 @@ details.faq p{ margin-top:12px; color:var(--muted); line-height:1.7; font-size:1
   transform-style:preserve-3d;
   transition:opacity .7s ease, transform .7s cubic-bezier(.22,.61,.36,1);
 }
-
-/* ===== Header nav breakpoint xl (Tailwind build thiếu xl:*) ===== */
-@media (min-width:1280px){
-  nav.xl\:flex{display:flex;}
-  a.xl\:inline-flex{display:inline-flex;}
-  .xl\:ml-8{margin-left:2rem;}
-}
-@media (min-width:1280px){
-  button.xl\:hidden{display:none;}
-  #mobile-menu.xl\:hidden{display:none;}
-}
