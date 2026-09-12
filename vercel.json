@@ -9,6 +9,17 @@
         {
           "type": "query",
           "key": "slug",
+          "value": "giao-cu-montessori-cho-be-tai-nha"
+        }
+      ],
+      "destination": "/bai-viet/giao-cu-montessori-cho-be-tai-nha/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
           "value": "montessori-vs-truyen-thong"
         }
       ],
