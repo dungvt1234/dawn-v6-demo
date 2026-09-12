@@ -9,6 +9,39 @@
         {
           "type": "query",
           "key": "slug",
+          "value": "giao-vien-ban-ngu-day-tieng-anh-mam-non"
+        }
+      ],
+      "destination": "/bai-viet/giao-vien-ban-ngu-day-tieng-anh-mam-non/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "may-tuoi-nen-cho-be-hoc-tieng-anh"
+        }
+      ],
+      "destination": "/bai-viet/may-tuoi-nen-cho-be-hoc-tieng-anh/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "song-ngu-hay-tieng-anh-tang-cuong"
+        }
+      ],
+      "destination": "/bai-viet/song-ngu-hay-tieng-anh-tang-cuong/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
           "value": "giao-cu-montessori-cho-be-tai-nha"
         }
       ],

@@ -5,6 +5,24 @@
 
 [[redirects]]
   from = "/bai-viet.html"
+  to = "/bai-viet/giao-vien-ban-ngu-day-tieng-anh-mam-non/index.html"
+  status = 200
+  query = {slug = "giao-vien-ban-ngu-day-tieng-anh-mam-non"}
+
+[[redirects]]
+  from = "/bai-viet.html"
+  to = "/bai-viet/may-tuoi-nen-cho-be-hoc-tieng-anh/index.html"
+  status = 200
+  query = {slug = "may-tuoi-nen-cho-be-hoc-tieng-anh"}
+
+[[redirects]]
+  from = "/bai-viet.html"
+  to = "/bai-viet/song-ngu-hay-tieng-anh-tang-cuong/index.html"
+  status = 200
+  query = {slug = "song-ngu-hay-tieng-anh-tang-cuong"}
+
+[[redirects]]
+  from = "/bai-viet.html"
   to = "/bai-viet/giao-cu-montessori-cho-be-tai-nha/index.html"
   status = 200
   query = {slug = "giao-cu-montessori-cho-be-tai-nha"}
