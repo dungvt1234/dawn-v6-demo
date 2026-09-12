@@ -92,19 +92,19 @@
     <span class="text-[9px] md:text-[10px] tracking-[0.24em] text-forest font-bold uppercase mt-0.5 whitespace-nowrap text-center">Mầm Non Bình Minh</span>
    </div>
   </a>
-  <nav class="hidden lg:flex items-center gap-7 lg:ml-10">
+  <nav class="hidden xl:flex items-center gap-6 xl:ml-8">
    ${navLinks}
   </nav>
-  <a href="${DEMO_URL}" target="_blank" rel="noopener" class="hidden lg:inline-flex items-center gap-2 ml-6 px-5 py-2.5 rounded-full text-[12px] font-bold tracking-[0.08em] uppercase transition-all duration-300 hover:-translate-y-0.5 focus-ring" style="background:var(--chartreuse); color:var(--forest); box-shadow:0 4px 14px rgba(0,0,0,.12);">🖥️ Dùng thử phần mềm</a>
+  <a href="${DEMO_URL}" target="_blank" rel="noopener" class="hidden xl:inline-flex items-center gap-2 ml-6 px-5 py-2.5 rounded-full text-[12px] font-bold tracking-[0.08em] uppercase transition-all duration-300 hover:-translate-y-0.5 focus-ring" style="background:var(--chartreuse); color:var(--forest); box-shadow:0 4px 14px rgba(0,0,0,.12);">🖥️ Dùng thử phần mềm</a>
   <a href="tel:0866685632" aria-label="Gọi tư vấn 0866 685 632" class="focus-ring inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-bold tracking-wide transition-all duration-300 hover:-translate-y-0.5 shrink-0" style="background:#223D22;color:#F8F7F0;">
    <i data-lucide="phone" class="w-4 h-4"></i><span class="hidden sm:inline">0866 685 632</span>
   </a>
-  <button id="menu-btn" class="lg:hidden p-2 text-forest focus:outline-none focus-ring" aria-label="Mở menu">
+  <button id="menu-btn" class="xl:hidden p-2 text-forest focus:outline-none focus-ring" aria-label="Mở menu">
    <i data-lucide="menu" class="w-7 h-7"></i>
   </button>
  </div>
 </header>
-<div id="mobile-menu" class="hidden fixed top-[90px] left-0 right-0 bottom-0 bg-ivory border-b border-forest/10 p-6 flex-col gap-4 shadow-2xl lg:hidden overflow-y-auto overscroll-contain z-[100]" style="-webkit-overflow-scrolling:touch;">
+<div id="mobile-menu" class="hidden fixed top-[90px] left-0 right-0 bottom-0 bg-ivory border-b border-forest/10 p-6 flex-col gap-4 shadow-2xl xl:hidden overflow-y-auto overscroll-contain z-[100]" style="-webkit-overflow-scrolling:touch;">
   ${mobileLinks}
   <a href="${DEMO_URL}" target="_blank" rel="noopener" class="mt-4 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-[13px] font-bold tracking-[0.08em] uppercase transition-all duration-300 focus-ring" style="background:var(--chartreuse); color:var(--forest);">🖥️ Dùng thử phần mềm quản lý</a>
  </div>`;
