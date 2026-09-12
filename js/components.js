@@ -24,6 +24,7 @@
       ]
     },
     { href: 'chuong-trinh.html', label: 'CHƯƠNG TRÌNH HỌC', key: 'program' },
+    { href: 'tieng-anh-cho-tre.html', label: 'TIẾNG ANH CHO TRẺ', key: 'english' },
     { href: 'tin-tuc.html', label: 'TIN TỨC & SỰ KIỆN', key: 'news' },
     { href: 'lien-he.html', label: 'LIÊN HỆ', key: 'contact' }
   ];
@@ -32,6 +33,7 @@
     'gioi-thieu.html': 'about',
     'doi-ngu.html': 'about',
     'chuong-trinh.html': 'program',
+    'tieng-anh-cho-tre.html': 'english',
     'sinh-hoat.html': 'program',
     'hoc-phi.html': 'info',
     'tuyen-sinh.html': 'info',
