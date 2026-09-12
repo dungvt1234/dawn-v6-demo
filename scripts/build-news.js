@@ -1,6 +1,6 @@
 // scripts/build-news.js
 // Gộp tất cả bài viết trong data/news/*.json thành data/news.json (mới nhất lên trước)
-// Đồng thời cập nhật sitemap.xml với lastmod từ ngày bài viết và tiêm H1/canonical vào bai-viet.html
+// Đồng thời cập nhật sitemap.xml, tiêm H1/canonical vào bai-viet.html và sinh static bài viết bai-viet/<slug>/index.html
 // Chạy tự động trên Netlify mỗi lần deploy (xem netlify.toml)
 const fs = require('fs');
 const path = require('path');
@@ -9,6 +9,8 @@ const dir = path.join(__dirname, '..', 'data', 'news');
 const outFile = path.join(__dirname, '..', 'data', 'news.json');
 const sitemapPath = path.join(__dirname, '..', 'sitemap.xml');
 const baiVietPath = path.join(__dirname, '..', 'bai-viet.html');
+const netlifyPath = path.join(__dirname, '..', 'netlify.toml');
+const vercelPath = path.join(__dirname, '..', 'vercel.json');
 
 function parseDate(s) {
   if (!s) return 0;
@@ -39,6 +41,27 @@ function escXml(s) {
 function escHtml(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
+function fmtDate(d) {
+  const [y,m,day]=String(d).split('-');
+  return `${day}/${m}/${y}`;
+}
+function mdToHtml(md){
+  // Thử dùng marked nếu có sẵn, fallback đơn giản
+  try{
+    const marked=require('marked');
+    if(marked && marked.parse) return marked.parse(md||'');
+  }catch(e){}
+  // Fallback đơn giản: headings, bold, list, table
+  let html=escHtml(md||'');
+  html=html.replace(/^### (.*)$/gm,'<h3>$1</h3>');
+  html=html.replace(/^## (.*)$/gm,'<h2>$1</h2>');
+  html=html.replace(/^# (.*)$/gm,'<h1>$1</h1>');
+  html=html.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>');
+  html=html.replace(/\n\n/g,'</p><p>');
+  html='<p>'+html+'</p>';
+  html=html.replace(/<p><h([23])>/g,'<h$1>').replace(/<\/h[23]><\/p>/g,'</h$1>');
+  return html;
+}
 
 let items = [];
 if (fs.existsSync(dir)) {
@@ -60,24 +83,28 @@ items.sort((a, b) => parseDate(b.date) - parseDate(a.date));
 fs.writeFileSync(outFile, JSON.stringify({ news: items }, null, 2), 'utf8');
 console.log('Đã gộp ' + items.length + ' bài viết -> data/news.json');
 
-// --- Sitemap: cập nhật lastmod cho từng bài viết, giữ nguyên static URLs ---
+// --- Sitemap: cập nhật lastmod, xóa llms.txt và bare bai-viet.html nếu cần, đảm bảo valid ---
 try {
   if (fs.existsSync(sitemapPath)) {
     let xml = fs.readFileSync(sitemapPath, 'utf8');
-    // Tạo map slug -> isoDate
+    // Xóa llms.txt khỏi sitemap (không phải HTML indexable)
+    xml = xml.replace(/\s*<url>\s*<loc>https:\/\/binhminhkindergarten\.site\/llms\.txt<\/loc>[\s\S]*?<\/url>/, '');
+    // Xóa bare bai-viet.html (không slug) khỏi sitemap để tránh duplicate với slug mới nhất
+    // Giữ lại bare chỉ nếu muốn, nhưng theo Phase 1 preferred là slug, nên xóa bare
+    const bareRegex = /\s*<url>\s*<loc>https:\/\/binhminhkindergarten\.site\/bai-viet\.html<\/loc>[\s\S]*?<\/url>/;
+    if (bareRegex.test(xml)) {
+      xml = xml.replace(bareRegex, '');
+      console.log('Đã xóa bare bai-viet.html khỏi sitemap (tránh duplicate, preferred là ?slug)');
+    }
     const dateMap = new Map();
     for (const it of items) {
       const iso = toISODate(it.date);
       if (iso && it.slug) dateMap.set(it.slug, iso);
     }
-    // Thay thế hoặc thêm lastmod cho từng bài viết
     for (const [slug, iso] of dateMap) {
       const loc = `https://binhminhkindergarten.site/bai-viet.html?slug=${slug}`;
       const locEsc = escXml(loc);
-      // Tìm block <url><loc>loc</loc>...</url>
-      const locPattern = `<loc>${locEsc}</loc>`;
       if (xml.includes(locEsc)) {
-        // Nếu đã có lastmod, thay thế; nếu chưa có, thêm vào
         const urlRegex = new RegExp(`<url>\\s*<loc>${locEsc.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}</loc>([\\s\\S]*?)</url>`, 'm');
         const match = xml.match(urlRegex);
         if (match) {
@@ -85,52 +112,44 @@ try {
           if (inner.includes('<lastmod>')) {
             inner = inner.replace(/<lastmod>.*?<\/lastmod>/, `<lastmod>${iso}</lastmod>`);
           } else {
-            // Thêm lastmod trước </url> sau changefreq/priority
-            inner = inner.replace(/<\/url>\s*$/, '');
-            // inner hiện tại là phần sau </loc> đến trước </url>, thêm lastmod vào cuối inner
-            if (!inner.includes('<lastmod>')) {
-              // Chèn lastmod trước khi đóng url: tìm vị trí sau priority
-              inner = inner.trimEnd();
-              // Nếu có priority, chèn sau nó
-              if (inner.includes('</priority>')) {
-                inner = inner.replace(/<\/priority>/, `</priority>\n    <lastmod>${iso}</lastmod>`);
-              } else if (inner.includes('</changefreq>')) {
-                inner = inner.replace(/<\/changefreq>/, `</changefreq>\n    <lastmod>${iso}</lastmod>`);
-              } else {
-                inner += `\n    <lastmod>${iso}</lastmod>`;
-              }
+            inner = inner.trimEnd();
+            if (inner.includes('</priority>')) {
+              inner = inner.replace(/<\/priority>/, `</priority>\n    <lastmod>${iso}</lastmod>`);
+            } else if (inner.includes('</changefreq>')) {
+              inner = inner.replace(/<\/changefreq>/, `</changefreq>\n    <lastmod>${iso}</lastmod>`);
+            } else {
+              inner += `\n    <lastmod>${iso}</lastmod>`;
             }
           }
           xml = xml.replace(urlRegex, `<url>\n    <loc>${locEsc}</loc>${inner}\n  </url>`);
         }
       } else {
-        // Thêm mới URL bài viết chưa có trong sitemap (ít xảy ra)
         const newEntry = `  <url>\n    <loc>${locEsc}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>0.6</priority>\n    <lastmod>${iso}</lastmod>\n  </url>`;
-        // Chèn trước </urlset>
         xml = xml.replace('</urlset>', newEntry + '\n</urlset>');
         console.log('Thêm sitemap entry mới: ' + loc);
       }
     }
-    // Đảm bảo không trùng lặp: kiểm tra duplicate loc
+    // Dedup check
     const locs = [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);
     const seen = new Set();
     let dup = false;
     for (const l of locs) { if (seen.has(l)) { console.warn('Duplicate sitemap loc: '+l); dup=true; } seen.add(l); }
-    // Ghi lại
-    fs.writeFileSync(sitemapPath, xml, 'utf8');
-    console.log('Đã cập nhật sitemap.xml với lastmod cho ' + dateMap.size + ' bài viết');
-    if (dup) console.warn('Cảnh báo: sitemap có URL trùng lặp');
-    // Validate XML cơ bản
+    // Sắp xếp lại cho gọn: static trước, articles sau (giữ nguyên thứ tự hiện tại là ok)
+    // Validate
     if (!xml.includes('<?xml') || !xml.includes('<urlset')) {
       console.error('Sitemap XML không hợp lệ');
       process.exit(1);
     }
+    // Đảm bảo không có broken URLs (kiểm tra file tồn tại cho static)
+    // Không kiểm tra slug URLs vì chúng là query param, luôn hợp lệ nếu có json
+    fs.writeFileSync(sitemapPath, xml, 'utf8');
+    console.log('Đã cập nhật sitemap.xml với lastmod cho ' + dateMap.size + ' bài viết, total URLs ' + locs.length + (dup?' (có duplicate!)':''));
   }
 } catch (e) {
-  console.error('Lỗi cập nhật sitemap:', e.message);
+  console.error('Lỗi cập nhật sitemap:', e.message, e.stack);
 }
 
-// --- Bai-viet.html: tiêm H1/title/canonical/OG cho bài mới nhất để SEO không phụ thuộc JS ---
+// --- Bai-viet.html: tiêm H1/title/canonical/OG cho bài mới nhất (để bare có nội dung khi không có JS) ---
 try {
   if (fs.existsSync(baiVietPath) && items.length > 0) {
     const latest = items[0];
@@ -142,38 +161,25 @@ try {
     const image = latest.image ? (latest.image.startsWith('http') ? latest.image : `${base}/${latest.image.replace(/^\//,'')}`) : `${base}/img/hero.webp`;
     const isoDate = toISODate(latest.date) || '2026-01-01';
     let html = fs.readFileSync(baiVietPath, 'utf8');
-    // Title
     html = html.replace(/<title>.*?<\/title>/s, `<title>${escHtml(title)} — Mầm non Bình Minh</title>`);
-    // Meta description
     html = html.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${escHtml(excerpt)}">`);
-    // Canonical (exactly one)
-    // Thay thế href của canonical-link, đảm bảo chỉ có một
     html = html.replace(/<link rel="canonical"[^>]*>/, `<link rel="canonical" id="canonical-link" href="${escHtml(postUrl)}">`);
-    // Đảm bảo không có canonical trùng (xóa nếu có 2)
     const canonCount = (html.match(/<link rel="canonical"/g) || []).length;
     if (canonCount > 1) {
-      console.warn('Phát hiện ' + canonCount + ' canonical, giữ lại 1');
-      // Giữ lại cái đầu, xóa các cái sau
       let first = true;
       html = html.replace(/<link rel="canonical"[^>]*>/g, (m) => {
         if (first) { first = false; return m; }
         return '';
       });
     }
-    // OG
     html = html.replace(/<meta property="og:url"[^>]*>/, `<meta property="og:url" id="og-url" content="${escHtml(postUrl)}">`);
     html = html.replace(/<meta property="og:title"[^>]*>/, `<meta property="og:title" id="og-title" content="${escHtml(title)} — Mầm non Bình Minh">`);
     html = html.replace(/<meta property="og:description"[^>]*>/, `<meta property="og:description" id="og-desc" content="${escHtml(excerpt)}">`);
     html = html.replace(/<meta property="og:image"[^>]*>/, `<meta property="og:image" id="og-image" content="${escHtml(image)}">`);
-    // Twitter
     html = html.replace(/<meta name="twitter:title"[^>]*>/, `<meta name="twitter:title" id="tw-title" content="${escHtml(title)} — Mầm non Bình Minh">`);
     html = html.replace(/<meta name="twitter:description"[^>]*>/, `<meta name="twitter:description" id="tw-desc" content="${escHtml(excerpt)}">`);
     html = html.replace(/<meta name="twitter:image"[^>]*>/, `<meta name="twitter:image" id="tw-image" content="${escHtml(image)}">`);
-    // H1 - thay placeholder "Đang tải bài viết..." bằng title thật
     html = html.replace(/<h1 id="bv-title"[^>]*>.*?<\/h1>/s, `<h1 id="bv-title" class="serif text-[30px] md:text-[52px] leading-[1.1] mt-4 max-w-[820px] text-white reveal in">${escHtml(title)}</h1>`);
-    // Breadcrumb JSON-LD: cập nhật item 2 và thêm item 3 cho bài viết nếu chưa có
-    // Giữ đơn giản: cập nhật BreadcrumbList để item 2 là bài viết
-    // Article JSON-LD: tiêm sẵn
     const articleLd = {
       '@context': 'https://schema.org',
       '@type': 'Article',
@@ -192,4 +198,121 @@ try {
   }
 } catch (e) {
   console.error('Lỗi cập nhật bai-viet.html:', e.message, e.stack);
+}
+
+// --- Sinh static bài viết bai-viet/<slug>/index.html cho mỗi bài ---
+try {
+  const templatePath = baiVietPath;
+  if (fs.existsSync(templatePath)) {
+    const template = fs.readFileSync(templatePath, 'utf8');
+    for (const post of items) {
+      const base = 'https://binhminhkindergarten.site';
+      const slug = post.slug;
+      const postUrl = `${base}/bai-viet.html?slug=${encodeURIComponent(slug)}`;
+      const cleanUrl = `${base}/bai-viet/${encodeURIComponent(slug)}/`;
+      const title = post.title;
+      const excerpt = (post.excerpt || '').slice(0, 155);
+      const image = post.image ? (post.image.startsWith('http') ? post.image : `${base}/${post.image.replace(/^\//,'')}`) : `${base}/img/hero.webp`;
+      const isoDate = toISODate(post.date) || '2026-01-01';
+      const bodyHtml = mdToHtml(post.body || post.excerpt || '');
+      const tag = post.tag || '';
+      const dateStr = isoDate ? `${isoDate.split('-')[2]}/${isoDate.split('-')[1]}/${isoDate.split('-')[0]}` : '';
+      let html = template;
+      // Thay title/desc/canonical/OG cho bài này (canonical vẫn là ?slug để giữ preferred URL)
+      html = html.replace(/<title>.*?<\/title>/s, `<title>${escHtml(title)} — Mầm non Bình Minh</title>`);
+      html = html.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${escHtml(excerpt)}">`);
+      html = html.replace(/<link rel="canonical"[^>]*>/, `<link rel="canonical" id="canonical-link" href="${escHtml(postUrl)}">`);
+      html = html.replace(/<meta property="og:url"[^>]*>/, `<meta property="og:url" id="og-url" content="${escHtml(postUrl)}">`);
+      html = html.replace(/<meta property="og:title"[^>]*>/, `<meta property="og:title" id="og-title" content="${escHtml(title)} — Mầm non Bình Minh">`);
+      html = html.replace(/<meta property="og:description"[^>]*>/, `<meta property="og:description" id="og-desc" content="${escHtml(excerpt)}">`);
+      html = html.replace(/<meta property="og:image"[^>]*>/, `<meta property="og:image" id="og-image" content="${escHtml(image)}">`);
+      html = html.replace(/<meta name="twitter:title"[^>]*>/, `<meta name="twitter:title" id="tw-title" content="${escHtml(title)} — Mầm non Bình Minh">`);
+      html = html.replace(/<meta name="twitter:description"[^>]*>/, `<meta name="twitter:description" id="tw-desc" content="${escHtml(excerpt)}">`);
+      html = html.replace(/<meta name="twitter:image"[^>]*>/, `<meta name="twitter:image" id="tw-image" content="${escHtml(image)}">`);
+      html = html.replace(/<h1 id="bv-title"[^>]*>.*?<\/h1>/s, `<h1 id="bv-title" class="serif text-[30px] md:text-[52px] leading-[1.1] mt-4 max-w-[820px] text-white reveal in">${escHtml(title)}</h1>`);
+      // Tag/date
+      html = html.replace(/<span id="bv-tag"[^>]*>.*?<\/span>/s, `<span id="bv-tag" class="tag" style="background:var(--chartreuse); color:var(--forest);">${escHtml(tag)}</span>`);
+      html = html.replace(/<span id="bv-date"[^>]*>.*?<\/span>/s, `<span id="bv-date" class="tracking-[0.08em] font-semibold" style="color:var(--gold);">${escHtml(dateStr)}</span>`);
+      // Image
+      html = html.replace(/<div id="bv-image-wrap"[^>]*>[\s\S]*?<\/div>/, `<div id="bv-image-wrap" class="mt-8 img-frame" style="border-radius:1.75rem;"><img decoding="async" id="bv-image" src="${escHtml(post.image||'')}" alt="${escHtml(title)}" class="w-full h-auto object-cover"></div>`);
+      // Body - thay article bv-body
+      html = html.replace(/<article id="bv-body"[^>]*>.*?<\/article>/s, `<article id="bv-body" class="mt-10 prose-article">${bodyHtml}</article>`);
+      // Article LD
+      const articleLd = {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: title,
+        description: excerpt,
+        image: image,
+        datePublished: isoDate,
+        dateModified: isoDate,
+        author: { '@type': 'Organization', name: 'Mầm non Bình Minh' },
+        publisher: { '@type': 'Organization', name: 'Mầm non Bình Minh', logo: { '@type': 'ImageObject', url: `${base}/img/logo.png` } },
+        mainEntityOfPage: postUrl
+      };
+      html = html.replace(/<script type="application\/ld\+json" id="article-jsonld">.*?<\/script>/s, `<script type="application/ld+json" id="article-jsonld">${JSON.stringify(articleLd, null, 2)}</script>`);
+      // Breadcrumb LD: cập nhật
+      // Giữ nguyên breadcrumb 2 items (Trang chủ + Bài viết) - đủ cho static
+
+      // Sử dụng đường dẫn tuyệt đối cho static subfolder để header (components.js) và assets hoạt động từ /bai-viet/<slug>/
+      html = html.replace(/href="css\//g, 'href="/css/');
+      html = html.replace(/src="img\//g, 'src="/img/');
+      html = html.replace(/src="js\//g, 'src="/js/');
+      html = html.replace(/href="img\//g, 'href="/img/');
+      html = html.replace(/fetch\('data\/news\.json'/g, "fetch('/data/news.json'");
+      // Các link nội bộ tương đối trong static HTML (ví dụ href="tin-tuc.html") -> tuyệt đối
+      html = html.replace(/href="(?!https?:\/\/|\/|#|mailto:|tel:|data:)([^"]*\.html[^"]*)"/g, 'href="/$1"');
+
+      const outDir = path.join(path.dirname(baiVietPath), 'bai-viet', slug);
+      fs.mkdirSync(outDir, { recursive: true });
+      const outPath = path.join(outDir, 'index.html');
+      fs.writeFileSync(outPath, html, 'utf8');
+    }
+    console.log('Đã sinh ' + items.length + ' static bài viết tại bai-viet/<slug>/index.html');
+  }
+} catch (e) {
+  console.error('Lỗi sinh static bài viết:', e.message, e.stack);
+}
+
+// --- Netlify redirects: map ?slug URL -> static file via 200 rewrite ---
+try {
+  if (fs.existsSync(netlifyPath)) {
+    let toml = fs.readFileSync(netlifyPath, 'utf8');
+    // Xóa redirects cũ cho bai-viet nếu có
+    toml = toml.replace(/\n\[\[redirects\]\][\s\S]*?(?=\n\[|$)/g, (m)=> m.includes('bai-viet') ? '' : m);
+    // Thêm redirects cho từng slug
+    let redirects = '';
+    for (const post of items) {
+      const slug = post.slug;
+      redirects += `\n[[redirects]]\n  from = "/bai-viet.html"\n  to = "/bai-viet/${slug}/index.html"\n  status = 200\n  query = {slug = "${slug}"}\n`;
+    }
+    // Thêm fallback cho clean URL canonical: /bai-viet/<slug> -> ?slug (optional, giữ clean URL cũng hoạt động)
+    // Không cần redirect ngược để tránh vòng lặp
+    toml = toml.trimEnd() + '\n' + redirects.trimEnd() + '\n';
+    fs.writeFileSync(netlifyPath, toml, 'utf8');
+    console.log('Đã cập nhật netlify.toml với ' + items.length + ' redirects cho ?slug');
+  }
+} catch (e) {
+  console.error('Lỗi cập nhật netlify.toml:', e.message);
+}
+
+// --- Vercel rewrites ---
+try {
+  if (fs.existsSync(vercelPath)) {
+    let vercel = JSON.parse(fs.readFileSync(vercelPath, 'utf8'));
+    vercel.rewrites = vercel.rewrites || [];
+    // Xóa rewrites cũ cho bai-viet
+    vercel.rewrites = vercel.rewrites.filter(r => !(r.source && r.source.includes('bai-viet')));
+    for (const post of items) {
+      vercel.rewrites.push({
+        source: "/bai-viet.html",
+        has: [{ type: "query", key: "slug", value: post.slug }],
+        destination: `/bai-viet/${post.slug}/index.html`
+      });
+    }
+    fs.writeFileSync(vercelPath, JSON.stringify(vercel, null, 2), 'utf8');
+    console.log('Đã cập nhật vercel.json rewrites cho ' + items.length + ' slugs');
+  }
+} catch (e) {
+  console.error('Lỗi cập nhật vercel.json:', e.message);
 }

@@ -1,5 +1,172 @@
 {
   "buildCommand": "node scripts/build-news.js",
   "outputDirectory": ".",
-  "cleanUrls": true
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "montessori-vs-truyen-thong"
+        }
+      ],
+      "destination": "/bai-viet/montessori-vs-truyen-thong/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "hoat-dong-chao-mung-2-9-2026"
+        }
+      ],
+      "destination": "/bai-viet/hoat-dong-chao-mung-2-9-2026/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "thong-bao-nghi-le-quoc-khanh-2-9-2026"
+        }
+      ],
+      "destination": "/bai-viet/thong-bao-nghi-le-quoc-khanh-2-9-2026/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "kinh-nghiem-chon-truong-mam-non-uy-tin-vung-tau"
+        }
+      ],
+      "destination": "/bai-viet/kinh-nghiem-chon-truong-mam-non-uy-tin-vung-tau/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "hoc-phi-truong-mam-non-tu-thuc-vung-tau-2026"
+        }
+      ],
+      "destination": "/bai-viet/hoc-phi-truong-mam-non-tu-thuc-vung-tau-2026/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "mam-non-song-ngu-vung-tau-tieng-anh-som"
+        }
+      ],
+      "destination": "/bai-viet/mam-non-song-ngu-vung-tau-tieng-anh-som/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "phuong-phap-montessori-truong-mam-non-vung-tau"
+        }
+      ],
+      "destination": "/bai-viet/phuong-phap-montessori-truong-mam-non-vung-tau/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "mam-non-quanh-toi-chon-truong-mam-non-gan-nha-vung-tau"
+        }
+      ],
+      "destination": "/bai-viet/mam-non-quanh-toi-chon-truong-mam-non-gan-nha-vung-tau/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "7-tieu-chi-vang-chon-truong-mam-non-cho-be-vung-tau"
+        }
+      ],
+      "destination": "/bai-viet/7-tieu-chi-vang-chon-truong-mam-non-cho-be-vung-tau/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "le-hoi-trung-thu-2026"
+        }
+      ],
+      "destination": "/bai-viet/le-hoi-trung-thu-2026/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "be-lam-vuon"
+        }
+      ],
+      "destination": "/bai-viet/be-lam-vuon/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "ngay-hoi-gia-dinh"
+        }
+      ],
+      "destination": "/bai-viet/ngay-hoi-gia-dinh/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "tieng-anh-qua-tro-choi"
+        }
+      ],
+      "destination": "/bai-viet/tieng-anh-qua-tro-choi/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "thuc-don-mua-thu"
+        }
+      ],
+      "destination": "/bai-viet/thuc-don-mua-thu/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "van-nghe-cung-be"
+        }
+      ],
+      "destination": "/bai-viet/van-nghe-cung-be/index.html"
+    }
+  ]
 }

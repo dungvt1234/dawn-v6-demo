@@ -5,28 +5,28 @@
   const DEMO_URL = 'https://school-os-eta.vercel.app';
 
   const NAV = [
-    { href: 'index.html', label: 'Trang chủ', key: 'index' },
+    { href: '/index.html', label: 'Trang chủ', key: 'index' },
     {
-      href: 'gioi-thieu.html', label: 'Giới thiệu', key: 'about',
+      href: '/gioi-thieu.html', label: 'Giới thiệu', key: 'about',
       children: [
-        { href: 'gioi-thieu.html', label: 'Về chúng tôi', key: 'about' },
-        { href: 'chuong-trinh.html', label: 'Chương trình học', key: 'program' },
-        { href: 'moi-truong.html', label: 'Cơ sở vật chất', key: 'about' },
-        { href: 'doi-ngu.html', label: 'Đội ngũ giáo viên', key: 'about' }
+        { href: '/gioi-thieu.html', label: 'Về chúng tôi', key: 'about' },
+        { href: '/chuong-trinh.html', label: 'Chương trình học', key: 'program' },
+        { href: '/moi-truong.html', label: 'Cơ sở vật chất', key: 'about' },
+        { href: '/doi-ngu.html', label: 'Đội ngũ giáo viên', key: 'about' }
       ]
     },
     {
       href: '#', label: 'Thông tin', key: 'info',
       children: [
-        { href: 'tuyen-sinh.html', label: 'Quy trình tuyển sinh', key: 'info' },
-        { href: 'hoc-phi.html', label: 'Học phí & ưu đãi', key: 'info' },
-        { href: 'gallery.html', label: 'Thư viện ảnh', key: 'info' }
+        { href: '/tuyen-sinh.html', label: 'Quy trình tuyển sinh', key: 'info' },
+        { href: '/hoc-phi.html', label: 'Học phí & ưu đãi', key: 'info' },
+        { href: '/gallery.html', label: 'Thư viện ảnh', key: 'info' }
       ]
     },
-    { href: 'chuong-trinh.html', label: 'Chương trình học', key: 'program' },
-    { href: 'tieng-anh-cho-tre.html', label: 'Tiếng Anh cho trẻ', key: 'english' },
-    { href: 'tin-tuc.html', label: 'Tin tức & Sự kiện', key: 'news' },
-    { href: 'lien-he.html', label: 'Liên hệ', key: 'contact' }
+    { href: '/chuong-trinh.html', label: 'Chương trình học', key: 'program' },
+    { href: '/tieng-anh-cho-tre.html', label: 'Tiếng Anh cho trẻ', key: 'english' },
+    { href: '/tin-tuc.html', label: 'Tin tức & Sự kiện', key: 'news' },
+    { href: '/lien-he.html', label: 'Liên hệ', key: 'contact' }
   ];
   const activeKey = {
     'index.html': 'index',
@@ -90,8 +90,8 @@
   const headerHTML = `
 <header id="site-header" class="site-header fixed top-0 left-0 right-0 z-50">
  <div class="site-header__inner">
-  <a href="index.html" class="site-brand focus-ring">
-   <img src="img/logo-icon.webp" alt="Mầm non Bình Minh" class="site-brand__icon">
+  <a href="/index.html" class="site-brand focus-ring">
+   <img src="/img/logo-icon.webp" alt="Mầm non Bình Minh" class="site-brand__icon">
    <div class="site-brand__text">
     <span class="site-brand__title">DAWN KINDERGARTEN</span>
     <span class="site-brand__subtitle">Mầm Non Bình Minh</span>
@@ -123,7 +123,7 @@
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-white/10">
    <div class="lg:col-span-2">
     <div class="flex flex-col sm:flex-row items-center gap-3 mb-6">
-     <img src="img/logo-icon-light.webp" alt="Mầm non Bình Minh" class="h-12 sm:h-16 w-auto shrink-0">
+     <img src="/img/logo-icon-light.webp" alt="Mầm non Bình Minh" class="h-12 sm:h-16 w-auto shrink-0">
      <div class="flex flex-col leading-tight items-center min-w-0">
       <span class="font-serif text-sm sm:text-xl tracking-[0.04em] text-ivory font-bold whitespace-nowrap text-center">DAWN KINDERGARTEN</span>
       <span class="text-[9px] sm:text-[11px] tracking-[0.28em] text-gold font-semibold uppercase mt-1 whitespace-nowrap text-center">Mầm Non Bình Minh</span>
@@ -137,19 +137,19 @@
    <div>
     <h4 class="text-xs font-bold tracking-[0.12em] uppercase text-gold mb-5">Khám Phá</h4>
     <ul class="space-y-3.5 text-sm text-ivory/80">
-     <li><a href="gioi-thieu.html" class="focus-ring hover:text-gold transition-colors">Về Chúng Tôi</a></li>
-     <li><a href="chuong-trinh.html" class="focus-ring hover:text-gold transition-colors">Chương Trình Học</a></li>
-     <li><a href="moi-truong.html" class="focus-ring hover:text-gold transition-colors">Cơ Sở Vật Chất</a></li>
-     <li><a href="doi-ngu.html" class="focus-ring hover:text-gold transition-colors">Đội Ngũ Giáo Viên</a></li>
+     <li><a href="/gioi-thieu.html" class="focus-ring hover:text-gold transition-colors">Về Chúng Tôi</a></li>
+     <li><a href="/chuong-trinh.html" class="focus-ring hover:text-gold transition-colors">Chương Trình Học</a></li>
+     <li><a href="/moi-truong.html" class="focus-ring hover:text-gold transition-colors">Cơ Sở Vật Chất</a></li>
+     <li><a href="/doi-ngu.html" class="focus-ring hover:text-gold transition-colors">Đội Ngũ Giáo Viên</a></li>
     </ul>
    </div>
    <div>
     <h4 class="text-xs font-bold tracking-[0.12em] uppercase text-gold mb-5">Thông Tin</h4>
     <ul class="space-y-3.5 text-sm text-ivory/80">
-     <li><a href="tuyen-sinh.html" class="focus-ring hover:text-gold transition-colors">Quy Trình Tuyển Sinh</a></li>
-     <li><a href="hoc-phi.html" class="focus-ring hover:text-gold transition-colors">Học Phí &amp; Ưu Đãi</a></li>
-     <li><a href="tin-tuc.html" class="focus-ring hover:text-gold transition-colors">Tin Tức &amp; Sự Kiện</a></li>
-     <li><a href="gallery.html" class="focus-ring hover:text-gold transition-colors">Thư Viện Ảnh</a></li>
+     <li><a href="/tuyen-sinh.html" class="focus-ring hover:text-gold transition-colors">Quy Trình Tuyển Sinh</a></li>
+     <li><a href="/hoc-phi.html" class="focus-ring hover:text-gold transition-colors">Học Phí &amp; Ưu Đãi</a></li>
+     <li><a href="/tin-tuc.html" class="focus-ring hover:text-gold transition-colors">Tin Tức &amp; Sự Kiện</a></li>
+     <li><a href="/gallery.html" class="focus-ring hover:text-gold transition-colors">Thư Viện Ảnh</a></li>
     </ul>
    </div>
    <div>

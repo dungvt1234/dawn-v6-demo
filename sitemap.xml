@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://binhminhkindergarten.site/bai-viet.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://binhminhkindergarten.site/cau-hoi.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -91,12 +86,16 @@
     <priority>0.6</priority>
     <lastmod>2026-08-31</lastmod>
   
+  
+  
   </url>
   <url>
     <loc>https://binhminhkindergarten.site/bai-viet.html?slug=hoc-phi-truong-mam-non-tu-thuc-vung-tau-2026</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <lastmod>2026-08-30</lastmod>
+  
+  
   
   </url>
   <url>
@@ -105,12 +104,16 @@
     <priority>0.6</priority>
     <lastmod>2026-08-29</lastmod>
   
+  
+  
   </url>
   <url>
     <loc>https://binhminhkindergarten.site/bai-viet.html?slug=phuong-phap-montessori-truong-mam-non-vung-tau</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <lastmod>2026-08-28</lastmod>
+  
+  
   
   </url>
   <url>
@@ -119,12 +122,16 @@
     <priority>0.6</priority>
     <lastmod>2026-08-27</lastmod>
   
+  
+  
   </url>
   <url>
     <loc>https://binhminhkindergarten.site/bai-viet.html?slug=7-tieu-chi-vang-chon-truong-mam-non-cho-be-vung-tau</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <lastmod>2026-08-26</lastmod>
+  
+  
   
   </url>
   <url>
@@ -133,12 +140,16 @@
     <priority>0.6</priority>
     <lastmod>2026-08-24</lastmod>
   
+  
+  
   </url>
   <url>
     <loc>https://binhminhkindergarten.site/bai-viet.html?slug=be-lam-vuon</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <lastmod>2026-08-18</lastmod>
+  
+  
   
   </url>
   <url>
@@ -147,12 +158,16 @@
     <priority>0.6</priority>
     <lastmod>2026-08-10</lastmod>
   
+  
+  
   </url>
   <url>
     <loc>https://binhminhkindergarten.site/bai-viet.html?slug=tieng-anh-qua-tro-choi</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <lastmod>2026-08-02</lastmod>
+  
+  
   
   </url>
   <url>
@@ -161,12 +176,16 @@
     <priority>0.6</priority>
     <lastmod>2026-07-28</lastmod>
   
+  
+  
   </url>
   <url>
     <loc>https://binhminhkindergarten.site/bai-viet.html?slug=van-nghe-cung-be</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <lastmod>2026-07-20</lastmod>
+  
+  
   
   </url>
   <url>
@@ -175,19 +194,20 @@
     <priority>0.7</priority>
     <lastmod>2026-09-06</lastmod>
   
+  
+  
   </url>
 <url>
     <loc>https://binhminhkindergarten.site/bai-viet.html?slug=thong-bao-nghi-le-quoc-khanh-2-9-2026</loc><lastmod>2026-09-01</lastmod>
+  
+  
   
   </url>
 <url>
     <loc>https://binhminhkindergarten.site/bai-viet.html?slug=hoat-dong-chao-mung-2-9-2026</loc>
     <lastmod>2026-09-01</lastmod>
   
-  </url>
-  <url>
-    <loc>https://binhminhkindergarten.site/llms.txt</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+  
+  
   </url>
 </urlset>

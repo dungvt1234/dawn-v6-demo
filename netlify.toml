@@ -2,3 +2,93 @@
 [build]
   command = "node scripts/build-news.js"
   publish = "."
+
+[[redirects]]
+  from = "/bai-viet.html"
+  to = "/bai-viet/montessori-vs-truyen-thong/index.html"
+  status = 200
+  query = {slug = "montessori-vs-truyen-thong"}
+
+[[redirects]]
+  from = "/bai-viet.html"
+  to = "/bai-viet/hoat-dong-chao-mung-2-9-2026/index.html"
+  status = 200
+  query = {slug = "hoat-dong-chao-mung-2-9-2026"}
+
+[[redirects]]
+  from = "/bai-viet.html"
+  to = "/bai-viet/thong-bao-nghi-le-quoc-khanh-2-9-2026/index.html"
+  status = 200
+  query = {slug = "thong-bao-nghi-le-quoc-khanh-2-9-2026"}
+
+[[redirects]]
+  from = "/bai-viet.html"
+  to = "/bai-viet/kinh-nghiem-chon-truong-mam-non-uy-tin-vung-tau/index.html"
+  status = 200
+  query = {slug = "kinh-nghiem-chon-truong-mam-non-uy-tin-vung-tau"}
+
+[[redirects]]
+  from = "/bai-viet.html"
+  to = "/bai-viet/hoc-phi-truong-mam-non-tu-thuc-vung-tau-2026/index.html"
+  status = 200
+  query = {slug = "hoc-phi-truong-mam-non-tu-thuc-vung-tau-2026"}
+
+[[redirects]]
+  from = "/bai-viet.html"
+  to = "/bai-viet/mam-non-song-ngu-vung-tau-tieng-anh-som/index.html"
+  status = 200
+  query = {slug = "mam-non-song-ngu-vung-tau-tieng-anh-som"}
+
+[[redirects]]
+  from = "/bai-viet.html"
+  to = "/bai-viet/phuong-phap-montessori-truong-mam-non-vung-tau/index.html"
+  status = 200
+  query = {slug = "phuong-phap-montessori-truong-mam-non-vung-tau"}
+
+[[redirects]]
+  from = "/bai-viet.html"
+  to = "/bai-viet/mam-non-quanh-toi-chon-truong-mam-non-gan-nha-vung-tau/index.html"
+  status = 200
+  query = {slug = "mam-non-quanh-toi-chon-truong-mam-non-gan-nha-vung-tau"}
+
+[[redirects]]
+  from = "/bai-viet.html"
+  to = "/bai-viet/7-tieu-chi-vang-chon-truong-mam-non-cho-be-vung-tau/index.html"
+  status = 200
+  query = {slug = "7-tieu-chi-vang-chon-truong-mam-non-cho-be-vung-tau"}
+
+[[redirects]]
+  from = "/bai-viet.html"
+  to = "/bai-viet/le-hoi-trung-thu-2026/index.html"
+  status = 200
+  query = {slug = "le-hoi-trung-thu-2026"}
+
+[[redirects]]
+  from = "/bai-viet.html"
+  to = "/bai-viet/be-lam-vuon/index.html"
+  status = 200
+  query = {slug = "be-lam-vuon"}
+
+[[redirects]]
+  from = "/bai-viet.html"
+  to = "/bai-viet/ngay-hoi-gia-dinh/index.html"
+  status = 200
+  query = {slug = "ngay-hoi-gia-dinh"}
+
+[[redirects]]
+  from = "/bai-viet.html"
+  to = "/bai-viet/tieng-anh-qua-tro-choi/index.html"
+  status = 200
+  query = {slug = "tieng-anh-qua-tro-choi"}
+
+[[redirects]]
+  from = "/bai-viet.html"
+  to = "/bai-viet/thuc-don-mua-thu/index.html"
+  status = 200
+  query = {slug = "thuc-don-mua-thu"}
+
+[[redirects]]
+  from = "/bai-viet.html"
+  to = "/bai-viet/van-nghe-cung-be/index.html"
+  status = 200
+  query = {slug = "van-nghe-cung-be"}
