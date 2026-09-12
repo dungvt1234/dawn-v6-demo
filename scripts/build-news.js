@@ -89,12 +89,18 @@ try {
     let xml = fs.readFileSync(sitemapPath, 'utf8');
     // Xóa llms.txt khỏi sitemap (không phải HTML indexable)
     xml = xml.replace(/\s*<url>\s*<loc>https:\/\/binhminhkindergarten\.site\/llms\.txt<\/loc>[\s\S]*?<\/url>/, '');
-    // Xóa bare bai-viet.html (không slug) khỏi sitemap để tránh duplicate với slug mới nhất
-    // Giữ lại bare chỉ nếu muốn, nhưng theo Phase 1 preferred là slug, nên xóa bare
+    // Xóa bare bai-viet.html (không slug) khỏi sitemap để tránh duplicate
     const bareRegex = /\s*<url>\s*<loc>https:\/\/binhminhkindergarten\.site\/bai-viet\.html<\/loc>[\s\S]*?<\/url>/;
     if (bareRegex.test(xml)) {
       xml = xml.replace(bareRegex, '');
-      console.log('Đã xóa bare bai-viet.html khỏi sitemap (tránh duplicate, preferred là ?slug)');
+      console.log('Đã xóa bare bai-viet.html khỏi sitemap (preferred là URL clean)');
+    }
+    // Xóa các URL ?slug cũ — preferred là URL clean /bai-viet/<slug>/ (Phase 2)
+    const oldQueryRegex = /\s*<url>\s*<loc>https:\/\/binhminhkindergarten\.site\/bai-viet\.html\?slug=[^<]*<\/loc>[\s\S]*?<\/url>/g;
+    const removed = (xml.match(oldQueryRegex) || []).length;
+    if (removed) {
+      xml = xml.replace(oldQueryRegex, '');
+      console.log('Đã xóa ' + removed + ' URL ?slug cũ khỏi sitemap (preferred là URL clean)');
     }
     const dateMap = new Map();
     for (const it of items) {
@@ -102,7 +108,7 @@ try {
       if (iso && it.slug) dateMap.set(it.slug, iso);
     }
     for (const [slug, iso] of dateMap) {
-      const loc = `https://binhminhkindergarten.site/bai-viet.html?slug=${slug}`;
+      const loc = `https://binhminhkindergarten.site/bai-viet/${slug}/`;
       const locEsc = escXml(loc);
       if (xml.includes(locEsc)) {
         const urlRegex = new RegExp(`<url>\\s*<loc>${locEsc.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}</loc>([\\s\\S]*?)</url>`, 'm');
@@ -155,7 +161,7 @@ try {
     const latest = items[0];
     const base = 'https://binhminhkindergarten.site';
     const slug = latest.slug;
-    const postUrl = `${base}/bai-viet.html?slug=${encodeURIComponent(slug)}`;
+    const postUrl = `${base}/bai-viet/${encodeURIComponent(slug)}/`;
     const title = latest.title;
     const excerpt = (latest.excerpt || '').slice(0, 155);
     const image = latest.image ? (latest.image.startsWith('http') ? latest.image : `${base}/${latest.image.replace(/^\//,'')}`) : `${base}/img/hero.webp`;
@@ -208,8 +214,7 @@ try {
     for (const post of items) {
       const base = 'https://binhminhkindergarten.site';
       const slug = post.slug;
-      const postUrl = `${base}/bai-viet.html?slug=${encodeURIComponent(slug)}`;
-      const cleanUrl = `${base}/bai-viet/${encodeURIComponent(slug)}/`;
+      const postUrl = `${base}/bai-viet/${encodeURIComponent(slug)}/`;
       const title = post.title;
       const excerpt = (post.excerpt || '').slice(0, 155);
       const image = post.image ? (post.image.startsWith('http') ? post.image : `${base}/${post.image.replace(/^\//,'')}`) : `${base}/img/hero.webp`;
@@ -251,8 +256,17 @@ try {
         mainEntityOfPage: postUrl
       };
       html = html.replace(/<script type="application\/ld\+json" id="article-jsonld">.*?<\/script>/s, `<script type="application/ld+json" id="article-jsonld">${JSON.stringify(articleLd, null, 2)}</script>`);
-      // Breadcrumb LD: cập nhật
-      // Giữ nguyên breadcrumb 2 items (Trang chủ + Bài viết) - đủ cho static
+      // Breadcrumb LD theo từng bài: Trang chủ > Tin tức & Sự kiện > bài viết (URL clean)
+      const crumbLd = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Trang chủ', item: `${base}/` },
+          { '@type': 'ListItem', position: 2, name: 'Tin tức & Sự kiện', item: `${base}/tin-tuc.html` },
+          { '@type': 'ListItem', position: 3, name: title, item: postUrl }
+        ]
+      };
+      html = html.replace(/<script type="application\/ld\+json">\s*\{\s*"@context": "https:\/\/schema\.org",\s*"@type": "BreadcrumbList",[\s\S]*?\}\s*<\/script>/, `<script type="application/ld+json">${JSON.stringify(crumbLd, null, 2)}</script>`);
 
       // Sử dụng đường dẫn tuyệt đối cho static subfolder để header (components.js) và assets hoạt động từ /bai-viet/<slug>/
       html = html.replace(/href="css\//g, 'href="/css/');

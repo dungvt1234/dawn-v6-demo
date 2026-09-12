@@ -14,7 +14,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="img/favicon.png">
 <title>Tin tức & Sự kiện mầm non Vũng Tàu | DAWN Kindergarten</title>
-<meta name="description" content="Tin tức & Sự kiện mầm non Vũng Tàu DAWN Kindergarten: hoạt động mới nhất của trường, lịch sự kiện và những khoảnh khắc đáng yêu của các bé.">
+<meta name="description" content="Tin tức & Sự kiện trường mầm non Vũng Tàu DAWN Kindergarten: cập nhật hoạt động mới nhất, lịch sự kiện và khoảnh khắc đáng yêu của các bé mỗi ngày.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- ===== Phase 3: preload fonts ===== -->
@@ -37,12 +37,12 @@
   <meta property="og:url" content="https://binhminhkindergarten.site/tin-tuc.html">
   <meta property="og:site_name" content="Mầm non Bình Minh">
   <meta property="og:title" content="Tin tức & Sự kiện mầm non Vũng Tàu | DAWN Kindergarten">
-  <meta property="og:description" content="Tin tức & Sự kiện mầm non Vũng Tàu DAWN Kindergarten: hoạt động mới nhất của trường, lịch sự kiện và những khoảnh khắc đáng yêu của các bé.">
+  <meta property="og:description" content="Tin tức & Sự kiện trường mầm non Vũng Tàu DAWN Kindergarten: cập nhật hoạt động mới nhất, lịch sự kiện và khoảnh khắc đáng yêu của các bé mỗi ngày.">
   <meta property="og:image" content="https://binhminhkindergarten.site/img/hero.webp">
   <meta property="og:locale" content="vi_VN">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Tin tức &amp; Sự kiện — Mầm non Bình Minh">
-  <meta name="twitter:description" content="Tin tức &amp; Sự kiện và hoạt động mới nhất tại Mầm non Bình Minh — Mầm non Bình Minh.">
+  <meta name="twitter:description" content="Tin tức & Sự kiện trường mầm non Vũng Tàu DAWN Kindergarten: cập nhật hoạt động mới nhất, lịch sự kiện và khoảnh khắc đáng yêu của các bé mỗi ngày.">
   <meta name="twitter:image" content="https://binhminhkindergarten.site/img/hero.webp">
   <meta name="theme-color" content="#223D22">
   <script type="application/ld+json">
@@ -71,7 +71,7 @@
 </head>
 <body class="grain">
 <div id="dawn-arc-track"><div id="dawn-arc-fill"></div></div>
-<div data-include="header"></div>
+<div data-include="header"><nav aria-label="Điều hướng chính"><ul><li><a href="/index.html">Trang chủ</a></li><li><a href="/gioi-thieu.html">Giới thiệu</a><ul><li><a href="/gioi-thieu.html">Về chúng tôi</a></li><li><a href="/chuong-trinh.html">Chương trình học</a></li><li><a href="/moi-truong.html">Cơ sở vật chất</a></li><li><a href="/doi-ngu.html">Đội ngũ giáo viên</a></li></ul></li><li><span>Thông tin</span><ul><li><a href="/tuyen-sinh.html">Quy trình tuyển sinh</a></li><li><a href="/hoc-phi.html">Học phí &amp; ưu đãi</a></li><li><a href="/gallery.html">Thư viện ảnh</a></li></ul></li><li><a href="/chuong-trinh.html">Chương trình học</a></li><li><a href="/tieng-anh-cho-tre.html">Tiếng Anh cho trẻ</a></li><li><a href="/tin-tuc.html">Tin tức &amp; Sự kiện</a></li><li><a href="/lien-he.html">Liên hệ</a></li></ul></nav></div>
 
 <section class="page-hero">
  <svg class="absolute left-0 top-0 w-full h-full pointer-events-none" viewBox="0 0 1280 500" preserveAspectRatio="none" style="opacity:.5;">
@@ -132,7 +132,7 @@
  }
  function newsCard(n, i) {
  return `<article class="reveal card overflow-hidden" style="--i:${i};">
- <a href="bai-viet.html?slug=${encodeURIComponent(n.slug)}" class="focus-ring block">
+ <a href="/bai-viet/${encodeURIComponent(n.slug)}/" class="focus-ring block">
  <div class="img-frame" style="border-radius:0;"><img decoding="async"  src="${n.image}" alt="${n.title.replace(/"/g, '&quot;')}" class="w-full h-[220px] object-cover photo-grade" loading="lazy"></div>
  <div class="p-7">
  <span class="tag">${n.tag}</span>
@@ -162,7 +162,7 @@
    itemListElement: sorted.map((n, i) => ({
     '@type': 'ListItem',
     position: i + 1,
-    url: base + '/bai-viet.html?slug=' + encodeURIComponent(n.slug),
+    url: base + '/bai-viet/' + encodeURIComponent(n.slug) + '/',
     name: n.title
    }))
   };
