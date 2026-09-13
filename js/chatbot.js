@@ -31,7 +31,7 @@
     reg: 'Tuyệt vời! Ba mẹ để lại thông tin tại <a href="dang-ky.html">trang đăng ký</a>, cô gọi lại trong 24h để hẹn tham quan ạ. 📝',
     prog: 'Chương trình theo triết lý Grow with Nature: Montessori, STEAM và tiếng Anh, vận động ngoài trời mỗi ngày. Chi tiết: <a href="chuong-trinh.html">chương trình học</a>. 🧩',
     food: 'Thực đơn theo tuần do chuyên gia dinh dưỡng thiết kế, công khai mỗi tuần. Xem tại <a href="dinh-duong.html">dinh dưỡng</a>. 🍲',
-    age: 'Trường nhận bé từ 6 tháng đến 6 tuổi ạ: nhà trẻ (6–24 tháng), mẫu giáo bé (2–3 tuổi), mẫu giáo nhỡ (3–4 tuổi), mẫu giáo lớn (4–6 tuổi). 👶',
+    age: 'Trường nhận bé từ 6 tháng đến 5 tuổi ạ: nhà trẻ (6–24 tháng), mẫu giáo bé (2–3 tuổi), mẫu giáo nhỡ (3–4 tuổi), mẫu giáo lớn (4–5 tuổi). 👶',
     camera: 'Dạ có ạ, trường có camera 24/7 để ba mẹ yên tâm theo dõi bé. Ba mẹ gọi <a href="tel:' + HOTLINE + '">' + HOTLINE_FMT + '</a> để được hướng dẫn xem camera nhé. 📷',
     contact: 'Hotline <a href="tel:' + HOTLINE + '">' + HOTLINE_FMT + '</a> · <a href="https://zalo.me/' + HOTLINE + '" target="_blank" rel="noopener">Zalo</a> · <a href="lien-he.html">trang liên hệ</a>. 📞',
     thanks: 'Dạ không có gì ạ! Mong sớm gặp bé tại Bình Minh! 💛',

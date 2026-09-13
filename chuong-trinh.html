@@ -14,7 +14,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="img/favicon.png">
 <title>Chương trình học mầm non tại Vũng Tàu | DAWN Kindergarten</title>
-<meta name="description" content="Chương trình học tại DAWN Kindergarten Vũng Tàu: Montessori, STEAM, tiếng Anh, thể chất, nghệ thuật cho bé 6 tháng – 6 tuổi. Phát triển toàn diện.">
+<meta name="description" content="Chương trình học tại DAWN Kindergarten Vũng Tàu: Montessori, STEAM, tiếng Anh, thể chất, nghệ thuật cho bé 6 tháng – 5 tuổi. Phát triển toàn diện.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- ===== Phase 3: preload fonts ===== -->
@@ -24,12 +24,11 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css?v=12">
   <!-- v4 design: Tailwind config colors -->
-  <link rel="preconnect" href="https://unpkg.com">
   <!-- AOS Animation Library -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="css/vendor/aos.css" rel="stylesheet">
+  <script src="js/vendor/aos.js"></script>
   <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@0.469.0"></script>
+  <script src="js/vendor/lucide.min.js"></script>
 
   <!-- ===== SEO: canonical + Open Graph + Twitter ===== -->
   <link rel="canonical" href="https://binhminhkindergarten.site/chuong-trinh.html">
@@ -37,12 +36,12 @@
   <meta property="og:url" content="https://binhminhkindergarten.site/chuong-trinh.html">
   <meta property="og:site_name" content="Mầm non Bình Minh">
   <meta property="og:title" content="Chương trình học mầm non tại Vũng Tàu | DAWN Kindergarten">
-  <meta property="og:description" content="Chương trình học tại DAWN Kindergarten Vũng Tàu: Montessori, STEAM, tiếng Anh, thể chất, nghệ thuật cho bé 6 tháng – 6 tuổi. Phát triển toàn diện.">
+  <meta property="og:description" content="Chương trình học tại DAWN Kindergarten Vũng Tàu: Montessori, STEAM, tiếng Anh, thể chất, nghệ thuật cho bé 6 tháng – 5 tuổi. Phát triển toàn diện.">
   <meta property="og:image" content="https://binhminhkindergarten.site/img/hero.webp">
   <meta property="og:locale" content="vi_VN">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Chương trình học mầm non tại Vũng Tàu | DAWN Kindergarten">
-  <meta name="twitter:description" content="Chương trình học tại DAWN Kindergarten Vũng Tàu: Montessori, STEAM, tiếng Anh, thể chất, nghệ thuật cho bé 6 tháng – 6 tuổi. Phát triển toàn diện.">
+  <meta name="twitter:description" content="Chương trình học tại DAWN Kindergarten Vũng Tàu: Montessori, STEAM, tiếng Anh, thể chất, nghệ thuật cho bé 6 tháng – 5 tuổi. Phát triển toàn diện.">
   <meta name="twitter:image" content="https://binhminhkindergarten.site/img/hero.webp">
   <meta name="theme-color" content="#223D22">
   <script type="application/ld+json">
@@ -381,7 +380,7 @@
   document.querySelectorAll('.reveal').forEach(el => {
     if (!el.hasAttribute('data-aos')) el.setAttribute('data-aos', 'fade-up');
   });
-  AOS.init({ once: true, offset: 80, duration: 900, easing: 'ease-out-cubic' });
+  if (typeof AOS !== 'undefined' && AOS.init) { AOS.init({ once: true, offset: 80, duration: 900, easing: 'ease-out-cubic' }); } else { document.querySelectorAll('[data-aos]').forEach(function(el){ el.removeAttribute('data-aos'); }); }
   if (typeof lucide !== 'undefined' && lucide.createIcons) { lucide.createIcons(); }
  // mobile menu (injected header)
  const menuBtn = document.getElementById('menu-btn');

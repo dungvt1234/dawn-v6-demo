@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="img/favicon.png">
   <title>Trường mầm non Vũng Tàu uy tín | DAWN Kindergarten</title>
-  <meta name="description" content="DAWN Kindergarten – trường mầm non tư thục tại 75/2A Phạm Hồng Thái, Vũng Tàu. Montessori, STEAM, tiếng Anh cho bé 6 tháng – 6 tuổi. Gọi 0866 685 632.">
+  <meta name="description" content="DAWN Kindergarten – trường mầm non tư thục tại 75/2A Phạm Hồng Thái, Vũng Tàu. Montessori, STEAM, tiếng Anh cho bé 6 tháng – 5 tuổi. Gọi 0866 685 632.">
 
   <!-- Google Fonts: DM Serif Display & Be Vietnam Pro -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,13 +29,12 @@
 
   <!-- Tailwind CSS v3 via CDN -->
 
-  <link rel="preconnect" href="https://unpkg.com">
   <!-- AOS Animation Library -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="css/vendor/aos.css" rel="stylesheet">
+  <script src="js/vendor/aos.js"></script>
 
   <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@0.469.0"></script>
+  <script src="js/vendor/lucide.min.js"></script>
 
   <link rel="stylesheet" href="css/style.css?v=12">
   <style>
@@ -51,12 +50,12 @@
   <meta property="og:url" content="https://binhminhkindergarten.site">
   <meta property="og:site_name" content="Mầm non Bình Minh">
   <meta property="og:title" content="Trường mầm non Vũng Tàu uy tín | DAWN Kindergarten">
-  <meta property="og:description" content="DAWN Kindergarten – trường mầm non tư thục tại 75/2A Phạm Hồng Thái, Vũng Tàu. Montessori, STEAM, tiếng Anh cho bé 6 tháng – 6 tuổi. Gọi 0866 685 632.">
+  <meta property="og:description" content="DAWN Kindergarten – trường mầm non tư thục tại 75/2A Phạm Hồng Thái, Vũng Tàu. Montessori, STEAM, tiếng Anh cho bé 6 tháng – 5 tuổi. Gọi 0866 685 632.">
   <meta property="og:image" content="https://binhminhkindergarten.site/img/hero.webp">
   <meta property="og:locale" content="vi_VN">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Trường mầm non Vũng Tàu uy tín | DAWN Kindergarten">
-  <meta name="twitter:description" content="DAWN Kindergarten – trường mầm non tư thục tại 75/2A Phạm Hồng Thái, Vũng Tàu. Montessori, STEAM, tiếng Anh cho bé 6 tháng – 6 tuổi. Gọi 0866 685 632.">
+  <meta name="twitter:description" content="DAWN Kindergarten – trường mầm non tư thục tại 75/2A Phạm Hồng Thái, Vũng Tàu. Montessori, STEAM, tiếng Anh cho bé 6 tháng – 5 tuổi. Gọi 0866 685 632.">
   <meta name="twitter:image" content="https://binhminhkindergarten.site/img/hero.webp">
   <meta name="theme-color" content="#223D22">
   <script type="application/ld+json">
@@ -815,13 +814,15 @@
    // Init Icons
    if (typeof lucide !== 'undefined' && lucide.createIcons) { lucide.createIcons(); }
 
-   // Init AOS Animation Library
+   // Init AOS Animation Library (guard: nếu CDN lỗi thì gỡ data-aos để nội dung luôn hiện)
+   if (typeof AOS !== 'undefined' && AOS.init) {
    AOS.init({
    once: true,
    offset: 80,
    duration: 900,
    easing: 'ease-out-cubic'
    });
+   } else { document.querySelectorAll('[data-aos]').forEach(function(el){ el.removeAttribute('data-aos'); }); }
 
    // Header Scroll Shadow & Glass Effect
    const header = document.getElementById('site-header');
