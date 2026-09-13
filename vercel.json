@@ -9,6 +9,17 @@
         {
           "type": "query",
           "key": "slug",
+          "value": "steam-cho-tre-mam-non-la-gi"
+        }
+      ],
+      "destination": "/bai-viet/steam-cho-tre-mam-non-la-gi/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
           "value": "giao-vien-ban-ngu-day-tieng-anh-mam-non"
         }
       ],

@@ -45,22 +45,74 @@ function fmtDate(d) {
   const [y,m,day]=String(d).split('-');
   return `${day}/${m}/${y}`;
 }
+function mdInline(s){
+  // Inline: escape HTML trước, sau đó áp dụng ảnh/link/bold/italic/code/URL trần
+  let html = escHtml(s);
+  html = html.replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, '<img decoding="async" loading="lazy" src="$2" alt="$1">');
+  html = html.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2">$1</a>');
+  html = html.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/(^|[^*\w])\*([^*\n]+)\*/g, '$1<em>$2</em>');
+  html = html.replace(/`([^`\n]+)`/g, '<code>$1</code>');
+  html = html.replace(/(^|[\s(>])(https?:\/\/[^\s<)]+)/g, '$1<a href="$2">$2</a>');
+  return html;
+}
 function mdToHtml(md){
-  // Thử dùng marked nếu có sẵn, fallback đơn giản
+  // Thử dùng marked nếu có sẵn, fallback không-dependency (đủ cho nội dung repo:
+  // heading, list, table, link, ảnh, quote, HTML thô như embed video)
   try{
     const marked=require('marked');
     if(marked && marked.parse) return marked.parse(md||'');
   }catch(e){}
-  // Fallback đơn giản: headings, bold, list, table
-  let html=escHtml(md||'');
-  html=html.replace(/^### (.*)$/gm,'<h3>$1</h3>');
-  html=html.replace(/^## (.*)$/gm,'<h2>$1</h2>');
-  html=html.replace(/^# (.*)$/gm,'<h1>$1</h1>');
-  html=html.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>');
-  html=html.replace(/\n\n/g,'</p><p>');
-  html='<p>'+html+'</p>';
-  html=html.replace(/<p><h([23])>/g,'<h$1>').replace(/<\/h[23]><\/p>/g,'</h$1>');
-  return html;
+  const lines = String(md||'').split('\n');
+  let out = '';
+  let para = [];
+  let listTag = null; // 'ul' | 'ol'
+  let tableRows = null;
+  let quote = [];
+  const flushPara = ()=>{ if(para.length){ out += '<p>' + para.join('\n') + '</p>'; para = []; } };
+  const flushList = ()=>{ if(listTag){ out += '</' + listTag + '>'; listTag = null; } };
+  const flushQuote = ()=>{ if(quote.length){ out += '<blockquote>' + quote.join('<br>') + '</blockquote>'; quote = []; } };
+  const flushTable = ()=>{
+    if(!tableRows) return;
+    const splitRow = (r)=> r.trim().replace(/^\||\|$/g, '').split('|').map(c=>c.trim());
+    const isSep = (cells)=> cells.length && cells.every(c=>/^:?-+:?$/.test(c));
+    let rows = tableRows.map(splitRow);
+    if(rows.length > 1 && isSep(rows[1])) rows.splice(1, 1); // bỏ dòng phân cách
+    let t = '<div class="table-wrap"><table>';
+    rows.forEach((cells, i)=>{
+      const tag = i === 0 ? 'th' : 'td';
+      t += '<tr>' + cells.map(c=>'<'+tag+'>'+mdInline(c)+'</'+tag+'>').join('') + '</tr>';
+    });
+    out += t + '</table></div>';
+    tableRows = null;
+  };
+  const flushAll = ()=>{ flushPara(); flushList(); flushTable(); flushQuote(); };
+  for(const raw of lines){
+    const line = raw.trim();
+    if(!line){ flushAll(); continue; }
+    // HTML thô (embed video...): giữ nguyên
+    if(/^<[a-zA-Z!/][^]*>$/.test(line)){ flushAll(); out += line; continue; }
+    // Bảng markdown
+    if(/^\|.*\|$/.test(line)){ flushPara(); flushList(); flushQuote(); (tableRows = tableRows || []).push(line); continue; }
+    flushTable();
+    // Heading
+    let m = line.match(/^(#{1,3})\s+(.*)$/);
+    if(m){ flushAll(); out += '<h' + m[1].length + '>' + mdInline(m[2]) + '</h' + m[1].length + '>'; continue; }
+    // HR
+    if(/^(-{3,}|\*{3,})$/.test(line)){ flushAll(); out += '<hr>'; continue; }
+    // Quote
+    if(/^>/.test(line)){ flushPara(); flushList(); quote.push(mdInline(line.replace(/^>\s?/, ''))); continue; }
+    flushQuote();
+    // List
+    m = line.match(/^(?:[-*•])\s+(.*)$/);
+    if(m){ flushPara(); if(listTag !== 'ul'){ flushList(); out += '<ul>'; listTag = 'ul'; } out += '<li>' + mdInline(m[1]) + '</li>'; continue; }
+    m = line.match(/^\d+[.)]\s+(.*)$/);
+    if(m){ flushPara(); if(listTag !== 'ol'){ flushList(); out += '<ol>'; listTag = 'ol'; } out += '<li>' + mdInline(m[1]) + '</li>'; continue; }
+    flushList();
+    para.push(mdInline(line));
+  }
+  flushAll();
+  return out;
 }
 
 let items = [];

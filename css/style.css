@@ -453,6 +453,12 @@ details.faq p{ margin-top:12px; color:var(--muted); line-height:1.7; font-size:1
 .prose-article a{ color:var(--forest); text-decoration:underline; text-underline-offset:3px; }
 .prose-article img{ border-radius:1.25rem; margin:1.5em 0; }
 .prose-article blockquote{ border-left:3px solid var(--gold); padding:.4em 1em; margin:0 0 1.25em; color:var(--muted); font-style:italic; }
+.prose-article .table-wrap{ overflow-x:auto; margin:0 0 1.5em; border:1px solid var(--border); border-radius:1rem; }
+.prose-article table{ width:100%; border-collapse:collapse; font-size:15px; line-height:1.6; min-width:560px; }
+.prose-article th,.prose-article td{ padding:.7em .9em; text-align:left; vertical-align:top; border-bottom:1px solid var(--border); }
+.prose-article thead th,.prose-article tr:first-child th{ background:var(--forest); color:#fff; font-weight:600; }
+.prose-article tbody tr:nth-child(even),.prose-article tr:nth-child(even) td{ background:rgba(201,211,181,.25); }
+.prose-article hr{ border:none; border-top:1px solid var(--border); margin:1.5em 0; }
 
 /* ===== Fallback: text-[color:var(--charcoal)]/xx (Tailwind không hỗ trợ opacity modifier với arbitrary var()) =====
    Trên CDN cũ các class này cũng không được generate → text hiển thị charcoal 100% (kế thừa body).
