@@ -226,13 +226,14 @@
  tag.style.background = 'var(--chartreuse)';
  tag.style.color = 'var(--forest)';
  document.getElementById('bv-date').textContent = fmtDate(post.date);
- if (post.image) {
- const wrap = document.getElementById('bv-image-wrap');
- const img = document.getElementById('bv-image');
- img.src = post.image;
- img.alt = post.title;
- wrap.style.display = 'block';
- }
+  if (post.image) {
+  const wrap = document.getElementById('bv-image-wrap');
+  const img = document.getElementById('bv-image');
+  // Đường dẫn tuyệt đối từ root để chạy đúng cả trên trang tĩnh /bai-viet/<slug>/
+  img.src = /^https?:\/\//.test(post.image) ? post.image : '/' + String(post.image).replace(/^\//, '');
+  img.alt = post.title;
+  wrap.style.display = 'block';
+  }
  const body = document.getElementById('bv-body');
  if (window.marked) { body.innerHTML = marked.parse(post.body || ''); }
  else { body.innerHTML = '<p>' + esc(post.excerpt || '') + '</p>'; }
@@ -243,7 +244,7 @@
  if (others.length) {
  othersEl.innerHTML = others.map(n => `
  <a href="/bai-viet/${encodeURIComponent(n.slug)}/" class="card overflow-hidden focus-ring block group">
- <div class="img-frame" style="border-radius:0;"><img decoding="async"  src="${n.image}" alt="${esc(n.title)}" class="w-full h-[150px] object-cover photo-grade group-hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+  <div class="img-frame" style="border-radius:0;"><img decoding="async"  src="${/^https?:\/\//.test(n.image || '') ? n.image : '/' + String(n.image || '').replace(/^\//, '')}" alt="${esc(n.title)}" class="w-full h-[150px] object-cover photo-grade group-hover:scale-105 transition-transform duration-500" loading="lazy"></div>
  <div class="p-5">
  <span class="tag">${esc(n.tag)}</span>
  <h3 class="serif text-[17px] leading-[1.3] mt-3" style="color:var(--plum);">${esc(n.title)}</h3>
