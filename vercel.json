@@ -9,6 +9,28 @@
         {
           "type": "query",
           "key": "slug",
+          "value": "quy-trinh-don-tra-tre-an-toan"
+        }
+      ],
+      "destination": "/bai-viet/quy-trinh-don-tra-tre-an-toan/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "tre-2-tuoi-di-hoc-mam-non-can-chuan-bi-gi"
+        }
+      ],
+      "destination": "/bai-viet/tre-2-tuoi-di-hoc-mam-non-can-chuan-bi-gi/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
           "value": "steam-cho-tre-mam-non-la-gi"
         }
       ],
