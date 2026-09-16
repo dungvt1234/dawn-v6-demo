@@ -40,10 +40,7 @@ module.exports = {
     // Classes xuất hiện động trong JS hoặc edge cases
     // NOTE: text-[color:var(--charcoal)]/xx KHÔNG được Tailwind hỗ trợ (opacity modifier với arbitrary var())
     // Trên CDN cũ các class này cũng KHÔNG generate → text hiển thị charcoal 100% (kế thừa body)
-    // → giữ nguyên hành vi: generate color: var(--charcoal) đặc
-    {
-      pattern: /text-\[color:var\(--charcoal\)\]\/\d+/
-    },
+    // → giữ nguyên hành vi: generate color: var(--charcoal) đặc (fallback trong css/style.css)
     'text-[color:var(--charcoal)]/70',
     'text-[color:var(--plum)]',
     'text-[color:var(--forest)]',
