@@ -260,6 +260,78 @@ try {
   console.error('Lỗi cập nhật bai-viet.html:', e.message, e.stack);
 }
 
+// --- P2-B3.1: single article migration test via templates/article.html ---
+// Usage: node scripts/build-news.js --article-template quy-trinh-don-tra-tre-an-toan
+// Chỉ generate 1 bài duy nhất từ templates/article.html → bai-viet/<slug>/index.html (production)
+const singleIdx = process.argv.indexOf('--article-template');
+if (singleIdx !== -1) {
+  const singleSlug = process.argv[singleIdx + 1];
+  if (!singleSlug) {
+    console.error('Missing slug for --article-template');
+    process.exit(1);
+  }
+  const singlePost = items.find(p => p.slug === singleSlug);
+  if (!singlePost) {
+    console.error('Slug not found:', singleSlug);
+    process.exit(1);
+  }
+  const tplPath = path.join(__dirname, '..', 'templates', 'article.html');
+  if (!fs.existsSync(tplPath)) {
+    console.error('Missing template:', tplPath);
+    process.exit(1);
+  }
+  // Reuse helpers from this file (escHtml, mdToHtml, toISODate, parseDate already defined)
+  const template = fs.readFileSync(tplPath, 'utf8');
+  const base = 'https://binhminhkindergarten.site';
+  const slug = singlePost.slug;
+  const postUrl = `${base}/bai-viet/${encodeURIComponent(slug)}/`;
+  const title = singlePost.title;
+  const excerpt = (singlePost.excerpt || '').slice(0, 155);
+  const image = singlePost.image ? (singlePost.image.startsWith('http') ? singlePost.image : `${base}/${singlePost.image.replace(/^\//,'')}`) : `${base}/img/hero.webp`;
+  const isoDate = toISODate(singlePost.date) || '2026-01-01';
+  const bodyHtml = mdToHtml(singlePost.body || singlePost.excerpt || '');
+  const tag = singlePost.tag || '';
+  const dateStr = isoDate ? `${isoDate.split('-')[2]}/${isoDate.split('-')[1]}/${isoDate.split('-')[0]}` : '';
+  const imageBlock = `<div id="bv-image-wrap" class="mt-8 img-frame" style="border-radius:1.75rem;"><img decoding="async" id="bv-image" src="${escHtml(singlePost.image||'')}" alt="${escHtml(title)}" class="w-full h-auto object-cover"></div>`;
+  const articleLd = { '@context': 'https://schema.org', '@type': 'Article', headline: title, description: excerpt, image: image, datePublished: isoDate, dateModified: isoDate, author: { '@type': 'Organization', name: 'Mầm non Bình Minh' }, publisher: { '@type': 'Organization', name: 'Mầm non Bình Minh', logo: { '@type': 'ImageObject', url: `${base}/img/logo.webp` } }, mainEntityOfPage: postUrl };
+  const crumbLd = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Trang chủ', item: `${base}/` }, { '@type': 'ListItem', position: 2, name: 'Tin tức & Sự kiện', item: `${base}/tin-tuc.html` }, { '@type': 'ListItem', position: 3, name: title, item: postUrl }] };
+  let html = template;
+  html = html.replace(/{{title}}/g, escHtml(title));
+  html = html.replace(/{{description}}/g, escHtml(excerpt));
+  html = html.replace(/{{canonical}}/g, escHtml(postUrl));
+  html = html.replace(/{{ogUrl}}/g, escHtml(postUrl));
+  html = html.replace(/{{ogTitle}}/g, escHtml(title + ' — Mầm non Bình Minh'));
+  html = html.replace(/{{ogDescription}}/g, escHtml(excerpt));
+  html = html.replace(/{{ogImage}}/g, escHtml(image));
+  html = html.replace(/{{twitterTitle}}/g, escHtml(title + ' — Mầm non Bình Minh'));
+  html = html.replace(/{{twitterDescription}}/g, escHtml(excerpt));
+  html = html.replace(/{{twitterImage}}/g, escHtml(image));
+  html = html.replace(/{{articleTitle}}/g, escHtml(title));
+  html = html.replace(/{{tag}}/g, escHtml(tag));
+  html = html.replace(/{{date}}/g, escHtml(dateStr));
+  html = html.replace(/{{imageBlock}}/g, imageBlock);
+  html = html.replace(/{{bodyHtml}}/g, bodyHtml);
+  html = html.replace(/{{articleJsonLd}}/g, `<script type="application/ld+json" id="article-jsonld">${JSON.stringify(articleLd, null, 2)}</script>`);
+  html = html.replace(/{{breadcrumbJsonLd}}/g, `<script type="application/ld+json">${JSON.stringify(crumbLd, null, 2)}</script>`);
+  if (/\{\{.*?\}\}/.test(html)) {
+    console.error('POC FAIL: placeholder remains', html.match(/\{\{.*?\}\}/g));
+    process.exit(1);
+  }
+  html = html.replace(/href="css\//g, 'href="/css/');
+  html = html.replace(/src="img\//g, 'src="/img/');
+  html = html.replace(/src="js\//g, 'src="/js/');
+  html = html.replace(/href="img\//g, 'href="/img/');
+  html = html.replace(/fetch\('data\/news\.json'/g, "fetch('/data/news.json'");
+  html = html.replace(/href="(?!https?:\/\/|\/|#|mailto:|tel:|data:)([^"]*\.html[^"]*)"/g, 'href="/$1"');
+  const outDir = path.join(path.dirname(baiVietPath), 'bai-viet', slug);
+  fs.mkdirSync(outDir, { recursive: true });
+  const outPath = path.join(outDir, 'index.html');
+  fs.writeFileSync(outPath, html, 'utf8');
+  console.log(`Migrated single article via template: ${slug} -> ${outPath}`);
+  console.log(`Title: ${title}, Body: ${bodyHtml.length}, Tag: ${tag}, Date: ${dateStr}`);
+  process.exit(0);
+}
+
 // --- Sinh static bài viết bai-viet/<slug>/index.html cho mỗi bài ---
 try {
   const templatePath = baiVietPath;
