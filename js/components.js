@@ -1,7 +1,10 @@
 // Shared header/footer for MẦM NON BÌNH MINH v6 — design v4 editorial style
 // Usage: <div data-include="header"></div> ... <div data-include="footer"></div>
 (function () {
-  const PAGE = location.pathname.split('/').filter(Boolean).pop() || 'index.html';
+  const PATH = location.pathname;
+  const IS_NEWS_ARTICLE = PATH.startsWith('/bai-viet/');
+  const IS_MONTE = PATH.startsWith('/montessori-vung-tau');
+  const PAGE = PATH.split('/').filter(Boolean).pop() || 'index.html';
   const DEMO_URL = 'https://school-os-eta.vercel.app';
 
   const NAV = [
@@ -29,8 +32,9 @@
     { href: '/tin-tuc.html', label: 'Tin tức & Sự kiện', key: 'news' },
     { href: '/lien-he.html', label: 'Liên hệ', key: 'contact' }
   ];
-  const activeKey = {
+  const activeKey = IS_NEWS_ARTICLE ? 'news' : IS_MONTE ? 'program' : {
     'index.html': 'index',
+    'bai-viet.html': 'news',
     'gioi-thieu.html': 'about',
     'doi-ngu.html': 'about',
     'chuong-trinh.html': 'program',
