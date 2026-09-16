@@ -2,6 +2,8 @@
 module.exports = {
   content: [
     './*.html',
+    './bai-viet/**/*.html',
+    './montessori-vung-tau/**/*.html',
     './js/*.js',
     './admin/**/*.html',
   ],
