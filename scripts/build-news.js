@@ -332,9 +332,9 @@ if (singleIdx !== -1) {
   process.exit(0);
 }
 
-// --- Sinh static bài viết bai-viet/<slug>/index.html cho mỗi bài ---
+// --- Sinh static bài viết bai-viet/<slug>/index.html cho mỗi bài — P2-B3.2: dùng templates/article.html ---
 try {
-  const templatePath = baiVietPath;
+  const templatePath = path.join(__dirname, '..', 'templates', 'article.html');
   if (fs.existsSync(templatePath)) {
     const template = fs.readFileSync(templatePath, 'utf8');
     for (const post of items) {
@@ -348,67 +348,43 @@ try {
       const bodyHtml = mdToHtml(post.body || post.excerpt || '');
       const tag = post.tag || '';
       const dateStr = isoDate ? `${isoDate.split('-')[2]}/${isoDate.split('-')[1]}/${isoDate.split('-')[0]}` : '';
+      const imageBlock = `<div id="bv-image-wrap" class="mt-8 img-frame" style="border-radius:1.75rem;"><img decoding="async" id="bv-image" src="${escHtml(post.image||'')}" alt="${escHtml(title)}" class="w-full h-auto object-cover"></div>`;
+      const articleLd = { '@context': 'https://schema.org', '@type': 'Article', headline: title, description: excerpt, image: image, datePublished: isoDate, dateModified: isoDate, author: { '@type': 'Organization', name: 'Mầm non Bình Minh' }, publisher: { '@type': 'Organization', name: 'Mầm non Bình Minh', logo: { '@type': 'ImageObject', url: `${base}/img/logo.webp` } }, mainEntityOfPage: postUrl };
+      const crumbLd = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Trang chủ', item: `${base}/` }, { '@type': 'ListItem', position: 2, name: 'Tin tức & Sự kiện', item: `${base}/tin-tuc.html` }, { '@type': 'ListItem', position: 3, name: title, item: postUrl }] };
       let html = template;
-      // Thay title/desc/canonical/OG cho bài này (canonical vẫn là ?slug để giữ preferred URL)
-      html = html.replace(/<title>.*?<\/title>/s, `<title>${escHtml(title)} — Mầm non Bình Minh</title>`);
-      html = html.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${escHtml(excerpt)}">`);
-      html = html.replace(/<link rel="canonical"[^>]*>/, `<link rel="canonical" id="canonical-link" href="${escHtml(postUrl)}">`);
-      html = html.replace(/<meta property="og:url"[^>]*>/, `<meta property="og:url" id="og-url" content="${escHtml(postUrl)}">`);
-      html = html.replace(/<meta property="og:title"[^>]*>/, `<meta property="og:title" id="og-title" content="${escHtml(title)} — Mầm non Bình Minh">`);
-      html = html.replace(/<meta property="og:description"[^>]*>/, `<meta property="og:description" id="og-desc" content="${escHtml(excerpt)}">`);
-      html = html.replace(/<meta property="og:image"[^>]*>/, `<meta property="og:image" id="og-image" content="${escHtml(image)}">`);
-      html = html.replace(/<meta name="twitter:title"[^>]*>/, `<meta name="twitter:title" id="tw-title" content="${escHtml(title)} — Mầm non Bình Minh">`);
-      html = html.replace(/<meta name="twitter:description"[^>]*>/, `<meta name="twitter:description" id="tw-desc" content="${escHtml(excerpt)}">`);
-      html = html.replace(/<meta name="twitter:image"[^>]*>/, `<meta name="twitter:image" id="tw-image" content="${escHtml(image)}">`);
-      html = html.replace(/<h1 id="bv-title"[^>]*>.*?<\/h1>/s, `<h1 id="bv-title" class="serif text-[30px] md:text-[52px] leading-[1.1] mt-4 max-w-[820px] text-white reveal in">${escHtml(title)}</h1>`);
-      // Tag/date
-      html = html.replace(/<span id="bv-tag"[^>]*>.*?<\/span>/s, `<span id="bv-tag" class="tag" style="background:var(--chartreuse); color:var(--forest);">${escHtml(tag)}</span>`);
-      html = html.replace(/<span id="bv-date"[^>]*>.*?<\/span>/s, `<span id="bv-date" class="tracking-[0.08em] font-semibold" style="color:var(--gold);">${escHtml(dateStr)}</span>`);
-      // Image
-      html = html.replace(/<div id="bv-image-wrap"[^>]*>[\s\S]*?<\/div>/, `<div id="bv-image-wrap" class="mt-8 img-frame" style="border-radius:1.75rem;"><img decoding="async" id="bv-image" src="${escHtml(post.image||'')}" alt="${escHtml(title)}" class="w-full h-auto object-cover"></div>`);
-      // Body - thay article bv-body
-      html = html.replace(/<article id="bv-body"[^>]*>.*?<\/article>/s, `<article id="bv-body" class="mt-10 prose-article">${bodyHtml}</article>`);
-      // Article LD
-      const articleLd = {
-        '@context': 'https://schema.org',
-        '@type': 'Article',
-        headline: title,
-        description: excerpt,
-        image: image,
-        datePublished: isoDate,
-        dateModified: isoDate,
-        author: { '@type': 'Organization', name: 'Mầm non Bình Minh' },
-        publisher: { '@type': 'Organization', name: 'Mầm non Bình Minh', logo: { '@type': 'ImageObject', url: `${base}/img/logo.webp` } },
-        mainEntityOfPage: postUrl
-      };
-      html = html.replace(/<script type="application\/ld\+json" id="article-jsonld">.*?<\/script>/s, `<script type="application/ld+json" id="article-jsonld">${JSON.stringify(articleLd, null, 2)}</script>`);
-      // Breadcrumb LD theo từng bài: Trang chủ > Tin tức & Sự kiện > bài viết (URL clean)
-      const crumbLd = {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Trang chủ', item: `${base}/` },
-          { '@type': 'ListItem', position: 2, name: 'Tin tức & Sự kiện', item: `${base}/tin-tuc.html` },
-          { '@type': 'ListItem', position: 3, name: title, item: postUrl }
-        ]
-      };
-      html = html.replace(/<script type="application\/ld\+json">\s*\{\s*"@context": "https:\/\/schema\.org",\s*"@type": "BreadcrumbList",[\s\S]*?\}\s*<\/script>/, `<script type="application/ld+json">${JSON.stringify(crumbLd, null, 2)}</script>`);
-
-      // Sử dụng đường dẫn tuyệt đối cho static subfolder để header (components.js) và assets hoạt động từ /bai-viet/<slug>/
+      html = html.replace(/{{title}}/g, escHtml(title));
+      html = html.replace(/{{description}}/g, escHtml(excerpt));
+      html = html.replace(/{{canonical}}/g, escHtml(postUrl));
+      html = html.replace(/{{ogUrl}}/g, escHtml(postUrl));
+      html = html.replace(/{{ogTitle}}/g, escHtml(title + ' — Mầm non Bình Minh'));
+      html = html.replace(/{{ogDescription}}/g, escHtml(excerpt));
+      html = html.replace(/{{ogImage}}/g, escHtml(image));
+      html = html.replace(/{{twitterTitle}}/g, escHtml(title + ' — Mầm non Bình Minh'));
+      html = html.replace(/{{twitterDescription}}/g, escHtml(excerpt));
+      html = html.replace(/{{twitterImage}}/g, escHtml(image));
+      html = html.replace(/{{articleTitle}}/g, escHtml(title));
+      html = html.replace(/{{tag}}/g, escHtml(tag));
+      html = html.replace(/{{date}}/g, escHtml(dateStr));
+      html = html.replace(/{{imageBlock}}/g, imageBlock);
+      html = html.replace(/{{bodyHtml}}/g, bodyHtml);
+      html = html.replace(/{{articleJsonLd}}/g, `<script type="application/ld+json" id="article-jsonld">${JSON.stringify(articleLd, null, 2)}</script>`);
+      html = html.replace(/{{breadcrumbJsonLd}}/g, `<script type="application/ld+json">${JSON.stringify(crumbLd, null, 2)}</script>`);
+      if (/\{\{.*?\}\}/.test(html)) {
+        console.error('Template placeholder remains for', slug, html.match(/\{\{.*?\}\}/g));
+        process.exit(1);
+      }
       html = html.replace(/href="css\//g, 'href="/css/');
       html = html.replace(/src="img\//g, 'src="/img/');
       html = html.replace(/src="js\//g, 'src="/js/');
       html = html.replace(/href="img\//g, 'href="/img/');
       html = html.replace(/fetch\('data\/news\.json'/g, "fetch('/data/news.json'");
-      // Các link nội bộ tương đối trong static HTML (ví dụ href="tin-tuc.html") -> tuyệt đối
       html = html.replace(/href="(?!https?:\/\/|\/|#|mailto:|tel:|data:)([^"]*\.html[^"]*)"/g, 'href="/$1"');
-
       const outDir = path.join(path.dirname(baiVietPath), 'bai-viet', slug);
       fs.mkdirSync(outDir, { recursive: true });
       const outPath = path.join(outDir, 'index.html');
       fs.writeFileSync(outPath, html, 'utf8');
     }
-    console.log('Đã sinh ' + items.length + ' static bài viết tại bai-viet/<slug>/index.html');
+    console.log('Đã sinh ' + items.length + ' static bài viết tại bai-viet/<slug>/index.html (template)');
   }
 } catch (e) {
   console.error('Lỗi sinh static bài viết:', e.message, e.stack);
