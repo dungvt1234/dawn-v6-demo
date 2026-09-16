@@ -1,0 +1,86 @@
+<header id="site-header" class="site-header fixed top-0 left-0 right-0 z-50">
+ <div class="site-header__inner">
+  <a href="/index.html" class="site-brand focus-ring">
+   <img src="/img/logo-icon.webp" alt="Mầm non Bình Minh" class="site-brand__icon">
+   <div class="site-brand__text">
+    <span class="site-brand__title">DAWN KINDERGARTEN</span>
+    <span class="site-brand__subtitle">Mầm Non Bình Minh</span>
+   </div>
+  </a>
+  <nav class="site-nav" aria-label="Điều hướng chính">
+   <ul class="site-nav__list">
+    <li class="site-nav__item"><a href="/index.html" class="site-nav__link focus-ring is-active">Trang chủ</a></li>
+  <li class="site-nav__item">
+  <a href="/gioi-thieu.html" class="site-nav__link focus-ring" aria-haspopup="true" aria-expanded="false">
+   Giới thiệu <i data-lucide="chevron-down" class="site-nav__chevron"></i>
+  </a>
+  <div class="site-nav__dropdown" role="menu">
+   <div class="site-nav__dropdown-panel">
+    <a href="/gioi-thieu.html" role="menuitem" class="site-nav__dropdown-link focus-ring">Về chúng tôi</a>
+    <a href="/chuong-trinh.html" role="menuitem" class="site-nav__dropdown-link focus-ring">Chương trình học</a>
+    <a href="/montessori-vung-tau/" role="menuitem" class="site-nav__dropdown-link focus-ring">Phương pháp Montessori</a>
+    <a href="/moi-truong.html" role="menuitem" class="site-nav__dropdown-link focus-ring">Cơ sở vật chất</a>
+    <a href="/doi-ngu.html" role="menuitem" class="site-nav__dropdown-link focus-ring">Đội ngũ giáo viên</a>
+   </div>
+  </div>
+ </li>
+  <li class="site-nav__item">
+  <a href="#" class="site-nav__link focus-ring" aria-haspopup="true" aria-expanded="false">
+   Thông tin <i data-lucide="chevron-down" class="site-nav__chevron"></i>
+  </a>
+  <div class="site-nav__dropdown" role="menu">
+   <div class="site-nav__dropdown-panel">
+    <a href="/tuyen-sinh.html" role="menuitem" class="site-nav__dropdown-link focus-ring">Quy trình tuyển sinh</a>
+    <a href="/hoc-phi.html" role="menuitem" class="site-nav__dropdown-link focus-ring">Học phí & ưu đãi</a>
+    <a href="/gallery.html" role="menuitem" class="site-nav__dropdown-link focus-ring">Thư viện ảnh</a>
+   </div>
+  </div>
+ </li>
+  <li class="site-nav__item"><a href="/chuong-trinh.html" class="site-nav__link focus-ring">Chương trình học</a></li>
+  <li class="site-nav__item"><a href="/tieng-anh-cho-tre.html" class="site-nav__link site-nav__link--cta focus-ring">Tiếng Anh cho trẻ</a></li>
+  <li class="site-nav__item"><a href="/tin-tuc.html" class="site-nav__link focus-ring">Tin tức & Sự kiện</a></li>
+  <li class="site-nav__item"><a href="/lien-he.html" class="site-nav__link focus-ring">Liên hệ</a></li>
+   </ul>
+  </nav>
+  <div class="site-actions">
+   <a href="tel:0866685632" aria-label="Gọi tư vấn 0866 685 632" class="site-phone focus-ring">
+    <i data-lucide="phone" class="w-4 h-4"></i><span class="hidden sm:inline">0866 685 632</span>
+   </a>
+   <button id="menu-btn" class="site-burger focus-ring" aria-expanded="false" aria-controls="mobile-menu" aria-label="Mở menu">
+    <i data-lucide="menu" class="w-6 h-6"></i>
+   </button>
+  </div>
+ </div>
+</header>
+<div id="mobile-menu" class="site-mobile hidden" style="top:76px;">
+  <a href="/index.html" class="block text-base font-semibold py-3 border-b border-forest/5 focus-ring text-plum" style="color:var(--plum);">Trang chủ</a>
+ <div class="border-b border-forest/5">
+  <button type="button" class="mobile-nav-toggle w-full flex items-center justify-between gap-2 py-3 text-left focus-ring" aria-expanded="false" aria-controls="mobile-sub-about">
+   <span class="text-base font-semibold text-charcoal" style="color:var(--charcoal);">Giới thiệu</span>
+   <i data-lucide="chevron-down" class="w-4 h-4 shrink-0 transition-transform duration-300" style="color:var(--muted);"></i>
+  </button>
+  <div id="mobile-sub-about" class="hidden pl-4 pb-3 flex flex-col gap-1">
+   <a href="/gioi-thieu.html" class="text-sm font-medium py-2 px-3 rounded-lg focus-ring">Về chúng tôi</a>
+<a href="/chuong-trinh.html" class="text-sm font-medium py-2 px-3 rounded-lg focus-ring">Chương trình học</a>
+<a href="/montessori-vung-tau/" class="text-sm font-medium py-2 px-3 rounded-lg focus-ring">Phương pháp Montessori</a>
+<a href="/moi-truong.html" class="text-sm font-medium py-2 px-3 rounded-lg focus-ring">Cơ sở vật chất</a>
+<a href="/doi-ngu.html" class="text-sm font-medium py-2 px-3 rounded-lg focus-ring">Đội ngũ giáo viên</a>
+  </div>
+ </div>
+ <div class="border-b border-forest/5">
+  <button type="button" class="mobile-nav-toggle w-full flex items-center justify-between gap-2 py-3 text-left focus-ring" aria-expanded="false" aria-controls="mobile-sub-info">
+   <span class="text-base font-semibold text-charcoal" style="color:var(--charcoal);">Thông tin</span>
+   <i data-lucide="chevron-down" class="w-4 h-4 shrink-0 transition-transform duration-300" style="color:var(--muted);"></i>
+  </button>
+  <div id="mobile-sub-info" class="hidden pl-4 pb-3 flex flex-col gap-1">
+   <a href="/tuyen-sinh.html" class="text-sm font-medium py-2 px-3 rounded-lg focus-ring">Quy trình tuyển sinh</a>
+<a href="/hoc-phi.html" class="text-sm font-medium py-2 px-3 rounded-lg focus-ring">Học phí & ưu đãi</a>
+<a href="/gallery.html" class="text-sm font-medium py-2 px-3 rounded-lg focus-ring">Thư viện ảnh</a>
+  </div>
+ </div>
+ <a href="/chuong-trinh.html" class="block text-base font-semibold py-3 border-b border-forest/5 focus-ring text-charcoal" style="color:var(--charcoal);">Chương trình học</a>
+ <a href="/tieng-anh-cho-tre.html" class="block text-base font-semibold py-3 border-b border-forest/5 focus-ring text-charcoal" style="color:var(--charcoal);">Tiếng Anh cho trẻ</a>
+ <a href="/tin-tuc.html" class="block text-base font-semibold py-3 border-b border-forest/5 focus-ring text-charcoal" style="color:var(--charcoal);">Tin tức & Sự kiện</a>
+ <a href="/lien-he.html" class="block text-base font-semibold py-3 border-b border-forest/5 focus-ring text-charcoal" style="color:var(--charcoal);">Liên hệ</a>
+  <a href="https://school-os-eta.vercel.app" target="_blank" rel="noopener" class="mt-4 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-[13px] font-bold tracking-[0.08em] uppercase transition-all duration-300 focus-ring" style="background:var(--chartreuse); color:var(--forest);">🖥️ Dùng thử phần mềm quản lý</a>
+ </div>
