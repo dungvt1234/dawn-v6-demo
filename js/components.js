@@ -240,10 +240,13 @@
     // Floating contact button (all pages)
     document.body.insertAdjacentHTML('beforeend', floatCSS + floatContactHTML);
 
-    // Re-init Lucide icons after injection (if available)
-    if (typeof lucide !== 'undefined' && lucide.createIcons) {
-      try { lucide.createIcons(); } catch (e) {}
+    // Re-init Lucide icons after injection (if available).
+    // lucide.min.js is deferred, so re-run on DOMContentLoaded (deferred scripts run before it).
+    function dawnIcons() {
+      try { if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons(); } catch (e) {}
     }
+    dawnIcons();
+    document.addEventListener('DOMContentLoaded', dawnIcons);
 
   }
 
