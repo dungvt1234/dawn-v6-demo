@@ -9,6 +9,17 @@
         {
           "type": "query",
           "key": "slug",
+          "value": "hoc-phi-mam-non-binh-minh-2026"
+        }
+      ],
+      "destination": "/bai-viet/hoc-phi-mam-non-binh-minh-2026/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
           "value": "truong-mam-non-vung-tau"
         }
       ],
