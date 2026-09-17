@@ -1,3 +1,4 @@
+<!-- templates/article.html — P2-B3 POC: placeholders for build-html.js -->
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -12,7 +13,7 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
 <title>Trường mầm non Vũng Tàu — Mầm non Bình Minh</title>
 <meta name="description" content="Mầm non Bình Minh (DAWN Kindergarten) tại 75/2A Phạm Hồng Thái, Phường 7, Vũng Tàu — trường mầm non tư thục nhận bé 6 tháng–6 tuổi, Montessori, STEAM, tiến">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,15 +23,15 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/bevietnampro/v12/QdVMSTAyLFyeg_IDWvOJmVES_HScJ281Rb0.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/bevietnampro/v12/QdVPSTAyLFyeg_IDWvOJmVES_Hw5BXoKZA.woff2">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=12">
+<link rel="stylesheet" href="/css/style.css?v=12">
   <!-- v4 design: Tailwind config colors -->
   <!-- AOS Animation Library -->
-  <link href="css/vendor/aos.css" rel="stylesheet">
-  <script src="js/vendor/aos.js"></script>
+  <link href="/css/vendor/aos.css" rel="stylesheet">
+  <script src="/js/vendor/aos.js"></script>
   <!-- Lucide Icons -->
-  <script src="js/vendor/lucide.min.js"></script>
+  <script src="/js/vendor/lucide.min.js"></script>
   <!-- Markdown renderer cho nội dung bài viết -->
-  <script defer src="js/vendor/marked.min.js"></script>
+  <script defer src="/js/vendor/marked.min.js"></script>
 
   <!-- ===== SEO: canonical + Open Graph + Twitter ===== -->
   <link rel="canonical" id="canonical-link" href="https://binhminhkindergarten.site/bai-viet/truong-mam-non-vung-tau/">
@@ -46,8 +47,7 @@
   <meta name="twitter:description" id="tw-desc" content="Mầm non Bình Minh (DAWN Kindergarten) tại 75/2A Phạm Hồng Thái, Phường 7, Vũng Tàu — trường mầm non tư thục nhận bé 6 tháng–6 tuổi, Montessori, STEAM, tiến">
   <meta name="twitter:image" id="tw-image" content="https://binhminhkindergarten.site/img/moment-01.webp">
   <meta name="theme-color" content="#223D22">
-  <script type="application/ld+json">
-{
+  <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
@@ -60,12 +60,17 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Bài viết — Mầm non Bình Minh",
-      "item": "https://binhminhkindergarten.site/bai-viet.html"
+      "name": "Tin tức & Sự kiện",
+      "item": "https://binhminhkindergarten.site/tin-tuc.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Trường mầm non Vũng Tàu",
+      "item": "https://binhminhkindergarten.site/bai-viet/truong-mam-non-vung-tau/"
     }
   ]
-}
-  </script>
+}</script>
   <!-- ===== SEO: Article JSON-LD động (được JS cập nhật theo bài viết) ===== -->
   <script type="application/ld+json" id="article-jsonld">{
   "@context": "https://schema.org",
@@ -89,7 +94,7 @@
   },
   "mainEntityOfPage": "https://binhminhkindergarten.site/bai-viet/truong-mam-non-vung-tau/"
 }</script>
-  <link rel="stylesheet" href="css/tailwind.css?v=5">
+  <link rel="stylesheet" href="/css/tailwind.css?v=5">
 </head>
 <body class="grain">
 <div id="dawn-arc-track"><div id="dawn-arc-fill"></div></div>
@@ -103,8 +108,8 @@
  <p class="eyebrow reveal in" style="color:var(--chartreuse);">TIN TỨC &amp; SỰ KIỆN</p>
  <h1 id="bv-title" class="serif text-[30px] md:text-[52px] leading-[1.1] mt-4 max-w-[820px] text-white reveal in">Trường mầm non Vũng Tàu</h1>
  <div class="mt-5 flex flex-wrap items-center gap-4 text-white/80 text-[14px] reveal in">
- <span id="bv-tag" class="tag"></span>
- <span id="bv-date" class="tracking-[0.08em] font-semibold" style="color:var(--gold);"></span>
+ <span id="bv-tag" class="tag" style="background:var(--chartreuse); color:var(--forest);">Giới thiệu</span>
+ <span id="bv-date" class="tracking-[0.08em] font-semibold" style="color:var(--gold);">18/09/2026</span>
  <span class="tracking-[0.08em] font-semibold" style="color:var(--gold);">· Bởi DAWN Kindergarten</span>
  </div>
  </div>
@@ -112,16 +117,14 @@
 
 <section>
  <div class="max-w-[820px] mx-auto px-6 md:px-10 py-16 md:py-20">
- <a href="tin-tuc.html" class="inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.08em] uppercase transition-colors hover:opacity-70" style="color:var(--forest);">
+ <a href="/tin-tuc.html" class="inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.08em] uppercase transition-colors hover:opacity-70" style="color:var(--forest);">
  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
  Về trang Tin tức &amp; Sự kiện
  </a>
 
- <div id="bv-image-wrap" class="mt-8 img-frame" style="border-radius:1.75rem; display:none;">
- <img decoding="async"  id="bv-image" src="" loading="lazy" alt="" class="w-full h-auto object-cover">
- </div>
+ <div id="bv-image-wrap" class="mt-8 img-frame" style="border-radius:1.75rem;"><img decoding="async" id="bv-image" src="/img/moment-01.webp" alt="Trường mầm non Vũng Tàu" class="w-full h-auto object-cover"></div>
 
- <article id="bv-body" class="mt-10 prose-article"></article>
+ <article id="bv-body" class="mt-10 prose-article"><p>Mầm non Bình Minh (DAWN Kindergarten) là trường mầm non tư thục tại 75/2A Phạm Hồng Thái, Phường 7, TP. Vũng Tàu. Trường nhận trẻ từ 6 tháng đến 6 tuổi, với chương trình lấy trẻ làm trung tâm, kết hợp Montessori, STEAM và tiếng Anh bản ngữ trong sinh hoạt hằng ngày. Thời gian bán trú từ 7:00–17:30, hỗ trợ đến 18:30 và có camera 24/7.</p><h2>Vì sao nhiều gia đình Vũng Tàu chọn Bình Minh</h2><ul><li><strong>Vị trí tại Phường 7:</strong> 75/2A Phạm Hồng Thái, thuận tiện cho phụ huynh đưa đón trẻ</li><li><strong>Chương trình rõ ràng:</strong> Montessori, STEAM và tiếng Anh bản ngữ — xem <a href="/chuong-trinh.html">chương trình học</a></li><li><strong>An toàn:</strong> <a href="/bai-viet/quy-trinh-don-tra-tre-an-toan/">quy trình đón trả trẻ</a>, danh sách ủy quyền và camera 24/7</li><li><strong>Đội ngũ:</strong> yêu trẻ, được đào tạo Montessori/STEAM</li><li><strong>Dinh dưỡng:</strong> thực đơn theo mùa — xem <a href="/bai-viet/thuc-don-mua-thu/">thực đơn mùa thu</a></li></ul><h2>Chương trình học tại Bình Minh</h2><p><strong>Montessori 2–6 tuổi:</strong> trẻ được lựa chọn hoạt động và làm việc với giáo cụ phù hợp — tìm hiểu <a href="/bai-viet/phuong-phap-montessori-truong-mam-non-vung-tau/">phương pháp Montessori tại Vũng Tàu</a> và <a href="/montessori-vung-tau/">Montessori tại DAWN</a></p><p><strong>STEAM:</strong> trẻ khám phá Khoa học, Công nghệ, Kỹ thuật, Nghệ thuật và Toán thông qua hoạt động trải nghiệm — xem <a href="/bai-viet/steam-cho-tre-mam-non-la-gi/">STEAM cho trẻ mầm non là gì?</a></p><p><strong>Tiếng Anh:</strong> trẻ tiếp xúc tiếng Anh cùng giáo viên bản ngữ thông qua các hoạt động phù hợp với lứa tuổi — xem <a href="/bai-viet/giao-vien-ban-ngu-day-tieng-anh-mam-non/">giáo viên bản ngữ dạy tiếng Anh mầm non</a> và <a href="/bai-viet/may-tuoi-nen-cho-be-hoc-tieng-anh/">mấy tuổi nên cho bé học tiếng Anh</a></p><p><strong>Một ngày của bé:</strong> 7:00 đón trẻ → vận động → Montessori/STEAM → tiếng Anh → ăn trưa → ngủ trưa → hoạt động ngoài trời/vườn (<a href="/bai-viet/be-lam-vuon/">bé làm vườn</a>) → trả trẻ 17:30</p><h2>7 tiêu chí chọn trường — Bình Minh đáp ứng thế nào</h2><p>Tham khảo <a href="/bai-viet/7-tieu-chi-vang-chon-truong-mam-non-cho-be-vung-tau/">7 tiêu chí vàng chọn trường mầm non cho bé Vũng Tàu</a> và <a href="/bai-viet/kinh-nghiem-chon-truong-mam-non-uy-tin-vung-tau/">kinh nghiệm chọn trường mầm non uy tín Vũng Tàu</a>:</p><ul><li><strong>Chương trình</strong> — Montessori, STEAM và tiếng Anh</li><li><strong>An toàn</strong> — camera và quy trình đón trả trẻ</li><li><strong>Giáo viên</strong> — đội ngũ được đào tạo</li><li><strong>Cơ sở vật chất</strong> — xem <a href="/moi-truong.html">môi trường học tập</a></li><li><strong>Dinh dưỡng</strong> — chế độ ăn bán trú</li><li><strong>Minh bạch</strong> — <a href="/bai-viet/hoc-phi-truong-mam-non-tu-thuc-vung-tau-2026/">thông tin học phí</a></li><li><strong>Vị trí</strong> — tại Phường 7, Vũng Tàu; tham khảo <a href="/bai-viet/mam-non-quanh-toi-chon-truong-mam-non-gan-nha-vung-tau/">cách tìm trường mầm non gần nhà</a></li></ul><h2>Tuyển sinh &amp; tham quan</h2><ul><li><strong>Độ tuổi:</strong> 6 tháng–6 tuổi</li><li><strong>Thời gian:</strong> 7:00–17:30, thứ Hai–thứ Bảy</li><li><strong>Đăng ký tham quan:</strong> <a href="/dang-ky.html">đăng ký tham quan</a></li><li><strong>Liên hệ:</strong> 0866 685 632 hoặc <a href="/lien-he.html">liên hệ</a></li></ul><h2>FAQ</h2><p><strong>Trường có nhận bé 6 tháng?</strong></p><p>Có. Mầm non Bình Minh nhận trẻ từ 6 tháng tuổi.</p><p><strong>Học phí bao gồm gì?</strong></p><p>Thông tin học phí và các khoản phí được nhà trường tư vấn theo chương trình và độ tuổi của trẻ. Xem <a href="/bai-viet/hoc-phi-truong-mam-non-tu-thuc-vung-tau-2026/">thông tin học phí</a>.</p><p><strong>Có camera không?</strong></p><p>Có camera 24/7 tại trường.</p><p><strong>Trường ở đâu tại Vũng Tàu?</strong></p><p>Mầm non Bình Minh (DAWN Kindergarten) tại 75/2A Phạm Hồng Thái, Phường 7, TP. Vũng Tàu.</p><hr><p><em>DAWN Kindergarten — Grow with Nature. Đón bé 6 tháng–6 tuổi. Hotline 0866 685 632.</em></p></article>
 
  <div class="mt-14 pt-10 border-t" style="border-color:var(--line);">
  <h2 class="serif text-[24px] md:text-[28px]" style="color:var(--plum);">Bài viết khác</h2>
@@ -131,9 +134,9 @@
 </section>
 
 <div data-include="footer"></div>
-<script src="js/components.js?v=14"></script>
-<script defer src="js/chatbot.js?v=11"></script>
-<script defer src="js/transitions.js?v=3"></script>
+<script src="/js/components.js?v=14"></script>
+<script defer src="/js/chatbot.js?v=11"></script>
+<script defer src="/js/transitions.js?v=3"></script>
 <script>
  const fill = document.getElementById('dawn-arc-fill');
  const header = document.getElementById('site-header');
@@ -166,7 +169,7 @@
  try {
  const params = new URLSearchParams(location.search);
  const slug = params.get('slug');
- const res = await fetch('data/news.json', { cache: 'no-store' });
+ const res = await fetch('/data/news.json', { cache: 'no-store' });
  const data = await res.json();
  const list = Array.isArray(data.news) ? data.news : [];
  const sorted = [...list].sort((a, b) => b.date.localeCompare(a.date));

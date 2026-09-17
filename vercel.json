@@ -9,6 +9,17 @@
         {
           "type": "query",
           "key": "slug",
+          "value": "truong-mam-non-vung-tau"
+        }
+      ],
+      "destination": "/bai-viet/truong-mam-non-vung-tau/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
           "value": "quy-trinh-don-tra-tre-an-toan"
         }
       ],
