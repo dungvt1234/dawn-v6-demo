@@ -123,8 +123,14 @@
  }
  (async () => {
  try {
- const params = new URLSearchParams(location.search);
- const slug = params.get('slug');
+  const params = new URLSearchParams(location.search);
+  let slug = params.get('slug');
+  // Static pages /bai-viet/<slug>/ have no ?slug= — derive slug from pathname
+  // so runtime SEO update keeps self-canonical instead of falling back to latest article
+  if (!slug) {
+  const m = location.pathname.match(/\/bai-viet\/([^\/]+)\/?/);
+  if (m) slug = decodeURIComponent(m[1]);
+  }
  const res = await fetch('data/news.json', { cache: 'no-store' });
  const data = await res.json();
  const list = Array.isArray(data.news) ? data.news : [];
