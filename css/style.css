@@ -415,6 +415,7 @@ details.faq p{ margin-top:12px; color:var(--muted); line-height:1.7; font-size:1
   html{ scroll-behavior:auto; }
   .ripple-btn::before{ animation:none; }
   .page-hero .sunrise-line{ animation:none; stroke-dashoffset:0; }
+  .marquee-track{ animation:none; }
 }
 
 /* ===== Chữ nổi trên ảnh (program cards) ===== */
