@@ -274,6 +274,31 @@
       menuBtnAria.setAttribute('aria-expanded', expanded ? 'false' : 'true');
     });
   }
+  // Desktop: parent links with href="#" (vd. "Thông tin") chỉ để mở dropdown —
+  // chặn nhảy lên đầu trang khi click
+  Array.prototype.forEach.call(document.querySelectorAll('.site-nav a[href="#"]'), function (a) {
+    a.addEventListener('click', function (e) { e.preventDefault(); });
+  });
+
+  // Khóa scroll body khi drawer mobile mở (theo dõi class hidden/flex)
+  function syncBodyLock() {
+    if (!mobileMenu) return;
+    var open = !mobileMenu.classList.contains('hidden');
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  if (mobileMenu && typeof MutationObserver !== 'undefined') {
+    new MutationObserver(syncBodyLock).observe(mobileMenu, { attributes: true, attributeFilter: ['class'] });
+  }
+  // Esc đóng drawer mobile
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && mobileMenu && !mobileMenu.classList.contains('hidden')) {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('flex');
+      syncBodyLock();
+      var mb = document.getElementById('menu-btn');
+      if (mb) mb.setAttribute('aria-expanded', 'false');
+    }
+  });
 
   // Gentle slide-down + stagger animation for mobile menu
   var menuMarginCss = '<style id="mobile-menu-motion">' +
