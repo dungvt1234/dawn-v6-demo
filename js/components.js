@@ -349,6 +349,14 @@
     });
   }
 
+  // GA4: đo click liên hệ (tel / Zalo / Messenger) — delegation nên bao cả header/footer/floating
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href^="tel:"], a[href*="zalo.me"], a[href*="m.me"]') : null;
+    if (!a) return;
+    var method = a.href.indexOf('zalo.me') > -1 ? 'zalo' : (a.href.indexOf('m.me') > -1 ? 'messenger' : 'phone');
+    try { if (typeof gtag !== 'undefined') gtag('event', 'contact_click', { method: method, page: location.pathname }); } catch (err) {}
+  });
+
   // Nút "Chat tư vấn" — mở chatbot Bé Ngoan (js/chatbot.js). Ẩn nút nếu chatbot chưa được nạp.
   var fcChat = document.getElementById('fc-chat');
   if (fcChat) {

@@ -25,6 +25,10 @@
     document.body.appendChild(modal);
 
     document.getElementById('zalo-modal-close').addEventListener('click', close);
+    // GA4: click nút Zalo trong popup
+    document.getElementById('zalo-modal-open').addEventListener('click', function () {
+      try { if (typeof gtag !== 'undefined') gtag('event', 'contact_click', { method: 'zalo_modal', page: location.pathname }); } catch (e) {}
+    });
     modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
   }
@@ -43,6 +47,8 @@
     document.querySelectorAll('form.js-zalo-form').forEach(function (form) {
       form.addEventListener('submit', function (e) {
         e.preventDefault();
+        // GA4: conversion gửi form (đánh dấu generate_lead trong GA4 UI)
+        try { if (typeof gtag !== 'undefined') gtag('event', 'generate_lead', { form_id: location.pathname }); } catch (err) {}
         // Reset form sau khi hiện popup
         form.reset();
         open();

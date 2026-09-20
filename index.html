@@ -880,6 +880,7 @@
     modal.classList.remove('hidden');
     modal.classList.add('flex');
     document.body.style.overflow = 'hidden';
+    try { if (typeof gtag !== 'undefined') gtag('event', 'video_open', { video: 'gioi-thieu' }); } catch (e) {}
   }
   function closeVideo() {
     modal.classList.add('hidden');
