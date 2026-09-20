@@ -45,6 +45,13 @@ function fmtDate(d) {
   const [y,m,day]=String(d).split('-');
   return `${day}/${m}/${y}`;
 }
+// FAQPage JSON-LD - chi sinh khi post co mang faq (khop noi dung FAQ hien thi trong body)
+function faqJsonLd(post) {
+  if (!post || !Array.isArray(post.faq) || !post.faq.length) return '';
+  const mainEntity = post.faq.filter(f => f && f.q && f.a).map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } }));
+  if (!mainEntity.length) return '';
+  return `<script type="application/ld+json" id="faq-jsonld">${JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity }, null, 2)}</script>`;
+}
 function mdInline(s){
   // Inline: escape HTML trước, sau đó áp dụng ảnh/link/bold/italic/code/URL trần
   let html = escHtml(s);
@@ -313,6 +320,8 @@ if (singleIdx !== -1) {
   html = html.replace(/{{bodyHtml}}/g, bodyHtml);
   html = html.replace(/{{articleJsonLd}}/g, `<script type="application/ld+json" id="article-jsonld">${JSON.stringify(articleLd, null, 2)}</script>`);
   html = html.replace(/{{breadcrumbJsonLd}}/g, `<script type="application/ld+json">${JSON.stringify(crumbLd, null, 2)}</script>`);
+  const faqLdSingle = faqJsonLd(singlePost);
+  if (faqLdSingle) html = html.replace(/(<script type="application\/ld\+json" id="article-jsonld">.*?<\/script>)/s, '$1\n  ' + faqLdSingle);
   if (/\{\{.*?\}\}/.test(html)) {
     console.error('POC FAIL: placeholder remains', html.match(/\{\{.*?\}\}/g));
     process.exit(1);
@@ -369,6 +378,8 @@ try {
       html = html.replace(/{{bodyHtml}}/g, bodyHtml);
       html = html.replace(/{{articleJsonLd}}/g, `<script type="application/ld+json" id="article-jsonld">${JSON.stringify(articleLd, null, 2)}</script>`);
       html = html.replace(/{{breadcrumbJsonLd}}/g, `<script type="application/ld+json">${JSON.stringify(crumbLd, null, 2)}</script>`);
+      const faqLd = faqJsonLd(post);
+      if (faqLd) html = html.replace(/(<script type="application\/ld\+json" id="article-jsonld">.*?<\/script>)/s, '$1\n  ' + faqLd);
       if (/\{\{.*?\}\}/.test(html)) {
         console.error('Template placeholder remains for', slug, html.match(/\{\{.*?\}\}/g));
         process.exit(1);
