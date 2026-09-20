@@ -5,6 +5,12 @@
 
 [[redirects]]
   from = "/bai-viet.html"
+  to = "/bai-viet/mot-ngay-cua-be-tai-binh-minh/index.html"
+  status = 200
+  query = {slug = "mot-ngay-cua-be-tai-binh-minh"}
+
+[[redirects]]
+  from = "/bai-viet.html"
   to = "/bai-viet/hoc-phi-mam-non-binh-minh-2026/index.html"
   status = 200
   query = {slug = "hoc-phi-mam-non-binh-minh-2026"}
