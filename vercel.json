@@ -9,6 +9,17 @@
         {
           "type": "query",
           "key": "slug",
+          "value": "phat-trien-nhan-thuc-mam-non-vung-tau"
+        }
+      ],
+      "destination": "/bai-viet/phat-trien-nhan-thuc-mam-non-vung-tau/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
           "value": "the-chat-mam-non-vung-tau"
         }
       ],

@@ -1,0 +1,304 @@
+<!-- templates/article.html — P2-B3 POC: placeholders for build-html.js -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y185FDJCHY"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+
+ gtag('config', 'G-Y185FDJCHY');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+<title>Phát triển nhận thức mầm non Vũng Tàu — Mầm non Bình Minh</title>
+<meta name="description" content="Tìm hiểu cách trẻ phát triển nhận thức qua quan sát, khám phá, toán học, trải nghiệm và học qua chơi tại Mầm non Bình Minh Vũng Tàu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- ===== Phase 3: preload fonts ===== -->
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/dmserifdisplay/v17/-nFnOHM81r4j6k0gjAW3mujVU2B2G_Bx0g.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/bevietnampro/v12/QdVMSTAyLFyeg_IDWvOJmVES_HScJ281Rb0.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/bevietnampro/v12/QdVPSTAyLFyeg_IDWvOJmVES_Hw5BXoKZA.woff2">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=12">
+  <!-- v4 design: Tailwind config colors -->
+  <!-- AOS Animation Library -->
+  <link href="/css/vendor/aos.css" rel="stylesheet">
+  <script src="/js/vendor/aos.js"></script>
+  <!-- Lucide Icons -->
+  <script defer src="/js/vendor/lucide.min.js"></script>
+  <!-- Markdown renderer cho nội dung bài viết -->
+  <script defer src="/js/vendor/marked.min.js"></script>
+
+  <!-- ===== SEO: canonical + Open Graph + Twitter ===== -->
+  <link rel="canonical" id="canonical-link" href="https://binhminhkindergarten.site/bai-viet/phat-trien-nhan-thuc-mam-non-vung-tau/">
+  <meta property="og:type" content="article">
+  <meta property="og:url" id="og-url" content="https://binhminhkindergarten.site/bai-viet/phat-trien-nhan-thuc-mam-non-vung-tau/">
+  <meta property="og:site_name" content="Mầm non Bình Minh">
+  <meta property="og:title" id="og-title" content="Phát triển nhận thức mầm non Vũng Tàu — Mầm non Bình Minh">
+  <meta property="og:description" id="og-desc" content="Tìm hiểu cách trẻ phát triển nhận thức qua quan sát, khám phá, toán học, trải nghiệm và học qua chơi tại Mầm non Bình Minh Vũng Tàu.">
+  <meta property="og:image" id="og-image" content="https://binhminhkindergarten.site/img/ct-steam.webp">
+  <meta property="og:locale" content="vi_VN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" id="tw-title" content="Phát triển nhận thức mầm non Vũng Tàu — Mầm non Bình Minh">
+  <meta name="twitter:description" id="tw-desc" content="Tìm hiểu cách trẻ phát triển nhận thức qua quan sát, khám phá, toán học, trải nghiệm và học qua chơi tại Mầm non Bình Minh Vũng Tàu.">
+  <meta name="twitter:image" id="tw-image" content="https://binhminhkindergarten.site/img/ct-steam.webp">
+  <meta name="theme-color" content="#223D22">
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang chủ",
+      "item": "https://binhminhkindergarten.site/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tin tức & Sự kiện",
+      "item": "https://binhminhkindergarten.site/tin-tuc.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Phát triển nhận thức mầm non Vũng Tàu",
+      "item": "https://binhminhkindergarten.site/bai-viet/phat-trien-nhan-thuc-mam-non-vung-tau/"
+    }
+  ]
+}</script>
+  <!-- ===== SEO: Article JSON-LD động (được JS cập nhật theo bài viết) ===== -->
+  <script type="application/ld+json" id="article-jsonld">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Phát triển nhận thức mầm non Vũng Tàu",
+  "description": "Tìm hiểu cách trẻ phát triển nhận thức qua quan sát, khám phá, toán học, trải nghiệm và học qua chơi tại Mầm non Bình Minh Vũng Tàu.",
+  "image": "https://binhminhkindergarten.site/img/ct-steam.webp",
+  "datePublished": "2026-09-23",
+  "dateModified": "2026-09-23",
+  "author": {
+    "@type": "Organization",
+    "name": "Mầm non Bình Minh"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mầm non Bình Minh",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://binhminhkindergarten.site/img/logo.webp"
+    }
+  },
+  "mainEntityOfPage": "https://binhminhkindergarten.site/bai-viet/phat-trien-nhan-thuc-mam-non-vung-tau/"
+}</script>
+  <script type="application/ld+json" id="faq-jsonld">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Phát triển nhận thức ở trẻ mầm non gồm những gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có thể bao gồm nhiều kỹ năng như quan sát, ghi nhớ, nhận biết, so sánh, phân loại, làm quen với số lượng, khám phá môi trường và giải quyết những vấn đề đơn giản phù hợp với độ tuổi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Trẻ mầm non có cần học toán sớm không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trẻ có thể làm quen với những khái niệm toán học cơ bản thông qua các hoạt động phù hợp với độ tuổi như đếm, nhận biết số lượng, so sánh kích thước, hình dạng và phân loại đồ vật."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bé hay đặt câu hỏi có phải đang phát triển nhận thức không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Việc trẻ đặt câu hỏi là một biểu hiện tự nhiên của sự tò mò và nhu cầu tìm hiểu thế giới. Người lớn có thể tận dụng những câu hỏi đó để cùng trẻ quan sát, suy nghĩ và tìm câu trả lời."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ba mẹ có thể hỗ trợ phát triển nhận thức cho trẻ tại nhà như thế nào?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ba mẹ có thể cùng trẻ đọc sách, quan sát thiên nhiên, phân loại đồ vật, nấu ăn, chăm sóc cây hoặc đặt những câu hỏi đơn giản trong sinh hoạt hằng ngày. Quan trọng là tạo cơ hội để trẻ được quan sát, suy nghĩ và tự diễn đạt điều mình nhận thấy."
+      }
+    }
+  ]
+}</script>
+  <link rel="stylesheet" href="/css/tailwind.css?v=5">
+</head>
+<body class="grain">
+<div id="dawn-arc-track"><div id="dawn-arc-fill"></div></div>
+<div data-include="header"><nav aria-label="Điều hướng chính"><ul><li><a href="/index.html">Trang chủ</a></li><li><a href="/gioi-thieu.html">Giới thiệu</a><ul><li><a href="/gioi-thieu.html">Về chúng tôi</a></li><li><a href="/chuong-trinh.html">Chương trình học</a></li><li><a href="/montessori-vung-tau/">Phương pháp Montessori</a></li><li><a href="/moi-truong.html">Cơ sở vật chất</a></li><li><a href="/doi-ngu.html">Đội ngũ giáo viên</a></li></ul></li><li><span>Thông tin</span><ul><li><a href="/tuyen-sinh.html">Quy trình tuyển sinh</a></li><li><a href="/hoc-phi.html">Học phí &amp; ưu đãi</a></li><li><a href="/gallery.html">Thư viện ảnh</a></li></ul></li><li><a href="/chuong-trinh.html">Chương trình học</a></li><li><a href="/tieng-anh-cho-tre.html">Tiếng Anh cho trẻ</a></li><li><a href="/tin-tuc.html">Tin tức &amp; Sự kiện</a></li><li><a href="/lien-he.html">Liên hệ</a></li></ul></nav></div>
+
+<section class="page-hero">
+ <svg class="absolute left-0 top-0 w-full h-full pointer-events-none" viewBox="0 0 1280 500" preserveAspectRatio="none" style="opacity:.5;">
+ <path class="sunrise-line" d="M-60 380c240-200 640-250 1360-30" stroke="#ECAB45" stroke-width="1.5" fill="none"/>
+ </svg>
+ <div class="relative z-10 max-w-[1280px] mx-auto px-6 md:px-10">
+ <p class="eyebrow reveal in" style="color:var(--chartreuse);">TIN TỨC &amp; SỰ KIỆN</p>
+ <h1 id="bv-title" class="serif text-[30px] md:text-[52px] leading-[1.1] mt-4 max-w-[820px] text-white reveal in">Phát triển nhận thức mầm non Vũng Tàu</h1>
+ <div class="mt-5 flex flex-wrap items-center gap-4 text-white/80 text-[14px] reveal in">
+ <span id="bv-tag" class="tag" style="background:var(--chartreuse); color:var(--forest);">Chương trình</span>
+ <span id="bv-date" class="tracking-[0.08em] font-semibold" style="color:var(--gold);">23/09/2026</span>
+ <span class="tracking-[0.08em] font-semibold" style="color:var(--gold);">· Bởi DAWN Kindergarten</span>
+ </div>
+ </div>
+</section>
+
+<section>
+ <div class="max-w-[820px] mx-auto px-6 md:px-10 py-16 md:py-20">
+ <a href="/tin-tuc.html" class="inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.08em] uppercase transition-colors hover:opacity-70" style="color:var(--forest);">
+ <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+ Về trang Tin tức &amp; Sự kiện
+ </a>
+
+ <div id="bv-image-wrap" class="mt-8 img-frame" style="border-radius:1.75rem;"><img decoding="async" id="bv-image" src="/img/ct-steam.webp" alt="Phát triển nhận thức mầm non Vũng Tàu" class="w-full h-auto object-cover"></div>
+
+ <article id="bv-body" class="mt-10 prose-article"><p>Mỗi ngày ở trường mầm non là một cơ hội để trẻ quan sát, đặt câu hỏi, thử nghiệm và khám phá thế giới xung quanh. Ở giai đoạn đầu đời, trẻ không chỉ học thông qua những hoạt động được gọi là “giờ học”, mà còn phát triển khả năng tư duy từ những trải nghiệm rất gần gũi trong cuộc sống.</p><p>Tại Mầm non Bình Minh, các hoạt động giáo dục được xây dựng để trẻ có cơ hội tìm hiểu, khám phá và chủ động tham gia vào quá trình học tập phù hợp với độ tuổi.</p><p>Ba mẹ có thể tìm hiểu thêm về <a href="/chuong-trinh.html">chương trình mầm non tại Bình Minh</a>.</p><h2>Phát triển nhận thức ở trẻ mầm non là gì?</h2><p>Phát triển nhận thức là quá trình trẻ dần hình thành khả năng quan sát, ghi nhớ, so sánh, phân loại, giải quyết vấn đề và hiểu hơn về thế giới xung quanh.</p><p>Ở mỗi độ tuổi, khả năng nhận thức của trẻ sẽ có những đặc điểm khác nhau. Trẻ nhỏ có thể bắt đầu từ việc nhận biết màu sắc, hình dạng, âm thanh và đồ vật quen thuộc. Khi lớn hơn, trẻ có thể thực hiện những hoạt động yêu cầu quan sát, suy luận, phân loại và tìm cách giải quyết một vấn đề đơn giản.</p><p>Vì vậy, hoạt động phát triển nhận thức ở mầm non không nhất thiết phải là những bài học lý thuyết. Trẻ có thể học thông qua chơi, trải nghiệm, quan sát và tương tác với môi trường xung quanh.</p><h2>Trẻ được phát triển nhận thức thông qua những hoạt động nào?</h2><h3>Khám phá thế giới xung quanh</h3><p>Trẻ luôn có nhu cầu tìm hiểu những điều diễn ra xung quanh mình.</p><p>Thông qua các hoạt động quan sát cây cối, con vật, đồ vật, thời tiết hoặc môi trường xung quanh trường, trẻ có cơ hội đặt câu hỏi và tìm hiểu những điều mình nhìn thấy.</p><p>Những câu hỏi rất đơn giản như “Đây là gì?”, “Vì sao lại như vậy?”, “Cái này giống hay khác cái kia?”, “Điều gì xảy ra nếu mình làm như thế?” đều có thể trở thành điểm bắt đầu cho quá trình khám phá của trẻ.</p><h3>Làm quen với số lượng và toán học</h3><p>Các khái niệm toán học đầu tiên có thể được trẻ tiếp cận thông qua những tình huống quen thuộc thay vì chỉ học bằng cách ghi nhớ.</p><p>Ví dụ, trẻ có thể làm quen với số lượng, đếm, nhiều – ít, lớn – nhỏ, dài – ngắn, hình dạng, vị trí, so sánh và phân loại.</p><p>Những hoạt động này giúp trẻ từng bước hình thành cách quan sát và nhận biết mối quan hệ giữa các sự vật.</p><h3>Phân loại và so sánh</h3><p>Khi chơi và khám phá, trẻ có thể được khuyến khích tìm điểm giống và khác nhau giữa các đồ vật.</p><p>Ví dụ: “Hai chiếc lá này giống nhau ở điểm nào?”, “Chiếc nào lớn hơn?”, “Những đồ vật nào có cùng màu?”, “Con có thể xếp những đồ vật này thành từng nhóm không?”</p><p>Thông qua những câu hỏi đơn giản, trẻ học cách quan sát, so sánh và đưa ra lựa chọn.</p><h3>Học thông qua trải nghiệm</h3><p>Một trong những cách tự nhiên để trẻ phát triển nhận thức là được trực tiếp làm và quan sát kết quả.</p><p>Các hoạt động trải nghiệm như <a href="/bai-viet/be-lam-vuon/">bé làm vườn</a> cho trẻ cơ hội quan sát cây cối, đất, nước và sự thay đổi của môi trường xung quanh.</p><p>Thay vì chỉ nghe cô giải thích, trẻ được nhìn thấy, chạm vào và tham gia vào hoạt động phù hợp với độ tuổi.</p><p>Bên cạnh các hoạt động tại trường, trẻ cũng có cơ hội tham gia những chương trình dã ngoại và trải nghiệm thực tế được tổ chức theo kế hoạch của nhà trường, thường khoảng 1–2 tháng/lần.</p><h2>Học qua chơi giúp trẻ phát triển tư duy như thế nào?</h2><p>Với trẻ mầm non, chơi không tách rời khỏi học tập.</p><p>Khi trẻ xây một công trình bằng các khối đồ chơi, trẻ đang lựa chọn hình dạng và kích thước. Khi chơi trò chơi phân loại, trẻ đang quan sát và tìm điểm giống nhau. Khi chơi cùng bạn, trẻ phải suy nghĩ về cách phối hợp và giải quyết những tình huống phát sinh.</p><p>Vì vậy, giáo viên có thể tạo ra những tình huống để trẻ quan sát, đặt câu hỏi, thử nghiệm, nhận biết kết quả rồi chia sẻ điều mình phát hiện.</p><p>Quá trình này giúp trẻ hình thành thói quen chủ động tìm hiểu thay vì chỉ chờ người lớn đưa ra câu trả lời.</p><h2>Vai trò của cô giáo trong hoạt động phát triển nhận thức</h2><p>Giáo viên không chỉ truyền đạt câu trả lời cho trẻ mà còn có thể đóng vai trò là người gợi mở và đồng hành trong quá trình khám phá.</p><p>Thay vì trả lời ngay khi trẻ hỏi “Tại sao?”, cô có thể đặt thêm câu hỏi như “Con nghĩ tại sao lại như vậy?” hoặc “Nếu mình thử cách khác thì điều gì sẽ xảy ra?”</p><p>Những câu hỏi mở phù hợp với độ tuổi giúp trẻ có cơ hội suy nghĩ và diễn đạt suy nghĩ của mình.</p><p>Đội ngũ giáo viên tại Mầm non Bình Minh đều tốt nghiệp chuyên ngành Mầm non, là nền tảng chuyên môn để đồng hành cùng trẻ trong các hoạt động chăm sóc và giáo dục hằng ngày.</p><h2>Phát triển nhận thức phù hợp với từng độ tuổi</h2><p>Không phải trẻ nào cũng có cùng tốc độ phát triển. Một hoạt động phù hợp với trẻ lớn chưa chắc đã phù hợp với trẻ nhỏ.</p><p>Vì vậy, hoạt động nhận thức cần được điều chỉnh dựa trên độ tuổi, khả năng của trẻ, mức độ tập trung, vốn kinh nghiệm, khả năng giao tiếp và mức độ chủ động của từng bé.</p><p>Với trẻ nhỏ, hoạt động có thể tập trung vào việc nhận biết, quan sát và khám phá những điều quen thuộc. Khi trẻ lớn hơn, hoạt động có thể mở rộng sang so sánh, phân loại, giải quyết vấn đề và đưa ra những suy luận đơn giản.</p><p>Điều quan trọng là tạo cho trẻ cơ hội khám phá phù hợp, thay vì đặt áp lực phải đạt cùng một kết quả.</p><h2>Câu hỏi thường gặp</h2><h3>Phát triển nhận thức ở trẻ mầm non gồm những gì?</h3><p>Có thể bao gồm nhiều kỹ năng như quan sát, ghi nhớ, nhận biết, so sánh, phân loại, làm quen với số lượng, khám phá môi trường và giải quyết những vấn đề đơn giản phù hợp với độ tuổi.</p><h3>Trẻ mầm non có cần học toán sớm không?</h3><p>Trẻ có thể làm quen với những khái niệm toán học cơ bản thông qua các hoạt động phù hợp với độ tuổi như đếm, nhận biết số lượng, so sánh kích thước, hình dạng và phân loại đồ vật.</p><h3>Bé hay đặt câu hỏi có phải đang phát triển nhận thức không?</h3><p>Việc trẻ đặt câu hỏi là một biểu hiện tự nhiên của sự tò mò và nhu cầu tìm hiểu thế giới. Người lớn có thể tận dụng những câu hỏi đó để cùng trẻ quan sát, suy nghĩ và tìm câu trả lời.</p><h3>Ba mẹ có thể hỗ trợ phát triển nhận thức cho trẻ tại nhà như thế nào?</h3><p>Ba mẹ có thể cùng trẻ đọc sách, quan sát thiên nhiên, phân loại đồ vật, nấu ăn, chăm sóc cây hoặc đặt những câu hỏi đơn giản trong sinh hoạt hằng ngày. Quan trọng là tạo cơ hội để trẻ được quan sát, suy nghĩ và tự diễn đạt điều mình nhận thấy.</p><h2>Tìm hiểu chương trình phát triển nhận thức tại Mầm non Bình Minh</h2><p>Phát triển nhận thức là một trong những nội dung trong chương trình giáo dục mầm non tại Bình Minh, bên cạnh phát triển thể chất, ngôn ngữ, tình cảm – kỹ năng xã hội và thẩm mỹ.</p><p>Ba mẹ có thể xem tổng quan <a href="/bai-viet/truong-mam-non-vung-tau/">chương trình mầm non tại Bình Minh</a> để xem tổng quan các hoạt động dành cho trẻ.</p><p>Nếu muốn tìm hiểu trực tiếp môi trường học tập, ba mẹ có thể <a href="/dang-ky.html">đăng ký tham quan trường</a> để tìm hiểu trực tiếp môi trường học tập và các hoạt động của trẻ.</p></article>
+
+ <div class="mt-14 pt-10 border-t" style="border-color:var(--line);">
+ <h2 class="serif text-[24px] md:text-[28px]" style="color:var(--plum);">Bài viết khác</h2>
+ <div id="bv-others" class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+ </div>
+ </div>
+</section>
+
+<div data-include="footer"></div>
+<script src="/js/components.js?v=14"></script>
+<script defer src="/js/chatbot.js?v=11"></script>
+<script defer src="/js/transitions.js?v=3"></script>
+<script>
+ const fill = document.getElementById('dawn-arc-fill');
+ const header = document.getElementById('site-header');
+ window.addEventListener('scroll', () => {
+ const h = document.documentElement;
+ const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+ fill.style.width = pct + '%';
+ if (h.scrollTop > 40) { header.classList.add('header-blur'); header.style.boxShadow = '0 1px 0 rgba(34,61,61,0.08)'; }
+ else { header.classList.remove('header-blur'); header.style.boxShadow = 'none'; }
+ });
+ const observer = new IntersectionObserver((entries) => {
+ entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+ }, { threshold: 0.15 });
+ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+ const menuBtn = document.getElementById('menu-btn');
+ const mobileMenu = document.getElementById('mobile-menu');
+ if (menuBtn && mobileMenu) {
+ menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); mobileMenu.classList.toggle('flex'); });
+ }
+
+ // === Tải bài viết theo ?slug= ===
+ function fmtDate(d) {
+ const [y, m, day] = d.split('-');
+ return `${day}/${m}/${y}`;
+ }
+ function esc(s) {
+ return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+ }
+ (async () => {
+ try {
+  const params = new URLSearchParams(location.search);
+  let slug = params.get('slug');
+  // Static pages /bai-viet/<slug>/ have no ?slug= — derive slug from pathname
+  // so runtime SEO update keeps self-canonical instead of falling back to latest article
+  if (!slug) {
+  const m = location.pathname.match(/\/bai-viet\/([^\/]+)\/?/);
+  if (m) slug = decodeURIComponent(m[1]);
+  }
+ const res = await fetch('/data/news.json', { cache: 'no-store' });
+ const data = await res.json();
+ const list = Array.isArray(data.news) ? data.news : [];
+ const sorted = [...list].sort((a, b) => b.date.localeCompare(a.date));
+ const post = list.find(n => n.slug === slug) || sorted[0];
+
+ if (!post) { document.getElementById('bv-title').textContent = 'Không tìm thấy bài viết'; return; }
+
+ document.title = post.title + ' — Mầm non Bình Minh';
+ document.getElementById('bv-title').textContent = post.title;
+
+ // === SEO động: canonical + OG/Twitter + Article JSON-LD theo bài viết ===
+ const base = 'https://binhminhkindergarten.site';
+ const postUrl = base + '/bai-viet/' + encodeURIComponent(post.slug) + '/';
+ const canon = document.getElementById('canonical-link');
+ if (canon) canon.setAttribute('href', postUrl);
+ const ogUrl = document.getElementById('og-url');
+ if (ogUrl) ogUrl.setAttribute('content', postUrl);
+ const ogT = document.getElementById('og-title');
+ if (ogT) ogT.setAttribute('content', post.title + ' — Mầm non Bình Minh');
+ const twT = document.getElementById('tw-title');
+ if (twT) twT.setAttribute('content', post.title + ' — Mầm non Bình Minh');
+ const ogD = document.getElementById('og-desc');
+ if (ogD) ogD.setAttribute('content', (post.excerpt || '').slice(0, 155));
+ const twD = document.getElementById('tw-desc');
+ if (twD) twD.setAttribute('content', (post.excerpt || '').slice(0, 155));
+ if (post.image) {
+  const imgAbs = post.image.indexOf('http') === 0 ? post.image : base + '/' + post.image.replace(/^\//, '');
+  const ogI = document.getElementById('og-image');
+  if (ogI) ogI.setAttribute('content', imgAbs);
+  const twI = document.getElementById('tw-image');
+  if (twI) twI.setAttribute('content', imgAbs);
+ }
+ // Article JSON-LD
+ try {
+  const dateISO = (post.date || '').replace(/^(\d{2})\/(\d{2})\/(\d{4})$/, '$3-$2-$1');
+  const imgAbs = post.image ? (post.image.indexOf('http') === 0 ? post.image : base + '/' + post.image.replace(/^\//, '')) : base + '/img/hero.webp';
+  const articleLd = {
+   '@context': 'https://schema.org',
+   '@type': 'Article',
+   headline: post.title,
+   description: post.excerpt || '',
+   image: imgAbs,
+   datePublished: dateISO || '2026-01-01',
+   dateModified: dateISO || '2026-01-01',
+   author: { '@type': 'Organization', name: 'Mầm non Bình Minh' },
+   publisher: { '@type': 'Organization', name: 'Mầm non Bình Minh', logo: { '@type': 'ImageObject', url: base + '/img/logo.webp' } },
+   mainEntityOfPage: postUrl
+  };
+  const ldEl = document.getElementById('article-jsonld');
+  if (ldEl) ldEl.textContent = JSON.stringify(articleLd);
+ } catch (err) { console.error('Lỗi Article JSON-LD:', err); }
+
+ const tag = document.getElementById('bv-tag');
+ tag.textContent = post.tag;
+ tag.style.background = 'var(--chartreuse)';
+ tag.style.color = 'var(--forest)';
+ document.getElementById('bv-date').textContent = fmtDate(post.date);
+  if (post.image) {
+  const wrap = document.getElementById('bv-image-wrap');
+  const img = document.getElementById('bv-image');
+  // Đường dẫn tuyệt đối từ root để chạy đúng cả trên trang tĩnh /bai-viet/<slug>/
+  img.src = /^https?:\/\//.test(post.image) ? post.image : '/' + String(post.image).replace(/^\//, '');
+  img.alt = post.title;
+  wrap.style.display = 'block';
+  }
+ const body = document.getElementById('bv-body');
+ if (window.marked) { body.innerHTML = marked.parse(post.body || ''); }
+ else { body.innerHTML = '<p>' + esc(post.excerpt || '') + '</p>'; }
+
+ // Bài viết khác (2 bài gần nhất, khác bài hiện tại)
+ const others = sorted.filter(n => n.slug !== post.slug).slice(0, 2);
+ const othersEl = document.getElementById('bv-others');
+ if (others.length) {
+ othersEl.innerHTML = others.map(n => `
+ <a href="/bai-viet/${encodeURIComponent(n.slug)}/" class="card overflow-hidden focus-ring block group">
+  <div class="img-frame" style="border-radius:0;"><img decoding="async"  src="${/^https?:\/\//.test(n.image || '') ? n.image : '/' + String(n.image || '').replace(/^\//, '')}" alt="${esc(n.title)}" class="w-full h-[150px] object-cover photo-grade group-hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+ <div class="p-5">
+ <span class="tag">${esc(n.tag)}</span>
+ <h3 class="serif text-[17px] leading-[1.3] mt-3" style="color:var(--plum);">${esc(n.title)}</h3>
+ <p class="mt-2 text-[12px] tracking-[0.1em] font-semibold" style="color:var(--gold-strong);">${fmtDate(n.date)}</p>
+ </div>
+ </a>`).join('\n ');
+ }
+ } catch (e) { console.error('Không tải được bài viết:', e); }
+ })();
+</script>
+</body>
+</html>
