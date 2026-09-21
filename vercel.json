@@ -9,6 +9,17 @@
         {
           "type": "query",
           "key": "slug",
+          "value": "the-chat-mam-non-vung-tau"
+        }
+      ],
+      "destination": "/bai-viet/the-chat-mam-non-vung-tau/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
           "value": "mot-ngay-cua-be-tai-binh-minh"
         }
       ],
