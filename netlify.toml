@@ -11,15 +11,15 @@
 
 [[redirects]]
   from = "/bai-viet.html"
-  to = "/bai-viet/phat-trien-nhan-thuc-mam-non-vung-tau/index.html"
-  status = 200
-  query = {slug = "phat-trien-nhan-thuc-mam-non-vung-tau"}
-
-[[redirects]]
-  from = "/bai-viet.html"
   to = "/bai-viet/the-chat-mam-non-vung-tau/index.html"
   status = 200
   query = {slug = "the-chat-mam-non-vung-tau"}
+
+[[redirects]]
+  from = "/bai-viet.html"
+  to = "/bai-viet/phat-trien-nhan-thuc-mam-non-vung-tau/index.html"
+  status = 200
+  query = {slug = "phat-trien-nhan-thuc-mam-non-vung-tau"}
 
 [[redirects]]
   from = "/bai-viet.html"
