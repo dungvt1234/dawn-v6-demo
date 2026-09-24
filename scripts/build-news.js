@@ -332,6 +332,9 @@ if (singleIdx !== -1) {
   html = html.replace(/href="img\//g, 'href="/img/');
   html = html.replace(/fetch\('data\/news\.json'/g, "fetch('/data/news.json'");
   html = html.replace(/href="(?!https?:\/\/|\/|#|mailto:|tel:|data:)([^"]*\.html[^"]*)"/g, 'href="/$1"');
+  // Static không cần marked runtime (body đã render tĩnh; script trang chỉ điền bv-others)
+  html = html.replace(/  <!-- Markdown renderer[\s\S]*?-->\r?\n/, '');
+  html = html.replace(/  <script defer src="\/js\/vendor\/marked\.min\.js"><\/script>\r?\n/, '');
   const outDir = path.join(path.dirname(baiVietPath), 'bai-viet', slug);
   fs.mkdirSync(outDir, { recursive: true });
   const outPath = path.join(outDir, 'index.html');
@@ -390,6 +393,9 @@ try {
       html = html.replace(/href="img\//g, 'href="/img/');
       html = html.replace(/fetch\('data\/news\.json'/g, "fetch('/data/news.json'");
       html = html.replace(/href="(?!https?:\/\/|\/|#|mailto:|tel:|data:)([^"]*\.html[^"]*)"/g, 'href="/$1"');
+      // Static không cần marked runtime (body đã render tĩnh; script trang chỉ điền bv-others)
+      html = html.replace(/  <!-- Markdown renderer[\s\S]*?-->\r?\n/, '');
+      html = html.replace(/  <script defer src="\/js\/vendor\/marked\.min\.js"><\/script>\r?\n/, '');
       const outDir = path.join(path.dirname(baiVietPath), 'bai-viet', slug);
       fs.mkdirSync(outDir, { recursive: true });
       const outPath = path.join(outDir, 'index.html');

@@ -30,8 +30,6 @@
   <script src="/js/vendor/aos.js"></script>
   <!-- Lucide Icons -->
   <script defer src="/js/vendor/lucide.min.js"></script>
-  <!-- Markdown renderer cho nội dung bài viết -->
-  <script defer src="/js/vendor/marked.min.js"></script>
 
   <!-- ===== SEO: canonical + Open Graph + Twitter ===== -->
   <link rel="canonical" id="canonical-link" href="https://binhminhkindergarten.site/bai-viet/phuong-phap-montessori-truong-mam-non-vung-tau/">
@@ -181,9 +179,31 @@
  const sorted = [...list].sort((a, b) => b.date.localeCompare(a.date));
  const post = list.find(n => n.slug === slug) || sorted[0];
 
- if (!post) { document.getElementById('bv-title').textContent = 'Không tìm thấy bài viết'; return; }
+  if (!post) { document.getElementById('bv-title').textContent = 'Không tìm thấy bài viết'; return; }
 
- document.title = post.title + ' — Mầm non Bình Minh';
+  // Static page (/bai-viet/<slug>/, không có ?slug=): HTML tĩnh đã render đủ
+  // title/H1/body/SEO — chỉ điền "Bài viết khác", TUYỆT ĐỐI không ghi đè.
+  // (marked.min.js dùng defer nên chưa chạy xong lúc script này thực thi;
+  // ghi đè body lúc này sẽ xóa nội dung tĩnh, chỉ còn excerpt.)
+  if (!params.get('slug') && slug) {
+    try {
+      const othersS = sorted.filter(function (n) { return n.slug !== post.slug; }).slice(0, 2);
+      const othersElS = document.getElementById('bv-others');
+      if (othersS.length && othersElS) {
+        othersElS.innerHTML = othersS.map(function (n) {
+          return '<a href="/bai-viet/' + encodeURIComponent(n.slug) + '/" class="card overflow-hidden focus-ring block group">' +
+          '<div class="img-frame" style="border-radius:0;"><img decoding="async" src="' + (/^https?:\/\//.test(n.image || '') ? n.image : '/' + String(n.image || '').replace(/^\//, '')) + '" alt="' + esc(n.title) + '" class="w-full h-[150px] object-cover photo-grade group-hover:scale-105 transition-transform duration-500" loading="lazy"></div>' +
+          '<div class="p-5"><span class="tag">' + esc(n.tag) + '</span>' +
+          '<h3 class="serif text-[17px] leading-[1.3] mt-3" style="color:var(--plum);">' + esc(n.title) + '</h3>' +
+          '<p class="mt-2 text-[12px] tracking-[0.1em] font-semibold" style="color:var(--gold-strong);">' + fmtDate(n.date) + '</p>' +
+          '</div></a>';
+        }).join('\n ');
+      }
+    } catch (err2) { console.error('Lỗi tải bài viết khác:', err2); }
+    return;
+  }
+
+  document.title = post.title + ' — Mầm non Bình Minh';
  document.getElementById('bv-title').textContent = post.title;
 
  // === SEO động: canonical + OG/Twitter + Article JSON-LD theo bài viết ===
