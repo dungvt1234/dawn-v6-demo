@@ -299,7 +299,7 @@ if (singleIdx !== -1) {
   const bodyHtml = mdToHtml(singlePost.body || singlePost.excerpt || '');
   const tag = singlePost.tag || '';
   const dateStr = isoDate ? `${isoDate.split('-')[2]}/${isoDate.split('-')[1]}/${isoDate.split('-')[0]}` : '';
-  const imageBlock = `<div id="bv-image-wrap" class="mt-8 img-frame" style="border-radius:1.75rem;"><img decoding="async" id="bv-image" src="${escHtml(singlePost.image||'')}" alt="${escHtml(title)}" class="w-full h-auto object-cover"></div>`;
+  const imageBlock = `<div id="bv-image-wrap" class="mt-8 img-frame" style="border-radius:1.75rem;"><img decoding="async" id="bv-image" src="${escHtml(singlePost.image||'')}" alt="${escHtml(title)}" class="w-full object-cover" style="max-height:480px;"></div>`;
   const articleLd = { '@context': 'https://schema.org', '@type': 'Article', headline: title, description: excerpt, image: image, datePublished: isoDate, dateModified: isoDate, author: { '@type': 'Organization', name: 'Mầm non Bình Minh' }, publisher: { '@type': 'Organization', name: 'Mầm non Bình Minh', logo: { '@type': 'ImageObject', url: `${base}/img/logo.webp` } }, mainEntityOfPage: postUrl };
   const crumbLd = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Trang chủ', item: `${base}/` }, { '@type': 'ListItem', position: 2, name: 'Tin tức & Sự kiện', item: `${base}/tin-tuc.html` }, { '@type': 'ListItem', position: 3, name: title, item: postUrl }] };
   let html = template;
@@ -360,7 +360,7 @@ try {
       const bodyHtml = mdToHtml(post.body || post.excerpt || '');
       const tag = post.tag || '';
       const dateStr = isoDate ? `${isoDate.split('-')[2]}/${isoDate.split('-')[1]}/${isoDate.split('-')[0]}` : '';
-      const imageBlock = `<div id="bv-image-wrap" class="mt-8 img-frame" style="border-radius:1.75rem;"><img decoding="async" id="bv-image" src="${escHtml(post.image||'')}" alt="${escHtml(title)}" class="w-full h-auto object-cover"></div>`;
+      const imageBlock = `<div id="bv-image-wrap" class="mt-8 img-frame" style="border-radius:1.75rem;"><img decoding="async" id="bv-image" src="${escHtml(post.image||'')}" alt="${escHtml(title)}" class="w-full object-cover" style="max-height:480px;"></div>`;
       const articleLd = { '@context': 'https://schema.org', '@type': 'Article', headline: title, description: excerpt, image: image, datePublished: isoDate, dateModified: isoDate, author: { '@type': 'Organization', name: 'Mầm non Bình Minh' }, publisher: { '@type': 'Organization', name: 'Mầm non Bình Minh', logo: { '@type': 'ImageObject', url: `${base}/img/logo.webp` } }, mainEntityOfPage: postUrl };
       const crumbLd = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Trang chủ', item: `${base}/` }, { '@type': 'ListItem', position: 2, name: 'Tin tức & Sự kiện', item: `${base}/tin-tuc.html` }, { '@type': 'ListItem', position: 3, name: title, item: postUrl }] };
       let html = template;
