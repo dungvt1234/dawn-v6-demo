@@ -23,7 +23,7 @@ html{ scroll-behavior:smooth; overflow-x:clip; }
 /* overflow-x:clip chặn scroll ngang triệt để (kể cả iOS Safari),
    không tạo scroll container như overflow-x:hidden */
 body{
-  background:var(--ivory);
+  background:#fff;
   color:var(--charcoal);
   font-family:'Be Vietnam Pro',sans-serif;
   overflow-x:hidden;
