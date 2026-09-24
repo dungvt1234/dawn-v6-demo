@@ -9,6 +9,17 @@
         {
           "type": "query",
           "key": "slug",
+          "value": "tinh-cam-ky-nang-xa-hoi-tre-mam-non"
+        }
+      ],
+      "destination": "/bai-viet/tinh-cam-ky-nang-xa-hoi-tre-mam-non/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
           "value": "phat-trien-ngon-ngu-o-tre-mam-non"
         }
       ],
