@@ -85,10 +85,12 @@
  <div class="card p-8 md:p-12 reveal" style="background:var(--white);">
  <p class="eyebrow" style="color:var(--gold-strong);">MẪU ĐĂNG KÝ</p>
  <h2 class="serif text-[28px] md:text-[30px] leading-[1.15] mt-3" style="color:var(--plum);">Thông tin gia đình</h2>
-  <form class="mt-9 space-y-6 js-zalo-form" novalidate>
-  <div><label class="label" for="pname">Họ tên phụ huynh *</label><input class="field" id="pname" required placeholder="Họ và tên"></div>
-  <div><label class="label" for="pphone">Số điện thoại *</label><input class="field" id="pphone" required type="tel" placeholder="0xx xxx xxxx"></div>
-  <div><label class="label" for="bname">Tên bé và độ tuổi</label><input class="field" id="bname" placeholder="VD: Bo — 3 tuổi"></div>
+  <form id="dangky-form" class="mt-9 space-y-6 js-zalo-form" novalidate>
+  <div><label class="label" for="pname">Họ tên phụ huynh *</label><input class="field" id="pname" name="Ho ten phu huynh" required placeholder="Họ và tên" autocomplete="name"></div>
+  <div><label class="label" for="pphone">Số điện thoại *</label><input class="field" id="pphone" name="So dien thoai" required type="tel" placeholder="0xx xxx xxxx" autocomplete="tel" inputmode="tel"></div>
+  <div><label class="label" for="bname">Tên bé và độ tuổi</label><input class="field" id="bname" name="Ten be va do tuoi" placeholder="VD: Bo — 3 tuổi"></div>
+  <input type="text" name="_honey" id="f-honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <p id="form-msg" class="text-[14px] hidden" role="status"></p>
  <div class="pt-2 flex flex-col sm:flex-row gap-4 items-center">
  <button type="submit" class="focus-ring btn-solid w-full sm:w-auto">GỬI ĐĂNG KÝ THAM QUAN →</button>
  <p class="text-[13px]" style="color:var(--forest);">Hoặc gọi trực tiếp: <strong>0866 685 632</strong></p>
@@ -111,6 +113,42 @@
 </section>
 <div data-include="footer"></div>
 <script src="js/components.js?v=14"></script>
+<script>
+// Gửi lead về email trường qua FormSubmit (chạy trước zalo-modal.js nên validate được trước popup)
+(function () {
+  var form = document.getElementById('dangky-form');
+  if (!form) return;
+  var msg = document.getElementById('form-msg');
+  function note(text, ok) {
+    msg.textContent = text;
+    msg.classList.remove('hidden');
+    msg.style.color = ok ? '#2F6B2F' : '#B3261E';
+  }
+  form.addEventListener('submit', function (e) {
+    var name = document.getElementById('pname').value.trim();
+    var phone = document.getElementById('pphone').value.replace(/[\s.]/g, '');
+    var child = document.getElementById('bname').value.trim();
+    if (document.getElementById('f-honey').value) { e.preventDefault(); return; } // bot
+    if (name.length < 2) { e.preventDefault(); e.stopImmediatePropagation(); note('Anh/chị vui lòng nhập họ tên.', false); return; }
+    if (!/^0\d{9}$/.test(phone)) { e.preventDefault(); e.stopImmediatePropagation(); note('Số điện thoại gồm 10 số, bắt đầu bằng 0.', false); return; }
+    note('Đang gửi đăng ký...', true);
+    fetch('https://formsubmit.co/ajax/buituandung1405@gmail.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        'Họ tên phụ huynh': name, 'Số điện thoại': phone, 'Tên bé và độ tuổi': child || '—',
+        '_subject': 'Đăng ký tham quan mới — Mầm non Bình Minh',
+        '_template': 'table', '_captcha': 'false', '_honey': ''
+      })
+    }).then(function (r) { return r.json(); }).then(function (d) {
+      if (d && String(d.success) === 'true') note('Đã gửi đăng ký! Nhà trường sẽ liên hệ xác nhận lịch tham quan.', true);
+      else note('Gửi email chưa thành công — anh/chị vui lòng nhắn Zalo hoặc gọi hotline giúp trường.', false);
+    }).catch(function () {
+      note('Mạng lỗi khi gửi email — anh/chị vui lòng nhắn Zalo hoặc gọi hotline giúp trường.', false);
+    });
+  });
+})();
+</script>
 <script defer src="js/chatbot.js?v=11"></script>
 <script defer src="js/transitions.js?v=3"></script>
 <script>
