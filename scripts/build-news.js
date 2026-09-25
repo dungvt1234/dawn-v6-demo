@@ -201,7 +201,7 @@ try {
       const file = rel === '' ? 'index.html' : (rel.endsWith('/') ? rel + 'index.html' : rel);
       let iso = null;
       try { iso = fs.statSync(path.join(__dirname, '..', file)).mtime.toISOString().slice(0, 10); } catch (e) { return m; }
-      if (/<lastmod>/.test(inner)) inner = inner.replace(/<lastmod>.*?<\/lastmod>/, `<lastmod>${iso}</lastmod>`);
+      if (/<lastmod>/.test(inner)) inner = inner.replace(/<lastmod>.*?<\/lastmod>/, `<lastmod>${iso}</lastmod>`).trimEnd();
       else inner = inner.trimEnd() + `\n    <lastmod>${iso}</lastmod>`;
       return `<url>\n    <loc>${loc}</loc>${inner}\n  </url>`;
     });
