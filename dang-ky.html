@@ -85,7 +85,7 @@
  <div class="card p-8 md:p-12 reveal" style="background:var(--white);">
  <p class="eyebrow" style="color:var(--gold-strong);">MẪU ĐĂNG KÝ</p>
  <h2 class="serif text-[28px] md:text-[30px] leading-[1.15] mt-3" style="color:var(--plum);">Thông tin gia đình</h2>
-  <form id="dangky-form" class="mt-9 space-y-6 js-zalo-form" novalidate>
+  <form id="dangky-form" class="mt-9 space-y-6" novalidate>
   <div><label class="label" for="pname">Họ tên phụ huynh *</label><input class="field" id="pname" name="Ho ten phu huynh" required placeholder="Họ và tên" autocomplete="name"></div>
   <div><label class="label" for="pphone">Số điện thoại *</label><input class="field" id="pphone" name="So dien thoai" required type="tel" placeholder="0xx xxx xxxx" autocomplete="tel" inputmode="tel"></div>
   <div><label class="label" for="bname">Tên bé và độ tuổi</label><input class="field" id="bname" name="Ten be va do tuoi" placeholder="VD: Bo — 3 tuổi"></div>
@@ -132,6 +132,7 @@
     if (name.length < 2) { e.preventDefault(); e.stopImmediatePropagation(); note('Anh/chị vui lòng nhập họ tên.', false); return; }
     if (!/^0\d{9}$/.test(phone)) { e.preventDefault(); e.stopImmediatePropagation(); note('Số điện thoại gồm 10 số, bắt đầu bằng 0.', false); return; }
     note('Đang gửi đăng ký...', true);
+    try { if (typeof gtag !== 'undefined') gtag('event', 'generate_lead', { form_id: location.pathname }); } catch (err) {}
     fetch('https://formsubmit.co/ajax/buituandung1405@gmail.com', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
