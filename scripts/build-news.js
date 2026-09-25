@@ -194,6 +194,17 @@ try {
         console.log('Thêm sitemap entry mới: ' + loc);
       }
     }
+    // Static URLs: lastmod theo mtime file thật để GSC recrawl (vd gioi-thieu.html sửa nhiều mà sitemap không báo)
+    xml = xml.replace(/<url>\s*<loc>(https:\/\/binhminhkindergarten\.site\/[^<]*)<\/loc>([\s\S]*?)<\/url>/g, (m, loc, inner) => {
+      if (loc.includes('/bai-viet/')) return m;
+      const rel = loc.replace('https://binhminhkindergarten.site/', '');
+      const file = rel === '' ? 'index.html' : (rel.endsWith('/') ? rel + 'index.html' : rel);
+      let iso = null;
+      try { iso = fs.statSync(path.join(__dirname, '..', file)).mtime.toISOString().slice(0, 10); } catch (e) { return m; }
+      if (/<lastmod>/.test(inner)) inner = inner.replace(/<lastmod>.*?<\/lastmod>/, `<lastmod>${iso}</lastmod>`);
+      else inner = inner.trimEnd() + `\n    <lastmod>${iso}</lastmod>`;
+      return `<url>\n    <loc>${loc}</loc>${inner}\n  </url>`;
+    });
     // Chuẩn hóa whitespace sau các thao tác xóa
     xml = xml.replace(/[ \t]+\n/g, '\n').replace(/\n{3,}/g, '\n\n');
     // Dedup check
