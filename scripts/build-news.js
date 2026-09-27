@@ -466,6 +466,34 @@ try {
   console.error('Lỗi cập nhật tin-tuc.html:', e.message);
 }
 
+// --- Index.html: in sẵn 3 cards tin mới nhất vào #home-news (crawler/no-JS thấy nội dung, JS fetch ghi đè giống hệt) ---
+try {
+  const indexPath = path.join(__dirname, '..', 'index.html');
+  if (fs.existsSync(indexPath) && items.length > 0) {
+    const escH = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    const fmtD = (d) => { const p = String(d).split('-'); return p.length === 3 ? `${p[2]}/${p[1]}/${p[0]}` : d; };
+    const top3 = [...items].sort((a, b) => String(b.date).localeCompare(String(a.date))).slice(0, 3);
+    const cards = top3.map((n, i) => `<a href="/bai-viet/${encodeURIComponent(n.slug)}/" data-aos="fade-up" data-aos-delay="${i * 100}" class="group relative block bg-forest rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 h-[300px]">` +
+      `<img decoding="async" src="${escH(n.image)}" alt="${escH(n.title)}" class="absolute inset-0 w-full h-full object-cover photo-grade transition-transform duration-700 group-hover:scale-105" loading="lazy">` +
+      `<div class="absolute inset-0 bg-gradient-to-t from-forest/95 via-forest/45 to-forest/5 transition-opacity duration-500"></div>` +
+      `<div class="absolute inset-x-0 bottom-0 p-6 z-10">` +
+      `<span class="tag">${escH((n.tag || '').toUpperCase())}</span>` +
+      `<h3 class="font-serif text-[19px] leading-[1.3] mt-3 text-white">${escH(n.title)}</h3>` +
+      `<p class="mt-2 text-[13px] font-medium text-gold">${fmtD(n.date)}</p>` +
+      `</div></a>`).join('\n');
+    let h = fs.readFileSync(indexPath, 'utf8');
+    const marker = '<!-- 3 bài mới nhất được tải động từ data/news.json -->';
+    if (h.includes(marker)) {
+      h = h.replace(/<!-- home-news-ssg-start -->[\s\S]*?<!-- home-news-ssg-end -->\n?/g, '');
+      h = h.replace(marker, `${marker}\n<!-- home-news-ssg-start -->\n${cards}\n<!-- home-news-ssg-end -->`);
+      fs.writeFileSync(indexPath, h, 'utf8');
+      console.log('Đã in sẵn 3 cards vào #home-news: ' + top3.map(n => n.slug).join(', '));
+    }
+  }
+} catch (e) {
+  console.error('Lỗi in sẵn home-news:', e.message);
+}
+
 // --- Vercel rewrites ---
 try {
   if (fs.existsSync(vercelPath)) {
