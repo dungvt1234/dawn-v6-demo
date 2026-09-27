@@ -8,7 +8,7 @@
   const DEMO_URL = 'https://school-os-eta.vercel.app';
 
   const NAV = [
-    { href: '/index.html', label: 'Trang chủ', key: 'index' },
+    { href: '/', label: 'Trang chủ', key: 'index' },
     {
       href: '/gioi-thieu.html', label: 'Giới thiệu', key: 'about',
       children: [
@@ -96,7 +96,7 @@
   const headerHTML = `
 <header id="site-header" class="site-header fixed top-0 left-0 right-0 z-50">
  <div class="site-header__inner">
-  <a href="/index.html" class="site-brand focus-ring">
+  <a href="/" class="site-brand focus-ring">
    <img src="/img/logo-icon.webp" alt="Mầm non Bình Minh" class="site-brand__icon">
    <div class="site-brand__text">
     <span class="site-brand__title">DAWN KINDERGARTEN</span>
