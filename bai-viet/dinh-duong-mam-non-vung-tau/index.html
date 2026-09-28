@@ -1,0 +1,336 @@
+<!-- templates/article.html — P2-B3 POC: placeholders for build-html.js -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y185FDJCHY"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+
+ gtag('config', 'G-Y185FDJCHY');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+<title>Thực đơn Dinh dưỡng Mầm non Vũng Tàu – Cân bằng, An toàn, Phù hợp Độ tuổi — Mầm non Bình Minh</title>
+<meta name="description" content="Thực đơn dinh dưỡng Mầm non Bình Minh Vũng Tàu: cân bằng 4 nhóm chất, an toàn vệ sinh VSATTP, phù hợp độ tuổi 6 tháng–5 tuổi. Xem thực đơn tuần, quy trình ">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- ===== Phase 3: preload fonts ===== -->
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/dmserifdisplay/v17/-nFnOHM81r4j6k0gjAW3mujVU2B2G_Bx0g.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/bevietnampro/v12/QdVMSTAyLFyeg_IDWvOJmVES_HScJ281Rb0.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/bevietnampro/v12/QdVPSTAyLFyeg_IDWvOJmVES_Hw5BXoKZA.woff2">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=12">
+  <!-- v4 design: Tailwind config colors -->
+  <!-- AOS Animation Library -->
+  <link href="/css/vendor/aos.css" rel="stylesheet">
+  <script src="/js/vendor/aos.js"></script>
+  <!-- Lucide Icons -->
+  <script defer src="/js/vendor/lucide.min.js"></script>
+
+  <!-- ===== SEO: canonical + Open Graph + Twitter ===== -->
+  <link rel="canonical" id="canonical-link" href="https://binhminhkindergarten.site/bai-viet/dinh-duong-mam-non-vung-tau/">
+  <meta property="og:type" content="article">
+  <meta property="og:url" id="og-url" content="https://binhminhkindergarten.site/bai-viet/dinh-duong-mam-non-vung-tau/">
+  <meta property="og:site_name" content="Mầm non Bình Minh">
+  <meta property="og:title" id="og-title" content="Thực đơn Dinh dưỡng Mầm non Vũng Tàu – Cân bằng, An toàn, Phù hợp Độ tuổi — Mầm non Bình Minh">
+  <meta property="og:description" id="og-desc" content="Thực đơn dinh dưỡng Mầm non Bình Minh Vũng Tàu: cân bằng 4 nhóm chất, an toàn vệ sinh VSATTP, phù hợp độ tuổi 6 tháng–5 tuổi. Xem thực đơn tuần, quy trình ">
+  <meta property="og:image" id="og-image" content="https://binhminhkindergarten.site/img/dinh-duong.webp">
+  <meta property="og:locale" content="vi_VN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" id="tw-title" content="Thực đơn Dinh dưỡng Mầm non Vũng Tàu – Cân bằng, An toàn, Phù hợp Độ tuổi — Mầm non Bình Minh">
+  <meta name="twitter:description" id="tw-desc" content="Thực đơn dinh dưỡng Mầm non Bình Minh Vũng Tàu: cân bằng 4 nhóm chất, an toàn vệ sinh VSATTP, phù hợp độ tuổi 6 tháng–5 tuổi. Xem thực đơn tuần, quy trình ">
+  <meta name="twitter:image" id="tw-image" content="https://binhminhkindergarten.site/img/dinh-duong.webp">
+  <meta name="theme-color" content="#223D22">
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang chủ",
+      "item": "https://binhminhkindergarten.site/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tin tức & Sự kiện",
+      "item": "https://binhminhkindergarten.site/tin-tuc.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Thực đơn Dinh dưỡng Mầm non Vũng Tàu – Cân bằng, An toàn, Phù hợp Độ tuổi",
+      "item": "https://binhminhkindergarten.site/bai-viet/dinh-duong-mam-non-vung-tau/"
+    }
+  ]
+}</script>
+  <!-- ===== SEO: Article JSON-LD động (được JS cập nhật theo bài viết) ===== -->
+  <script type="application/ld+json" id="article-jsonld">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Thực đơn Dinh dưỡng Mầm non Vũng Tàu – Cân bằng, An toàn, Phù hợp Độ tuổi",
+  "description": "Thực đơn dinh dưỡng Mầm non Bình Minh Vũng Tàu: cân bằng 4 nhóm chất, an toàn vệ sinh VSATTP, phù hợp độ tuổi 6 tháng–5 tuổi. Xem thực đơn tuần, quy trình ",
+  "image": "https://binhminhkindergarten.site/img/dinh-duong.webp",
+  "datePublished": "2026-09-27",
+  "dateModified": "2026-09-27",
+  "author": {
+    "@type": "Organization",
+    "name": "Mầm non Bình Minh"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mầm non Bình Minh",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://binhminhkindergarten.site/img/logo.webp"
+    }
+  },
+  "mainEntityOfPage": "https://binhminhkindergarten.site/bai-viet/dinh-duong-mam-non-vung-tau/"
+}</script>
+  <script type="application/ld+json" id="faq-jsonld">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Bé ăn kiêng/dị ứng có được hỗ trợ không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Nhà trường có quy trình dị ứng riêng: hồ sơ cam kết, bàn ăn riêng, đồ ăn thay thế, giáo viên theo dõi 1-1, hộp thuốc khẩn cấp. Xem Quy trình dị ứng tại trang Câu hỏi thường gặp."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Thực đơn có thay đổi theo mùa không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Thực đơn thay đổi hàng tuần / theo mùa (hè: rau mát, trái cây mọng; đông: đạm/nóng, canh nóng). Xem thực đơn tuần tại Trang Tin tức."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bé ăn kém có được khuyến khích/ăn bổ sung không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Giáo viên khuyến khích nhẹ nhàng, không ép buộc. Bé ăn kém được ăn bổ sung bữa phụ (sữa, cháo, trứng, trái cây). Giáo viên ghi nhận lượng ăn giao phụ huynh hàng ngày."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Nhà trường có cấp giấy VSATTP bếp không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Bếp trường đạt chứng nhận VSATTP [PLACEHOLDER: số hiệu, ngày cấp, cấp bởi Sở Y tế/Bộ Y tế]. Giấy chứng nhận công bố tại khu vực bếp."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phụ huynh xem thực đơn tuần ở đâu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Website: Trang Tin tức (cập nhật Thứ 7 hàng tuần); Fanpage Facebook; Zalo/Email: Đăng ký nhận thực đơn tuần; PDF tải về trên Google Drive."
+      }
+    }
+  ]
+}</script>
+  <link rel="stylesheet" href="/css/tailwind.css?v=5">
+</head>
+<body class="grain">
+<div id="dawn-arc-track"><div id="dawn-arc-fill"></div></div>
+<div data-include="header"><nav aria-label="Điều hướng chính"><ul><li><a href="/index.html">Trang chủ</a></li><li><a href="/gioi-thieu.html">Giới thiệu</a><ul><li><a href="/gioi-thieu.html">Về chúng tôi</a></li><li><a href="/chuong-trinh.html">Chương trình học</a></li><li><a href="/montessori-vung-tau/">Phương pháp Montessori</a></li><li><a href="/moi-truong.html">Cơ sở vật chất</a></li><li><a href="/doi-ngu.html">Đội ngũ giáo viên</a></li></ul></li><li><span>Thông tin</span><ul><li><a href="/tuyen-sinh.html">Quy trình tuyển sinh</a></li><li><a href="/hoc-phi.html">Học phí &amp; ưu đãi</a></li><li><a href="/gallery.html">Thư viện ảnh</a></li></ul></li><li><a href="/chuong-trinh.html">Chương trình học</a></li><li><a href="/tieng-anh-cho-tre.html">Tiếng Anh cho trẻ</a></li><li><a href="/tin-tuc.html">Tin tức &amp; Sự kiện</a></li><li><a href="/lien-he.html">Liên hệ</a></li></ul></nav></div>
+
+<section class="page-hero">
+ <svg class="absolute left-0 top-0 w-full h-full pointer-events-none" viewBox="0 0 1280 500" preserveAspectRatio="none" style="opacity:.5;">
+ <path class="sunrise-line" d="M-60 380c240-200 640-250 1360-30" stroke="#ECAB45" stroke-width="1.5" fill="none"/>
+ </svg>
+ <div class="relative z-10 max-w-[1280px] mx-auto px-6 md:px-10">
+ <p class="eyebrow reveal in" style="color:var(--chartreuse);">TIN TỨC &amp; SỰ KIỆN</p>
+ <h1 id="bv-title" class="serif text-[30px] md:text-[52px] leading-[1.1] mt-4 max-w-[820px] text-white reveal in">Thực đơn Dinh dưỡng Mầm non Vũng Tàu – Cân bằng, An toàn, Phù hợp Độ tuổi</h1>
+ <div class="mt-5 flex flex-wrap items-center gap-4 text-white/80 text-[14px] reveal in">
+ <span id="bv-tag" class="tag" style="background:var(--chartreuse); color:var(--forest);">Chương trình</span>
+ <span id="bv-date" class="tracking-[0.08em] font-semibold" style="color:var(--gold);">27/09/2026</span>
+ <span class="tracking-[0.08em] font-semibold" style="color:var(--gold);">· Bởi DAWN Kindergarten</span>
+ </div>
+ </div>
+</section>
+
+<section>
+ <div class="max-w-[820px] mx-auto px-6 md:px-10 py-16 md:py-20">
+ <a href="/tin-tuc.html" class="inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.08em] uppercase transition-colors hover:opacity-70" style="color:var(--forest);">
+ <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+ Về trang Tin tức &amp; Sự kiện
+ </a>
+
+ <div id="bv-image-wrap" class="mt-8 img-frame" style="border-radius:1.75rem;"><img decoding="async" id="bv-image" src="/img/dinh-duong.webp" alt="Thực đơn Dinh dưỡng Mầm non Vũng Tàu – Cân bằng, An toàn, Phù hợp Độ tuổi" class="w-full object-cover" style="max-height:480px;"></div>
+
+ <article id="bv-body" class="mt-10 prose-article"><p>Khi phụ huynh tìm hiểu về một trường mầm non, câu hỏi “bé ăn gì, ăn thế nào, có an toàn không?” luôn đứng đầu. Tại Mầm non Bình Minh (DAWN Kindergarten) Vũng Tàu, chúng tôi không chỉ “cho bé ăn no” mà xây dựng nền tảng dinh dưỡng khoa học: <strong>cân bằng 4 nhóm chất</strong>, <strong>an toàn vệ sinh đạt chuẩn VSATTP</strong>, và <strong>phù hợp từng độ tuổi từ 6 tháng đến 5 tuổi</strong>.</p><h2>1. Triết lý Dinh dưỡng tại DAWN Kindergarten</h2><p>Mầm non Bình Minh lấy trẻ làm trung tâm — cả trên đĩa ăn. Triết lý dinh dưỡng của trường xoay quanh ba trụ cột:</p><ul><li><strong>Cân bằng</strong>: Mỗi bữa đủ 4 nhóm chất (Protein – Glucid – Lipid – Vitamin &amp; Khoáng chất) theo khuyến nghị Viện Dinh dưỡng Quốc gia &amp; Bộ Y tế.</li><li><strong>An toàn</strong>: Quy trình 4 bước <strong>Chọn – Nhận – Chế biến – Phân phối</strong> tuân thủ chuẩn <strong>VSATTP</strong> [PLACEHOLDER: số chứng nhận VSATTP, ngày cấp], kiểm soát dị ứng nghiêm ngặt.</li><li><strong>Phù hợp độ tuổi</strong>: Thực đơn phân nhóm <strong>Nhà trẻ (6–24 tháng)</strong> và <strong>Mẫu giáo (2–5 tuổi)</strong>, điều chỉnh kết cấu, kích thước, vị giác cho từng giai đoạn.</li></ul><blockquote>“Ăn ngon, lớn khỏe mỗi ngày” không chỉ là slogan — là cam kết đo lường được qua thực đơn công khai hàng tuần, kiểm soát VSATTP [PLACEHOLDER: số hiệu, ngày cấp] và phản hồi hàng ngày từ phụ huynh.</blockquote><h2>2. Thực đơn Mẫu Tuần (T2–T6) — Cụ thể, Theo Mùa</h2><p>Dưới đây là thực đơn mẫu một tuần (thay đổi theo mùa, nguyên liệu tươi, đa dạng màu sắc):</p><div class="table-wrap"><table><tr><th>Thứ</th><th>Sáng (7:00)</th><th>Trưa (11:00)</th><th>Phụ (14:30)</th><th>Chiều (15:30)</th></tr><tr><td><strong>Thứ 2</strong></td><td>Cháo gà nấu rau cải, sữa</td><td>Cơm trắng, cá hồi nấu chua cay nhẹ, canh bí đao tôm, dưa chua</td><td>Sữa chua + trái cây</td><td>Bánh mì kẹp trứng, sữa</td></tr><tr><td><strong>Thứ 3</strong></td><td>Bún riêu cua, sữa</td><td>Cơm trắng, thịt bò xào rau bina, canh mướp hương nấu tôm, dưa leo</td><td>Chè đậu xanh + bánh ngọt</td><td>Sữa tươi + bánh mì</td></tr><tr><td><strong>Thứ 4</strong></td><td>Cháo tôm thịt băm rau ngổ, sữa</td><td>Cơm trắng, cá chép hấp hành gừng, canh rau ngót tôm, kim chi nhẹ</td><td>Trái cây tươi (xoài/vải)</td><td>Bánh flan + sữa</td></tr><tr><td><strong>Thứ 5</strong></td><td>Bánh mì kẹp trứng ốp la, sữa</td><td>Cơm trắng, gà luộc xé sợi, canh bầu nấu tôm, rau muống xào tỏi</td><td>Sữa chua + trái cây</td><td>Bánh mì kẹp phô mai, sữa</td></tr><tr><td><strong>Thứ 6</strong></td><td>Cháo gà nấu nấm hương, sữa</td><td>Cơm trắng, cá basa hấp chanh, canh mồng tơi tôm, salad rau củ</td><td>Chè hạt sen + bánh ngọt</td><td>Sữa tươi + bánh quy</td></tr></table></div><blockquote><strong>Lưu ý:</strong> Thực đơn thay đổi <strong>hàng tuần / theo mùa</strong> (hè: nhiều rau mát, mưa: nhiều đạm/nóng). Phụ huynh xem thực đơn cập nhật tại <a href="/tin-tuc.html">trang Tin tức</a> hoặc nhận qua Zalo/email — <a href="/dang-ky.html">đăng ký nhận thực đơn</a>.</blockquote><blockquote>Thực đơn chi tiết từng ngày (PDF) tải tại: [PLACEHOLDER: link Google Drive/OneDrive thực đơn tuần]</blockquote><h2>3. Cân bằng 4 Nhóm Chất — Áp dụng Thực tế Mỗi Bữa</h2><p>Mỗi bữa trưa tại trường đảm bảo <strong>đủ 4 nhóm chất</strong> theo tỷ lệ khuyến nghị (Viện Dinh dưỡng Quốc gia):</p><div class="table-wrap"><table><tr><th>Nhóm chất</th><th>Vai trò</th><th>Ví dụ trên đĩa ăn tại trường</th></tr><tr><td><strong>Protein</strong> (đạm)</td><td>Xây dựng cơ bắp, enzyme, hormone</td><td>Cá hồi, tôm, cá chép, gà, trứng, tôm, đậu hũ, thịt bò</td></tr><tr><td><strong>Glucid</strong> (tinh bột)</td><td>Năng lượng chủ yếu cho não &amp; cơ bắp</td><td>Gạo, bún, mì, khoai lang, khoai tây, ngô, mì ý</td></tr><tr><td><strong>Lipid</strong> (chất béo)</td><td>Não bộ, hấp thu vitamin A/D/E/K</td><td>Dầu ăn, dầu olive, cá hồi, trứng, phô mai, sữa</td></tr><tr><td><strong>Vitamin &amp; Khoáng</strong></td><td>Miễn dịch, xương, răng, máu</td><td>Rau xanh (cải, bina, ngót, mồng tơi), cà rốt, bí đỏ, trái cây tươi</td></tr></table></div><blockquote><strong>Áp dụng thực tế:</strong> Mỗi bữa trưa có <strong>≥ 1 món đạm (cá/thịt/trứng/đậu) + 1 món rau xanh + 1 món canh + cơm + trái cây/sữa</strong>. Tỷ lệ đạm:tinh bột:chất béo ≈ 15:65:20 (theo khuyến nghị 6–59 tháng).</blockquote><h2>4. An Toàn Vệ Sinh Thực Phẩm — Tiêu Chuẩn VSATTP</h2><h3>4.1. Quy trình 4 Bước: Chọn – Nhận – Chế biến – Phân phối</h3><ol><li><strong>Chọn</strong>: Nhà cung cấp có giấy phép kinh doanh, CO/CQ xuất xứ rõ ràng, nguyên liệu tươi, đúng mùa.</li><li><strong>Nhận</strong>: Kiểm tra cảm quan (màu, mùi, độ tươi), nhiệt độ xe lạnh (≤ 4°C), kiểm tra tem/niêm phong, ghi nhận sổ nhật ký nhận hàng [PLACEHOLDER: có mẫu phiếu nhận hàng mẫu không?].</li><li><strong>Chế biến</strong>: Tách khu vực sống/chín, dao/dĩa riêng màu (đỏ: thịt, xanh: rau, vàng: trứng, trắng: cá), nấu chín tới tâm (≥ 70°C tâm), không nấu lại quá 1 lần.</li><li><strong>Phân phối</strong>: Đồ nóng giữ ≥ 60°C, đồ lạnh ≤ 4°C, phân phối trong 30 phút, dùng hộp inox nắp kín, ghi nhật ký phân phối.</li></ol><blockquote>Sơ đồ quy trình 4 bước: [PLACEHOLDER: link ảnh sơ đồ flowchart 4 bước]</blockquote><h3>4.2. Kiểm soát Dị ứng &amp; Khẩu vị Riêng</h3><ul><li><strong>Hồ sơ dị ứng</strong>: Phụ huynh ký <strong>Cam kết thông tin dị ứng</strong> khi nhập học (mẫu [PLACEHOLDER: link mẫu cam kết]).</li><li><strong>Bàn ăn riêng</strong>: Bé dị ứng ngồi bàn riêng, đồ ăn nấu riêng dụng cụ riêng, giáo viên theo dõi 1-1.</li><li><strong>Thay thế nguyên liệu</strong>: Sữa bò → sữa đậu nành/hạt; trứng → đậu hũ/đậu phụ; hải sản → thịt gà/bò.</li><li><strong>Quy trình khẩn cấp</strong>: Hộp thuốc chống dị ứng (EpiPen nếu có), giáo viên đào tạo sơ cứu, liên hệ ngay phụ huynh + 115.</li></ul><blockquote>Mẫu cam kết dị ứng: [PLACEHOLDER: link mẫu cam kết dị ứng PDF]</blockquote><h2>5. Dinh dưỡng Theo Độ Tuổi (Nhà trẻ 6–24T | Mẫu giáo 2–5T)</h2><div class="table-wrap"><table><tr><th>Tiêu chí</th><th>Nhà trẻ (6–24 tháng)</th><th>Mẫu giáo (2–5 tuổi)</th></tr><tr><td><strong>Kết cấu</strong></td><td>Cháo mịn, bột mịn, nước ép mịn</td><td>Cơm mềm, món cắn xé, tự ăn tay</td></tr><tr><td><strong>Số bữa/ngày</strong></td><td>3 chính + 2–3 phụ (sữa, cháo, trái cây)</td><td>3 chính + 2 phụ (sữa, trái cây, bánh)</td></tr><tr><td><strong>Đạm/ngày</strong></td><td>~25–30g</td><td>~35–45g</td></tr><tr><td><strong>Canxi</strong></td><td>500–600mg</td><td>600–700mg</td></tr><tr><td><strong>Sắt</strong></td><td>7–9mg</td><td>7–10mg</td></tr><tr><td><strong>Kỹ năng</strong></td><td>Ăn hỗ trợ, tập cầm thìa</td><td>Tự ăn thìa/dĩa, rửa tay, rửa miệng</td></tr></table></div><blockquote>Tham khảo: Khuyến nghị dinh dưỡng Việt Nam 2020 (Viện Dinh dưỡng Quốc gia) — [PLACEHOLDER: link PDF khuyến nghị]</blockquote><h2>6. Cam kết Dinh dưỡng &amp; Thực đơn Công khai Hàng Tuần</h2><ul><li>Thực đơn tuần được đăng tải <strong>mỗi Thứ 7 cho tuần sau</strong> tại <a href="/tin-tuc.html">Trang Tin tức</a> và Fanpage chính thức.</li><li>Phụ huynh được xem trước, góp ý qua Zalo/email — nhà trường điều chỉnh nếu phù hợp.</li><li><strong>Đăng ký nhận thực đơn tuần qua Zalo/Email</strong>: <a href="/dang-ky.html">đăng ký tại đây</a> (chọn “Nhận thực đơn tuần”).</li><li>Thực đơn PDF tải tại: [PLACEHOLDER: link Google Drive thực đơn tuần]</li></ul><h2>7. FAQ Thực đơn &amp; Dinh dưỡng</h2><p><strong>Q1: Bé ăn kiêng/dị ứng có được hỗ trợ không?</strong>
+Có. Nhà trường có quy trình dị ứng riêng: hồ sơ cam kết, bàn ăn riêng, đồ ăn thay thế, giáo viên theo dõi 1-1, hộp thuốc khẩn cấp. Xem <a href="/cau-hoi.html#di-ung">Quy trình dị ứng</a>.</p><p><strong>Q2: Thực đơn có thay đổi theo mùa không?</strong>
+Có. Thực đơn thay đổi <strong>hàng tuần / theo mùa</strong> (hè: rau mát, trái cây mọng; đông: đạm/nóng, canh nóng). Xem thực đơn tuần tại <a href="/tin-tuc.html">Trang Tin tức</a>.</p><p><strong>Q3: Bé ăn kém có được khuyến khích/ăn bổ sung không?</strong>
+Có. Giáo viên khuyến khích nhẹ nhàng, không ép buộc. Bé ăn kém được ăn bổ sung bữa phụ (sữa, cháo, trứng, trái cây). Giáo viên ghi nhận lượng ăn giao phụ huynh hàng ngày.</p><p><strong>Q4: Nhà trường có cấp giấy VSATTP bếp không?</strong>
+Có. Bếp trường đạt chứng nhận <strong>VSATTP</strong> [PLACEHOLDER: số hiệu, ngày cấp, cấp bởi Sở Y tế/Bộ Y tế]. Giấy chứng nhận công bố tại khu vực bếp và [PLACEHOLDER: link ảnh giấy chứng nhận].</p><p><strong>Q5: Phụ huynh xem thực đơn tuần ở đâu?</strong></p><ul><li>Website: <a href="/tin-tuc.html">Trang Tin tức</a> (cập nhật Thứ 7 hàng tuần)</li><li>Fanpage Facebook: Mầm non Bình Minh DAWN Kindergarten</li><li>Zalo/Email: <a href="/dang-ky.html">Đăng ký nhận thực đơn tuần</a> (chọn “Nhận thực đơn tuần”)</li><li>PDF tải về: [PLACEHOLDER: link Google Drive]</li></ul><hr><p>Ba mẹ có thể <strong><a href="/dang-ky.html">đăng ký tham quan</a></strong>, <strong><a href="/lien-he.html">liên hệ nhà trường</a></strong> hoặc gọi <strong>hotline 0866 685 632</strong> để được tư vấn trực tiếp về thực đơn, dinh dưỡng phù hợp con.</p></article>
+
+ <div class="mt-14 pt-10 border-t" style="border-color:var(--line);">
+ <h2 class="serif text-[24px] md:text-[28px]" style="color:var(--plum);">Bài viết khác</h2>
+ <div id="bv-others" class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+ </div>
+ </div>
+</section>
+
+<div data-include="footer"></div>
+<script src="/js/components.js?v=14"></script>
+<script defer src="/js/chatbot.js?v=11"></script>
+<script defer src="/js/transitions.js?v=3"></script>
+<script>
+ const fill = document.getElementById('dawn-arc-fill');
+ const header = document.getElementById('site-header');
+ window.addEventListener('scroll', () => {
+ const h = document.documentElement;
+ const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+ fill.style.width = pct + '%';
+ if (h.scrollTop > 40) { header.classList.add('header-blur'); header.style.boxShadow = '0 1px 0 rgba(34,61,61,0.08)'; }
+ else { header.classList.remove('header-blur'); header.style.boxShadow = 'none'; }
+ });
+ const observer = new IntersectionObserver((entries) => {
+ entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+ }, { threshold: 0.15 });
+ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+ const menuBtn = document.getElementById('menu-btn');
+ const mobileMenu = document.getElementById('mobile-menu');
+ if (menuBtn && mobileMenu) {
+ menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); mobileMenu.classList.toggle('flex'); });
+ }
+
+ // === Tải bài viết theo ?slug= ===
+ function fmtDate(d) {
+ const [y, m, day] = d.split('-');
+ return `${day}/${m}/${y}`;
+ }
+ function esc(s) {
+ return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+ }
+ (async () => {
+ try {
+  const params = new URLSearchParams(location.search);
+  let slug = params.get('slug');
+  // Static pages /bai-viet/<slug>/ have no ?slug= — derive slug from pathname
+  // so runtime SEO update keeps self-canonical instead of falling back to latest article
+  if (!slug) {
+  const m = location.pathname.match(/\/bai-viet\/([^\/]+)\/?/);
+  if (m) slug = decodeURIComponent(m[1]);
+  }
+ const res = await fetch('/data/news.json', { cache: 'no-store' });
+ const data = await res.json();
+ const list = Array.isArray(data.news) ? data.news : [];
+ const sorted = [...list].sort((a, b) => b.date.localeCompare(a.date));
+ const post = list.find(n => n.slug === slug) || sorted[0];
+
+  if (!post) { document.getElementById('bv-title').textContent = 'Không tìm thấy bài viết'; return; }
+
+  // Static page (/bai-viet/<slug>/, không có ?slug=): HTML tĩnh đã render đủ
+  // title/H1/body/SEO — chỉ điền "Bài viết khác", TUYỆT ĐỐI không ghi đè.
+  // (marked.min.js dùng defer nên chưa chạy xong lúc script này thực thi;
+  // ghi đè body lúc này sẽ xóa nội dung tĩnh, chỉ còn excerpt.)
+  if (!params.get('slug') && slug) {
+    try {
+      const othersS = sorted.filter(function (n) { return n.slug !== post.slug; }).slice(0, 2);
+      const othersElS = document.getElementById('bv-others');
+      if (othersS.length && othersElS) {
+        othersElS.innerHTML = othersS.map(function (n) {
+          return '<a href="/bai-viet/' + encodeURIComponent(n.slug) + '/" class="card overflow-hidden focus-ring block group">' +
+          '<div class="img-frame" style="border-radius:0;"><img decoding="async" src="' + (/^https?:\/\//.test(n.image || '') ? n.image : '/' + String(n.image || '').replace(/^\//, '')) + '" alt="' + esc(n.title) + '" class="w-full h-[150px] object-cover photo-grade group-hover:scale-105 transition-transform duration-500" loading="lazy"></div>' +
+          '<div class="p-5"><span class="tag">' + esc(n.tag) + '</span>' +
+          '<h3 class="serif text-[17px] leading-[1.3] mt-3" style="color:var(--plum);">' + esc(n.title) + '</h3>' +
+          '<p class="mt-2 text-[12px] tracking-[0.1em] font-semibold" style="color:var(--gold-strong);">' + fmtDate(n.date) + '</p>' +
+          '</div></a>';
+        }).join('\n ');
+      }
+    } catch (err2) { console.error('Lỗi tải bài viết khác:', err2); }
+    return;
+  }
+
+  document.title = post.title + ' — Mầm non Bình Minh';
+ document.getElementById('bv-title').textContent = post.title;
+
+ // === SEO động: canonical + OG/Twitter + Article JSON-LD theo bài viết ===
+ const base = 'https://binhminhkindergarten.site';
+ const postUrl = base + '/bai-viet/' + encodeURIComponent(post.slug) + '/';
+ const canon = document.getElementById('canonical-link');
+ if (canon) canon.setAttribute('href', postUrl);
+ const ogUrl = document.getElementById('og-url');
+ if (ogUrl) ogUrl.setAttribute('content', postUrl);
+ const ogT = document.getElementById('og-title');
+ if (ogT) ogT.setAttribute('content', post.title + ' — Mầm non Bình Minh');
+ const twT = document.getElementById('tw-title');
+ if (twT) twT.setAttribute('content', post.title + ' — Mầm non Bình Minh');
+ const ogD = document.getElementById('og-desc');
+ if (ogD) ogD.setAttribute('content', (post.excerpt || '').slice(0, 155));
+ const twD = document.getElementById('tw-desc');
+ if (twD) twD.setAttribute('content', (post.excerpt || '').slice(0, 155));
+ if (post.image) {
+  const imgAbs = post.image.indexOf('http') === 0 ? post.image : base + '/' + post.image.replace(/^\//, '');
+  const ogI = document.getElementById('og-image');
+  if (ogI) ogI.setAttribute('content', imgAbs);
+  const twI = document.getElementById('tw-image');
+  if (twI) twI.setAttribute('content', imgAbs);
+ }
+ // Article JSON-LD
+ try {
+  const dateISO = (post.date || '').replace(/^(\d{2})\/(\d{2})\/(\d{4})$/, '$3-$2-$1');
+  const imgAbs = post.image ? (post.image.indexOf('http') === 0 ? post.image : base + '/' + post.image.replace(/^\//, '')) : base + '/img/hero.webp';
+  const articleLd = {
+   '@context': 'https://schema.org',
+   '@type': 'Article',
+   headline: post.title,
+   description: post.excerpt || '',
+   image: imgAbs,
+   datePublished: dateISO || '2026-01-01',
+   dateModified: dateISO || '2026-01-01',
+   author: { '@type': 'Organization', name: 'Mầm non Bình Minh' },
+   publisher: { '@type': 'Organization', name: 'Mầm non Bình Minh', logo: { '@type': 'ImageObject', url: base + '/img/logo.webp' } },
+   mainEntityOfPage: postUrl
+  };
+  const ldEl = document.getElementById('article-jsonld');
+  if (ldEl) ldEl.textContent = JSON.stringify(articleLd);
+ } catch (err) { console.error('Lỗi Article JSON-LD:', err); }
+
+ const tag = document.getElementById('bv-tag');
+ tag.textContent = post.tag;
+ tag.style.background = 'var(--chartreuse)';
+ tag.style.color = 'var(--forest)';
+ document.getElementById('bv-date').textContent = fmtDate(post.date);
+  if (post.image) {
+  const wrap = document.getElementById('bv-image-wrap');
+  const img = document.getElementById('bv-image');
+  // Đường dẫn tuyệt đối từ root để chạy đúng cả trên trang tĩnh /bai-viet/<slug>/
+  img.src = /^https?:\/\//.test(post.image) ? post.image : '/' + String(post.image).replace(/^\//, '');
+  img.alt = post.title;
+  wrap.style.display = 'block';
+  }
+ const body = document.getElementById('bv-body');
+ if (window.marked) { body.innerHTML = marked.parse(post.body || ''); }
+ else { body.innerHTML = '<p>' + esc(post.excerpt || '') + '</p>'; }
+
+ // Bài viết khác (2 bài gần nhất, khác bài hiện tại)
+ const others = sorted.filter(n => n.slug !== post.slug).slice(0, 2);
+ const othersEl = document.getElementById('bv-others');
+ if (others.length) {
+ othersEl.innerHTML = others.map(n => `
+ <a href="/bai-viet/${encodeURIComponent(n.slug)}/" class="card overflow-hidden focus-ring block group">
+  <div class="img-frame" style="border-radius:0;"><img decoding="async"  src="${/^https?:\/\//.test(n.image || '') ? n.image : '/' + String(n.image || '').replace(/^\//, '')}" alt="${esc(n.title)}" class="w-full h-[150px] object-cover photo-grade group-hover:scale-105 transition-transform duration-500" loading="lazy"></div>
+ <div class="p-5">
+ <span class="tag">${esc(n.tag)}</span>
+ <h3 class="serif text-[17px] leading-[1.3] mt-3" style="color:var(--plum);">${esc(n.title)}</h3>
+ <p class="mt-2 text-[12px] tracking-[0.1em] font-semibold" style="color:var(--gold-strong);">${fmtDate(n.date)}</p>
+ </div>
+ </a>`).join('\n ');
+ }
+ } catch (e) { console.error('Không tải được bài viết:', e); }
+ })();
+</script>
+</body>
+</html>

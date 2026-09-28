@@ -296,7 +296,7 @@
     <loc>https://binhminhkindergarten.site/bai-viet/steam-cho-tre-mam-non-la-gi/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-27</lastmod>
 
 
 
@@ -373,6 +373,13 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <lastmod>2026-09-24</lastmod>
+
+  </url>
+  <url>
+    <loc>https://binhminhkindergarten.site/bai-viet/dinh-duong-mam-non-vung-tau/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-09-27</lastmod>
 
   </url>
 </urlset>

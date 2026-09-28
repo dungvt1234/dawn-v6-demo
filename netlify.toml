@@ -5,6 +5,18 @@
 
 [[redirects]]
   from = "/bai-viet.html"
+  to = "/bai-viet/dinh-duong-mam-non-vung-tau/index.html"
+  status = 200
+  query = {slug = "dinh-duong-mam-non-vung-tau"}
+
+[[redirects]]
+  from = "/bai-viet.html"
+  to = "/bai-viet/steam-cho-tre-mam-non-la-gi/index.html"
+  status = 200
+  query = {slug = "steam-cho-tre-mam-non-la-gi"}
+
+[[redirects]]
+  from = "/bai-viet.html"
   to = "/bai-viet/tinh-cam-ky-nang-xa-hoi-tre-mam-non/index.html"
   status = 200
   query = {slug = "tinh-cam-ky-nang-xa-hoi-tre-mam-non"}
@@ -56,12 +68,6 @@
   to = "/bai-viet/tre-2-tuoi-di-hoc-mam-non-can-chuan-bi-gi/index.html"
   status = 200
   query = {slug = "tre-2-tuoi-di-hoc-mam-non-can-chuan-bi-gi"}
-
-[[redirects]]
-  from = "/bai-viet.html"
-  to = "/bai-viet/steam-cho-tre-mam-non-la-gi/index.html"
-  status = 200
-  query = {slug = "steam-cho-tre-mam-non-la-gi"}
 
 [[redirects]]
   from = "/bai-viet.html"
