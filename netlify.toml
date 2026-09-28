@@ -5,6 +5,18 @@
 
 [[redirects]]
   from = "/bai-viet.html"
+  to = "/bai-viet/hoc-qua-choi-tre-mam-non/index.html"
+  status = 200
+  query = {slug = "hoc-qua-choi-tre-mam-non"}
+
+[[redirects]]
+  from = "/bai-viet.html"
+  to = "/bai-viet/phat-trien-tham-my-cho-tre-mam-non/index.html"
+  status = 200
+  query = {slug = "phat-trien-tham-my-cho-tre-mam-non"}
+
+[[redirects]]
+  from = "/bai-viet.html"
   to = "/bai-viet/dinh-duong-mam-non-vung-tau/index.html"
   status = 200
   query = {slug = "dinh-duong-mam-non-vung-tau"}

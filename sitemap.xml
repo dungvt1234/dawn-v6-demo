@@ -10,7 +10,7 @@
     <loc>https://binhminhkindergarten.site/chuong-trinh.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-09-28</lastmod>
   </url>
   <url>
     <loc>https://binhminhkindergarten.site/tieng-anh-cho-tre.html</loc>
@@ -381,5 +381,17 @@
     <priority>0.6</priority>
     <lastmod>2026-09-27</lastmod>
 
+  </url>
+  <url>
+    <loc>https://binhminhkindergarten.site/bai-viet/hoc-qua-choi-tre-mam-non/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://binhminhkindergarten.site/bai-viet/phat-trien-tham-my-cho-tre-mam-non/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-09-28</lastmod>
   </url>
 </urlset>
