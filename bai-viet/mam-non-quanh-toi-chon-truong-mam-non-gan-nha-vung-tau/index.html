@@ -84,11 +84,16 @@
   },
   "publisher": {
     "@type": "Organization",
+    "@id": "https://binhminhkindergarten.site/#school",
     "name": "Mầm non Bình Minh",
+    "url": "https://binhminhkindergarten.site/",
     "logo": {
       "@type": "ImageObject",
       "url": "https://binhminhkindergarten.site/img/logo.webp"
-    }
+    },
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=100093002850389"
+    ]
   },
   "mainEntityOfPage": "https://binhminhkindergarten.site/bai-viet/mam-non-quanh-toi-chon-truong-mam-non-gan-nha-vung-tau/"
 }</script>
@@ -241,7 +246,7 @@
    datePublished: dateISO || '2026-01-01',
    dateModified: dateISO || '2026-01-01',
    author: { '@type': 'Organization', name: 'Mầm non Bình Minh' },
-   publisher: { '@type': 'Organization', name: 'Mầm non Bình Minh', logo: { '@type': 'ImageObject', url: base + '/img/logo.webp' } },
+   publisher: { '@type': 'Organization', '@id': 'https://binhminhkindergarten.site/#school', name: 'Mầm non Bình Minh', url: base + '/', logo: { '@type': 'ImageObject', url: base + '/img/logo.webp' }, sameAs: ['https://www.facebook.com/profile.php?id=100093002850389'] },
    mainEntityOfPage: postUrl
   };
   const ldEl = document.getElementById('article-jsonld');

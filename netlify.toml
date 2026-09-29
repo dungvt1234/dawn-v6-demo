@@ -11,6 +11,12 @@
 
 [[redirects]]
   from = "/bai-viet.html"
+  to = "/bai-viet/may-tuoi-nen-cho-be-hoc-tieng-anh/index.html"
+  status = 200
+  query = {slug = "may-tuoi-nen-cho-be-hoc-tieng-anh"}
+
+[[redirects]]
+  from = "/bai-viet.html"
   to = "/bai-viet/phat-trien-tham-my-cho-tre-mam-non/index.html"
   status = 200
   query = {slug = "phat-trien-tham-my-cho-tre-mam-non"}
@@ -86,12 +92,6 @@
   to = "/bai-viet/giao-vien-ban-ngu-day-tieng-anh-mam-non/index.html"
   status = 200
   query = {slug = "giao-vien-ban-ngu-day-tieng-anh-mam-non"}
-
-[[redirects]]
-  from = "/bai-viet.html"
-  to = "/bai-viet/may-tuoi-nen-cho-be-hoc-tieng-anh/index.html"
-  status = 200
-  query = {slug = "may-tuoi-nen-cho-be-hoc-tieng-anh"}
 
 [[redirects]]
   from = "/bai-viet.html"
