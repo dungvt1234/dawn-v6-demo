@@ -9,6 +9,8 @@
 
   var HOTLINE = '0866685632';
   var HOTLINE_FMT = '0866 685 632';
+  var FANPAGE = 'https://www.facebook.com/profile.php?id=100093002850389';
+  var MESSENGER = 'https://m.me/100093002850389';
 
   var T = {
     hello: 'Chào ba mẹ! Em là trợ lý Bé Ngoan. Ba mẹ cần tư vấn gì ạ? 🌱',
@@ -17,7 +19,9 @@
     fallback:
       'Câu này hơi khó, em chưa chắc chắn. Ba mẹ <a href="https://zalo.me/' +
       HOTLINE +
-      '" target="_blank" rel="noopener">nhắn Zalo</a> hoặc gọi <a href="tel:' +
+      '" target="_blank" rel="noopener">nhắn Zalo</a>, <a href="' +
+      MESSENGER +
+      '" target="_blank" rel="noopener">nhắn Messenger</a> hoặc gọi <a href="tel:' +
       HOTLINE +
       '">' +
       HOTLINE_FMT +
@@ -33,7 +37,7 @@
     food: 'Thực đơn theo tuần do chuyên gia dinh dưỡng thiết kế, công khai mỗi tuần. Xem tại <a href="dinh-duong.html">dinh dưỡng</a>. 🍲',
     age: 'Trường nhận bé từ 6 tháng đến 5 tuổi ạ: nhà trẻ (6–24 tháng), mẫu giáo bé (2–3 tuổi), mẫu giáo nhỡ (3–4 tuổi), mẫu giáo lớn (4–5 tuổi). 👶',
     camera: 'Dạ có ạ, trường có camera 24/7 để ba mẹ yên tâm theo dõi bé. Ba mẹ gọi <a href="tel:' + HOTLINE + '">' + HOTLINE_FMT + '</a> để được hướng dẫn xem camera nhé. 📷',
-    contact: 'Hotline <a href="tel:' + HOTLINE + '">' + HOTLINE_FMT + '</a> · <a href="https://zalo.me/' + HOTLINE + '" target="_blank" rel="noopener">Zalo</a> · <a href="lien-he.html">trang liên hệ</a>. 📞',
+    contact: 'Hotline <a href="tel:' + HOTLINE + '">' + HOTLINE_FMT + '</a> · <a href="https://zalo.me/' + HOTLINE + '" target="_blank" rel="noopener">Zalo</a> · <a href="' + MESSENGER + '" target="_blank" rel="noopener">Messenger</a> · <a href="' + FANPAGE + '" target="_blank" rel="noopener">Facebook</a> · <a href="lien-he.html">trang liên hệ</a>. 📞',
     thanks: 'Dạ không có gì ạ! Mong sớm gặp bé tại Bình Minh! 💛',
     bye: 'Chào ba mẹ, chúc gia đình một ngày vui vẻ! 👋',
   };
