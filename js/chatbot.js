@@ -28,7 +28,7 @@
   };
 
   var A = {
-    fee: 'Học phí chi tiết ba mẹ xem tại <a href="hoc-phi.html">trang học phí</a> nhé — minh bạch, đang có ưu đãi nhập học sớm. Để biết mức phí hiện hành, ba mẹ gọi <a href="tel:' + HOTLINE + '">' + HOTLINE_FMT + '</a> ạ. 💰',
+    fee: 'Học phí chi tiết ba mẹ xem tại <a href="hoc-phi.html">trang học phí</a> nhé — minh bạch, đang có ưu đãi nhập học sớm. Để biết mức phí hiện hành, ba mẹ <a href="https://zalo.me/' + HOTLINE + '" target="_blank" rel="noopener">nhắn Zalo</a>, <a href="' + FANPAGE + '" target="_blank" rel="noopener">nhắn tin Facebook</a> hoặc gọi <a href="tel:' + HOTLINE + '">' + HOTLINE_FMT + '</a> ạ. 💰',
     hours: 'Trường đón bé từ 7:00 – 17:30, Thứ 2 – Thứ 7, có bán trú và camera 24/7 ạ. 🕖',
     addr: 'Trường ở 75/2A Phạm Hồng Thái, Phường 7, TP. Vũng Tàu. Ba mẹ xem <a href="lien-he.html">bản đồ đường đi</a> nhé. 📍',
     reg: 'Tuyệt vời! Ba mẹ để lại thông tin tại <a href="dang-ky.html">trang đăng ký</a>, cô gọi lại trong 24h để hẹn tham quan ạ. 📝',
