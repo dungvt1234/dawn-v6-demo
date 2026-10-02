@@ -26,6 +26,17 @@
         {
           "type": "query",
           "key": "slug",
+          "value": "song-ngu-hay-tieng-anh-tang-cuong"
+        }
+      ],
+      "destination": "/bai-viet/song-ngu-hay-tieng-anh-tang-cuong/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
           "value": "hoc-qua-choi-tre-mam-non"
         }
       ],
@@ -184,17 +195,6 @@
         }
       ],
       "destination": "/bai-viet/giao-vien-ban-ngu-day-tieng-anh-mam-non/index.html"
-    },
-    {
-      "source": "/bai-viet.html",
-      "has": [
-        {
-          "type": "query",
-          "key": "slug",
-          "value": "song-ngu-hay-tieng-anh-tang-cuong"
-        }
-      ],
-      "destination": "/bai-viet/song-ngu-hay-tieng-anh-tang-cuong/index.html"
     },
     {
       "source": "/bai-viet.html",
