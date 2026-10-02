@@ -26,6 +26,17 @@
         {
           "type": "query",
           "key": "slug",
+          "value": "giao-vien-ban-ngu-day-tieng-anh-mam-non"
+        }
+      ],
+      "destination": "/bai-viet/giao-vien-ban-ngu-day-tieng-anh-mam-non/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
           "value": "mam-non-song-ngu-vung-tau-tieng-anh-som"
         }
       ],
@@ -41,6 +52,17 @@
         }
       ],
       "destination": "/bai-viet/song-ngu-hay-tieng-anh-tang-cuong/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "tieng-anh-qua-tro-choi"
+        }
+      ],
+      "destination": "/bai-viet/tieng-anh-qua-tro-choi/index.html"
     },
     {
       "source": "/bai-viet.html",
@@ -202,17 +224,6 @@
         {
           "type": "query",
           "key": "slug",
-          "value": "giao-vien-ban-ngu-day-tieng-anh-mam-non"
-        }
-      ],
-      "destination": "/bai-viet/giao-vien-ban-ngu-day-tieng-anh-mam-non/index.html"
-    },
-    {
-      "source": "/bai-viet.html",
-      "has": [
-        {
-          "type": "query",
-          "key": "slug",
           "value": "giao-cu-montessori-cho-be-tai-nha"
         }
       ],
@@ -338,17 +349,6 @@
         }
       ],
       "destination": "/bai-viet/ngay-hoi-gia-dinh/index.html"
-    },
-    {
-      "source": "/bai-viet.html",
-      "has": [
-        {
-          "type": "query",
-          "key": "slug",
-          "value": "tieng-anh-qua-tro-choi"
-        }
-      ],
-      "destination": "/bai-viet/tieng-anh-qua-tro-choi/index.html"
     },
     {
       "source": "/bai-viet.html",
