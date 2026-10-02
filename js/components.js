@@ -194,9 +194,9 @@
    <span class="fc-icon w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-lg" style="background:#0068FF;">Z</span>
    <span class="text-[13px] font-semibold text-charcoal">Zalo</span>
   </a>
-  <a href="https://m.me/100093002850389" target="_blank" rel="noopener" class="fc-btn flex items-center gap-2.5 bg-white rounded-full pl-2 pr-4 py-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 focus-ring">
-   <span class="fc-icon w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-base" style="background:#0084FF;">M</span>
-   <span class="text-[13px] font-semibold text-charcoal">Messenger</span>
+  <a href="https://www.facebook.com/profile.php?id=100093002850389" target="_blank" rel="noopener" class="fc-btn flex items-center gap-2.5 bg-white rounded-full pl-2 pr-4 py-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 focus-ring">
+   <span class="fc-icon w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-base" style="background:#0084FF;">f</span>
+   <span class="text-[13px] font-semibold text-charcoal">Facebook</span>
   </a>
   <a href="tel:0866685632" class="fc-btn flex items-center gap-2.5 bg-white rounded-full pl-2 pr-4 py-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 focus-ring">
    <span class="fc-icon w-9 h-9 rounded-full flex items-center justify-center text-white" style="background:#223D22;"><i data-lucide="phone" class="w-4.5 h-4.5"></i></span>
