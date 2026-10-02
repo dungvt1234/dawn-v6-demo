@@ -5,6 +5,12 @@
 
 [[redirects]]
   from = "/bai-viet.html"
+  to = "/bai-viet/mam-non-song-ngu-vung-tau-tieng-anh-som/index.html"
+  status = 200
+  query = {slug = "mam-non-song-ngu-vung-tau-tieng-anh-som"}
+
+[[redirects]]
+  from = "/bai-viet.html"
   to = "/bai-viet/song-ngu-hay-tieng-anh-tang-cuong/index.html"
   status = 200
   query = {slug = "song-ngu-hay-tieng-anh-tang-cuong"}
@@ -134,12 +140,6 @@
   to = "/bai-viet/hoc-phi-truong-mam-non-tu-thuc-vung-tau-2026/index.html"
   status = 200
   query = {slug = "hoc-phi-truong-mam-non-tu-thuc-vung-tau-2026"}
-
-[[redirects]]
-  from = "/bai-viet.html"
-  to = "/bai-viet/mam-non-song-ngu-vung-tau-tieng-anh-som/index.html"
-  status = 200
-  query = {slug = "mam-non-song-ngu-vung-tau-tieng-anh-som"}
 
 [[redirects]]
   from = "/bai-viet.html"

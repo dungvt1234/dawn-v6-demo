@@ -26,6 +26,17 @@
         {
           "type": "query",
           "key": "slug",
+          "value": "mam-non-song-ngu-vung-tau-tieng-anh-som"
+        }
+      ],
+      "destination": "/bai-viet/mam-non-song-ngu-vung-tau-tieng-anh-som/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
           "value": "song-ngu-hay-tieng-anh-tang-cuong"
         }
       ],
@@ -261,17 +272,6 @@
         }
       ],
       "destination": "/bai-viet/hoc-phi-truong-mam-non-tu-thuc-vung-tau-2026/index.html"
-    },
-    {
-      "source": "/bai-viet.html",
-      "has": [
-        {
-          "type": "query",
-          "key": "slug",
-          "value": "mam-non-song-ngu-vung-tau-tieng-anh-som"
-        }
-      ],
-      "destination": "/bai-viet/mam-non-song-ngu-vung-tau-tieng-anh-som/index.html"
     },
     {
       "source": "/bai-viet.html",
