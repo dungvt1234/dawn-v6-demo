@@ -26,6 +26,17 @@
         {
           "type": "query",
           "key": "slug",
+          "value": "phan-xa-giao-tiep-tieng-anh-cho-be"
+        }
+      ],
+      "destination": "/bai-viet/phan-xa-giao-tiep-tieng-anh-cho-be/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
           "value": "giao-vien-ban-ngu-day-tieng-anh-mam-non"
         }
       ],
