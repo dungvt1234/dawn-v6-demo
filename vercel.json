@@ -37,6 +37,17 @@
         {
           "type": "query",
           "key": "slug",
+          "value": "tu-vung-mau-cau-tieng-anh-theo-tuoi"
+        }
+      ],
+      "destination": "/bai-viet/tu-vung-mau-cau-tieng-anh-theo-tuoi/index.html"
+    },
+    {
+      "source": "/bai-viet.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
           "value": "giao-vien-ban-ngu-day-tieng-anh-mam-non"
         }
       ],
