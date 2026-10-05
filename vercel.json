@@ -26,10 +26,10 @@
         {
           "type": "query",
           "key": "slug",
-          "value": "phan-xa-giao-tiep-tieng-anh-cho-be"
+          "value": "tu-vung-mau-cau-tieng-anh-theo-tuoi"
         }
       ],
-      "destination": "/bai-viet/phan-xa-giao-tiep-tieng-anh-cho-be/index.html"
+      "destination": "/bai-viet/tu-vung-mau-cau-tieng-anh-theo-tuoi/index.html"
     },
     {
       "source": "/bai-viet.html",
@@ -37,10 +37,10 @@
         {
           "type": "query",
           "key": "slug",
-          "value": "tu-vung-mau-cau-tieng-anh-theo-tuoi"
+          "value": "phan-xa-giao-tiep-tieng-anh-cho-be"
         }
       ],
-      "destination": "/bai-viet/tu-vung-mau-cau-tieng-anh-theo-tuoi/index.html"
+      "destination": "/bai-viet/phan-xa-giao-tiep-tieng-anh-cho-be/index.html"
     },
     {
       "source": "/bai-viet.html",

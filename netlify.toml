@@ -5,15 +5,15 @@
 
 [[redirects]]
   from = "/bai-viet.html"
-  to = "/bai-viet/phan-xa-giao-tiep-tieng-anh-cho-be/index.html"
-  status = 200
-  query = {slug = "phan-xa-giao-tiep-tieng-anh-cho-be"}
-
-[[redirects]]
-  from = "/bai-viet.html"
   to = "/bai-viet/tu-vung-mau-cau-tieng-anh-theo-tuoi/index.html"
   status = 200
   query = {slug = "tu-vung-mau-cau-tieng-anh-theo-tuoi"}
+
+[[redirects]]
+  from = "/bai-viet.html"
+  to = "/bai-viet/phan-xa-giao-tiep-tieng-anh-cho-be/index.html"
+  status = 200
+  query = {slug = "phan-xa-giao-tiep-tieng-anh-cho-be"}
 
 [[redirects]]
   from = "/bai-viet.html"
