@@ -239,7 +239,7 @@ try {
     const image = latest.image ? (latest.image.startsWith('http') ? latest.image : `${base}/${latest.image.replace(/^\//,'')}`) : `${base}/img/hero.webp`;
     const isoDate = toISODate(latest.date) || '2026-01-01';
     let html = fs.readFileSync(baiVietPath, 'utf8');
-    html = html.replace(/<title>.*?<\/title>/s, `<title>${escHtml(title)} — Mầm non Bình Minh</title>`);
+    html = html.replace(/<title>.*?<\/title>/s, `<title>${escHtml(title)} | Bình Minh by Vstar</title>`);
     html = html.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${escHtml(excerpt)}">`);
     html = html.replace(/<link rel="canonical"[^>]*>/, `<link rel="canonical" id="canonical-link" href="${escHtml(postUrl)}">`);
     const canonCount = (html.match(/<link rel="canonical"/g) || []).length;
@@ -251,10 +251,10 @@ try {
       });
     }
     html = html.replace(/<meta property="og:url"[^>]*>/, `<meta property="og:url" id="og-url" content="${escHtml(postUrl)}">`);
-    html = html.replace(/<meta property="og:title"[^>]*>/, `<meta property="og:title" id="og-title" content="${escHtml(title)} — Mầm non Bình Minh">`);
+    html = html.replace(/<meta property="og:title"[^>]*>/, `<meta property="og:title" id="og-title" content="${escHtml(title)} | Bình Minh by Vstar">`);
     html = html.replace(/<meta property="og:description"[^>]*>/, `<meta property="og:description" id="og-desc" content="${escHtml(excerpt)}">`);
     html = html.replace(/<meta property="og:image"[^>]*>/, `<meta property="og:image" id="og-image" content="${escHtml(image)}">`);
-    html = html.replace(/<meta name="twitter:title"[^>]*>/, `<meta name="twitter:title" id="tw-title" content="${escHtml(title)} — Mầm non Bình Minh">`);
+    html = html.replace(/<meta name="twitter:title"[^>]*>/, `<meta name="twitter:title" id="tw-title" content="${escHtml(title)} | Bình Minh by Vstar">`);
     html = html.replace(/<meta name="twitter:description"[^>]*>/, `<meta name="twitter:description" id="tw-desc" content="${escHtml(excerpt)}">`);
     html = html.replace(/<meta name="twitter:image"[^>]*>/, `<meta name="twitter:image" id="tw-image" content="${escHtml(image)}">`);
     html = html.replace(/<h1 id="bv-title"[^>]*>.*?<\/h1>/s, `<h1 id="bv-title" class="serif text-[30px] md:text-[52px] leading-[1.1] mt-4 max-w-[820px] text-white reveal in">${escHtml(title)}</h1>`);
@@ -266,8 +266,8 @@ try {
       image: image,
       datePublished: isoDate,
       dateModified: isoDate,
-      author: { '@type': 'Organization', name: 'Mầm non Bình Minh' },
-      publisher: { '@type': 'Organization', '@id': 'https://binhminhkindergarten.site/#school', name: 'Mầm non Bình Minh', url: 'https://binhminhkindergarten.site/', logo: { '@type': 'ImageObject', url: `${base}/img/logo.webp` }, sameAs: ['https://www.facebook.com/mamnonbinhminhvstarkingdergarten'] },
+      author: { '@type': 'Organization', name: 'Mầm non Bình Minh by Vstar' },
+      publisher: { '@type': 'Organization', '@id': 'https://binhminhkindergarten.site/#school', name: 'Mầm non Bình Minh by Vstar', url: 'https://binhminhkindergarten.site/', logo: { '@type': 'ImageObject', url: `${base}/img/logo.webp` }, sameAs: ['https://www.facebook.com/mamnonbinhminhvstarkingdergarten'] },
       mainEntityOfPage: postUrl
     };
     html = html.replace(/<script type="application\/ld\+json" id="article-jsonld">.*?<\/script>/s, `<script type="application/ld+json" id="article-jsonld">${JSON.stringify(articleLd, null, 2)}</script>`);
@@ -311,17 +311,17 @@ if (singleIdx !== -1) {
   const tag = singlePost.tag || '';
   const dateStr = isoDate ? `${isoDate.split('-')[2]}/${isoDate.split('-')[1]}/${isoDate.split('-')[0]}` : '';
   const imageBlock = `<div id="bv-image-wrap" class="mt-8 img-frame" style="border-radius:1.75rem;"><img decoding="async" id="bv-image" src="${escHtml(singlePost.image||'')}" alt="${escHtml(title)}" class="w-full object-cover" style="max-height:480px;"></div>`;
-  const articleLd = { '@context': 'https://schema.org', '@type': 'Article', headline: title, description: excerpt, image: image, datePublished: isoDate, dateModified: isoDate, author: { '@type': 'Organization', name: 'Mầm non Bình Minh' }, publisher: { '@type': 'Organization', '@id': 'https://binhminhkindergarten.site/#school', name: 'Mầm non Bình Minh', url: 'https://binhminhkindergarten.site/', logo: { '@type': 'ImageObject', url: `${base}/img/logo.webp` }, sameAs: ['https://www.facebook.com/mamnonbinhminhvstarkingdergarten'] }, mainEntityOfPage: postUrl };
+  const articleLd = { '@context': 'https://schema.org', '@type': 'Article', headline: title, description: excerpt, image: image, datePublished: isoDate, dateModified: isoDate, author: { '@type': 'Organization', name: 'Mầm non Bình Minh by Vstar' }, publisher: { '@type': 'Organization', '@id': 'https://binhminhkindergarten.site/#school', name: 'Mầm non Bình Minh by Vstar', url: 'https://binhminhkindergarten.site/', logo: { '@type': 'ImageObject', url: `${base}/img/logo.webp` }, sameAs: ['https://www.facebook.com/mamnonbinhminhvstarkingdergarten'] }, mainEntityOfPage: postUrl };
   const crumbLd = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Trang chủ', item: `${base}/` }, { '@type': 'ListItem', position: 2, name: 'Tin tức & Sự kiện', item: `${base}/tin-tuc.html` }, { '@type': 'ListItem', position: 3, name: title, item: postUrl }] };
   let html = template;
   html = html.replace(/{{title}}/g, escHtml(title));
   html = html.replace(/{{description}}/g, escHtml(excerpt));
   html = html.replace(/{{canonical}}/g, escHtml(postUrl));
   html = html.replace(/{{ogUrl}}/g, escHtml(postUrl));
-  html = html.replace(/{{ogTitle}}/g, escHtml(title + ' — Mầm non Bình Minh'));
+  html = html.replace(/{{ogTitle}}/g, escHtml(title + ' | Bình Minh by Vstar'));
   html = html.replace(/{{ogDescription}}/g, escHtml(excerpt));
   html = html.replace(/{{ogImage}}/g, escHtml(image));
-  html = html.replace(/{{twitterTitle}}/g, escHtml(title + ' — Mầm non Bình Minh'));
+  html = html.replace(/{{twitterTitle}}/g, escHtml(title + ' | Bình Minh by Vstar'));
   html = html.replace(/{{twitterDescription}}/g, escHtml(excerpt));
   html = html.replace(/{{twitterImage}}/g, escHtml(image));
   html = html.replace(/{{articleTitle}}/g, escHtml(title));
@@ -372,17 +372,17 @@ try {
       const tag = post.tag || '';
       const dateStr = isoDate ? `${isoDate.split('-')[2]}/${isoDate.split('-')[1]}/${isoDate.split('-')[0]}` : '';
       const imageBlock = `<div id="bv-image-wrap" class="mt-8 img-frame" style="border-radius:1.75rem;"><img decoding="async" id="bv-image" src="${escHtml(post.image||'')}" alt="${escHtml(title)}" class="w-full object-cover" style="max-height:480px;"></div>`;
-      const articleLd = { '@context': 'https://schema.org', '@type': 'Article', headline: title, description: excerpt, image: image, datePublished: isoDate, dateModified: isoDate, author: { '@type': 'Organization', name: 'Mầm non Bình Minh' }, publisher: { '@type': 'Organization', '@id': 'https://binhminhkindergarten.site/#school', name: 'Mầm non Bình Minh', url: 'https://binhminhkindergarten.site/', logo: { '@type': 'ImageObject', url: `${base}/img/logo.webp` }, sameAs: ['https://www.facebook.com/mamnonbinhminhvstarkingdergarten'] }, mainEntityOfPage: postUrl };
+      const articleLd = { '@context': 'https://schema.org', '@type': 'Article', headline: title, description: excerpt, image: image, datePublished: isoDate, dateModified: isoDate, author: { '@type': 'Organization', name: 'Mầm non Bình Minh by Vstar' }, publisher: { '@type': 'Organization', '@id': 'https://binhminhkindergarten.site/#school', name: 'Mầm non Bình Minh by Vstar', url: 'https://binhminhkindergarten.site/', logo: { '@type': 'ImageObject', url: `${base}/img/logo.webp` }, sameAs: ['https://www.facebook.com/mamnonbinhminhvstarkingdergarten'] }, mainEntityOfPage: postUrl };
       const crumbLd = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Trang chủ', item: `${base}/` }, { '@type': 'ListItem', position: 2, name: 'Tin tức & Sự kiện', item: `${base}/tin-tuc.html` }, { '@type': 'ListItem', position: 3, name: title, item: postUrl }] };
       let html = template;
       html = html.replace(/{{title}}/g, escHtml(title));
       html = html.replace(/{{description}}/g, escHtml(excerpt));
       html = html.replace(/{{canonical}}/g, escHtml(postUrl));
       html = html.replace(/{{ogUrl}}/g, escHtml(postUrl));
-      html = html.replace(/{{ogTitle}}/g, escHtml(title + ' — Mầm non Bình Minh'));
+      html = html.replace(/{{ogTitle}}/g, escHtml(title + ' | Bình Minh by Vstar'));
       html = html.replace(/{{ogDescription}}/g, escHtml(excerpt));
       html = html.replace(/{{ogImage}}/g, escHtml(image));
-      html = html.replace(/{{twitterTitle}}/g, escHtml(title + ' — Mầm non Bình Minh'));
+      html = html.replace(/{{twitterTitle}}/g, escHtml(title + ' | Bình Minh by Vstar'));
       html = html.replace(/{{twitterDescription}}/g, escHtml(excerpt));
       html = html.replace(/{{twitterImage}}/g, escHtml(image));
       html = html.replace(/{{articleTitle}}/g, escHtml(title));
@@ -448,7 +448,7 @@ try {
     const itemList = {
       '@context': 'https://schema.org',
       '@type': 'ItemList',
-      name: 'Tin tức & Sự kiện Mầm non Bình Minh',
+      name: 'Tin tức & Sự kiện Mầm non Bình Minh by Vstar',
       numberOfItems: items.length,
       itemListElement: items.map((n, i) => ({
         '@type': 'ListItem',

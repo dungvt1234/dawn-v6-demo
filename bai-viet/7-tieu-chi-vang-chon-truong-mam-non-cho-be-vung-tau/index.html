@@ -14,7 +14,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="/img/favicon.png">
-<title>7 tiêu chí chọn trường mầm non tại Vũng Tàu — Mầm non Bình Minh</title>
+<title>7 tiêu chí chọn trường mầm non tại Vũng Tàu | Bình Minh by Vstar</title>
 <meta name="description" content="Từ chương trình học đến an toàn, dinh dưỡng và đội ngũ giáo viên - 7 tiêu chí vàng giúp ba mẹ chọn trường mầm non cho bé tại Vũng Tàu thật sự phù hợp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,13 +35,13 @@
   <link rel="canonical" id="canonical-link" href="https://binhminhkindergarten.site/bai-viet/7-tieu-chi-vang-chon-truong-mam-non-cho-be-vung-tau/">
   <meta property="og:type" content="article">
   <meta property="og:url" id="og-url" content="https://binhminhkindergarten.site/bai-viet/7-tieu-chi-vang-chon-truong-mam-non-cho-be-vung-tau/">
-  <meta property="og:site_name" content="Mầm non Bình Minh">
-  <meta property="og:title" id="og-title" content="7 tiêu chí chọn trường mầm non tại Vũng Tàu — Mầm non Bình Minh">
+  <meta property="og:site_name" content="Bình Minh by Vstar">
+  <meta property="og:title" id="og-title" content="7 tiêu chí chọn trường mầm non tại Vũng Tàu | Bình Minh by Vstar">
   <meta property="og:description" id="og-desc" content="Từ chương trình học đến an toàn, dinh dưỡng và đội ngũ giáo viên - 7 tiêu chí vàng giúp ba mẹ chọn trường mầm non cho bé tại Vũng Tàu thật sự phù hợp.">
   <meta property="og:image" id="og-image" content="https://binhminhkindergarten.site/img/moment-03.webp">
   <meta property="og:locale" content="vi_VN">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" id="tw-title" content="7 tiêu chí chọn trường mầm non tại Vũng Tàu — Mầm non Bình Minh">
+  <meta name="twitter:title" id="tw-title" content="7 tiêu chí chọn trường mầm non tại Vũng Tàu | Bình Minh by Vstar">
   <meta name="twitter:description" id="tw-desc" content="Từ chương trình học đến an toàn, dinh dưỡng và đội ngũ giáo viên - 7 tiêu chí vàng giúp ba mẹ chọn trường mầm non cho bé tại Vũng Tàu thật sự phù hợp.">
   <meta name="twitter:image" id="tw-image" content="https://binhminhkindergarten.site/img/moment-03.webp">
   <meta name="theme-color" content="#223D22">
@@ -80,12 +80,12 @@
   "dateModified": "2026-08-26",
   "author": {
     "@type": "Organization",
-    "name": "Mầm non Bình Minh"
+    "name": "Mầm non Bình Minh by Vstar"
   },
   "publisher": {
     "@type": "Organization",
     "@id": "https://binhminhkindergarten.site/#school",
-    "name": "Mầm non Bình Minh",
+    "name": "Mầm non Bình Minh by Vstar",
     "url": "https://binhminhkindergarten.site/",
     "logo": {
       "@type": "ImageObject",
@@ -264,7 +264,7 @@
     return;
   }
 
-  document.title = post.title + ' — Mầm non Bình Minh';
+  document.title = post.title + ' | Bình Minh by Vstar';
  document.getElementById('bv-title').textContent = post.title;
 
  // === SEO động: canonical + OG/Twitter + Article JSON-LD theo bài viết ===
@@ -275,9 +275,9 @@
  const ogUrl = document.getElementById('og-url');
  if (ogUrl) ogUrl.setAttribute('content', postUrl);
  const ogT = document.getElementById('og-title');
- if (ogT) ogT.setAttribute('content', post.title + ' — Mầm non Bình Minh');
+ if (ogT) ogT.setAttribute('content', post.title + ' | Bình Minh by Vstar');
  const twT = document.getElementById('tw-title');
- if (twT) twT.setAttribute('content', post.title + ' — Mầm non Bình Minh');
+ if (twT) twT.setAttribute('content', post.title + ' | Bình Minh by Vstar');
  const ogD = document.getElementById('og-desc');
  if (ogD) ogD.setAttribute('content', (post.excerpt || '').slice(0, 155));
  const twD = document.getElementById('tw-desc');
@@ -301,8 +301,8 @@
    image: imgAbs,
    datePublished: dateISO || '2026-01-01',
    dateModified: dateISO || '2026-01-01',
-   author: { '@type': 'Organization', name: 'Mầm non Bình Minh' },
-   publisher: { '@type': 'Organization', '@id': 'https://binhminhkindergarten.site/#school', name: 'Mầm non Bình Minh', url: base + '/', logo: { '@type': 'ImageObject', url: base + '/img/logo.webp' }, sameAs: ['https://www.facebook.com/mamnonbinhminhvstarkingdergarten'] },
+   author: { '@type': 'Organization', name: 'Mầm non Bình Minh by Vstar' },
+   publisher: { '@type': 'Organization', '@id': 'https://binhminhkindergarten.site/#school', name: 'Mầm non Bình Minh by Vstar', url: base + '/', logo: { '@type': 'ImageObject', url: base + '/img/logo.webp' }, sameAs: ['https://www.facebook.com/mamnonbinhminhvstarkingdergarten'] },
    mainEntityOfPage: postUrl
   };
   const ldEl = document.getElementById('article-jsonld');
