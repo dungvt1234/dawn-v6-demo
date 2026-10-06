@@ -9,7 +9,7 @@
 
   var HOTLINE = '0866685632';
   var HOTLINE_FMT = '0866 685 632';
-  var FANPAGE = 'https://www.facebook.com/profile.php?id=100093002850389';
+  var FANPAGE = 'https://www.facebook.com/mamnonbinhminhvstarkingdergarten';
 
   var T = {
     hello: 'Chào ba mẹ! Em là trợ lý Bé Ngoan. Ba mẹ cần tư vấn gì ạ? 🌱',

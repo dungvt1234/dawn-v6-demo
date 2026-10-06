@@ -140,7 +140,7 @@
     </p>
      <p class="mt-4 text-[11px] tracking-[0.08em] sm:tracking-[0.14em] uppercase text-gold/90 font-semibold text-center lg:text-left" style="text-wrap:balance;">Yêu thương · Tôn trọng · An toàn · Phát triển</p>
      <div class="mt-6 flex items-center gap-3">
-      <a href="https://www.facebook.com/profile.php?id=100093002850389" target="_blank" rel="noopener" aria-label="Facebook Mầm non Bình Minh" class="focus-ring inline-flex items-center justify-center w-9 h-9 rounded-full border border-white/15 text-ivory/80 hover:text-gold hover:border-gold/60 transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+      <a href="https://www.facebook.com/mamnonbinhminhvstarkingdergarten" target="_blank" rel="noopener" aria-label="Facebook Mầm non Bình Minh" class="focus-ring inline-flex items-center justify-center w-9 h-9 rounded-full border border-white/15 text-ivory/80 hover:text-gold hover:border-gold/60 transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
      </div>
     </div>
    <div>
@@ -194,7 +194,7 @@
    <span class="fc-icon w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-lg" style="background:#0068FF;">Z</span>
    <span class="text-[13px] font-semibold text-charcoal">Zalo</span>
   </a>
-  <a href="https://www.facebook.com/profile.php?id=100093002850389" target="_blank" rel="noopener" class="fc-btn flex items-center gap-2.5 bg-white rounded-full pl-2 pr-4 py-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 focus-ring">
+  <a href="https://www.facebook.com/mamnonbinhminhvstarkingdergarten" target="_blank" rel="noopener" class="fc-btn flex items-center gap-2.5 bg-white rounded-full pl-2 pr-4 py-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 focus-ring">
    <span class="fc-icon w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-base" style="background:#0084FF;">f</span>
    <span class="text-[13px] font-semibold text-charcoal">Facebook</span>
   </a>
