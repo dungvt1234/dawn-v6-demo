@@ -172,8 +172,8 @@
   <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-ivory/50 gap-4">
    <p>© 2026 Mầm non Bình Minh. All rights reserved.</p>
    <div class="flex gap-6">
-    <a href="#" class="focus-ring hover:text-gold transition-colors">Bảo Mật Thông Tin</a>
-    <a href="#" class="focus-ring hover:text-gold transition-colors">Điều Khoản Sử Dụng</a>
+    <a href="/bao-mat-thong-tin.html" class="focus-ring hover:text-gold transition-colors">Bảo Mật Thông Tin</a>
+    <a href="/dieu-khoan-su-dung.html" class="focus-ring hover:text-gold transition-colors">Điều Khoản Sử Dụng</a>
    </div>
   </div>
  </div>
