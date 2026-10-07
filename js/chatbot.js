@@ -124,6 +124,7 @@
     'box-shadow:0 12px 30px rgba(20,30,20,.3);}' +
     '@media (max-width:767px){#dawn-chat{bottom:216px;right:12px;}' +
     '#dawn-chat-teaser{left:12px;right:12px;bottom:150px;max-width:340px;}}';
+  if (/\/dang-ky\.html$/.test(location.pathname)) { css += '#dawn-chat-teaser{display:none!important;}'; }
   var style = document.createElement('style');
   style.id = 'dawn-chat-css';
   style.textContent = css;
