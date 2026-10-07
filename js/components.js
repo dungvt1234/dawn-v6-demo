@@ -28,7 +28,7 @@
       ]
     },
     { href: '/chuong-trinh.html', label: 'Chương trình học', key: 'program' },
-    { href: '/tieng-anh-cho-tre.html', label: 'Tiếng Anh cho trẻ', key: 'english' },
+    { href: '/dang-ky.html', label: 'Đặt lịch tham quan', key: 'booking' },
     { href: '/tin-tuc.html', label: 'Tin tức & Sự kiện', key: 'news' },
     { href: '/lien-he.html', label: 'Liên hệ', key: 'contact' }
   ];
@@ -50,12 +50,12 @@
     'tin-tuc.html': 'news',
     'gallery.html': 'info',
     'lien-he.html': 'contact',
-    'dang-ky.html': 'contact'
+    'dang-ky.html': 'booking'
   }[PAGE] || 'index';
 
    const navLinks = NAV.map(n => {
     const isActive = activeKey === n.key;
-    const isCta = n.key === 'english';
+    const isCta = n.key === 'booking';
     if (n.children) {
       return `
  <li class="site-nav__item">
